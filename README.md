@@ -23,6 +23,7 @@ PC, Mac, Linux. Cabalesque is distributed via the Steam Workshop as a modificati
 GNU Public. Currently there are no plans to license any parts of Cabalesque, but the gameplay could lend itself to a turn-based variant on mobile devices and physical formats.
 
 ## Play Mechanic
+
 Each player controls a single infantry unit, who utilises a variety of ballistic and explosive weapons to engage increasingly intelligent and complex enemy infantry and vehicles on numerous, single-screen battlefields. A fixed, 3rd-person camera situated behind and slightly above the player characters watches the action unfold. Enemies appear from the sides and top of the battlefield, or from behind and within cover objects such as houses, machine gun nests, mobile armoured personnel carriers, and the like. Players can have their characters use these objects for cover or choose to destroy them in the hope of locating power-ups such as ammunition, more powerful weapons, or other special bonuses like airstrikes and supply crate drops.
 Enemy units are constantly firing upon the player characters, who must evade these attacks by ducking/crouching, running or rolling from side to side, or advancing to the nearest cover object deeper in the battlefield.
 
