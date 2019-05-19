@@ -30,7 +30,7 @@ Weapons available to player characters have the following attributes:
 #### Primary Weapons
 
 | Type | Projectile | Fire Rate | Equip Duration |
-|---|---|---|---|---|
+|---|---|---|---|
 | Assault rifle | Bullet | 5/sec | Indefinite (default) |
 | Shotgun | Bullet | 5x3/sec | 20 seconds |
 | Minigun | Bullet | 10/sec | 15 seconds |
