@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon file="base_primary_shotgun.weapon" key="cabal_sg.weapon">
+    <tag name="cqb" />
+    <specification
+    retrigger_time="0.40"
+    accuracy_factor="0.59"
+    sustained_fire_grow_step="2.0"
+    sustained_fire_diminish_rate="0.6"
+    magazine_size="10"
+    can_shoot_standing="1"
+    suppressed="0"
+    name="Cabal Shotgun"
+    class="4"
+    reload_one_at_a_time="1"
+    sight_range_modifier="1.0"
+    projectile_speed="15.0"
+    projectiles_per_shot="3"
+    burst_shots="1" />
+
+    <animation key="recoil" ref="27" />
+    <animation key="reload" ref="29" />
+    <sound key="fire" fileref="qbs-09_shot.wav" pitch_variety="0.04" volume="0.7" />
+    <sound key="cycle" fileref="mossberg500_cycle.wav" />
+    <sound key="reload_one" fileref="mossberg500_reload.wav" />
+    <sound class="impact" fileref="rifle_drop.wav" />
+    <model filename="qbs-09.xml" />
+
+    <hud_icon filename="hud_qbs-09.png" />
+    <commonness value="0.2" />
+    <inventory encumbrance="10.0" price="2.0" />
+
+    <weak_hand_hold offset="0.2" />
+    <projectile file="cabal_laser_short.projectile">
+        <result class="hit" kill_probability="0.59" kill_decay_start_time="0.23" kill_decay_end_time="0.32" />
+    </projectile>
+
+    <modifier class="speed" value="+0.0" />
+</weapon>
