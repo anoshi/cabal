@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- package 'description' is used here as a key, not a value. See languages/<language>/package_ui.xml>-->
+<package
+	name="cabal"
+	description="Campaign description"
+	show_in_campaign_menu="1"
+	campaign_entry_script="start_campaign.as"
+	show_in_quick_match_mods="1"
+	quick_match_entry_script="start_quickie.as"
+	image="cabal_campaign.png">
+
+	<campaign_options
+		faction="0"
+		presets="0"
+		friendly_capacity="0"
+		enemy_capacity="0"
+		friendly_accuracy="0"
+		enemy_accuracy="0"
+		xp_multiplier="0"
+		rp_multiplier="0"
+		player_damage_modifier="0"
+		allow_activate_server="1">
+		<choice id="difficulty" text="Difficulty" default="1" >
+			<entry text="Recruit" help="Help:Difficulty:Recruit" />
+			<entry text="Professional" help="Help:Difficulty:Professional" />
+			<entry text="Veteran" help="Help:Difficulty:Veteran" />
+		</choice>
+	</campaign_options>
+</package>
