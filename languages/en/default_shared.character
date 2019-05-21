@@ -971,8 +971,8 @@
 	<comment key="map start with 1 base, capture" text="%map_name" />
 	<comment key="map start with 1 base, koth" text="The primary task is to gain control of %target_base_name and defend it" />
 
-	<comment key="side objectives" text="The BNN feed will report targets of opportunity. Secure our bases before following these distractions" />
-	<comment key="loot objective" text="Return salvaged items and weaponry to an armoury for rewards and to unlock equipment" />
+	<comment key="side objectives" text="" />
+	<comment key="loot objective" text="" />
 	<comment key="radio tower or truck objective" text="Keep your eyes open for radio towers or radar trucks behind enemy lines" />
 	<comment key="aa objective" text="Enemy anti-air weapons prevent delivering air drops in the area; locate and destroy the site" />
 
