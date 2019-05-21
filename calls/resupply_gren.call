@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<call name="Resupply Grenadier" key="resupply_gren.call"
+  initiation_comment1="Got nades?"
+  acknowledge_comment="Loud and clear!"
+  launch_comment="Supplies on the way">
+  <round instances="1"
+    instance_class="vehicle"
+    instance_key="gren_supply_crate.vehicle"
+    instance_spread="6 6 6"
+    common_spread="6 0 6"
+    launch_time="3.0"
+    spawn_time="9.0">
+    <effect class="launch" ref="ShadowAirplaneFlyby" shadow="1" />
+    <sound class="launch" fileref="spaceship_fly_by_low.wav" />
+  </round>
+  <hud_icon filename="crate_wood.png" />
+  <capacity value="0" source="rank" source_value="0.0" />
+  <capacity value="100" source="rank" source_value="0.1" />
+  <inventory encumbrance="0.0" price="40.0" />
+</call>

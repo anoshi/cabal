@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call name="CabalArmour Piercing Rounds" key="cabal_ap_rounds_1.call"
+  initiation_comment1="Looking to penetrate"
+  acknowledge_comment="Sounds painful"
+  launch_comment="Item dispatched">
+  <round instances="1"
+    instance_class="vehicle"
+    instance_key="cabal_ap_crate.vehicle"
+    instance_spread="0 0 0"
+    common_spread="0 0 0"
+    launch_time="3.0"
+    spawn_time="9.0">
+    <effect class="launch" ref="ShadowAirplaneFlyby" shadow="1" />
+    <sound class="launch" fileref="spaceship_fly_by_low.wav" />
+  </round>
+  <hud_icon filename="hud_barrett_m107.png" />
+  <capacity value="0" source="rank" source_value="0.0" />
+  <capacity value="100" source="rank" source_value="0.3" />
+  <inventory encumbrance="0.0" price="60.0" />
+</call>

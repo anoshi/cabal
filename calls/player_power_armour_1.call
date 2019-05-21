@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call name="Player Power Armour" key="player_power_armour_1.call"
+  initiation_comment1="Exosuit required"
+  acknowledge_comment="Shipping molecules now"
+  launch_comment="Synthetic warp fabric delivering">
+  <round instances="1"
+    instance_class="carry_item"
+    instance_key="player_power_armour.carry_item"
+    instance_spread="0.5 0.5 0.5"
+    common_spread="0 0 0"
+    launch_time="1.0"
+    spawn_time="3.0">
+    <sound class="spawn" fileref="woosh1.wav" volume="0.07" />
+  </round>
+  <hud_icon filename="hud_eod.png" />
+  <capacity value="0" source="rank" source_value="0.0" />
+  <capacity value="100" source="rank" source_value="0.1" />
+  <inventory encumbrance="0.0" price="40.0" />
+</call>
