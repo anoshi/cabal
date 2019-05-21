@@ -1,0 +1,13 @@
+material "Material__108"
+{
+	technique Material__108_technique
+	{
+		pass Material__108_standard
+		{
+			ambient 1 0.47451 0.215686 1
+			diffuse 1 0.47451 0.215686 1
+			specular 0 0 0 0 25.5
+			emissive 0.329412 0 0 1
+		}
+	}
+}
