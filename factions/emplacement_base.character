@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<character>
+	<parameter class="moving_inputsteer_threshold" value="0.0" />
+	<parameter class="stopping_velocity_threshold" value="0.0" />
+
+	<parameter class="walking_steer_amount" value="0.0" />
+	<parameter class="running_steer_amount" value="0.0" />
+	<parameter class="crouch_walking_steer_amount" value="0.0" />
+	<parameter class="crouch_walking_doing_something_steer_amount" value="0.0" />
+	<parameter class="leaving_vehicle_jump_steer_amount" value="0.0" />
+
+	<parameter class="prone_moving_steer_amount" value="0.0" />
+	<parameter class="prone_moving_steer_amount_stroke" value="0.0" />
+	<parameter class="prone_moving_max_dot_to_move" value="0.0" />
+
+	<parameter class="stopping_oppositesteer_amount" value="0.0" />
+
+	<parameter class="throwing_self_over_initial_bounce" value="0.0" />
+	<parameter class="throwing_self_over_steer_amount" value="0.0" />
+	<parameter class="throwing_self_over_lift_up" value="0.0" />
+	<parameter class="lifting_up_initial_bounce" value="0.0" />
+	<parameter class="jumping_up_bounce" value="0.0" />
+
+	<parameter class="climbing_ladder_stopping_oppositesteer_amount" value="0.0" />
+	<parameter class="ending_climbing_ladder_initial_bounce" value="0.0" />
+	<parameter class="ending_climbing_up_ladder_steer_amount" value="0.0" />
+	<parameter class="climbing_switch_initial_bounce" value="0.0" />
+
+	<parameter class="climbing_up_ladder" value="0.0" />
+	<parameter class="climbing_down_ladder" value="0.0" />
+	<parameter class="climbing_switch_steer" value="0.0" />
+
+	<parameter class="climbing_end_height_offset" value="0.0" />
+	<parameter class="climbing_with_jump_end_height_offset" value="0.0" />
+
+	<parameter class="falling_steer_amount_heading" value="0.0" />
+
+	<parameter class="diving_steer_amount" value="0.0" />
+	<parameter class="diving_steer_amount_sliding_with_friction" value="0.0" />
+	<parameter class="diving_steer_amount_push" value="0.0" />
+	<parameter class="diving_steer_amount_jump" value="0.0" />
+
+	<parameter class="swimming_character_y_position_at_water_height" value="0.0" />
+	<parameter class="swimming_y_handling_factor" value="0.0" />
+	<parameter class="swimming_steer_amount" value="0.0" />
+	<parameter class="swimming_steer_amount_stroke" value="0.0" />
+
+	<parameter class="wounded_auto_death_time" value="0.0" />
+	<parameter class="wounded_medic_call_time" value="0.0" />
+	<parameter class="wounded_max_dot_to_move" value="0.0" />
+	<parameter class="wounded_moving_steer_amount" value="0.0" />
+	<parameter class="wounded_moving_steer_amount_stroke" value="0.0" />
+
+	<parameter class="being_stunned_steer_amount" value="0.0" />
+
+	<parameter class="request_strike_time" value="0.0" />
+	<parameter class="request_strike_no_signal_time" value="0.0" />
+
+	<parameter class="warn_about_grenades_time" value="5.0" />
+
+	<parameter class="willingness_to_chat" value="0.0" />
+
+	<parameter class="still_relax_min_time" value="0.0" />
+	<parameter class="still_relax_max_time" value="0.0" />
+
+	<parameter class="sight_range_as_dead" value="20.0" />
+
+	<parameter class="warn_about_overencumbered_time" value="20.0" />
+
+	<parameter class="detectability_prone" value="1.2" />
+	<parameter class="detectability_wounded" value="1.2" />
+	<parameter class="detectability_crouching" value="1.2" />
+	<parameter class="detectability_crouch_moving" value="1.2" />
+	<parameter class="detectability_walking" value="1.2" />
+	<parameter class="detectability_still" value="1.2" />
+	<parameter class="detectability_running" value="1.2" />
+
+	<parameter class="default_squad_config_index" value="0" />
+
+	<parameter class="skydiving_gravity" value="-100.0" />
+	<parameter class="swimming_gravity" value="8.0" />
+
+	<parameter class="overpacked_speed_modifier" value="0.0" />
+
+	<parameter class="experience_blasts_multiplied" value="2" />
+
+	<sound key="body_fall" fileref="body_fall1.wav" volume="1.0" />
+
+	<!--<sound key="throw" fileref="energy_teleport.wav" volume="0.7" />-->
+
+    <animation key="running, no weapon, 60" target_key="falling, drone" />
+    <animation key="running, single hand carry" target_key="falling, drone" />
+    <animation key="still, instructor" target_key="falling, drone" />
+    <animation key="still, single hand carry" target_key="falling, drone" />
+    <animation key="crouch still, no weapon, 62" target_key="falling, drone" />
+    <animation key="crouch, still, single hand carry" target_key="falling, drone" />
+    <animation key="crouching forwards, no weapon, 61" target_key="falling, drone" />
+    <animation key="crouching forwards, single hand carry" target_key="falling, drone" />
+    <animation key="crouching backwards, single hand carry" target_key="falling, drone" />
+    <animation state_key="changing_weapon_in" animation_key="falling, drone" />
+    <animation state_key="stabbing" animation_key="falling, drone" />
+    <animation state_key="hold" animation_key="falling, drone" />
+    <animation state_key="still_against_wall" animation_key="falling, drone" />
+    <animation state_key="crouch_moving" animation_key="falling, drone" />
+    <animation state_key="crouch_moving_backwards" animation_key="falling, drone" />
+    <animation key="falling"	target_key="falling, drone" />
+    <animation key="throwing self over" target_key="falling, drone" />
+    <animation key="stunned" target_key="falling, drone" />
+    <animation key="swimming still" target_key="falling, drone" />
+    <animation key="swimming forwards" target_key="falling, drone" />
+    <animation key="jumping" target_key="falling, drone" />
+    <animation key="arriving ground" target_key="falling, drone" />
+    <animation key="walking" target_key="falling, drone" />
+    <animation key="surrender" target_key="falling, drone" />
+    <animation key="wounded, still, 66" target_key="falling, drone" />
+    <animation key="wounded, moving forwards, 67" target_key="falling, drone" />
+	<animation key="celebrating" target_key="falling, drone" />
+	<animation key="celebrating, shooting" target_key="falling, drone" />
+	<animation key="climbing ladder, still" target_key="falling, drone" />
+</character>

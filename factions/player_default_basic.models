@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<models>
+	<model filename="player_blue.xml" />
+	<model filename="player_red.xml" />
+</models>
