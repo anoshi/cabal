@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scene>
+	<camera direction="-0.01 -0.21 0.5" distance="9.5" far_clip="80.0" shadow_far_clip="80.0" fov="1.00" />
+	<fog offset="15.0" range="50.0" />
+</scene>
