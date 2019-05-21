@@ -1,10 +1,6 @@
 // internal
 #include "tracker.as"
-//#include "helpers.as"
-//#include "log.as"
 #include "time_announcer_task.as"
-//#include "query_helpers.as"
-//#include "cabal_helpers.as"
 // --------------------------------------------
 
 
@@ -87,13 +83,16 @@ class ResourceLifecycleHandler : Tracker {
 		}
 
 		// decrement lives left
+		_log("*** CABAL: Player 1 lost a life!", 1);
+		player1Lives -= 1;
+
 		if (player1Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 1", 1);
 			if (player2Lives <= 0) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
-		} else if ( player2Lives <= 0) {
+		} else if (player2Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 2", 1);
 			if (player1Lives <= 0) {
 				_log("*** GAME OVER!", 1);
@@ -228,9 +227,9 @@ class ResourceLifecycleHandler : Tracker {
 		} else if (charXP > 0.8) {
 			dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop minigun
 		} else if (charXP > 0.6) {
-			dropPowerUp(dropPos.toString(), "weapon", "cabal_mg.weapon"); // drop lmg
+			dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop lmg
 		} else if (charXP > 0.4) {
-			dropPowerUp(dropPos.toString(), "weapon", "cabal_sg.weapon"); // drop shotgun
+			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
 		} else if (charXP > 0.2) {
 			dropPowerUp(dropPos.toString(), "grenade", "grenadier_he.projectile"); // drop grenade
 		}

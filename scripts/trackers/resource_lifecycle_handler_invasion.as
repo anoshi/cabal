@@ -1,10 +1,6 @@
 // internal
 #include "tracker.as"
-//#include "helpers.as"
-//#include "log.as"
 #include "gamemode_invasion.as"
-//#include "query_helpers.as"
-//#include "cabal_helpers.as"
 // --------------------------------------------
 
 
@@ -254,9 +250,9 @@ class ResourceLifecycleHandler : Tracker {
 		} else if (charXP > 0.8) {
 			dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop minigun
 		} else if (charXP > 0.6) {
-			dropPowerUp(dropPos.toString(), "weapon", "cabal_mg.weapon"); // drop lmg
+			dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop lmg
 		} else if (charXP > 0.4) {
-			dropPowerUp(dropPos.toString(), "weapon", "cabal_sg.weapon"); // drop shotgun
+			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
 		} else if (charXP > 0.2) {
 			dropPowerUp(dropPos.toString(), "grenade", "grenadier_he.projectile"); // drop grenade
 		}
