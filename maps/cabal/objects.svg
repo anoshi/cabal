@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.0000011"
-     inkscape:cx="1117.6668"
-     inkscape:cy="866.99154"
+     inkscape:zoom="5.6568558"
+     inkscape:cx="1064.0924"
+     inkscape:cy="788.38199"
      inkscape:document-units="px"
-     inkscape:current-layer="layer33"
+     inkscape:current-layer="layer46"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -7550,7 +7550,7 @@
          id="tspan15284"
          sodipodi:role="line"
          style="font-size:8px;line-height:1.25;font-family:sans-serif">to have randomly generated tree sizes.</tspan><tspan
-         y="859.31836"
+         y="855.35742"
          x="3408.8633"
          id="tspan15286"
          sodipodi:role="line"
@@ -7583,7 +7583,7 @@
          id="tspan15290"
          sodipodi:role="line"
          style="font-size:8px;line-height:1.25;font-family:sans-serif">to have randomly generated fir tree sizes.</tspan><tspan
-         y="895.06836"
+         y="891.10742"
          x="3408.8633"
          id="tspan15292"
          sodipodi:role="line"
@@ -7725,7 +7725,7 @@
          sodipodi:role="line"
          id="tspan12929"
          x="3211.2661"
-         y="640.40332"
+         y="636.44238"
          style="font-size:8px;line-height:1.25;font-family:sans-serif" /></text>
     <rect
        style="display:inline;fill:#ffff00;fill-opacity:0.07843137;fill-rule:nonzero;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
@@ -7950,7 +7950,7 @@
          sodipodi:role="line"
          id="tspan21181"
          x="3847.199"
-         y="217.95296"
+         y="213.99202"
          style="font-size:8px;line-height:1.25;font-family:sans-serif" /></text>
     <path
        sodipodi:nodetypes="cc"
@@ -7989,7 +7989,7 @@
          sodipodi:role="line"
          id="tspan21195"
          x="3847.199"
-         y="267.24942"
+         y="263.28848"
          style="font-size:8px;line-height:1.25;font-family:sans-serif" /></text>
     <text
        xml:space="preserve"
@@ -8020,7 +8020,7 @@
        sodipodi:nodetypes="cc" />
   </g>
   <g
-     style="display:inline;opacity:0.92"
+     style="display:inline;opacity:0.92000002"
      inkscape:label="materials"
      id="layer29"
      inkscape:groupmode="layer">
@@ -8777,7 +8777,7 @@ see_through = 1;</desc>
          id="desc10349-8-98-8-7-0">template = streetlantern;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;filter:url(#filter11084-896);enable-background:new;stroke-opacity:1;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none"
+       style="display:inline;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter11084-896);enable-background:new"
        id="rect10340-4-5-7-9-9"
        width="4.4683914"
        height="3.811275"
@@ -8789,7 +8789,7 @@ see_through = 1;</desc>
          id="desc10349-9-4-79-8-4">name = streetlight; mesh_name = streetlight.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 0 1 128 128; collision_model_type = 0; collision_model_size = .3 7 .3;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;enable-background:new;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="display:inline;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
        id="rect10340-4-5-7-9-9-8"
        width="4.4683914"
        height="3.811275"
@@ -8945,7 +8945,7 @@ see_through = 1;</desc>
          id="title9786-13-5-7-8-6">venus</title>
     </rect>
     <rect
-       transform="rotate(0.07879261,-1918532.9,3935806.1)"
+       transform="rotate(0.07879261,-1918532.9,3935805.3)"
        inkscape:label="#mesh_template"
        y="-1522.1748"
        x="-2658.7271"
@@ -8957,7 +8957,7 @@ see_through = 1;</desc>
          id="desc10092-7-0-4-9-8-24">name = sunchair_red; mesh_name = sunchair.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 7 1 32 32; collision_model_type = 1; collision_model_size = 1.3 1.5 1.6; penetrability = 0.7; see_through = 1</desc>
     </rect>
     <rect
-       transform="rotate(0.00494255,-30581037,62796757)"
+       transform="rotate(0.00494255,-30581037,62786209)"
        inkscape:label="#mesh_template"
        y="-1522.1748"
        x="-2658.7271"
@@ -9675,7 +9675,7 @@ see_through = 1;
 climbable = 0;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999925, 3.99999925000000012;stroke-dashoffset:6.99999952;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999925, 3.99999925;stroke-dashoffset:6.99999952;stroke-opacity:1;enable-background:new"
        id="spawn2_5"
        width="5.7888808"
        height="6.6684999"
@@ -9687,7 +9687,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-4-9-3">type = vehicle; key = deco_car2_red.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000109, 4.00000108999999959;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000109, 4.00000109;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
        id="spawn2_6"
        width="5.7888808"
        height="6.6684999"
@@ -9699,7 +9699,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9">type = vehicle; key = deco_car2_grey.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999908, 3.99999907999999982;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999908, 3.99999908;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn2_3"
        width="5.7888808"
        height="6.6684999"
@@ -9711,7 +9711,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-0">type = vehicle; key = deco_car2_white.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#36f8ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999917, 3.99999917000000016;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#36f8ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999917, 3.99999917;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
        id="spawn3_5"
        width="5.7888808"
        height="6.6684999"
@@ -9723,7 +9723,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-7-1-4-6">type = vehicle; key = deco_car3_sky.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#1acc00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.0000009, 4.00000089999999986;stroke-dashoffset:7.00000191;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#1acc00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.0000009, 4.0000009;stroke-dashoffset:7.00000191;stroke-opacity:1;enable-background:new"
        id="spawn4_5"
        width="5.7888808"
        height="6.6684999"
@@ -9735,7 +9735,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-5-4-3-0">type = vehicle; key = deco_pickup_green.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.0000012, 4.00000119999999981;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.0000012, 4.0000012;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
        id="spawn2_8"
        width="5.7888808"
        height="6.6684999"
@@ -9747,7 +9747,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-6-0">type = vehicle; key = deco_car2_blue.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#333333;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000123, 4.00000122999999963;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#333333;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000123, 4.00000123;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
        id="spawn_2_9"
        width="5.7888808"
        height="6.6684999"
@@ -9759,7 +9759,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-6-9-8">type = vehicle; key = deco_car2_black.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#aa8800;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.0000012, 4.00000119999999981;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#aa8800;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.0000012, 4.0000012;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
        id="spawn2_7"
        width="5.7888808"
        height="6.6684999"
@@ -9771,7 +9771,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-6-9-5-13">type = vehicle; key = deco_car2_brown.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#008000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000125, 4.00000125000000040;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#008000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000125, 4.00000125;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
        id="spawn2_1"
        width="5.7888808"
        height="6.6684999"
@@ -9783,7 +9783,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-6-9-5-9-7">type = vehicle; key = deco_car2_green.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#d2d2d2;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000128, 4.00000128000000021;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#d2d2d2;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000128, 4.00000128;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
        id="spawn2_4"
        width="5.7888808"
        height="6.6684999"
@@ -9795,7 +9795,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-6-9-5-9-3-9">type = vehicle; key = deco_car2_silver.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912000000002;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn1_8"
        width="5.7888808"
        height="6.6684999"
@@ -9807,7 +9807,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-66">type = vehicle; key = deco_car1_white.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999911, 3.99999911000000008;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999911, 3.99999911;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn1_7"
        width="5.7888808"
        height="6.6684999"
@@ -9819,7 +9819,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-6-0">type = vehicle; key = deco_car1_blue.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#333333;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999909, 3.99999909000000020;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#333333;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999909, 3.99999909;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn1_6"
        width="5.7888808"
        height="6.6684999"
@@ -9831,7 +9831,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-6-4-8">type = vehicle; key = deco_car1_black.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#c87137;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999907, 3.99999906999999988;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#c87137;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999907, 3.99999907;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn1_5"
        width="5.7888808"
        height="6.6684999"
@@ -9843,7 +9843,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-6-4-4-2">type = vehicle; key = deco_car1_brown.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#008000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905000000000;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#008000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn1_4"
        width="5.7888808"
        height="6.6684999"
@@ -9855,7 +9855,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-6-4-4-7-0">type = vehicle; key = deco_car1_green.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ff00ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999903, 3.99999903000000012;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ff00ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999903, 3.99999903;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn1_3"
        width="5.7888808"
        height="6.6684999"
@@ -9867,7 +9867,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-6-4-4-7-9-5">type = vehicle; key = deco_car1_pink.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999901, 3.99999900999999980;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999901, 3.99999901;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn1_2"
        width="5.7888808"
        height="6.6684999"
@@ -9879,7 +9879,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-6-4-4-7-9-6-9">type = vehicle; key = deco_car1_yellow.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912000000002;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn5_7"
        width="5.7888808"
        height="6.6684999"
@@ -9891,7 +9891,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-3-8">type = vehicle; key = deco_van_yellow.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#a0892c;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999909, 3.99999909000000020;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#a0892c;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999909, 3.99999909;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn5_6"
        width="5.7888808"
        height="6.6684999"
@@ -9903,7 +9903,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-3-2-9">type = vehicle; key = deco_van_brown.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.0000009, 4.00000089999999986;stroke-dashoffset:7.00000191;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.0000009, 4.0000009;stroke-dashoffset:7.00000191;stroke-opacity:1;enable-background:new"
        id="spawn4_4"
        width="5.7888808"
        height="6.6684999"
@@ -9915,7 +9915,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-5-4-3-6-4">type = vehicle; key = deco_pickup_red.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999915, 3.99999914999999984;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999915, 3.99999915;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn3_4"
        width="5.7888808"
        height="6.6684999"
@@ -9927,7 +9927,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-7-1-4-7-2">type = vehicle; key = deco_car3_green.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#e9ddaf;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000111, 4.00000111000000036;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#e9ddaf;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000111, 4.00000111;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
        id="spawn4_3"
        width="5.7888808"
        height="6.6684999"
@@ -9939,7 +9939,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-5-4-3-6-7-2">type = vehicle; key = deco_pickup_khaki.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000118, 4.00000117999999993;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000118, 4.00000118;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
        id="spawn4_2"
        width="5.7888808"
        height="6.6684999"
@@ -9951,7 +9951,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-5-4-3-6-7-5-8">type = vehicle; key = deco_pickup_yellow.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999923, 3.99999922999999979;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999923, 3.99999923;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
        id="spawn3_3"
        width="5.7888808"
        height="6.6684999"
@@ -9963,7 +9963,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-7-1-4-7-1-7">type = vehicle; key = deco_car3_blue.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999921, 3.99999920999999992;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999921, 3.99999921;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
        id="spawn3_2"
        width="5.7888808"
        height="6.6684999"
@@ -9975,7 +9975,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-7-1-4-7-1-6-9">type = vehicle; key = deco_car3_black.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#f8ea00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999909, 3.99999909000000020;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#f8ea00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999909, 3.99999909;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn2_2"
        width="5.7888808"
        height="6.6684999"
@@ -9987,7 +9987,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-8">type = vehicle; key = deco_car2_yellow.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000074, 4.00000073999999994;stroke-dashoffset:7.00000143;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000074, 4.00000074;stroke-dashoffset:7.00000143;stroke-opacity:1;enable-background:new"
        id="spawn4_1"
        width="5.7888808"
        height="6.6684999"
@@ -9999,7 +9999,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-5-4-3-6-7-5-8-6">type = vehicle; key = deco_pickup_blue.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#008000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905000000000;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#008000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn5_5"
        width="5.7888808"
        height="6.6684999"
@@ -10011,7 +10011,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-3-2-9-9">type = vehicle; key = deco_van_green.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#36f8ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905000000000;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#36f8ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn5_4"
        width="5.7888808"
        height="6.6684999"
@@ -10023,7 +10023,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-3-2-9-1">type = vehicle; key = deco_van_sky.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#e9ddaf;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905000000000;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#e9ddaf;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn5_3"
        width="5.7888808"
        height="6.6684999"
@@ -10035,7 +10035,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-3-2-9-8">type = vehicle; key = deco_van_khaki.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905000000000;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999905, 3.99999905;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn5_2"
        width="5.7888808"
        height="6.6684999"
@@ -10047,7 +10047,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-3-2-9-5">type = vehicle; key = deco_van_blue.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999906, 3.99999905999999994;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999906, 3.99999906;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn5_1"
        width="5.7888808"
        height="6.6684999"
@@ -10059,7 +10059,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-3-2-9-2">type = vehicle; key = deco_van_red.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.9999992, 3.99999919999999998;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.9999992, 3.9999992;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
        id="spawn3_1"
        width="5.7888808"
        height="6.6684999"
@@ -10071,7 +10071,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-7-1-4-7-1-6-9-7">type = vehicle; key = deco_car3_yellow.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999897, 3.99999897000000004;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999897, 3.99999897;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
        id="spawn1_1"
        width="5.7888808"
        height="6.6684999"
@@ -10083,7 +10083,7 @@ climbable = 0;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-6-4-4-7-9-6-9-0">type = vehicle; key = deco_car1_red.vehicle;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999918, 3.99999918000000010;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999918, 3.99999918;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
        id="spawn3_6"
        width="5.7888808"
        height="6.6684999"
@@ -10410,7 +10410,7 @@ climbable = 0;</desc>
          id="desc32550-2">template = bush5; offset = 0 -0.0 0;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:#00ff00;stroke-width:0.60000002;stroke-miterlimit:4;stroke-dasharray:0.60000001, 0.60000001000000003;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:#00ff00;stroke-width:0.60000002;stroke-miterlimit:4;stroke-dasharray:0.60000001, 0.60000001;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        id="rect14642-1-94-86-5-54-1-22-1-17-1"
        width="5.3120146"
        height="5.3120146"
@@ -10430,7 +10430,7 @@ climbable = 0;</desc>
        height="2.6560073"
        width="2.6560073"
        id="rect11363"
-       style="display:inline;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:#00ff00;stroke-width:0.60000002;stroke-miterlimit:4;stroke-dasharray:0.60000002, 0.60000001999999997;stroke-dashoffset:0;stroke-opacity:1;enable-background:new">
+       style="display:inline;fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke:#00ff00;stroke-width:0.60000002;stroke-miterlimit:4;stroke-dasharray:0.60000002, 0.60000002;stroke-dashoffset:0;stroke-opacity:1;enable-background:new">
       <title
          id="title11365">bush3_1</title>
       <desc
@@ -10654,7 +10654,7 @@ climbable = 0;</desc>
          id="desc6925-5-6-2-1">template = chairset_chair;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#855e00;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.79999995;stroke-dasharray:5.99999947, 1.99999973000000009;stroke-dashoffset:1.59999979;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#855e00;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.79999995;stroke-dasharray:5.99999947, 1.99999973;stroke-dashoffset:1.59999979;stroke-opacity:1;enable-background:new"
        id="mesh923-5-7-7-9"
        width="2.6240289"
        height="1.5191746"
@@ -11613,7 +11613,7 @@ visual_hitbox_size = 2 2 2;
        height="7.3961515"
        width="3.982286"
        id="spawn1-3-7"
-       style="display:inline;fill:#007cff;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-miterlimit:4;stroke-dasharray:12.01889764, 12.01889764000000049;stroke-dashoffset:4.60724401;stroke-opacity:1;enable-background:new">
+       style="display:inline;fill:#007cff;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-miterlimit:4;stroke-dasharray:12.01889764, 12.01889764;stroke-dashoffset:4.60724401;stroke-opacity:1;enable-background:new">
       <desc
          id="desc7082-7-40">type = vehicle;
 tag = jeep;</desc>
@@ -11654,7 +11654,7 @@ tag = jeep;</desc>
        height="7.3961515"
        width="3.982286"
        id="spawn1-70-1-4-9-1-9"
-       style="display:inline;fill:#008000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999945, 11.99999945000000068;stroke-dashoffset:4.5999999;stroke-opacity:1;enable-background:new">
+       style="display:inline;fill:#008000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999945, 11.99999945;stroke-dashoffset:4.5999999;stroke-opacity:1;enable-background:new">
       <desc
          id="desc7082-9-7-0-4-7-4">type = vehicle;
 key = armored_truck.vehicle;</desc>
@@ -11681,7 +11681,7 @@ key = armored_truck.vehicle;</desc>
        height="7.3961515"
        width="3.982286"
        id="spawn1-1-1-1-8"
-       style="display:inline;fill:#ff7f2a;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999964, 11.99999964000000041;stroke-dashoffset:4.5999999;stroke-opacity:1;enable-background:new">
+       style="display:inline;fill:#ff7f2a;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999964, 11.99999964;stroke-dashoffset:4.5999999;stroke-opacity:1;enable-background:new">
       <desc
          id="desc7082-740-7-7-8">type = vehicle;
 tag = apc;</desc>
@@ -11701,7 +11701,7 @@ tag = apc;</desc>
            style="font-family:sans-serif" /></flowRegion><flowPara
          id="flowPara20897"
          style="font-size:10px;line-height:1.25;font-family:sans-serif">APC</flowPara></flowRoot>    <rect
-       style="display:inline;fill:#d40000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.99999991, 3.99999973999999980;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#d40000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.99999991, 3.99999974;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
        id="spawn1-70-3-9-5"
        width="5.7888808"
        height="6.6684999"
@@ -11732,10 +11732,10 @@ tag = apc;</desc>
          sodipodi:role="line"
          id="tspan20968"
          x="2568.8311"
-         y="1061.6345"
+         y="1064.7517"
          style="font-size:10px;line-height:1.25;font-family:sans-serif" /></text>
     <rect
-       style="display:inline;fill:#4d4d4d;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:12.00000106, 12.00000106000000066;stroke-dashoffset:4.60000038;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#4d4d4d;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:12.00000106, 12.00000106;stroke-dashoffset:4.60000038;stroke-opacity:1;enable-background:new"
        id="spawn1-1-4-2-1-0-9"
        width="3.982286"
        height="7.3961515"
@@ -11759,7 +11759,7 @@ tag = tank;</desc>
          y="276.11179"
          style="font-size:10px;line-height:1.25;font-family:sans-serif">tank</tspan></text>
     <rect
-       style="display:inline;fill:#b3b3b3;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:12.00000088, 12.00000088000000176;stroke-dashoffset:4.60000038;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#b3b3b3;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:12.00000088, 12.00000088;stroke-dashoffset:4.60000038;stroke-opacity:1;enable-background:new"
        id="spawn1-1-4-2-1-1-0-6-2-4"
        width="3.982286"
        height="7.3961515"
@@ -11783,7 +11783,7 @@ key = cargo_truck.vehicle;</desc>
          y="452.02963"
          style="font-size:10px;line-height:1.25;font-family:sans-serif">cargo truck</tspan></text>
     <rect
-       style="display:inline;fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999879, 11.99999878999999936;stroke-dashoffset:4.59999943;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999879, 11.99999879;stroke-dashoffset:4.59999943;stroke-opacity:1;enable-background:new"
        id="spawn1-70-6-0-5-9"
        width="3.982286"
        height="7.3961515"
@@ -11807,7 +11807,7 @@ tag = truck;</desc>
          y="305.10901"
          style="font-size:10px;line-height:1.25;font-family:sans-serif">transport truck</tspan></text>
     <rect
-       style="display:inline;fill:#6c5353;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.00000013, 4.00000056000000015;stroke-dashoffset:6.99999952;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#6c5353;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.00000013, 4.00000056;stroke-dashoffset:6.99999952;stroke-opacity:1;enable-background:new"
        id="spawn1-70-3-1"
        width="5.7888808"
        height="6.6684999"
@@ -11881,7 +11881,7 @@ key = radar_tower.vehicle;
          y="567.38794"
          style="font-size:10px;line-height:1.25;font-family:sans-serif">radar tower</tspan></text>
     <rect
-       style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999876, 11.99999876000000043;stroke-dashoffset:4.59999943;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999876, 11.99999876;stroke-dashoffset:4.59999943;stroke-opacity:1;enable-background:new"
        id="spawn1-70-6-0-5-9-1"
        width="3.982286"
        height="7.3961515"
@@ -11967,7 +11967,7 @@ capturable = 1;</desc>
          style="font-size:10px;line-height:1.25;font-family:sans-serif">base</tspan></text>
     <rect
        transform="rotate(0.08978138)"
-       style="display:inline;opacity:0.5;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:4.99999988, 4.99999987999999984;stroke-dashoffset:5;stroke-opacity:1;enable-background:new"
+       style="display:inline;opacity:0.5;fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:4.99999988, 4.99999988;stroke-dashoffset:5;stroke-opacity:1;enable-background:new"
        id="rect91118"
        width="45.429642"
        height="46.488388"
@@ -11984,7 +11984,7 @@ capturable = 1;</desc>
        height="46.488449"
        width="45.429886"
        id="rect91923"
-       style="display:inline;opacity:0.5;fill:none;stroke:#afafaf;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:4.99999988, 4.99999987999999984;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+       style="display:inline;opacity:0.5;fill:none;stroke:#afafaf;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:4.99999988, 4.99999988;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        transform="rotate(0.08978138)">
       <desc
          id="desc91925">name=Name of the base;</desc>
@@ -12006,7 +12006,7 @@ capturable = 1;</desc>
        x="-2387.5898"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="-61.166668"
+         y="-58.04948"
          x="-2387.5898"
          id="tspan7313"
          sodipodi:role="line"
@@ -12017,7 +12017,7 @@ capturable = 1;</desc>
        x="2438.4131"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="1362.7142"
+         y="1365.8314"
          x="2438.4131"
          id="tspan25037"
          sodipodi:role="line"
@@ -12028,7 +12028,7 @@ capturable = 1;</desc>
        x="2432.7507"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="1362.2999"
+         y="1365.4171"
          x="2432.7507"
          id="tspan25041"
          sodipodi:role="line"
@@ -12237,7 +12237,7 @@ capturable = 1;</desc>
        x="2396.4841"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        xml:space="preserve"><tspan
-         y="1922.6094"
+         y="1925.7266"
          x="2396.4841"
          id="tspan25125"
          sodipodi:role="line"
@@ -13380,7 +13380,7 @@ climb_type = 0;
          id="desc16653-2-9-3-3-8-7-0-7-9">name = barell_red; mesh_name = barell.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 10 16 32 32; collision_model_type = 0; collision_model_size = 1.2 1.4 1.2; penetrability = 0.4;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#ffff00;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000122, 1.00000121999999991;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#ffff00;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000122, 1.00000122;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        id="rect16633-4-8-7-6-9-9-3"
        width="3.411628"
        height="5.9932504"
@@ -13393,7 +13393,7 @@ climb_type = 0;
          id="desc16653-2-9-3-3-2-6">name = barbwire; mesh_name = barbwire.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 1 9 16 16; collision_model_type = 1; collision_model_size = 1.4 1.4 2.8; collision_model_offset = 0 0 0; walkable = 0; alpha_blend = 1; penetrability = 0.8; see_through = 1;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000118, 2.00000246000000015;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000118, 2.00000246;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        id="rect16633-4-8-7-6-8-1"
        width="1.8432783"
        height="9.5349865"
@@ -13484,7 +13484,7 @@ climb_type = 0;
          id="desc16653-2-9-3-3-8-7-0-7-4-6-1-5">template = barell_blue;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000118, 2.00000247000000009;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000118, 2.00000247;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        id="rect16633-4-8-7-6-0-2"
        width="1.8432783"
        height="9.5349865"
@@ -13499,7 +13499,7 @@ climb_type = 0;
          id="desc16653-2-9-3-6-0">template = barrier;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#ffff00;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000123, 1.00000123000000007;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#ffff00;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000123, 1.00000123;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        id="rect16633-4-8-7-6-9-9-5-7-48"
        width="3.411628"
        height="5.9932504"
@@ -13514,7 +13514,7 @@ climb_type = 0;
          id="desc16653-2-9-3-3-2-2-3-7">template = barbwire;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000118, 2.00000246000000015;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000118, 2.00000246;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        id="rect16633-4-8-7-6-8-1-8"
        width="3.11585"
        height="3.1687195"
@@ -13533,7 +13533,7 @@ penetrability = 0;
 see_through = 0;</desc>
     </rect>
     <rect
-       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000118, 2.00000247000000009;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ff0000;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000118, 2.00000247;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        id="rect16633-4-8-7-6-0-2-9"
        width="2.9338198"
        height="2.9869075"
@@ -14405,8 +14405,7 @@ visual_hitbox_size = 3.5 10 3.5;
          style="font-size:10px;line-height:1.25;font-family:sans-serif">brick wall</tspan></text>
     <g
        id="g18736"
-       transform="translate(0,6)"
-       style="">
+       transform="translate(0,6)">
       <path
          sodipodi:nodetypes="cc"
          style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:none;stroke:#cb0000;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:new"
@@ -14433,8 +14432,7 @@ top_material = terrain;</desc>
     </g>
     <g
        id="g18722"
-       transform="translate(0,11.5)"
-       style="">
+       transform="translate(0,11.5)">
       <path
          sodipodi:nodetypes="cc"
          inkscape:label="#path7943_platform"
@@ -14715,7 +14713,7 @@ collision_model_size =0.4 8.5 0.4;</desc>
        height="7.3961515"
        width="3.982286"
        id="spawn1-70-1-4-9-17-2-25-2-6-1-52"
-       style="display:inline;fill:#ffd5d5;fill-opacity:1;stroke:#ff00ff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999972, 11.99999972000000170;stroke-dashoffset:4.59999943;stroke-opacity:1;enable-background:new">
+       style="display:inline;fill:#ffd5d5;fill-opacity:1;stroke:#ff00ff;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999972, 11.99999972;stroke-dashoffset:4.59999943;stroke-opacity:1;enable-background:new">
       <desc
          id="desc7082-9-7-0-4-4-3-3-9-2-1-7">type = vehicle;
 key = mobile_armory.vehicle;</desc>
@@ -14735,8 +14733,7 @@ key = mobile_armory.vehicle;</desc>
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
          id="flowPara12851"
          style="font-size:10px;line-height:1.25;font-family:sans-serif">armory truck</flowPara></flowRoot>    <g
-       id="g12962"
-       style="">
+       id="g12962">
       <path
          style="display:inline;fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 3074.7834,629.14368 4.0081,-4.3083 -0.041,-6.427 -5.1025,-3.23188"
@@ -14951,16 +14948,14 @@ separator_depth = 0.7;</desc>
        id="flowRoot12115"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        transform="translate(250.92886,55.497471)"><flowRegion
-         id="flowRegion12117"
-         style=""><rect
+         id="flowRegion12117"><rect
            id="rect12119"
            width="131.52182"
            height="53.740112"
            x="-1503.309"
-           y="-118.57512"
-           style="" /></flowRegion><flowPara
+           y="-118.57512" /></flowRegion><flowPara
          id="flowPara12121"
-         style="font-size:18.66666603px">Cabal sandbag</flowPara></flowRoot>    <rect
+         style="font-size:18.66666603px">SS sandbag</flowPara></flowRoot>    <rect
        style="display:inline;opacity:0.93000034;fill:#bc5514;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 4;stroke-dashoffset:2.9000001;stroke-opacity:1;enable-background:new"
        id="spawn2_6-9-4-9"
        width="5.7888808"
@@ -14994,7 +14989,7 @@ tag = speeder;</desc>
        height="16.478903"
        width="32.412472"
        id="hitbox_trigger_999"
-       style="display:inline;enable-background:new;opacity:0.4;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#787878;stroke-width:1.32283465;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.32283465, 2.64566928999999984;stroke-dashoffset:0;stroke-opacity:0.97247709" />
+       style="display:inline;opacity:0.4;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#787878;stroke-width:1.32283461;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.32283465, 2.64566929;stroke-dashoffset:0;stroke-opacity:0.97247709;enable-background:new" />
     <text
        id="text7284-3"
        y="381.77829"
@@ -15005,12 +15000,12 @@ tag = speeder;</desc>
          id="tspan7288-8"
          x="3634.3806"
          y="381.77829"
-         style="font-size:40px;line-height:1.25;font-family:sans-serif">CABAL </tspan></text>
+         style="font-size:40px;line-height:1.25;font-family:sans-serif">SECESSION </tspan></text>
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path7290-0"
-       d="m 3809.1833,401.89297 0,227.65333"
+       d="M 3809.1833,401.89297 V 629.5463"
        style="display:inline;opacity:0.93000034;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new" />
     <text
        xml:space="preserve"
@@ -15024,7 +15019,7 @@ tag = speeder;</desc>
          sodipodi:role="line"
          style="font-size:10px;line-height:1.25;font-family:sans-serif">trigger area</tspan></text>
     <rect
-       style="display:inline;opacity:0.93000034;fill:#e66e2d;fill-opacity:1;fill-rule:nonzero;stroke:#1e1e1e;stroke-width:0.57211763;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.57211762, 0.57211761999999999;stroke-dashoffset:0.84000003;stroke-opacity:1;enable-background:new"
+       style="display:inline;opacity:0.93000034;fill:#e66e2d;fill-opacity:1;fill-rule:nonzero;stroke:#1e1e1e;stroke-width:0.57211763;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.57211762, 0.57211762;stroke-dashoffset:0.84000003;stroke-opacity:1;enable-background:new"
        id="spawn_terminal-1-3"
        width="3.3321514"
        height="3.3363316"
@@ -15169,7 +15164,7 @@ key = veh_repair_bay_small.vehicle;</desc>
        id="rect9344-60-5-0"
        style="display:inline;opacity:0.93000034;fill:#233448;fill-opacity:1;fill-rule:nonzero;stroke:#4d3a4b;stroke-width:5;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new">
       <desc
-         id="desc9346-8-9-2">name = CabalBuilding1Busy;
+         id="desc9346-8-9-2">name = SecessionBuilding1Busy;
 color = stroke;
 color_variance = 0.0 0.0 0.3;
 detail_texture = wall_atlas1.png;
@@ -15198,14 +15193,14 @@ roof_texture_scale = 8.0 8.0;</desc>
        id="rect9344-60-5-0-4"
        style="display:inline;opacity:0.93000034;fill:#d6cc1b;fill-opacity:0.97619042;fill-rule:nonzero;stroke:#4d3a4b;stroke-width:5;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new">
       <desc
-         id="desc9346-8-9-2-8">name = CabalBackdropBuilding1;
+         id="desc9346-8-9-2-8">name = SecessionBackdropBuilding1;
 color = stroke;
 color_variance = 0.0 0.0 0.3;
 detail_texture = minor_corp_decals.png;
 detail_texture_atlas_cell = 2 1 8 8 0.0078125;
 detail_texture_scale = 3 3;
-1st_floor_1 = CabalBackdropBuilding_Billboard;
-1st_floor_2 = CabalBackdropBuilding_Billboard;
+1st_floor_1 = SecessionBackdropBuilding_Billboard;
+1st_floor_2 = SecessionBackdropBuilding_Billboard;
 1st_floor_3 = apartment1_1st_floor_really_empty;
 1st_floor_4 = apartment1_1st_floor_busy;
 other_floor_1 = apartment1;
@@ -15227,7 +15222,7 @@ roof_texture_scale = 2.0 2.0;</desc>
        id="rect9344-6-8-0-1-2-9-3-3-5-1-3"
        style="display:inline;opacity:0.92000002;fill:#9e6287;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:5;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new">
       <desc
-         id="desc6587-6-2-2-5-3-8-9">name = CabalBackdropBuilding_Billboard;
+         id="desc6587-6-2-2-5-3-8-9">name = SecessionBackdropBuilding_Billboard;
 sequence = apartment1_1st_floor_poster_wide1_l; sequence = apartment1_1st_floor_poster_wide1_r;
 sequence = apartment1_1st_floor_poster_wide1_l; sequence = apartment1_1st_floor_poster_wide1_r;</desc>
     </rect>
@@ -15240,26 +15235,26 @@ sequence = apartment1_1st_floor_poster_wide1_l; sequence = apartment1_1st_floor_
        id="rect9344-60-4-6-0"
        style="display:inline;opacity:0.92000002;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:#844feb;stroke-width:5;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new">
       <desc
-         id="desc9346-8-8-4-5">name = CabalBuilding2Busy;
+         id="desc9346-8-8-4-5">name = SecessionBuilding2Busy;
 color = stroke;
 color_variance = 0.02 0.2 0.2;
 # brick;
 detail_texture = wall_atlas1.png;
-detail_texture_atlas_cell = 2 0 8 8 0.0078125 0.0078125; detail_texture_scale = 3 3;
+detail_texture_atlas_cell = 2 0 8 8 0.0078125 0.0078125; detail_texture_scale = 3 3; 
 detail_cutout_texture = cutout.png;
-detail_cutout_texture_channel = 1;
-detail_cutout_texture_scale = 10 10;
+detail_cutout_texture_channel = 1; 
+detail_cutout_texture_scale = 10 10; 
 1st_floor_1 = apartment1_1st_floor_busy;
 1st_floor_2 = apartment1_1st_floor_really_empty;
 1st_floor_3 = apartment1_1st_floor_busy;
-1st_floor_4 = apartment1_1st_floor_busy;
-other_floor_1 = apartment1;
-other_floor_2 = apartment1;
-other_floor_3 = apartment1;
-other_floor_4 = apartment1;
-roof_color = fill;
-roof_color_variance = 0 0.1 0.1;
-roof_texture = wall_atlas1.png;
+1st_floor_4 = apartment1_1st_floor_busy; 
+other_floor_1 = apartment1; 
+other_floor_2 = apartment1; 
+other_floor_3 = apartment1; 
+other_floor_4 = apartment1; 
+roof_color = fill; 
+roof_color_variance = 0 0.1 0.1; 
+roof_texture = wall_atlas1.png; 
 roof_texture_atlas_cell = 1 2 4 4 0.004;
 roof_texture_scale = 5 5; </desc>
     </rect>
@@ -15372,10 +15367,10 @@ sequence = empty;</desc>
       <desc
          id="desc6587-6-2-2-5-3">name = apartment1_1st_floor;
 sequence = apartment1_1st_floor_door_wide1_l, apartment1_1st_floor_door_wide1_r;
-sequence = apartment1_1st_floor_door_wide1_l, apartment1_1st_floor_door_wide1_r;
+sequence = apartment1_1st_floor_door_wide1_l, apartment1_1st_floor_door_wide1_r; 
 sequence = apartment1_1st_floor_window;
 sequence = apartment1_1st_floor_window;
-sequence = apartment1_1st_floor_window;
+sequence = apartment1_1st_floor_window; 
 sequence = apartment1_1st_floor_empty;
 sequence = apartment1_1st_floor_empty;
 sequence = apartment1_1st_floor_window, apartment1_1st_floor_empty;</desc>
@@ -15497,7 +15492,7 @@ sequence = apartment1_1st_floor_window, apartment1_1st_floor_empty;</desc>
     <rect
        inkscape:label="#general"
        y="8.3465004"
-       x="-3085.2844"
+       x="-3083.2844"
        height="50.507629"
        width="77.781746"
        id="rect9344-6-8-0"
@@ -15506,7 +15501,7 @@ sequence = apartment1_1st_floor_window, apartment1_1st_floor_empty;</desc>
          id="desc9346-4-7-4">day_color = fill;
 night_color = stroke;
 name = Cabal;
-description = Cabal: Cabal mission 1;
+description = Secession: Cabal mission 1;
 randomize_faction_index=0;
 flip = 1;
 visible_in_menu = 1;
@@ -15963,8 +15958,8 @@ key = empl_turret_offline.vehicle;</desc>
        inkscape:label="#mesh_template"
        transform="rotate(-89.853636,3522.2929,268.88216)">
       <desc
-         id="desc10349-9-4-79-8-4-6">name = ramp;
-mesh_name = obj_ramp.mesh;
+         id="desc10349-9-4-79-8-4-6">name = ramp; 
+mesh_name = obj_ramp.mesh; 
 texture0 = obj_ramp.png;
 collision_model_type = 1;
 collision_model_size = 8.0 -0.2 4.0;
@@ -15995,7 +15990,7 @@ backline = 1;</desc>
            x="-1848"
            y="112.00005"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
-         id="flowPara3622-8">Cabal building1 busy</flowPara></flowRoot>    <flowRoot
+         id="flowPara3622-8">Secession building1 busy</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3616-7-0"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.92000002;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
@@ -16008,7 +16003,7 @@ backline = 1;</desc>
            x="-1848"
            y="112.00005"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start" /></flowRegion><flowPara
-         id="flowPara3622-8-8">Cabal building2 busy</flowPara></flowRoot>    <rect
+         id="flowPara3622-8-8">Secession building2 busy</flowPara></flowRoot>    <rect
        style="display:inline;opacity:0.92000002;fill:url(#pattern8388-9);fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:5;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        id="rect9344-60-7-4-5-4-6-2-5-9"
        width="77.781746"
@@ -16088,17 +16083,17 @@ climbable = 0;</desc>
        transform="translate(-2369.1654,916.37685)" />
   </g>
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:label="alpha_grass"
      id="layer31"
      inkscape:groupmode="layer" />
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:label="alpha_asphalt"
      id="layer34"
      inkscape:groupmode="layer" />
   <g
-     style="display:inline;filter:url(#filter4390)"
+     style="display:none;filter:url(#filter4390)"
      inkscape:label="alpha_road"
      id="layer35"
      inkscape:groupmode="layer" />
@@ -16114,17 +16109,17 @@ climbable = 0;</desc>
      inkscape:groupmode="layer">
     <rect
        inkscape:label="#rect11324_base"
-       y="-1103.8951"
-       x="1243.0463"
-       height="43.934574"
-       width="38.154469"
+       y="-1102.0975"
+       x="1243.4412"
+       height="47.499657"
+       width="13.056321"
        id="rect4874-8-1-8-0-11"
        style="display:inline;opacity:0.72566373;fill:#ffff00;fill-opacity:1;stroke:none;enable-background:new"
        transform="rotate(90.067586)">
       <desc
          id="desc4876-3-1-3-9-78">name=Other Guys;
 faction_index=0;
-capturable = 1;</desc>
+capturable = 0;</desc>
     </rect>
     <rect
        inkscape:label="#rect11324_base"
@@ -16165,17 +16160,14 @@ capturable = 1;</desc>
      id="layer39"
      inkscape:groupmode="layer">
     <rect
-       inkscape:label="#rect11324_base"
-       y="1243.4434"
-       x="1059.0416"
-       height="4.2823977"
-       width="45.490978"
+       inkscape:label=""
+       y="1242.8278"
+       x="1056.2179"
+       height="13.60246"
+       width="46.016228"
        id="rect91923-7-88"
        style="display:inline;opacity:0.5;fill:none;stroke:#afafaf;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:4.99999988, 4.99999988;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-       transform="rotate(0.08978138)">
-      <desc
-         id="desc91925-6-96">name=Other Guys;</desc>
-    </rect>
+       transform="rotate(0.08978138)" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot3482-1"
@@ -16191,17 +16183,14 @@ capturable = 1;</desc>
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;font-family:'Damage Inc';-inkscape-font-specification:'Damage Inc, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#303030;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara3494-0">target</flowPara><flowPara
          id="flowPara5618">Gamma</flowPara></flowRoot>    <rect
-       inkscape:label="#rect11324_base"
+       inkscape:label=""
        y="1093.809"
        x="1082.2639"
        height="31.495108"
        width="41.156467"
-       id="rect91923-7-88-9"
+       id="rect120002"
        style="display:inline;opacity:0.5;fill:none;stroke:#afafaf;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:4.99999988, 4.99999988;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-       transform="rotate(0.08978138)">
-      <desc
-         id="desc91925-6-96-8">name=Bad Guys;</desc>
-    </rect>
+       transform="rotate(0.08978138)" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -16277,12 +16266,12 @@ capturable = 1;</desc>
          style="display:inline;fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#ff00ff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.97247709;enable-background:new" />
       <rect
          inkscape:label="#rect36349"
-         y="1134.39"
-         x="1065.9841"
-         height="17.539602"
-         width="18.270266"
-         id="hitbox_extraction3"
-         style="display:inline;fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#ff00ff;stroke-width:4;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.97247709;enable-background:new" />
+         y="1266.619"
+         x="1050.2511"
+         height="10.114989"
+         width="56.630745"
+         id="hitbox_extraction2"
+         style="display:inline;fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#ff00ff;stroke-width:1.32283461;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.97247709;enable-background:new" />
     </g>
     <g
        inkscape:groupmode="layer"
@@ -16315,7 +16304,7 @@ capturable = 1;</desc>
          inkscape:label="#rect6406"
          transform="rotate(89.747014)">
         <desc
-           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-2">height=4; material = CabalBuilding1Busy; offset=0 0 0;</desc>
+           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-2">height=4; material = SecessionBuilding1Busy; offset=0 0 0;</desc>
       </rect>
       <rect
          style="display:inline;fill:#d9d6b1;fill-opacity:1;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1;enable-background:new"
@@ -16327,7 +16316,7 @@ capturable = 1;</desc>
          inkscape:label="#rect6406"
          transform="rotate(-179.9248)">
         <desc
-           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-9">height=4; material = CabalBuilding1Busy; offset=0 0 0;</desc>
+           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-9">height=4; material = SecessionBuilding1Busy; offset=0 0 0;</desc>
       </rect>
       <rect
          style="display:inline;fill:#d9d6b1;fill-opacity:1;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1;enable-background:new"
@@ -16341,11 +16330,11 @@ capturable = 1;</desc>
          inkscape:transform-center-x="4.9999987"
          inkscape:transform-center-y="8.7499978">
         <desc
-           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-70-4">height=4; material = CabalBuilding1Busy; offset=0 0 0;</desc>
+           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-70-4">height=4; material = SecessionBuilding1Busy; offset=0 0 0;</desc>
       </rect>
       <rect
          style="display:inline;fill:#d9d6b1;fill-opacity:1;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1;enable-background:new"
-         id="buildingrect6406-7-4-1-3-8-0-15-7-2-74-5-3-27-8-82-4-6-5-98-3-7-2"
+         id="buildingrect6406-7-4-1-3-8-0-15-7-2-74-5-3-27-8-82-4-6-5-98-3-7-"
          width="20.133688"
          height="19.695774"
          x="-1045.2878"
@@ -16353,7 +16342,7 @@ capturable = 1;</desc>
          inkscape:label="#rect6406"
          transform="rotate(-179.82347)">
         <desc
-           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-9-2-5">height=6; material = CabalBuilding1Busy; offset=0 0 0;</desc>
+           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-9-2-5">height=6; material = SecessionBuilding1Busy; offset=0 0 0;</desc>
       </rect>
       <rect
          ry="2"
@@ -16383,7 +16372,7 @@ capturable = 1;</desc>
       </rect>
       <rect
          style="display:inline;fill:#d9d6b1;fill-opacity:1;stroke:#000000;stroke-width:1.00000012;stroke-opacity:1;enable-background:new"
-         id="buildingrect6406-7-4-1-3-8-0-15-7-2-74-5-3-27-8-82-4-6-5-98-3-7--8"
+         id="buildingrect6406-7-4-1-3-8-0-1"
          width="65.366531"
          height="12.058491"
          x="-185.37823"
@@ -16391,17 +16380,17 @@ capturable = 1;</desc>
          inkscape:label="#rect6406"
          transform="rotate(-89.981592)">
         <desc
-           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-9-2-2-7">height=6; material = CabalBuilding1Busy; offset=0 0 0;</desc>
+           id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-9-2-2-7">height=6; material = SecessionBuilding1Busy; offset=0 0 0;</desc>
       </rect>
     </g>
     <g
-       style="display:inline;opacity:0.563"
+       style="display:inline;opacity:0.56300001"
        inkscape:label="walls"
        id="layer8"
        inkscape:groupmode="layer">
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1049.0438,1251.1085 0.062,-1.8579 59.4255,0.1015 0.01,1.7869"
+         d="m 1049.0456,1261.3922 0.062,-1.8579 55.3596,0.1015 0.01,1.7869"
          id="wall37832-1-7-0-43-24-4"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16411,7 +16400,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1108.67,1242.3803 v 1.5238 l -60.1587,-0.2005 v -1.3429"
+         d="m 1108.67,1242.3803 v 1.5238 l -68.3692,-0.2005 v -1.3429"
          id="wall37832-1-7-0-43-24-4-7"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16421,7 +16410,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1018.9428,1206.3464 1.7886,-1.3862 36.9787,47.2239 -1.8772,1.4515"
+         d="m 1020.2686,1211.7823 1.7886,-1.3862 29.1717,49.1007 -1.8772,1.4515"
          id="wall37832-1-7-0-43-24-4-0"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16431,7 +16420,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1105.6395,1252.0297 -2.0405,-0.6382 77.3112,-221.3917 1.9847,0.7488"
+         d="m 1104.9342,1260.7509 -2.0405,-0.6382 78.0165,-230.1129 1.9847,0.7488"
          id="wall37832-1-7-0-43-24-4-0-3"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16441,7 +16430,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 976.93167,1031.658 2.06275,-0.9304 34.16588,131.5503 -2.1642,0.9732"
+         d="m 976.93167,1031.658 2.06275,-0.9304 30.45358,120.5901 -2.1642,0.9732"
          id="wall37832-1-7-0-43-24-4-0-4"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16537,54 +16526,6 @@ capturable = 1;</desc>
        id="layer16"
        inkscape:groupmode="layer">
       <rect
-         style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000109, 4.00000109;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
-         id="spawn2_6-9"
-         width="5.7888808"
-         height="6.6684999"
-         x="1556.8508"
-         y="-475.71915"
-         inkscape:label=""
-         transform="rotate(64.811325)">
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9">type = vehicle; key = deco_car2_grey.vehicle;</desc>
-      </rect>
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
-         id="spawn1_8-1"
-         width="5.7888808"
-         height="6.6684999"
-         x="1575.8939"
-         y="309.33273"
-         inkscape:label=""
-         transform="rotate(36.706144)">
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-66-7">type = vehicle; key = deco_car1_white.vehicle;</desc>
-      </rect>
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#e9ddaf;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000111, 4.00000111;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
-         id="spawn4_3-2"
-         width="5.7888808"
-         height="6.6684999"
-         x="-31.612938"
-         y="1608.8009"
-         inkscape:label=""
-         transform="rotate(-42.301718)">
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-5-4-3-6-7-2-3">type = vehicle; key = deco_pickup_khaki.vehicle;</desc>
-      </rect>
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999921, 3.99999921;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
-         id="spawn3_2-6"
-         width="5.7888808"
-         height="6.6684999"
-         x="1071.7415"
-         y="1173.9524"
-         inkscape:label=""
-         transform="rotate(0.47999757)">
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-7-1-4-7-1-6-9-5">type = vehicle; key = deco_car3_black.vehicle;</desc>
-      </rect>
-      <rect
          style="display:inline;opacity:0.93000034;fill:#7d3928;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4, 4;stroke-dashoffset:2.9000001;stroke-opacity:1;enable-background:new"
          id="spawn2_6-9-4"
          width="5.7888808"
@@ -16595,19 +16536,6 @@ capturable = 1;</desc>
          transform="rotate(46.984378)">
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-6">type = vehicle;
-tag = speeder;</desc>
-      </rect>
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#7d3928;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00629902, 4.00629902;stroke-dashoffset:2.90456676;stroke-opacity:1;enable-background:new"
-         id="spawn2_6-9-4-3"
-         width="5.7888808"
-         height="6.6684999"
-         x="-818.56329"
-         y="1366.5687"
-         inkscape:label=""
-         transform="rotate(-71.928512)">
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-6-8">type = vehicle;
 tag = speeder;</desc>
       </rect>
     </g>
@@ -16622,20 +16550,11 @@ tag = speeder;</desc>
        inkscape:groupmode="layer">
       <rect
          style="display:inline;opacity:0.93000034;fill:#ff9955;fill-opacity:1;stroke:none;enable-background:new"
-         id="craterect10748-4-29-6-8-48-7-1-7-4-8-5-5"
-         width="4"
-         height="4"
-         x="-1162.3087"
-         y="1044.7838"
-         inkscape:label="#rect10748"
-         transform="rotate(-89.765408)" />
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#ff9955;fill-opacity:1;stroke:none;enable-background:new"
          id="craterect10748-4-29-6-8-48-7-1-7-4-8-5-5-8"
          width="4"
          height="4"
-         x="-1232.2548"
-         y="1101.608"
+         x="-1237.5486"
+         y="1103.9279"
          inkscape:label="#rect10748"
          transform="rotate(-89.765408)" />
       <rect
@@ -16652,8 +16571,8 @@ tag = speeder;</desc>
          id="craterect10748-4-29-6-8-48-7-1-7-4-8-5-5-8-7"
          width="4"
          height="4"
-         x="-1238.9556"
-         y="1056.6622"
+         x="-1240.1748"
+         y="1061.0867"
          inkscape:label="#rect10748"
          transform="rotate(-89.765408)" />
       <rect
@@ -16661,8 +16580,8 @@ tag = speeder;</desc>
          id="craterect10748-4-29-6-8-48-7-1-7-4-8-5-5-8-9"
          width="4"
          height="4"
-         x="-1238.8687"
-         y="1077.8752"
+         x="-1240.5568"
+         y="1075.7609"
          inkscape:label="#rect10748"
          transform="rotate(-89.765408)" />
       <rect
@@ -16697,8 +16616,8 @@ tag = speeder;</desc>
          id="craterect10748-4-29-6-8-48-7-1-7-4-8-5-5-8-2"
          width="4"
          height="4"
-         x="-1232.5491"
-         y="1088.6329"
+         x="-1239.9646"
+         y="1090.873"
          inkscape:label="#rect10748"
          transform="rotate(-89.765408)" />
     </g>
@@ -16757,12 +16676,12 @@ tag = speeder;</desc>
        style="opacity:0.98000004">
       <rect
          inkscape:label="#spawnrect10748"
-         y="1245.3812"
-         x="1058.5051"
+         y="1248.2045"
+         x="1059.1731"
          height="2.0679491"
          width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+         id="rect4878-1"
+         style="display:inline;opacity:0.93000034;fill:#216db5;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
          y="1071.8004"
@@ -16805,20 +16724,12 @@ tag = speeder;</desc>
          style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1245.5576"
-         x="1093.5796"
+         y="1248.2041"
+         x="1096.3097"
          height="2.0679491"
          width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-0"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1245.5447"
-         x="1078.5945"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-0-7"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+         id="rect4878-4"
+         style="display:inline;opacity:0.93000034;fill:#df1a20;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
          y="1097.2163"
@@ -16853,20 +16764,102 @@ tag = speeder;</desc>
          style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1162.9663"
-         x="1035.1008"
+         y="1248.1124"
+         x="1070.8247"
          height="2.0679491"
          width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-57-7"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+         id="rect4878-2"
+         style="display:inline;opacity:0.93000034;fill:#216db5;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1165.7163"
-         x="1090.8508"
+         y="1248.2892"
+         x="1084.79"
          height="2.0679491"
          width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-57-9"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+         id="rect4878-3"
+         style="display:inline;opacity:0.93000034;fill:#df1a20;fill-opacity:1;stroke:none;enable-background:new" />
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer46"
+     inkscape:label="layer1.map1">
+    <g
+       inkscape:groupmode="layer"
+       id="layer47"
+       inkscape:label="vehicles">
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000109, 4.00000109;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+         id="spawn2_6-9"
+         width="5.7888808"
+         height="6.6684999"
+         x="1568.6271"
+         y="-474.32455"
+         inkscape:label=""
+         transform="rotate(64.811325)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9">type = vehicle; key = deco_car2_grey.vehicle;</desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#e9ddaf;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000111, 4.00000111;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
+         id="spawn4_3-2"
+         width="5.7888808"
+         height="6.6684999"
+         x="-36.411037"
+         y="1619.6454"
+         inkscape:label=""
+         transform="rotate(-42.301718)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-5-4-3-6-7-2-3">type = vehicle; key = deco_pickup_khaki.vehicle;</desc>
+      </rect>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer48"
+     inkscape:label="layer1.map2"
+     style="display:inline">
+    <g
+       inkscape:groupmode="layer"
+       id="layer49"
+       inkscape:label="vehicles">
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
+         id="spawn1_8-1"
+         width="5.7888808"
+         height="6.6684999"
+         x="1585.6246"
+         y="316.11057"
+         inkscape:label=""
+         transform="rotate(36.706144)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-66-7">type = vehicle; key = deco_car1_white.vehicle;</desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999921, 3.99999921;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
+         id="spawn3_2-6"
+         width="5.7888808"
+         height="6.6684999"
+         x="1075.5856"
+         y="1185.1705"
+         inkscape:label=""
+         transform="rotate(0.47999757)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-7-1-4-7-1-6-9-5">type = vehicle; key = deco_car3_black.vehicle;</desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#7d3928;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00629902, 4.00629902;stroke-dashoffset:2.90456676;stroke-opacity:1;enable-background:new"
+         id="spawn2_6-9-4-3"
+         width="5.7888808"
+         height="6.6684999"
+         x="-828.09509"
+         y="1373.6235"
+         inkscape:label=""
+         transform="rotate(-71.928512)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-6-8">type = vehicle;
+tag = speeder;</desc>
+      </rect>
     </g>
   </g>
   <g
@@ -16960,7 +16953,7 @@ tag = speeder;</desc>
   </g>
   <g
      style="display:inline"
-     inkscape:label="Layer3"
+     inkscape:label="layer3"
      id="layer22"
      inkscape:groupmode="layer">
     <g
