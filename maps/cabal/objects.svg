@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568558"
-     inkscape:cx="1064.0924"
-     inkscape:cy="788.38199"
+     inkscape:zoom="8.0000022"
+     inkscape:cx="1087.4145"
+     inkscape:cy="802.90206"
      inkscape:document-units="px"
-     inkscape:current-layer="layer46"
+     inkscape:current-layer="layer8"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -16390,7 +16390,7 @@ capturable = 1;</desc>
        inkscape:groupmode="layer">
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1049.0456,1261.3922 0.062,-1.8579 55.3596,0.1015 0.01,1.7869"
+         d="m 1048.3063,1254.2657 0.062,-1.8579 55.3596,0.1015 0.01,1.7869"
          id="wall37832-1-7-0-43-24-4"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16410,7 +16410,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1020.2686,1211.7823 1.7886,-1.3862 29.1717,49.1007 -1.8772,1.4515"
+         d="m 1020.2686,1211.7823 1.7886,-1.3862 26.9217,44.3507 -1.8772,1.4515"
          id="wall37832-1-7-0-43-24-4-0"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16420,7 +16420,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1104.9342,1260.7509 -2.0405,-0.6382 78.0165,-230.1129 1.9847,0.7488"
+         d="m 1105.8092,1255.4384 -2.0405,-0.6382 77.1415,-224.8004 1.9847,0.7488"
          id="wall37832-1-7-0-43-24-4-0-3"
          inkscape:connector-curvature="0"
          inkscape:label=""
