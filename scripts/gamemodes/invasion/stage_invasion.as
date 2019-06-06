@@ -266,7 +266,7 @@ class Stage {
 		_log("*** CABAL: Setting camera mode for map: " + m_mapInfo.m_id, 1);
 		XmlElement camera("camera");
 		camera.setStringAttribute("direction", "-0.01 -0.21 0.5");
-		camera.setFloatAttribute("distance", 9.5);
+		camera.setFloatAttribute("distance", 12.5);
 		camera.setFloatAttribute("far_clip", 80.0);
 		camera.setFloatAttribute("shadow_far_clip", 80.0);
 		scene.appendChild(camera);
