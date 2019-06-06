@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon file="base_primary.weapon" key="cabal_lr.weapon">
+    <tag name="assault" />
+    <specification
+  retrigger_time="0.123"
+  accuracy_factor="1.0"
+  sustained_fire_grow_step="0.40"
+  sustained_fire_diminish_rate="1.2"
+  magazine_size="30"
+  can_shoot_standing="1"
+  suppressed="0"
+  name="Cabal Laser Rifle"
+  class="0"
+  projectile_speed="15.0" />
+
+    <animation key="recoil" ref="12" />
+    <animation key="recoil" ref="13" />
+    <animation key="recoil" ref="14" />
+    <animation state_key="reload" animation_key="reloading, ak47" />
+
+    <animation state_key="celebrate_shoot" animation_key="celebrating, shooting" />
+
+    <sound key="fire" fileref="ak47_shot.wav" pitch_variety="0.06" />
+    <sound key="magazine_out" fileref="rifle_clip_out.wav" />
+    <sound key="magazine_in" fileref="rifle_clip_in.wav" />
+    <sound key="cycle" fileref="rifle_chamber.wav" />
+    <sound class="impact" fileref="rifle_drop.wav" />
+    <model filename="assault_rifle1.xml" />
+
+    <hud_icon filename="hud_ak47.png" />
+    <commonness value="0.6" />
+    <inventory encumbrance="10.0" price="2.0" />
+
+    <projectile file="cabal_laser.projectile">
+	    <result class="hit" kill_probability="0.55" kill_decay_start_time="0.33" kill_decay_end_time="0.68" />
+    </projectile>
+    <modifier class="speed" value="-0.02" />
+</weapon>

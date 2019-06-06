@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<calls>
+    <!-- COMMON calls -->
+	<call file="artillery1.call" />
+	<call file="bombing_run.call" />
+	<call file="paratroopers1.call" />
+	<!-- end COMMON calls -->
+
+	<!-- CLASS calls -->
+	<!-- LIGHT FOOT -->
+
+	<!-- GRENADIER -->
+	<call file="resupply_gren.call" /> <!-- could one restock.call suffice with notify_metagame ...? -->
+	<!-- DEMOLITIONS TROOPER -->   <!-- work out the class of the caller and drop that class's weapons -->
+	<call file="resupply_demo.call" />
+	<!-- SNIPER -->
+	<!-- MEDIC -->
+	<call file="resupply_medic.call" />
+
+	<!-- FACTION calls -->
+	<!-- Player calls -->
+	<call file="player_annihilator_1.call" />
+	<call file="player_grenade_launcher_turret_1.call" />
+	<call file="player_hot_potato_1.call" />
+	<call file="player_minigun_turret_1.call" />
+	<call file="player_power_armour_1.call" />
+	<!-- end Player calls -->
+
+	<!-- Cabal calls -->
+	<call file="cabal_ap_rounds_1.call" />
+	<call file="cabal_exp_rounds_1.call" />
+	<call file="cabal_probe_1.call" />
+	<call file="cabal_x-ray_1.call" />
+	<!-- end Cabal calls -->
+
+	<!-- end FACTION calls -->
+</calls>

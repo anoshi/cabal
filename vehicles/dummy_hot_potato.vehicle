@@ -1,0 +1,17 @@
+<vehicle name="" key="dummy_hot_potato.vehicle" map_view_atlas_index="0" time_to_live="0.0" usable_for_cover="0" >
+	<!-- a dummy vehicle that is created when a hot potato grenade is thrown. Has a 0 TTL. On destroy, triggers the handleVehicleDestroyEvent method  -->
+	<tag name="dummy" />
+
+	<tire_set offset="0.85 0.0 1.54" radius="0.4" />
+	<tire_set offset="0.85 0.0 -1.54" radius="0.4" />
+
+	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="0.2" max_water_depth="1.9" />
+
+	<physics max_health="3" mass="1.0" extent="0.2 0.0 0.2" offset="0 0.0 0" top_offset="0 0.5 0" collision_model_pos="0 0.2 0" collision_model_extent="0.6 0.2 0.6" visual_offset="0 0.0 0" gravity="-20" />
+
+	<event>
+		<trigger class="destroy" />
+  		<result class="spawn" instance_class="grenade" instance_key="hot_pot_boom.projectile" min_amount="1" max_amount="1" offset="0 0 0" position_spread="0 0" direction_spread="0 0" />
+	</event>
+
+</vehicle>

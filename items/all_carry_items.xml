@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carry_items>
+	<!-- general resale items -->
+	<carry_item file="whiskey_bottle.carry_item" />
+	<carry_item file="cigarettes.carry_item" />
+	<carry_item file="gamingdevice.carry_item" />
+	<carry_item file="cigars.carry_item" />
+	<carry_item file="beer_can.carry_item" />
+	<carry_item file="lighter.carry_item" />
+	<carry_item file="steroids.carry_item" />
+	<carry_item file="chewing_gum.carry_item" />
+	<carry_item file="chocolate.carry_item" />
+	<carry_item file="energy_drink.carry_item" />
+	<carry_item file="fancy_sunglasses.carry_item" />
+	<carry_item file="radio.carry_item" />
+	<carry_item file="razor.carry_item" />
+	<carry_item file="sunglasses.carry_item" />
+	<carry_item file="playing_cards.carry_item" />
+	<carry_item file="gold_bar.carry_item" />
+
+	<!-- intel items -->
+	<carry_item file="laptop.carry_item" />
+	<carry_item file="suitcase.carry_item" />
+
+<!-- FACTION GEAR (see factions/<faction>_default.resources to enable and disable these items)-->
+	<!-- Common Items -->
+	<carry_item file="commstech_radio_1.carry_item" />
+
+	<!-- Player -->
+	<carry_item file="player_vest1.carry_item" />
+	<carry_item file="player_impervavest.carry_item" />
+	<carry_item file="player_power_armour.carry_item" />
+
+	<!-- Cabal -->
+	<carry_item file="cabal_vest1.carry_item" />
+
+<!-- END FACTION GEAR -->
+</carry_items>

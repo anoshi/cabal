@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources clear_weapons="1">
+	<carry_item key="commstech_radio_1.carry_item" enabled="1" />
+</resources>

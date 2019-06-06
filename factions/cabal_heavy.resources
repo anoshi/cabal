@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <weapon key='cabal_mg.weapon' />
+  <weapon key='cabal_sg.weapon' />
+
+	<call key="cabal_exp_rounds_1.call" />
+  <vehicle key="cabal_exp_crate.vehicle" />
+
+  <carry_item key="cabal_vest_1.carry_item" enabled="1" />
+</resources>

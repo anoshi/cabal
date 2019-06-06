@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ui>
+  <text key="Campaign description" text="Destroy all of the Cabal's bases to put an end to their devious plans!" />
+  <text key="Difficulty:Recruit" text="Recruit" />
+  <text key="Help:Difficulty:Recruit" text="Enemies are less accurate and more likely to drop items on death." />
+  <text key="Difficulty:Professional" text="Professional" />
+  <text key="Help:Difficulty:Professional" text="Standard difficulty" />
+  <text key="Veteran" text="Veteran" />
+  <text key="Help:Difficulty:Veteran" text="Same as professional but enemies outside the field of vision near your crosshair will be hidden from view!" />
+  <text key="Continue campaign as new" text="Start new campaign" />
+</ui>

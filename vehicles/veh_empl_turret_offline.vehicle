@@ -1,0 +1,13 @@
+<vehicle name="turret (offline)" key="veh_empl_turret_offline.vehicle" map_view_atlas_index="0" respawn_time="120" usable_for_cover="1">
+	<tag name="emplacement" />
+
+	<tire_set offset="0.1 0.0 0.1" radius="0.1" />
+	<tire_set offset="0.1 0.0 -0.1" radius="0.1" />
+
+	<control max_speed="1.0" acceleration="1" max_reverse_speed="1.0" max_rotation="0.2" max_water_depth="1.9" />
+	<physics max_health="3" mass="1.0" extent="0.2 0.0 0.2" offset="0 0.0 0" top_offset="0 0.5 0" collision_model_pos="0 0.2 0" collision_model_extent="0.6 0.2 0.6" visual_offset="0 0.0 0" gravity="-20" />
+	<visual class="chassis" mesh_filename="deployable_mg_tripod.mesh" texture_filename="deployable_mg.png" />
+	<!-- visual class="chassis" mesh_filename="veh_empl_turret.vehicle" texture_filename="veh_empl_turret.png" />-->
+
+	<!--<effect event_key="destroy" key="other" ref="RedShine" lighting="0" />-->
+</vehicle>

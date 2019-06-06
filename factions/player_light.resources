@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <weapon key='player_lr.weapon' />
+  <weapon key='player_sil.weapon' />
+  <weapon key='player_lrx.weapon' />
+
+  <carry_item key="player_vest1.carry_item" enabled="1" />
+</resources>

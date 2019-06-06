@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons>
+  <!-- CABAL weapons -->
+
+  <!-- Player weapons -->
+  <weapon file="player_lr.weapon"> <!-- laser rifle -->
+    <capacity source="rank" source_value="0.0" value="1" />
+  </weapon>
+  <weapon file="player_mg.weapon"> <!-- machine gun -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.05" value="1" />
+  </weapon>
+  <weapon file="player_sr.weapon"> <!-- sniper rifle -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.05" value="1" />
+  </weapon>
+  <weapon file="player_sg.weapon"> <!-- shotgun -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.05" value="1" />
+  </weapon>
+  <weapon file="player_lrx.weapon"> <!-- laser rifle extreme -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.2" value="1" />
+  </weapon>
+  <weapon file="player_smg.weapon"> <!-- sub machine gun -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.05" value="1" />
+  </weapon>
+  <weapon file="player_smg_pri.weapon"> <!-- sub machine gun (as a primary) -->
+    <capacity source="rank" source_value="0.0" value="1" />
+  </weapon>
+  <weapon file="player_rl.weapon"> <!-- rocket launcher -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.05" value="1" />
+    <capacity source="rank" source_value="0.2" value="2" />
+  </weapon>
+  <weapon file="player_gl.weapon"> <!-- (sticky) grenade launcher -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.2" value="1" />
+  </weapon>
+  <!-- end Player weapons -->
+
+  <!-- Cabal weapons -->
+  <weapon file="cabal_lr.weapon"> <!-- laser rifle -->
+    <capacity source="rank" source_value="0.0" value="1" />
+  </weapon>
+  <weapon file="cabal_mg.weapon"> <!-- machine gun -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.05" value="1" />
+  </weapon>
+  <weapon file="cabal_sr.weapon"> <!-- sniper rifle -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.05" value="1" />
+  </weapon>
+  <weapon file="cabal_sg.weapon"> <!-- shotgun -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.05" value="1" />
+  </weapon>
+  <!-- end Cabal weapons -->
+
+  <!-- SHARED / generic weapons -->
+  <weapon file="medikit.weapon" />
+  <weapon file="cover_resource.weapon">
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.025" value="1" />
+  </weapon>
+  <weapon file="bandage.weapon" />
+  <!-- end SHARED / generic weapons -->
+
+  <!-- VEHICULAR / MOUNTED weapons -->
+  <weapon file="empl_turret.weapon" />
+  <weapon file="apc_hmg.weapon" />
+  <weapon file="apc_hmg_1.weapon" />
+  <weapon file="apc_hmg_2.weapon" />
+  <weapon file="tank_cannon.weapon" />
+  <weapon file="tank_mg.weapon" />
+  <weapon file="tank_cannon_1.weapon" />
+  <weapon file="tank_cannon_2.weapon" />
+  <weapon file="tank_mg_1.weapon" />
+  <weapon file="tank_mg_2.weapon" />
+  <weapon file="tank2_cannon.weapon" />
+  <weapon file="tank2_mg.weapon" />
+  <weapon file="tank2_missile_launcher.weapon" />
+  <weapon file="mortar_vulcan.weapon" />
+  <weapon file="vulcan_tank_mg.weapon" />
+  <weapon file="m113_tank_cannon.weapon" />
+  <weapon file="buggy_mg.weapon" />
+  <weapon file="humvee_gl.weapon" />
+  <weapon file="humvee_mg.weapon"/>
+  <weapon file="patrol_ship_mg.weapon" />
+  <weapon file="patrol_ship_cannon.weapon" />
+  <weapon file="patrol_ship_mortar.weapon" />
+  <weapon file="deployable_mg.weapon" />
+  <weapon file="mg_resource.weapon" >
+  <weapon file="technical_mg.weapon" />
+  <weapon file="radar_tank_cannon.weapon" />
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.2" value="1" />
+  </weapon>
+  <weapon file="deployable_minig.weapon" />
+  <weapon file="minig_resource.weapon" >
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.2" value="1" />
+  </weapon>
+  <weapon file="deployable_gl.weapon" />
+  <weapon file="gl_resource.weapon" >
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.3" value="1" />
+    <capacity source="rank" source_value="0.5" value="2" />
+  </weapon>
+  <weapon file="mortar.weapon" />
+  <weapon file="mortar_resource.weapon" >
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.2" value="1" />
+  </weapon>
+  <!-- end VEHICULAR / MOUNTED weapons -->
+</weapons>

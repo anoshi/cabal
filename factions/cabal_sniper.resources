@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Resources available to Cabal Snipers -->
+<resources>
+	<weapon key='cabal_sr.weapon' />
+
+	<call key="cabal_ap_rounds_1.call" />
+	<call key="cabal_probe_1.call" />
+
+	<vehicle key="cabal_ap_crate.vehicle" />
+</resources>

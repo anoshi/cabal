@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources clear_weapons="1" clear_vehicles="1" clear_calls="1">
+    <!-- wonder if it's possible to have civilians farm and / or mine the land in appropriate maps -->
+	<!-- faction would gain rp for each windmill / mine / etc. setup up by civilians -->
+
+    <!-- <weapon key="pitchfork.weapon" />-->
+	<!-- <vehicle key="tractor.vehicle" />-->
+
+	<!-- <carry_item key="civilian_paraphernalia_999.carry_item" enabled="1" />-->
+    <!-- <civilians will call for support from their faction commander when they detect enemies nearby -->
+	<!-- <call key="emergency.call" />-->
+</resources>

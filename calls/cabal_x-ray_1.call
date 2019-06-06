@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call name="CabalX-Ray" key="cabal_x-ray_1.call" notify_metagame="1"
+  initiation_comment1="What's in the box?"
+  acknowledge_comment="Engaging subharmonic state-changer"
+  launch_comment="Contents examined">
+  <round launch_time="1.0"
+    spawn_time="2.0">
+    <sound class="spawn" fileref="woosh1.wav" volume="0.07" />
+  </round>
+  <hud_icon filename="hud_sunglasses.png" />
+  <capacity value="0" source="rank" source_value="0.0" />
+  <capacity value="100" source="rank" source_value="0.1" />
+  <inventory encumbrance="0.0" price="40.0" />
+</call>

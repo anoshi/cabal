@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call name="CabalExplosive Rounds" key="cabal_exp_rounds_1.call"
+  initiation_comment1="Bring on the boom!"
+  acknowledge_comment="You got it"
+  launch_comment="Boomstick in transit">
+  <round instances="1"
+    instance_class="vehicle"
+    instance_key="cabal_exp_crate.vehicle"
+    instance_spread="2 15 2"
+    common_spread="0 0 0"
+    launch_time="3.0"
+    spawn_time="9.0">
+    <effect class="launch" ref="ShadowAirplaneFlyby" shadow="1" />
+    <sound class="launch" fileref="spaceship_fly_by_low.wav" />
+  </round>
+  <hud_icon filename="hud_aa-12_frag.png" />
+  <capacity value="0" source="rank" source_value="0.0" />
+  <capacity value="100" source="rank" source_value="0.5" />
+  <inventory encumbrance="0.0" price="50.0" />
+</call>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<character filename="emplacement_base.character">
+
+	<parameter class="can_use_vehicles" value="0" />
+	<parameter class="player_aim_to_crosshair" value="0" />
+	<parameter class="can_use_inventory" value="0" />
+
+	<!--<sound key="death" fileref="crystal_death.wav" volume="0.55" />
+	<sound key="death" fileref="crystal_crush.wav" volume="0.55" />
+	<sound key="death" fileref="crystal_crush2.wav" volume="0.55" />
+	<sound key="death" fileref="player_death.wav" volume="0.55" />-->
+
+</character>

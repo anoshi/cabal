@@ -1,0 +1,143 @@
+<vehicles>
+	<!-- if you add something here, remember to add it in common.resources too! -->
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate21.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="xm25.weapon" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate22.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="musket.weapon" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate23.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="aa12_frag.weapon" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate24.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="desert_eagle_gold.weapon" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate25.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="carry_item" instance_key="gift_box_1.carry_item" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate26.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="carry_item" instance_key="gift_box_2.carry_item" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate27.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="carry_item" instance_key="gift_box_3.carry_item" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate28.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="carry_item" instance_key="gift_box_community_1.carry_item" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate29.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="minig_resource.weapon" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate30.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="gl_resource.weapon" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+<vehicle filename="special_crate_base.vehicle" key="special_crate31.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="carry_item" instance_key="gift_box_community_2.carry_item" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate32.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="stoner62.weapon" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate33.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="carry_item" instance_key="camo_vest.carry_item" min_amount="1" max_amount="3" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate34.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="desert_eagle_gold.weapon" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate35.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="projectile" instance_key="banana_peel.projectile" min_amount="2" max_amount="10" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate36.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="mp7.weapon" min_amount="1" max_amount="1" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate37.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="carry_item" instance_key="gold_bar.carry_item" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate38.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="medikit.weapon" min_amount="1" max_amount="5" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate39.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="minig_resource.weapon" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+<vehicle filename="special_crate_base.vehicle" key="special_crate40.vehicle">
+	<event>
+		<trigger class="destroy" />		
+		<result class="spawn" instance_class="weapon" instance_key="gl_resource.weapon" min_amount="1" max_amount="2" offset="0 1.0 0" position_spread="0 0" direction_spread="0.04 0.2" /> 
+	</event>
+</vehicle>
+
+</vehicles>

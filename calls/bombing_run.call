@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<call name="Bombing Run" key="bombing_run.call" notify_metagame="1"
+  radio_view_text="Hell in a handbasket"
+  initiation_comment1="Line em up!"
+  acknowledge_comment="Bomber disptached..."
+  acknowledge_time="3.0"
+  launch_comment="Incoming!!">
+  <round launch_time="5.0"
+    spawn_time="8.0">
+  </round>
+  <round launch_time="7.0"
+    spawn_time="10.0">
+  </round>
+  <hud_icon filename="hud_flare_blue.png" />
+  <capacity value="0" source="rank" source_value="0.0" />
+  <capacity value="100" source="rank" source_value="0.4" />
+  <inventory encumbrance="0.0" price="250.0" />
+</call>

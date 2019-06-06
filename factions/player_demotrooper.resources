@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Resources available to Player Demolition Troopers -->
+<resources>
+	<weapon key="player_rl.weapon" />
+	<weapon key="player_gl.weapon" />
+
+	<call key="player_annihilator_1.call" />
+	<call key="player_grenade_launcher_turret_1.call" />
+
+	<carry_item key="player_power_armour.carry_item" enabled="1" />
+</resources>
