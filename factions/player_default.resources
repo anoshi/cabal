@@ -13,8 +13,7 @@
 	<weapon key="player_sg.weapon" />
 	<weapon key="player_mg.weapon" />
 	<weapon key="player_gl.weapon" />
-	<weapon key="player_smg_pri.weapon" />
-	<weapon key="player_smg.weapon" />
+	<weapon key="player_mp.weapon" />
 	<weapon key="player_rl.weapon" />
 	<weapon key="player_sr.weapon" />
 
