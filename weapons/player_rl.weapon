@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="base_secondary.weapon" key="player_rl.weapon">
+<weapon file="base_secondary.weapon" key="player_rl.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="10.0">
     <tag name="bazooka" />
     <specification
     retrigger_time="-1.0"
@@ -11,7 +11,7 @@
     can_shoot_standing="1"
     can_shoot_crouching="1"
     suppressed="0"
-    name="Player Rocket Launcher"
+    name="Rocket Launcher"
     class="3"
     reload_one_at_a_time="1"
     projectile_speed="60.0"

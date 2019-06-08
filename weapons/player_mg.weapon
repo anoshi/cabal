@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="base_primary.weapon" key="player_mg.weapon">
+<weapon file="base_primary.weapon" key="player_mg.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="10.0">
     <tag name="machine gun" />
     <specification
     retrigger_time="0.032"
@@ -12,7 +12,7 @@
     can_shoot_crouching="1"
     can_shoot_prone="0"
     suppressed="0"
-    name="Player Machine Gun"
+    name="Minigun"
     class="0"
     barrel_offset="0.6"
     barrel_offset_3d="0 -0.1 0.6"

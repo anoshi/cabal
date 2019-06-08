@@ -930,20 +930,18 @@
 	</dialogue>
 
 	<!-- commander comments -->
-	<comment key="player promotion" text="Congratulations soldier, you've just been promoted to %rank_name!" />
-	<comment key="we captured a base" text="%base_name is now controlled by our forces" />
-	<comment key="we captured a base" text="Our forces have conquered %base_name" />
-	<comment key="enemy captured a base" text="%base_name is now controlled by %faction_name" />
-	<comment key="enemy captured a base" text="%faction_name has conquered %base_name" />
+	<comment key="player promotion" text="Player earned %rank_name!" />
+	<comment key="we captured a base" text="%base_name captured" />
+	<comment key="enemy captured a base" text="%base_name lost" />
 	<comment key="neutral captured a base" text="" />
 
-	<comment key="new attack orders" text="New attack orders, approach %base_name from the %direction" />
+	<comment key="new attack orders" text="" />
 
 	<comment key="we have lost our last base" text="We have lost our last base - the battle has been lost!" />
-	<comment key="enemy has lost their last base" text="%faction_name have been defeated!" />
+	<comment key="enemy has lost their last base" text="%faction_name has been defeated!" />
 
 	<comment key="our assault ran out of time" text="Our assault ran out of time - the battle has been lost!" />
-	<comment key="enemy assault ran out of time" text="%faction_name have been defeated!" />
+	<comment key="enemy assault ran out of time" text="%faction_name has been defeated!" />
 
 	<comment key="we won by map conquer" text="Our faction is victorious! We have taken over all the bases in this area!" />
 	<comment key="we won by defense timer" text="Our faction is victorious!" />
@@ -958,12 +956,6 @@
 	<comment key="defense timer started" text="%faction_name hold all the bases, %time_left seconds to go!" />
 	<comment key="defense timer to go" text="%time_left seconds to go!" />
 
-  	<!-- adventure mode -->
-	<!--
-	<comment key="map start with 1 base, part 1" text="status report: we've managed to secure one base" />
-	<comment key="map start with 1 base, part 2" text="prepare to continue invasion" />
-	-->
-
 	<comment key="map start with 1 base, part 1" text="" />
 	<comment key="map start with 1 base, part 2" text="" />
 	<comment key="map start with 1 base, part 3" text="" />
@@ -976,13 +968,12 @@
 	<comment key="radio tower or truck objective" text="Keep your eyes open for radio towers or radar trucks behind enemy lines" />
 	<comment key="aa objective" text="Enemy anti-air weapons prevent delivering air drops in the area; locate and destroy the site" />
 
-	<comment key="map start, ending" text="Godspeed, soldiers" />
-	<comment key="map start, ending" text="Good luck, soldiers" />
+	<comment key="map start, ending" text="" />
 
 	<comment key="map start with more bases, part 1" text="Good thing you joined us, glad to have some reinforcements around here" />
 	<comment key="map start with more bases, part 2" text="We've managed to hold our positions, still controlling %number_of_bases bases" />
 
-	<comment key="map start with completed map" text="Welcome back, soldier. Rearm and relocate" />
+	<comment key="map start with completed map" text="Rearm and relocate" />
 
 	<comment key="map advance, held by enemy" text="intel reports %map_name is held by %faction_name" />
 	<comment key="map advance, another enemy present" text="%faction_name have also been spotted in the area" />

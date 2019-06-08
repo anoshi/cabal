@@ -231,12 +231,29 @@ class ResourceLifecycleHandler : Tracker {
 		} else if (charXP > 0.4) {
 			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
 		} else if (charXP > 0.2) {
-			dropPowerUp(dropPos.toString(), "grenade", "grenadier_he.projectile"); // drop grenade
+			dropPowerUp(dropPos.toString(), "grenade", "grenadier_imp.projectile"); // drop grenade
 		}
 		// revert to default weapon after X seconds have elapsed...
 		else {
 			_log("*** CABAL: XP too low, Nothing dropped", 1);
 		}
+	}
+
+	///////////////////////
+	// POWERUP LIFECYCLE //
+	///////////////////////
+	protected void dropPowerUp(string position, string instanceClass, string instanceKey) {
+		// between the invisible walls the the player character is locked within (enemyX, playerY+2, playerZ)
+		if (levelComplete) {
+			return;
+		}
+        _log("*** CABAL: dropping an item at " + position, 1);
+        string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
+        m_metagame.getComms().send(creator);
+		_log("*** CABAL: item placed at " + position, 1);
+
+		// ensure all dropped items have a short TTL e.g 5 seconds
+        // ensure only rare weapons are dropped
 	}
 
 	///////////////////
@@ -295,23 +312,6 @@ class ResourceLifecycleHandler : Tracker {
 			} // etc.
         }
     }
-
-	/////////////////////////
-	// POWERUP DISTRIBUTOR //
-	/////////////////////////
-	protected void dropPowerUp(string position, string instanceClass, string instanceKey) {
-		// between the invisible walls the the player character is locked within (enemyX, playerY+2, playerZ)
-		if (levelComplete) {
-			return;
-		}
-        _log("*** CABAL: dropping an item at " + position, 1);
-        string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
-        m_metagame.getComms().send(creator);
-		_log("*** CABAL: item placed at " + position, 1);
-
-		// ensure all dropped items have a short TTL e.g 5 seconds
-        // ensure only rare weapons are dropped
-	}
 
 	// --------------------------------------------
 	bool hasStarted() const { return true; }
