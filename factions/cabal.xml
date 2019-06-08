@@ -3,7 +3,7 @@
 	<rank xp="0.0" name="CabalCivilian">
 		<hud_icon filename="hud_rank0.png" />
 	</rank>
-	<rank xp="0.04" name="Cabal urret">
+	<rank xp="0.04" name="Cabal Turret">
 		<hud_icon filename="hud_rank0.png" />
 	</rank>
 	<rank xp="0.05" name="Cabal One">

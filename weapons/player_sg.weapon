@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="base_primary_shotgun.weapon" key="player_sg.weapon">
+<weapon file="base_primary_shotgun.weapon" key="player_sg.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="10.0">
     <tag name="cqb" />
     <specification
     retrigger_time="0.2"
@@ -10,11 +10,12 @@
     magazine_size="8"
     can_shoot_standing="1"
     suppressed="0"
-    name="Player Shotgun"
+    name="Shotgun"
     class="1"
     reload_one_at_a_time="1"
     projectile_speed="90.0"
-    projectiles_per_shot="6" />
+    projectiles_per_shot="6"
+    spread_range="0.25" />
 
     <animation key="recoil" ref="27" />
     <animation key="cycle" ref="28" />

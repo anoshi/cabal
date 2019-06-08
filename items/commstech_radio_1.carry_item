@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Comms Tech Radio mk. 1 -->
 <!-- Heavy item that grants improved radio call abilities to wearer -->
-<!-- Blast damage destroys radio but only wounds or stuns wearer -->
-<!-- Projectile hits do not destroy radio but will wound or stun wearer -->
-<!-- Radio slows wearer by 10% -->
+<!-- Projectile Blast and hit damage destroys radio but only wounds or stuns wearer -->
 
-<carry_item name="CT-1 Radio" key="commstech_radio_1.carry_item" slot="1" drop_count_factor_on_death="0.3" time_to_live_out_in_the_open="120.0" >
+<carry_item name="CT-1 Radio" key="commstech_radio_1.carry_item" slot="1" drop_count_factor_on_death="0.3" time_to_live_out_in_the_open="25.0" >
     <hud_icon filename="hud_radio.png" />
     <capacity value="0" source="rank" source_value="0.0" />
     <capacity value="1" source="rank" source_value="0.10" />
@@ -17,9 +15,9 @@
 
     <modifier class="projectile_blast_result" input_character_state="death" output_character_state="wound" consumes_item="1" />
     <modifier class="projectile_blast_result" input_character_state="wound" output_character_state="stun" consumes_item="1" />
-    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="0" />
+    <modifier class="projectile_hit_result" input_character_state="death" output_character_state="death" consumes_item="0" />
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="stun" consumes_item="0" />
-    <modifier class="speed" value="-0.05" />
+    <modifier class="speed" value="-0.00" />
     <modifier class="hit_success_probability" value="-0.05" />
     <modifier class="detectability" value="0.10" />
     <modifier class="night_detectability" value="0.10" />

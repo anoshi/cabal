@@ -7,6 +7,17 @@
  	<vehicle key="tank_1.vehicle" />
  	<vehicle key="transport_truck_1.vehicle" />
 
+	<!-- faction-specific weapons (not listed in common.resources) -->
+	<weapon key="player_lr.weapon" />
+	<weapon key="player_lrx.weapon" />
+	<weapon key="player_sg.weapon" />
+	<weapon key="player_mg.weapon" />
+	<weapon key="player_gl.weapon" />
+	<weapon key="player_smg_pri.weapon" />
+	<weapon key="player_smg.weapon" />
+	<weapon key="player_rl.weapon" />
+	<weapon key="player_sr.weapon" />
+
 	<!-- faction-specific calls (not listed in common.resources) -->
 	<call key="player_annihilator_1.call" />
 	<call key="player_grenade_launcher_turret_1.call" />

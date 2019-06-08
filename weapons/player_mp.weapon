@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="base_secondary_sidearm.weapon" key="player_smg.weapon">
+<weapon file="base_primary.weapon" key="player_smg_pri.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="10.0">
     <tag name="assault" />
 
     <specification
@@ -13,11 +13,11 @@
     can_shoot_standing="1"
     carry_in_two_hands="0"
     suppressed="0"
-    name="Player SMG"
+    name="Machine Pistol"
     class="0"
     projectile_speed="100.0"
     barrel_offset="0"
-    slot="1" />
+    slot="0" />
 
 	<animation state_key="recoil"	animation_key="recoil, pistol" />
     <animation state_key="reload"	animation_key="reloading, pistol" />
@@ -40,7 +40,7 @@
     <model filename="player_smg.xml" />
     <hud_icon filename="hud_steyr_tmp.png" />
     <inventory encumbrance="6.0" price="3.0" />
-    <commonness value="0.0" can_respawn_with="1" in_stock="1"/>
+    <commonness value="0.8" can_respawn_with="1" in_stock="1"/>
 
     <projectile file="player_laser_short.projectile">
         <result class="hit" kill_probability="0.5" kill_decay_start_time="0.19" kill_decay_end_time="0.33" />
