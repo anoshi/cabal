@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8.0000022"
-     inkscape:cx="1087.4145"
-     inkscape:cy="802.90206"
+     inkscape:zoom="5.6568558"
+     inkscape:cx="1056.8765"
+     inkscape:cy="841.31544"
      inkscape:document-units="px"
-     inkscape:current-layer="layer8"
+     inkscape:current-layer="layer47"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -16676,8 +16676,8 @@ tag = speeder;</desc>
        style="opacity:0.98000004">
       <rect
          inkscape:label="#spawnrect10748"
-         y="1248.2045"
-         x="1059.1731"
+         y="1247.9545"
+         x="1059.0481"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-1"
@@ -16812,7 +16812,25 @@ tag = speeder;</desc>
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-5-4-3-6-7-2-3">type = vehicle; key = deco_pickup_khaki.vehicle;</desc>
       </rect>
+      <rect
+         style="display:inline;enable-background:new;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369000000000;stroke-dashoffset:7.01102591;stroke-opacity:1"
+         id="spawn2_6-9-4-3-6"
+         width="12.776917"
+         height="19.266247"
+         x="1195.5193"
+         y="-1111.0839"
+         inkscape:label=""
+         transform="rotate(90.149388)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9">type = vehicle;
+tag = building;</desc>
+      </rect>
     </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer50"
+       inkscape:label="objects"
+       style="display:inline" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -16860,7 +16878,25 @@ tag = speeder;</desc>
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-6-8">type = vehicle;
 tag = speeder;</desc>
       </rect>
+      <rect
+         transform="rotate(90.149388)"
+         inkscape:label=""
+         y="-1064.1121"
+         x="1215.0873"
+         height="19.266247"
+         width="12.776917"
+         id="spawn2_6-9-4-3-1"
+         style="display:inline;enable-background:new;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369000000000;stroke-dashoffset:7.01102591;stroke-opacity:1">
+        <desc
+           id="desc3624">type = vehicle;
+tag = building;</desc>
+      </rect>
     </g>
+    <g
+       inkscape:label="objects"
+       id="g3628"
+       inkscape:groupmode="layer"
+       style="display:inline" />
   </g>
   <g
      style="display:inline"
