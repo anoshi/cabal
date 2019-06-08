@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <projectiles>
-
-	<projectile file="stun_grenade.projectile" />
-	<projectile file="hand_grenade.projectile" />
-	<projectile file="impact_grenade.projectile" />
-
-	<!-- rather awkward place for this definition, but for now, that's the way it is -->
 	<!-- projectile itself defines its slot, 0 being actual throwables that can also equipped, thrown, bought and found -->
 	<!-- mortar shell is in slot 2 -->
 	<projectile file="mortar_shell.projectile" />
@@ -15,16 +9,7 @@
 	<projectile file="empl_turret.projectile" />
 	<projectile file="hot_potato.projectile" />
 	<projectile file="hot_pot_boom.projectile" />
-
-	<!-- CLASS-SPECIFIC THROWABLES -->
-	<!-- GRENADIER -->
-	<projectile file="grenadier_he.projectile" />
 	<projectile file="grenadier_imp.projectile" />
-	<projectile file="grenadier_stun.projectile" />
-	<!-- end GRENADIER -->
-
-	<!-- SNIPER -->
-	<!-- end SNIPER -->
 
 	<!-- FACTION-SPECIFIC THROWABLES -->
 	<!-- Player throwables -->
@@ -41,8 +26,5 @@
 	<projectile file="debri_stun_big.projectile" />
 	<projectile file="debri_destroy_big.projectile" />
 	<projectile file="debri_destroy_small.projectile" />
-
-	<projectile file="tracer_missile.projectile" />
-	<projectile file="wiesel_flare.projectile" />
 
 </projectiles>

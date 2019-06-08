@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Player Power Armour -->
-<!-- Armour speeds up wearer by 35 / 25 / 15 / 5 % -->
 <!-- Bullet, Laser, etc. projectile hits have no effect on armour or wearer -->
 <!-- Blast damage weakens armour (3 layers) however -->
 
@@ -22,7 +21,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" /> <!-- melee hits will not destroy the vest -->
-    <modifier class="speed" value="0.35" />
+    <modifier class="speed" value="0.00" />
   </carry_item>
 
   <carry_item name="Player Power Armour 66%" slot="1" key="player_power_armour_2" transform_on_consume="player_power_armour_3" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="60.0">
@@ -42,7 +41,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" /> <!-- melee hits will not destroy the vest -->
-    <modifier class="speed" value="0.25" />
+    <modifier class="speed" value="0.00" />
     </carry_item>
 
     <carry_item name="Player Power Armour 33%" slot="1" key="player_power_armour_3" transform_on_consume="player_power_armour_4" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="60.0">
@@ -62,7 +61,7 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="none" consumes_item="0" />
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" /> <!-- melee hits will not destroy the vest -->
-    <modifier class="speed" value="0.15" />
+    <modifier class="speed" value="0.00" />
   </carry_item>
 
   <carry_item name="Player Power Armour 0%" slot="1" key="player_power_armour_4" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="60.0">
@@ -82,6 +81,6 @@
     <modifier class="projectile_hit_result" input_character_state="death" output_character_state="wound" consumes_item="0" />
     <modifier class="projectile_hit_result" input_character_state="wound" output_character_state="none" consumes_item="0" />
     <modifier class="projectile_hit_result" input_character_state="stun" output_character_state="none" consumes_item="0" /> <!-- melee hits will not destroy the vest -->
-    <modifier class="speed" value="0.05" />
+    <modifier class="speed" value="0.00" />
   </carry_item>
 </carry_items>

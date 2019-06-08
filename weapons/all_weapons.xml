@@ -6,6 +6,10 @@
   <weapon file="player_lr.weapon"> <!-- laser rifle -->
     <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
+  <weapon file="player_mp.weapon"> <!-- machine pistol -->
+    <capacity source="rank" source_value="0.0" value="0" />
+    <capacity source="rank" source_value="0.0" value="1" />
+  </weapon>
   <weapon file="player_mg.weapon"> <!-- machine gun -->
     <capacity source="rank" source_value="0.0" value="0" />
     <capacity source="rank" source_value="0.05" value="1" />
@@ -17,17 +21,6 @@
   <weapon file="player_sg.weapon"> <!-- shotgun -->
     <capacity source="rank" source_value="0.0" value="0" />
     <capacity source="rank" source_value="0.05" value="1" />
-  </weapon>
-  <weapon file="player_lrx.weapon"> <!-- laser rifle extreme -->
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.2" value="1" />
-  </weapon>
-  <weapon file="player_smg.weapon"> <!-- sub machine gun -->
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.05" value="1" />
-  </weapon>
-  <weapon file="player_smg_pri.weapon"> <!-- sub machine gun (as a primary) -->
-    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_rl.weapon"> <!-- rocket launcher -->
     <capacity source="rank" source_value="0.0" value="0" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <faction name="Cabal" color="0.2 0.4 0.2" firstnames_file="cabal_firstnames.txt" lastnames_file="cabal_lastnames.txt" chat_icon_filename="cabal_chat_icon_soldier.png" chat_icon_commander_filename="cabal_chat_icon_commander.png" campaign_completion_icon_filename="cabal_campaign_win.png">
-	<rank xp="0.0" name="CabalCivilian">
+	<rank xp="0.0" name="Cabal Civilian">
 		<hud_icon filename="hud_rank0.png" />
 	</rank>
-	<rank xp="0.04" name="Cabal urret">
+	<rank xp="0.04" name="Cabal Turret">
 		<hud_icon filename="hud_rank0.png" />
 	</rank>
 	<rank xp="0.05" name="Cabal One">

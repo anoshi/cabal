@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="base_primary_shotgun.weapon" key="cabal_sg.weapon">
+<weapon file="base_primary_shotgun.weapon" key="cabal_sg.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="0.0">
     <tag name="cqb" />
     <specification
     retrigger_time="0.40"
-    accuracy_factor="0.59"
+    accuracy_factor="0.79"
     sustained_fire_grow_step="2.0"
     sustained_fire_diminish_rate="0.6"
     magazine_size="10"
@@ -15,6 +15,7 @@
     sight_range_modifier="1.0"
     projectile_speed="15.0"
     projectiles_per_shot="3"
+    spread_range="0.35"
     burst_shots="1" />
 
     <animation key="recoil" ref="27" />
@@ -30,7 +31,7 @@
     <inventory encumbrance="10.0" price="2.0" />
 
     <weak_hand_hold offset="0.2" />
-    <projectile file="cabal_laser_short.projectile">
+    <projectile file="cabal_laser.projectile">
         <result class="hit" kill_probability="0.59" kill_decay_start_time="0.23" kill_decay_end_time="0.32" />
     </projectile>
 

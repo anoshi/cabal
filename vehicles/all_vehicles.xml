@@ -62,6 +62,9 @@
   <vehicle file="veh_empl_turret.vehicle" />
   <vehicle file="veh_empl_turret_offline.vehicle" />
 
+  <!-- CABAL destroyable buildings -->
+  <vehicle file="env_building.vehicle" />
+
   <!-- DUMMY vehicles (for tracking purposes) -->
   <vehicle file="dummy_hot_potato.vehicle" />
 
