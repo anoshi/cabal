@@ -6,13 +6,24 @@ material "mat_env_building"
 		{
 			cull_hardware none
 			cull_software none
-			ambient 0.843137 0.2 0 0.52
-			diffuse 0.843137 0.2 0 0.52
+			ambient 1 1 1 1
+			diffuse 1 1 1 1
 			specular 0 0 0 0 25.5
-			emissive 0.294118 0 0 0.52
+			emissive 0.25 0.25 0.25 1
 
-			scene_blend alpha_blend
-			depth_write off
+			texture_unit mat_env_building_Diffuse#0
+			{
+				texture env_building.png
+				tex_coord_set 0
+				colour_op modulate
+			}
+
+			texture_unit mat_env_building_Self-Illumination#1
+			{
+				texture env_building.png
+				tex_coord_set 0
+				colour_op add
+			}
 		}
 	}
 }

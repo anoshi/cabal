@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568558"
-     inkscape:cx="1083.46"
-     inkscape:cy="831.45668"
+     inkscape:zoom="4.0000011"
+     inkscape:cx="1057.3965"
+     inkscape:cy="841.15651"
      inkscape:document-units="px"
-     inkscape:current-layer="layer47"
+     inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -16677,7 +16677,7 @@ tag = speeder;</desc>
       <rect
          inkscape:label="#spawnrect10748"
          y="1247.392"
-         x="1060.2981"
+         x="1063.1731"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-1"
@@ -16724,8 +16724,8 @@ tag = speeder;</desc>
          style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1247.4541"
-         x="1093.1847"
+         y="1247.5166"
+         x="1092.0597"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-4"
@@ -16764,16 +16764,16 @@ tag = speeder;</desc>
          style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1247.2374"
-         x="1071.5122"
+         y="1247.4874"
+         x="1072.5122"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-2"
          style="display:inline;opacity:0.93000034;fill:#216db5;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1247.4142"
-         x="1083.1025"
+         y="1247.4767"
+         x="1081.8525"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-3"

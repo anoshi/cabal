@@ -44,7 +44,6 @@
 
     <weak_hand_hold offset="0.4" />
     <projectile file="player_laser_short.projectile">
-        <result class="hit" kill_probability="0.5" kill_decay_start_time="0.25" kill_decay_end_time="0.60" />
     </projectile>
 
     <capacity value="1" source="rank" source_value="0.2" />
