@@ -13,7 +13,7 @@
   name="Sniper Rifle"
   class="2"
   reload_one_at_a_time="0"
-  sight_range_modifier="1.6"
+  sight_range_modifier="0"
   projectile_speed="190.0"
   barrel_offset="0.4"
   projectiles_per_shot="1" />

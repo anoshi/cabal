@@ -20,7 +20,9 @@
     <animation key="recoil" ref="14" />
     <animation state_key="reload" animation_key="reloading, g36" />
 
-    <animation state_key="celebrate_shoot" animation_key="celebrating, shooting" />
+    <animation state_key="celebrate_shoot"  animation_key="celebrating, shooting" />
+    <animation state_key="prone"            animation_key="crouch still" />
+    <animation state_key="prone_still"      animation_key="crouch still" />
 
     <sound key="fire" fileref="laser3.wav" pitch_variety="0.06" volume="0.8" />
     <sound key="magazine_out" fileref="rifle_clip_out.wav" />
