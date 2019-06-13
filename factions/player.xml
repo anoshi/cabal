@@ -68,7 +68,7 @@
 	<!-- default group -->
 	<!-- ///////////// -->
 	<soldier name="default" spawn_score="1.0">
-		<character filename="default_male.character" />
+		<character filename="player_male.character" />
 		<ai filename="default.ai" />
 
     	<models file="player_default_basic.models" />
