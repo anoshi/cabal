@@ -2,12 +2,12 @@
 	<tag name="metal_thin" />
 	<tag name="barricade" />
 
-	<tire_set offset="0.80 0.0 1.54" radius="0.90" />
-	<tire_set offset="0.80 0.0 -1.54" radius="0.90" />
+	 	<tire_set offset="0.80 0.0 1.54" radius="0.90" />  
+	    <tire_set offset="0.80 0.0 -1.54" radius="0.90" />   
 
-	<control max_speed="3.0" acceleration="1.0" max_reverse_speed="1.0" max_rotation="0.0" max_water_depth="10.0" />
+	<control max_speed="1.0" acceleration="1.0" max_reverse_speed="1.0" max_rotation="1.0" max_water_depth="10.0" />
 
-	<physics max_health="2.2" mass="3000" blast_damage_threshold="0.0" extent="3 3 1" offset="0 0.0 0" top_offset="0 0 0" collision_model_pos="0 0 0" collision_model_extent="2 0.5 1.5" visual_offset="0 0.0 0.0" friction_offset="0.0" drag_offset="-0.05" destroy_on_top_hit="0" destroy_on_top_hit_time="1.0" top_hit_tracking_time="0.6" />
+	<physics max_health="30" mass="3000" blast_damage_threshold="0.0" extent="3 2 1" offset="0 0.0 0" top_offset="0 4 0" collision_model_pos="0 0.6 0" collision_model_extent="3 1 1" visual_offset="0 0.4 0" friction_offset="10.0" drag_offset="-0.5" destroy_on_top_hit="0" destroy_on_top_hit_time="1.0" top_hit_tracking_time="0.6" gravity="-10"/>
 
 	<visual class="chassis" mesh_filename="env_barricade.mesh" material="env_building.material" />
 	<!--<visual class="chassis" key="broken" mesh_filename="env_building_1_3_3.mesh" texture_filename="jeep_body_broken.png" />-->
