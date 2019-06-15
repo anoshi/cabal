@@ -1,4 +1,4 @@
-<vehicle file="vehicle_base.vehicle" name="Barricade" key="env_barricade.vehicle" respawn_time="600" map_view_atlas_index="0" spottable="0" >
+<vehicle file="vehicle_base.vehicle" name="Barricade" key="env_barricade.vehicle" usable_for_cover="1" respawn_time="600" map_view_atlas_index="0" spottable="0" >
 	<tag name="metal_thin" />
 	<tag name="barricade" />
 
@@ -7,7 +7,7 @@
 
 	<control max_speed="3.0" acceleration="1.0" max_reverse_speed="1.0" max_rotation="0.0" max_water_depth="10.0" />
 
-	<physics max_health="2.2" mass="3000" blast_damage_threshold="0.0" extent="3 3 1" offset="0 0.0 0" top_offset="0 5 0" collision_model_pos="0 1.0 0" collision_model_extent="8 8 2.3" visual_offset="0 0.0 0.0" friction_offset="0.0" drag_offset="-0.05" destroy_on_top_hit="1" destroy_on_top_hit_time="1.0" top_hit_tracking_time="0.6" />
+	<physics max_health="2.2" mass="3000" blast_damage_threshold="0.0" extent="3 3 1" offset="0 0.0 0" top_offset="0 0 0" collision_model_pos="0 0 0" collision_model_extent="2 0.5 1.5" visual_offset="0 0.0 0.0" friction_offset="0.0" drag_offset="-0.05" destroy_on_top_hit="0" destroy_on_top_hit_time="1.0" top_hit_tracking_time="0.6" />
 
 	<visual class="chassis" mesh_filename="env_barricade.mesh" material="env_building.material" />
 	<!--<visual class="chassis" key="broken" mesh_filename="env_building_1_3_3.mesh" texture_filename="jeep_body_broken.png" />-->
