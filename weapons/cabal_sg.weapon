@@ -13,7 +13,7 @@
     class="4"
     reload_one_at_a_time="1"
     sight_range_modifier="1.0"
-    projectile_speed="15.0"
+    projectile_speed="10.0"
     projectiles_per_shot="3"
     spread_range="0.35"
     burst_shots="1" />

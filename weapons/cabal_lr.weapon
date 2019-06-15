@@ -11,7 +11,7 @@
   suppressed="0"
   name="Cabal Laser Rifle"
   class="0"
-  projectile_speed="15.0" />
+  projectile_speed="10.0" />
 
     <animation key="recoil" ref="12" />
     <animation key="recoil" ref="13" />
