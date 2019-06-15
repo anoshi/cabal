@@ -28,9 +28,9 @@ class CabalStage : Stage {
 		const CabalUserSettings@ cabalSettings = cast<const CabalUserSettings>(m_userSettings);
 		if (cabalSettings !is null) {
 			if (cabalSettings.m_difficulty == 0) {
-				{ XmlElement e("weapon");		e.setStringAttribute("file", "easy_weapons.xml"); mapConfig.appendChild(e); }
+				{ XmlElement e("weapon");		e.setStringAttribute("file", "diff_1_rec_weapons.xml"); mapConfig.appendChild(e); }
 			} else {
-				{ XmlElement e("weapon");		e.setStringAttribute("file", "hard_weapons.xml"); mapConfig.appendChild(e); }
+				{ XmlElement e("weapon");		e.setStringAttribute("file", "diff_2_pro_weapons.xml"); mapConfig.appendChild(e); }
 			}
 		}
 	}

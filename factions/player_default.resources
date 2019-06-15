@@ -30,9 +30,6 @@
 	<call key="resupply_medic.call" />
 
 	<!-- explicitly enable this faction's carry items (listed as disabled in common.resources) -->
-	<carry_item key="player_vest1.carry_item" enabled="1" />
-	<carry_item key="player_vest2.carry_item" enabled="1" />
-	<carry_item key="player_vest3.carry_item" enabled="1" />
 	<carry_item key="player_impervavest.carry_item" enabled="1" />
 	<carry_item key="player_power_armour.carry_item" enabled="1" />
 </resources>

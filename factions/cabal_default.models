@@ -1,142 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
+	<!-- // soldier model 1 // -->
 	<model filename="cabal_soldier_1.xml">
 		<requirement class="carry_item" slot="1" key="commstech_radio_1.carry_item"/>
 		<requirement class="rank" range="0 10000" />
 	</model>
 	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest1.carry_item"/>
-		<requirement class="rank" range="0 50" />
-	</model>
-	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest1_2"/>
-		<requirement class="rank" range="0 50" />
-	</model>
-	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest2.carry_item"/>
-		<requirement class="rank" range="51 100" />
-	</model>
-	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest2_2"/>
-		<requirement class="rank" range="51 100" />
-	</model>
-	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest2_3"/>
-		<requirement class="rank" range="51 100" />
-	</model>
-	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3.carry_item"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_2"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_3"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_4"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_1.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_5"/>
-		<requirement class="rank" range="0 100" />
 	</model>
 
-	<!-- ////////////////////////// -->
+	<!-- // soldier model 2 // -->
 	<model filename="cabal_soldier_2.xml">
 		<requirement class="carry_item" slot="1" key="commstech_radio_1.carry_item"/>
 		<requirement class="rank" range="0 10000" />
 	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest1.carry_item"/>
-		<requirement class="rank" range="0 50" />
-	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest1_2"/>
-		<requirement class="rank" range="0 50" />
-	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest2.carry_item"/>
-		<requirement class="rank" range="51 100" />
-	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest2_2"/>
-		<requirement class="rank" range="51 100" />
-	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest2_3"/>
-		<requirement class="rank" range="51 100" />
-	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3.carry_item"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_2"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_3"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_4"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_2.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_5"/>
-		<requirement class="rank" range="0 100" />
-	</model>
 
-	<!-- ////////////////////////// -->
+	<!-- /// soldier model 3 // -->
 	<model filename="cabal_soldier_3.xml">
 		<requirement class="carry_item" slot="1" key="commstech_radio_1.carry_item"/>
 		<requirement class="rank" range="0 10000" />
 	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest1.carry_item"/>
-		<requirement class="rank" range="0 50" />
-	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest1_2"/>
-		<requirement class="rank" range="0 50" />
-	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest2.carry_item"/>
-		<requirement class="rank" range="51 100" />
-	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest2_2"/>
-		<requirement class="rank" range="51 100" />
-	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest2_3"/>
-		<requirement class="rank" range="51 100" />
-	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3.carry_item"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_2"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_3"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_4"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-	<model filename="cabal_soldier_3.xml">
-		<requirement class="carry_item" slot="1" key="cabal_vest3_5"/>
-		<requirement class="rank" range="0 100" />
-	</model>
-
 	<!-- ////////////////////////// -->
 
 	<!-- ////////////////////////// -->
