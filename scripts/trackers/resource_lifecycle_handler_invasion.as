@@ -18,6 +18,8 @@ class ResourceLifecycleHandler : Tracker {
 	protected float MAX_GOAL_XP = 5.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
 	protected float curXP = 0.0;
+	protected int player1Lives = 3;
+	protected int player2Lives = 3; // placeholder. Will be handy when coop mode is implemented
 
 	protected bool levelComplete;
 
@@ -110,15 +112,32 @@ class ResourceLifecycleHandler : Tracker {
 	protected void handlePlayerDieEvent(const XmlElement@ event) {
 		_log("*** CABAL: ResourceLifecycleHandler::handlePlayerDieEvent", 1);
 
+		// level already won/lost? bug out
+		if (levelComplete) {
+			return;
+		}
+
 		// decrement lives left
+		_log("*** CABAL: Player 1 lost a life!", 1);
+		player1Lives -= 1;
+
+		if (player1Lives <= 0) {
+			_log("*** CABAL: GAME OVER for Player 1", 1);
+			if (player2Lives <= 0) {
+				_log("*** GAME OVER!", 1);
+				processGameOver();
+			}
+		} else if (player2Lives <= 0) {
+			_log("*** CABAL: GAME OVER for Player 2", 1);
+			if (player1Lives <= 0) {
+				_log("*** GAME OVER!", 1);
+				processGameOver();
+			}
+		}
 
 		// tidy up assets
 
 		// reset stuffs as required
-
-		// end game if 0 lives left
-		processGameOver();
-		levelComplete = true;
 	}
 
 	// ----------------------------------------------------
@@ -137,6 +156,7 @@ class ResourceLifecycleHandler : Tracker {
 		XmlElement c("command");
 		c.setStringAttribute("class", "set_campaign_status");
 		c.setStringAttribute("key", "lose");
+		// delay this for 2-3 seconds. It's a little abrupt when you lose :-|
 		m_metagame.getComms().send(c);
 
 		levelComplete = true;
@@ -177,7 +197,7 @@ class ResourceLifecycleHandler : Tracker {
 	//////////////////////////////
     protected void handleCharacterDieEvent(const XmlElement@ event) {
 		// TagName					string (character_die)
-		// character_id				int (character who dropped the item)
+		// character_id				int (character who died)
 
 		// TagName					string (character)
 		// id						int (character's id)
@@ -194,8 +214,8 @@ class ResourceLifecycleHandler : Tracker {
 
         _log("*** CABAL: handleCharacterDieEvent fired!", 1);
 		// if it's the player character, don't process any further
-		if (event.getIntAttribute("player_id") >= 0) {
-			_log("*** CABAL: dead character is a player. Has separate handler method", 1);
+		if (event.getIntAttribute("character_id") == m_playerCharacterId) {
+			_log("*** CABAL: dead character id matches player character. Handled separately", 1);
 			return;
 		}
 

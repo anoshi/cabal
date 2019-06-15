@@ -171,8 +171,8 @@ class ResourceLifecycleHandler : Tracker {
 
         _log("*** CABAL: handleCharacterDieEvent fired!", 1);
 		// if it's the player character, don't process any further
-		if (event.getIntAttribute("player_id") >= 0) {
-			_log("*** CABAL: dead character is a player. Has separate handler method", 1);
+		if (event.getIntAttribute("character_id") == m_playerCharacterId) {
+			_log("*** CABAL: dead character id matches player character. Handled separately", 1);
 			return;
 		}
 
