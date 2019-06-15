@@ -170,7 +170,7 @@ class CabalStageConfigurator : StageConfigurator {
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
 			//f.m_overCapacity = 5;
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -209,7 +209,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -243,7 +243,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -277,7 +277,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -311,7 +311,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -345,7 +345,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -379,7 +379,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -416,7 +416,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -450,7 +450,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -484,7 +484,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -519,7 +519,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -553,7 +553,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
@@ -586,7 +586,7 @@ class CabalStageConfigurator : StageConfigurator {
 		}
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
-			f.m_overCapacity = 30;
+			f.m_overCapacity = 50;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}
