@@ -162,6 +162,7 @@
 	<vehicle key="veh_terminal.vehicle" />
 
 	<!-- CABAL buildings -->
+	<vehicle key="env_barricade.vehicle" />
 	<vehicle key="env_building.vehicle" />
 
 	<!-- CABAL DUMMY vehicles -->
