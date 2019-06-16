@@ -40,7 +40,6 @@ Males 13+. Older gamers will immediately appreciate the way Cabalesque focuses o
 * Take on the role of an elite soldier deep in hostile territory.
 * Use the environment to your advantage. Take cover, destroy obstructions, and conquer the field.
 * Work cooperatively with a friend to overcome countless enemy units on land, sea, and air.
-* Call in the big guns! Contact HQ to designate artillery targets or request ammo drops.
 * Find hidden supply caches and use your enemies' best weapons against them.
 * Tackle even more complex scenarios in the downloadable expansion packs!
 

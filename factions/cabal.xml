@@ -291,30 +291,6 @@
 		</attribute_config>
 	</soldier>
 
-	<!-- /////// -->
-	<!-- TURRETS -->
-	<!-- /////// -->
-	<soldier name="empl_turret" spawn_score="0.0000" firstnames_file="empl_firstnames.txt" lastnames_file="empl_lastnames.txt" squad_size_xp_cap="0.0">
-		<character filename="emplacement.character" />
-		<ai filename="emplacement.ai" />
-		<model filename="empl_turret.xml" />
-		<resources file="emplacement.resources" />
-
-		<item_class_existence_config>
-			<item_class_existence class="weapon" slot="1" probability="1.0" />
-			<item_class_existence class="carry_item" slot="1" probability="0.0" />
-			<item_class_existence class="carry_item" slot="0" probability="0.0" />
-		</item_class_existence_config>
-
-		<attribute_config class="rp">
-			<attribute weight="1.0" min="0.0" max="50.0" />
-		</attribute_config>
-
-		<attribute_config class="xp">
-			<attribute weight="1.0" min="0.04" max="0.049" />
-		</attribute_config>
-	</soldier>
-
 	<!-- ///////// -->
 	<!-- CIVILIANS -->
 	<!-- ///////// -->

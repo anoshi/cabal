@@ -61,7 +61,6 @@
   <!-- end SHARED / generic weapons -->
 
   <!-- VEHICULAR / MOUNTED weapons -->
-  <weapon file="empl_turret.weapon" />
   <weapon file="apc_hmg.weapon" />
   <weapon file="apc_hmg_1.weapon" />
   <weapon file="apc_hmg_2.weapon" />

@@ -136,21 +136,6 @@ void clearTriggerAreaAssociations(const Metagame@ metagame, string instanceType,
 	trackedTriggerAreas.clear();
 }
 
-///////////////////////
-// ----- CALLS ----- //
-///////////////////////
-// Player Hot Potato Position Tracker
-string hpPosition; // global var lols
-
-void setHotPotPosi(string pos) {
-	hpPosition = pos;
-	_log("Hot Potato now at: " + hpPosition, 1);
-}
-
-string getHotPotPosi() {
-	return hpPosition;
-}
-
 ///////////////////////////////////
 // ----- END CABAL HELPERS ----- //
 ///////////////////////////////////

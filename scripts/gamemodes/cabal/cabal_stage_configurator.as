@@ -594,7 +594,7 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_primaryObjective = "attrition"; // "capture"
 		stage.m_radioObjectivePresent = false;
 
-		// no calls for friendly faction in the last map
+		// enforce no calls for friendly faction in the last map
 		{
 			XmlElement command("command");
 			command.setStringAttribute("class", "faction_resources");

@@ -8,8 +8,6 @@
 #include "cabal_stage_configurator.as"
 #include "cabal_user_settings.as"
 #include "resource_lifecycle_handler_invasion.as"
-#include "call_handler.as"
-#include "dummy_vehicle_handler.as"
 
 // generic trackers
 #include "basic_command_handler.as"
@@ -163,9 +161,6 @@ class GameModeInvasion : GameMode {
 
 		// Cabal handlers:
 		addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
-		addTracker(CallHandler(this));				// 'H' call menu and scripted call handler
-		addTracker(DummyVehicleHandler(this));		// Performs tasks when (dummy) vehicles are destroyed
-
 
 		for (uint i = 0; i < m_factions.size(); ++i) {
 			if (i != 0) {

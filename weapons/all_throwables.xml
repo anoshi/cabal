@@ -6,9 +6,6 @@
 	<projectile file="artillery_shell.projectile" />
 
 	<!-- CABAL PROJECTILES -->
-	<projectile file="empl_turret.projectile" />
-	<projectile file="hot_potato.projectile" />
-	<projectile file="hot_pot_boom.projectile" />
 	<projectile file="grenadier_imp.projectile" />
 
 	<!-- FACTION-SPECIFIC THROWABLES -->

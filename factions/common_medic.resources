@@ -2,6 +2,4 @@
 <resources clear_weapons="1">
 	<weapon key='medikit.weapon' />
 	<weapon key='bandage.weapon' />
-
-	<call key='resupply_medic.call' />
 </resources>
