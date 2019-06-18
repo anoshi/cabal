@@ -157,13 +157,12 @@
 	<vehicle key="veh_speeder.vehicle" />
 
 	<!-- CABAL buildings -->
-	<vehicle key="env_barricade.vehicle" />
 	<vehicle key="env_building.vehicle" />
 
 	<!-- CABAL DUMMY vehicles -->
 	<vehicle key="dummy_hot_potato.vehicle" />
 	<!-- end CABAL vehicles -->
 	<!-- END ALL COMMON VEHICLES -->
-	
+
 	<!-- NO CALLS in Cabal -->
 </resources>

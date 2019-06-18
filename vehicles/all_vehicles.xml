@@ -61,7 +61,6 @@
   <vehicle file="veh_speeder.vehicle" />
 
   <!-- CABAL destroyable buildings -->
-  <vehicle file="env_barricade.vehicle" />
   <vehicle file="env_building.vehicle" />
 
   <!-- DUMMY vehicles (for tracking purposes) -->

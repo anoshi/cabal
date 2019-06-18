@@ -14,6 +14,8 @@ class ResourceLifecycleHandler : Tracker {
     protected float m_localPlayerCheckTimer;
     protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
 
+	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area
+	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area
 	protected float MIN_GOAL_XP = 3.0;
 	protected float MAX_GOAL_XP = 5.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
@@ -255,6 +257,12 @@ class ResourceLifecycleHandler : Tracker {
 
 		// create a new Vector3 as (enemyX, playerY +2, playerZ)
 		float retX = v3charPos.get_opIndex(0);
+		// if enemy X outside player spawn area X...
+		if (retX < MIN_SPAWN_X) {
+			retX = MIN_SPAWN_X + rand(1, 6);
+		} else if (retX > MIN_SPAWN_X) {
+			retX = MAX_SPAWN_X - rand(1, 6);
+		}
         float retY = v3playerPos.get_opIndex(1) + 2.0;
         float retZ = v3playerPos.get_opIndex(2);
         Vector3 dropPos = Vector3(retX, retY, retZ);
@@ -265,20 +273,22 @@ class ResourceLifecycleHandler : Tracker {
 		}
 
 		// XP-based drop chance logic
-		if (charXP > 1.0) {
-			dropPowerUp(dropPos.toString(), "weapon", "player_gl.weapon"); // drop grenade launcher.
-		} else if (charXP > 0.8) {
-			dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop minigun
-		} else if (charXP > 0.6) {
-			dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop lmg
-		} else if (charXP > 0.4) {
-			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
-		} else if (charXP > 0.2) {
-			dropPowerUp(dropPos.toString(), "grenade", "grenadier_imp.projectile"); // drop grenade
-		}
-		// revert to default weapon after X seconds have elapsed...
-		else {
-			_log("*** CABAL: XP too low, Nothing dropped", 1);
+		if (rand(1, 100) > 60) {
+			if (charXP > 1.0) {
+				dropPowerUp(dropPos.toString(), "weapon", "player_gl.weapon"); // drop grenade launcher.
+			} else if (charXP > 0.8) {
+				dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop minigun
+			} else if (charXP > 0.6) {
+				dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop lmg
+			} else if (charXP > 0.4) {
+				dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
+			} else if (charXP > 0.2) {
+				dropPowerUp(dropPos.toString(), "grenade", "grenadier_imp.projectile"); // drop grenade
+			}
+			// revert to default weapon after X seconds have elapsed...
+			else {
+				_log("*** CABAL: XP too low, Nothing dropped", 1);
+			}
 		}
 	}
 

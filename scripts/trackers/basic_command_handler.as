@@ -172,7 +172,7 @@ class BasicCommandHandler : Tracker {
 		} else if (checkCommand(message, "speeder")) {
 			spawnInstanceNearPlayer(senderId, "veh_speeder.vehicle", "vehicle");
 		} else if (checkCommand(message, "barricade")) {
-			spawnInstanceNearPlayer(senderId, "env_barricade.vehicle", "vehicle");
+			spawnInstanceNearPlayer(senderId, "env_barricade.static_object", "static_object");
 		} else if (checkCommand(message, "laserd")) {
 			spawnInstanceNearPlayer(senderId, "all_laser_designator_resource.weapon", "weapon");
 		} else  if(checkCommand(message, "suitcase")) {
