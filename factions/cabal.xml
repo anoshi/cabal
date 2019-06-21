@@ -3,9 +3,6 @@
 	<rank xp="0.0" name="Cabal Civilian">
 		<hud_icon filename="hud_rank0.png" />
 	</rank>
-	<rank xp="0.04" name="Cabal Turret">
-		<hud_icon filename="hud_rank0.png" />
-	</rank>
 	<rank xp="0.05" name="Cabal One">
 		<hud_icon filename="hud_rank1.png" />
 	</rank>
@@ -97,7 +94,7 @@
 	<!-- ////////// -->
 	<!-- LIGHT FOOT -->
 	<!-- ////////// -->
-	<soldier name="lightfoot" spawn_score="0.4">
+	<soldier name="lightfoot" spawn_score="0.35">
 		<character filename="default_male.character" />
 		<ai filename="ai_light.ai" />
 		<models file="cabal_soldier.models" />
@@ -125,7 +122,7 @@
 	<!-- ///////////// -->
 	<!-- HEAVY TROOPER -->
 	<!-- ///////////// -->
-	<soldier name="heavytrooper" spawn_score="0.20">
+	<soldier name="heavytrooper" spawn_score="0.2">
 		<character filename="default_male.character" />
 		<ai filename="ai_heavy.ai" />
 		<models file="cabal_soldier.models" />
@@ -181,13 +178,15 @@
 	<!-- ///////// -->
 	<!-- GRENADIER -->
 	<!-- ///////// -->
-	<soldier name="grenadier" spawn_score="0.1">
+	<soldier name="grenadier" spawn_score="0.15">
 		<character filename="default_male.character" />
 		<ai filename="ai_grenadier.ai" />
 		<models file="cabal_soldier.models" />
 		<resources file="cabal_grenadier.resources" />
 
 		<item_class_existence_config>
+			<!-- grenades -->
+			<item_class_existence class="weapon" slot="0" probability="1.0" />
 			<!-- secondary weapon -->
 			<item_class_existence class="weapon" slot="1" probability="1.0" />
 			<!-- wearables -->

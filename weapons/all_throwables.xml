@@ -7,6 +7,7 @@
 
 	<!-- CABAL PROJECTILES -->
 	<projectile file="grenadier_imp.projectile" />
+	<projectile file="cabal_grenade.projectile" />
 
 	<!-- FACTION-SPECIFIC THROWABLES -->
 	<!-- Player throwables -->

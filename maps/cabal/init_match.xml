@@ -41,7 +41,7 @@
 		/>
 		<faction
 			initial_over_capacity="0"
-			ai_accuracy="0.75"
+			ai_accuracy="0.88"
 			lose_without_bases="false"
 		/>
   	</command>

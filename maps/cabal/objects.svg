@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.313708"
-     inkscape:cx="1073.8677"
-     inkscape:cy="816.97871"
+     inkscape:zoom="3.9999998"
+     inkscape:cx="1054.9012"
+     inkscape:cy="850.16374"
      inkscape:document-units="px"
-     inkscape:current-layer="layer37"
+     inkscape:current-layer="layer16"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -16160,16 +16160,11 @@ key = env_building.vehicle;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-6">name = barricade; 
 static_object_type_key=env_barricade.static_object; 
 #mesh_name = env_barricade.mesh; 
-#texture0 = env_building.png; 
-#collision_model_type = 0; 
-#collision_model_size = 3 0.7 1; 
-#penetrability = 0.4; 
-mesh_name = barell.mesh; 
-texture0 = world_atlas1.png; 
-texture0_atlas_cell = 9 16 32 32; 
+mesh_name = hlf2_barrier.mesh;
+texture0 = env_building.png; 
 collision_model_type = 0; 
-collision_model_size = 1.2 1.4 1.2; 
-penetrability = 0.4;</desc>
+collision_model_size = 3 0.7 1; 
+penetrability = 0.4; </desc>
     </rect>
     <rect
        style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
@@ -16210,7 +16205,7 @@ penetrability = 0.4;</desc>
     </rect>
   </g>
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:label="dirt"
      id="layer4"
      inkscape:groupmode="layer"
@@ -16272,7 +16267,15 @@ penetrability = 0.4;</desc>
      style="display:inline"
      inkscape:label="offroad"
      id="layer36"
-     inkscape:groupmode="layer" />
+     inkscape:groupmode="layer">
+    <path
+       inkscape:label="#path1133"
+       sodipodi:nodetypes="ccccccccccccccc"
+       inkscape:connector-curvature="0"
+       id="path1133_navigation-2"
+       d="m 988.22224,1159.9838 -17.01837,15.8299 -20.93101,2.463 -13.45446,-13.7642 3.17615,-21.5848 20.1453,-9.9181 20.61731,7.5287 10.6066,16.4403 143.54084,-0.253 24.5735,12.7002 25.9849,-6.2 13.4353,-22.2913 -17.8557,-16.6307 -26.1614,9.5341 -16.8066,19.6051"
+       style="display:inline;opacity:0.92000002;fill:none;stroke:#956011;stroke-width:8;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter11732);enable-background:new" />
+  </g>
   <g
      style="display:inline"
      inkscape:label="bases"
@@ -16465,7 +16468,7 @@ capturable = 1;</desc>
        id="layer8"
        inkscape:groupmode="layer">
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1057.3688,1254.5782 0.062,-1.8579 34.6721,0.1015 0.01,1.7869"
          id="wall37832-1-7-0-43-24-4"
          inkscape:connector-curvature="0"
@@ -16475,7 +16478,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1110.0081,1239.8803 v 1.5238 l -58.5823,-0.2005 v -1.3429"
          id="wall37832-1-7-0-43-24-4-7"
          inkscape:connector-curvature="0"
@@ -16485,8 +16488,8 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-9">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1018.2904,1194.3269 1.9761,-0.011 32.9593,45.9801 -2.0022,0.014"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         d="m 1015.1084,1189.0236 1.9761,-0.011 36.1413,51.2834 -2.0022,0.014"
          id="wall37832-1-7-0-43-24-4-0"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16495,7 +16498,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1134.7939,1152.6081 -2.0405,-0.013 -0.03,-107.9959 h 2.1097"
          id="wall37832-1-7-0-43-24-4-0-3"
          inkscape:connector-curvature="0"
@@ -16505,8 +16508,8 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-9">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1018.2091,1044.7394 2.0627,0.1303 -0.04,149.5307 -2.0758,9e-4"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         d="m 1018.2091,1044.7394 2.0627,0.1303 -0.04,106.0436 -2.0758,9e-4"
          id="wall37832-1-7-0-43-24-4-0-4"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16515,7 +16518,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-8">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1133.3127,1044.2185 -0.013,2.2628 -114.5795,-0.053 0.016,-2.3729"
          id="wall37832-1-7-0-43-24-4-0-39"
          inkscape:connector-curvature="0"
@@ -16525,8 +16528,8 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-0">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1110.6294,1241.1525 -2.0405,-0.013 -0.155,-88.9151 h 2.1097"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         d="m 1110.6294,1241.1525 -2.0405,-0.013 -0.155,-78.8388 h 2.1097"
          id="wall37832-1-7-0-43-24-4-0-3-8"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16535,7 +16538,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-9-3">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1057.0627,1241.0357 1.9761,-0.011 -0.103,12.796 -2.0022,0.014"
          id="wall37832-1-7-0-43-24-4-0-9"
          inkscape:connector-curvature="0"
@@ -16545,7 +16548,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-05">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1090.2631,1240.797 1.9761,-0.011 -0.103,12.9727 -2.0022,0.014"
          id="wall37832-1-7-0-43-24-4-0-9-2"
          inkscape:connector-curvature="0"
@@ -16555,7 +16558,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-05-2">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1005.1235,1206.2793 0.028,1.9759 h -21.94917 l -0.032,-2.002"
          id="wall37832-1-7-0-43-24-4-0-9-7-7"
          inkscape:connector-curvature="0"
@@ -16565,7 +16568,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-05-3-9">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1176.1826,1222.0293 0.028,1.9759 -67.4828,0 -0.032,-2.002"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-0"
          inkscape:connector-curvature="0"
@@ -16575,7 +16578,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-05-3-9-2">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1176.0085,1277.5293 0.028,1.9759 -192.57124,0 -0.032,-2.002"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-3"
          inkscape:connector-curvature="0"
@@ -16585,7 +16588,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-05-3-9-9">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 1173.8989,1222.757 2.3294,0.053 -0.094,56.4637 -2.0019,0.039"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-9"
          inkscape:connector-curvature="0"
@@ -16595,7 +16598,7 @@ capturable = 1;</desc>
            id="desc37834-46-7-1-8-5-8-2-05-3-9-7">template = InvisibleWallPlayer;</desc>
       </path>
       <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
          d="m 982.63548,1206.9436 1.9758,-0.035 0.2599,72.6159 -2.0019,0.039"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-9-0"
          inkscape:connector-curvature="0"
@@ -16603,16 +16606,6 @@ capturable = 1;</desc>
          sodipodi:nodetypes="cccc">
         <desc
            id="desc37834-46-7-1-8-5-8-2-05-3-9-7-3">template = InvisibleWallPlayer;</desc>
-      </path>
-      <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1133.9985,1151.5293 0.028,1.9759 -25.5288,0 -0.032,-2.002"
-         id="wall37832-1-7-0-43-24-4-0-9-7-7-0-6"
-         inkscape:connector-curvature="0"
-         inkscape:label=""
-         sodipodi:nodetypes="cccc">
-        <desc
-           id="desc37834-46-7-1-8-5-8-2-05-3-9-2-5">template = InvisibleWallPlayer;</desc>
       </path>
     </g>
     <g
@@ -16638,8 +16631,8 @@ capturable = 1;</desc>
          id="buildingrect6406-7-4-1-3-8-0-15-7-2-74-5-3-27-8-82-4-6-5-98-3-7-"
          width="20.133688"
          height="19.695774"
-         x="-1041.3898"
-         y="-142.57935"
+         x="-1029.446"
+         y="-160.86623"
          inkscape:label="#rect6406"
          transform="rotate(-179.82347)">
         <desc
@@ -16652,8 +16645,8 @@ capturable = 1;</desc>
          id="mesh_template1-2-8-6-7"
          width="4"
          height="4"
-         x="1035.6753"
-         y="119.46243"
+         x="1023.8524"
+         y="137.82765"
          inkscape:label="#mesh_template"
          transform="rotate(0.55420551)">
         <desc
@@ -16664,8 +16657,8 @@ capturable = 1;</desc>
          id="rect10340-4-5-7-9-9-8-7-8-5"
          width="2.1257615"
          height="3.8477135"
-         x="-128.98083"
-         y="1095.3889"
+         x="-108.98615"
+         y="1092.9696"
          inkscape:label="#mesh"
          transform="rotate(-89.873063)">
         <desc
@@ -16676,8 +16669,8 @@ capturable = 1;</desc>
          id="buildingrect6406-7-4-1-3-8-0-1"
          width="65.366531"
          height="12.058491"
-         x="-185.25471"
-         y="1005.5725"
+         x="-203.50858"
+         y="993.57837"
          inkscape:label="#rect6406"
          transform="rotate(-89.981592)">
         <desc
@@ -16718,12 +16711,12 @@ separator_over_height = 0.1;
 separator_depth = 0.9;</desc>
       </rect>
       <rect
-         style="display:inline;opacity:0.92000002;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:1.20000002,1.20000002;stroke-opacity:1;enable-background:new;stroke-dashoffset:1.90000003"
+         style="display:inline;opacity:0.92000002;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:1.20000002, 1.20000002;stroke-dashoffset:1.89999998;stroke-opacity:1;enable-background:new"
          id="rect10340-4-5-7-9-9-8-7-8-5-7"
          width="2.2580423"
          height="3.6793866"
-         x="-1024.3711"
-         y="-147.28584"
+         x="-1012.4278"
+         y="-165.573"
          inkscape:label="#mesh"
          transform="rotate(-179.8222)">
         <desc
@@ -16761,8 +16754,8 @@ separator_depth = 0.9;</desc>
          id="rect5814-8-9-12-71-9-9-1-4-253-7"
          width="14"
          height="14"
-         x="1054.7206"
-         y="1159.9452" />
+         x="1052.2206"
+         y="1167.9452" />
       <rect
          rx="7"
          ry="7"
@@ -16819,81 +16812,64 @@ separator_depth = 0.9;</desc>
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-6">type = vehicle;
 tag = speeder;</desc>
       </rect>
-      <path
-         sodipodi:nodetypes="ccccccccccc"
-         inkscape:label="#path7528"
-         inkscape:connector-curvature="0"
-         id="avoid1-0-8-0-8-6-2-3-8"
-         d="m 1157.9572,1229.8885 -0.5723,47.0674 -46.1564,8.5595 -76.9583,1.3215 -33.9603,-13.4754 10.1641,-37.5847 13.4097,-30.9083 21.5971,33.917 58.59,-0.4162 13.2243,-22.0178 z"
-         style="display:inline;opacity:0.56300001;fill:none;stroke:#0000ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Mend-4-73-6-0-9-3);enable-background:new" />
-      <rect
-         ry="0"
-         transform="rotate(-179.77602)"
-         inkscape:label="#mesh"
-         y="-1218.2061"
-         x="-1090.7406"
-         height="2.2873633"
-         width="2.3240652"
-         id="rect16633-4-8-7-6-9-7-2-8-8-1-8-5-3-6"
-         style="display:inline;opacity:1;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#008eff;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:7;stroke-opacity:1;enable-background:new">
-        <title
-           id="title12411-5-3-1">barell_blue</title>
-        <desc
-           id="desc16653-2-9-3-3-8-7-0-7-4-6-1-5-4">template = barell_blue;</desc>
-      </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
-         id="rect84221-1-3"
+         id="rect84221-1-0-2"
          width="8.6231298"
          height="2.3819616"
-         x="-1072.1405"
-         y="-1243.5585"
+         x="-1086.6233"
+         y="-1243.5989"
          inkscape:label="#mesh"
          transform="rotate(-179.96146)"
          inkscape:transform-center-x="-7.4246192"
          inkscape:transform-center-y="-5.3032994">
         <title
-           id="title4384">barricade</title>
+           id="title4384-8-0">barricade</title>
         <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7">template = barricade; </desc>
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-6-46">template=barricade;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
-         id="rect84221-1-1"
+         id="rect84221-1-0-1"
          width="8.6231298"
          height="2.3819616"
-         x="-1085.51"
-         y="-1231.0486"
+         x="-1072.0226"
+         y="-1243.598"
          inkscape:label="#mesh"
          transform="rotate(-179.96146)"
          inkscape:transform-center-x="-7.4246192"
          inkscape:transform-center-y="-5.3032994">
         <title
-           id="title4384-9">barricade</title>
+           id="title4384-8-0-9">barricade</title>
         <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-0">template = barricade;</desc>
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-6-46-3">template=barricade;</desc>
       </rect>
       <rect
-         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
-         id="rect84221-1-2"
-         width="8.6231298"
-         height="2.3819616"
-         x="-1087.2861"
-         y="-1243.6427"
-         inkscape:label="#mesh"
-         transform="rotate(-179.96146)"
-         inkscape:transform-center-x="-7.4246192"
-         inkscape:transform-center-y="-5.3032994">
-        <title
-           id="title4384-2">barricade</title>
+         transform="rotate(89.678074)"
+         inkscape:label=""
+         y="-1100.5482"
+         x="1160.6637"
+         height="7.3961515"
+         width="3.982286"
+         id="spawn1-1-1-1-8-8"
+         style="display:inline;opacity:0.92000002;fill:#ff7f2a;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999964, 11.99999964;stroke-dashoffset:4.5999999;stroke-opacity:1;enable-background:new">
         <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-2">template = barricade;</desc>
+           id="desc7082-740-7-7-8-0">type = vehicle;
+tag = apc;</desc>
       </rect>
     </g>
     <g
        inkscape:groupmode="layer"
        id="layer27"
-       inkscape:label="avoid" />
+       inkscape:label="avoid">
+      <path
+         sodipodi:nodetypes="ccccccccccccccc"
+         inkscape:label="#path7528"
+         inkscape:connector-curvature="0"
+         id="avoid1-0-8-0-8-6-2-3-8"
+         d="m 1175.1045,1183.2195 20.909,28.0089 -38.6286,65.7275 -46.1564,8.5595 -76.9583,1.3215 -51.10764,-40.8758 23.59914,-17.0786 -0.042,-38.9395 8.6782,1.6672 30.0824,47.1753 59.2971,-0.4162 8.4513,-17.0681 -0.5081,-57.229 28.32,4.9751 z"
+         style="display:inline;opacity:0.56300001;fill:none;stroke:#0000ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Mend-4-73-6-0-9-3);enable-background:new" />
+    </g>
     <g
        style="display:inline"
        inkscape:label="crates"
@@ -17381,7 +17357,8 @@ tag = speeder;</desc>
     <g
        inkscape:groupmode="layer"
        id="layer47"
-       inkscape:label="destroyable">
+       inkscape:label="destroyable"
+       style="display:inline">
       <rect
          style="display:inline;opacity:0.93000034;fill:#e9ddaf;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000111, 4.00000111;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
          id="spawn4_3-2"
@@ -17440,99 +17417,51 @@ key = env_building.vehicle;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
-         id="rect84221-1-5"
-         width="8.7485504"
-         height="3.0068469"
-         x="-1063.7965"
-         y="-1186.6663"
+         id="rect84221-1-3"
+         width="8.6231298"
+         height="2.3819616"
+         x="-1057.7511"
+         y="-1222.0681"
          inkscape:label="#mesh"
          transform="rotate(-179.96146)"
          inkscape:transform-center-x="-7.4246192"
          inkscape:transform-center-y="-5.3032994">
         <title
-           id="title27477">barricade</title>
+           id="title4384">barricade</title>
         <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-72">template = barricade; </desc>
-      </rect>
-    </g>
-    <g
-       inkscape:groupmode="layer"
-       id="layer50"
-       inkscape:label="objects"
-       style="display:inline" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer48"
-     inkscape:label="layer1.map2"
-     style="display:inline">
-    <g
-       inkscape:groupmode="layer"
-       id="layer49"
-       inkscape:label="destroyable">
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
-         id="spawn1_8-1"
-         width="5.7888808"
-         height="6.6684999"
-         x="1585.6246"
-         y="316.11057"
-         inkscape:label=""
-         transform="rotate(36.706144)">
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-66-7">type = vehicle;
-key = deco_car1_white.vehicle;</desc>
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7">template = barricade; </desc>
       </rect>
       <rect
-         style="display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999921, 3.99999921;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
-         id="spawn3_2-6"
-         width="5.7888808"
-         height="6.6684999"
-         x="1075.5856"
-         y="1185.1705"
-         inkscape:label=""
-         transform="rotate(0.47999757)">
+         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
+         id="rect84221-1-1"
+         width="8.6231298"
+         height="2.3819616"
+         x="-1085.51"
+         y="-1231.0486"
+         inkscape:label="#mesh"
+         transform="rotate(-179.96146)"
+         inkscape:transform-center-x="-7.4246192"
+         inkscape:transform-center-y="-5.3032994">
+        <title
+           id="title4384-9">barricade</title>
         <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-7-1-4-7-1-6-9-5">type = vehicle; key = deco_car3_black.vehicle;</desc>
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-0">template = barricade;</desc>
       </rect>
       <rect
-         style="display:inline;opacity:0.93000034;fill:#7d3928;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00629902, 4.00629902;stroke-dashoffset:2.90456676;stroke-opacity:1;enable-background:new"
-         id="spawn2_6-9-4-3"
-         width="5.7888808"
-         height="6.6684999"
-         x="-828.09509"
-         y="1373.6235"
-         inkscape:label=""
-         transform="rotate(-71.928512)">
+         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
+         id="rect84221-1-2"
+         width="8.6231298"
+         height="2.3819616"
+         x="-1090.9054"
+         y="-1235.1403"
+         inkscape:label="#mesh"
+         transform="rotate(-179.96146)"
+         inkscape:transform-center-x="-7.4246192"
+         inkscape:transform-center-y="-5.3032994">
+        <title
+           id="title4384-2">barricade</title>
         <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-6-8">type = vehicle;
-tag = speeder;</desc>
-      </rect>
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
-         id="spawn2_6-9-4-3-6-7"
-         width="31.138823"
-         height="14.218333"
-         x="1169.7129"
-         y="-1048.3367"
-         inkscape:label=""
-         transform="rotate(90.149388)">
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-9">type = vehicle;
-key = env_building.vehicle;</desc>
-      </rect>
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000109, 4.00000109;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
-         id="spawn2_6-9"
-         width="5.7888808"
-         height="6.6684999"
-         x="1575.2341"
-         y="-471.6315"
-         inkscape:label=""
-         transform="rotate(64.811325)">
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9">type = vehicle;
-key = deco_car2_grey.vehicle;</desc>
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-2">template = barricade;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.10483941;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.10483942, 2.51614584;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
@@ -17550,12 +17479,125 @@ key = deco_car2_grey.vehicle;</desc>
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-9">template = barricade; </desc>
       </rect>
+      <rect
+         style="display:inline;enable-background:new;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912000000002;stroke-dashoffset:6.99999809;stroke-opacity:1"
+         id="spawn1_8-1"
+         width="5.7888808"
+         height="6.6684999"
+         x="1585.6246"
+         y="316.11057"
+         inkscape:label=""
+         transform="rotate(36.706144)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-2-6-7-2-66-7">type = vehicle;
+key = deco_car1_white.vehicle;</desc>
+      </rect>
+      <rect
+         style="display:inline;enable-background:new;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000109, 4.00000108999999959;stroke-dashoffset:7.00000238;stroke-opacity:1"
+         id="spawn2_6-9"
+         width="5.7888808"
+         height="6.6684999"
+         x="1575.2341"
+         y="-471.6315"
+         inkscape:label=""
+         transform="rotate(64.811325)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9">type = vehicle;
+key = deco_car2_grey.vehicle;</desc>
+      </rect>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer50"
+       inkscape:label="objects"
+       style="display:inline" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer48"
+     inkscape:label="layer1.map2"
+     style="display:inline">
+    <g
+       inkscape:groupmode="layer"
+       id="layer49"
+       inkscape:label="destroyable"
+       style="display:inline">
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999921, 3.99999921;stroke-dashoffset:6.99999857;stroke-opacity:1;enable-background:new"
+         id="spawn3_2-6"
+         width="5.7888808"
+         height="6.6684999"
+         x="1075.5856"
+         y="1185.1705"
+         inkscape:label=""
+         transform="rotate(0.47999757)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-7-1-4-7-1-6-9-5">type = vehicle; key = deco_car3_black.vehicle;</desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#7d3928;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00629902, 4.00629902;stroke-dashoffset:2.90456676;stroke-opacity:1;enable-background:new"
+         id="spawn2_6-9-4-3"
+         width="5.7888808"
+         height="6.6684999"
+         x="-791.88434"
+         y="1348.3964"
+         inkscape:label=""
+         transform="rotate(-71.928512)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-6-8">type = vehicle;
+tag = speeder;</desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
+         id="spawn2_6-9-4-3-6-7"
+         width="31.138823"
+         height="14.218333"
+         x="1175.9557"
+         y="-1051.1029"
+         inkscape:label=""
+         transform="rotate(90.149388)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-9">type = vehicle;
+key = env_building.vehicle;</desc>
+      </rect>
     </g>
     <g
        inkscape:label="objects"
        id="g3628"
        inkscape:groupmode="layer"
        style="display:inline" />
+  </g>
+  <g
+     style="display:inline"
+     inkscape:label="layer1.map3"
+     id="g27529"
+     inkscape:groupmode="layer">
+    <g
+       inkscape:groupmode="layer"
+       id="layer52"
+       inkscape:label="destroyable"
+       style="display:inline">
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
+         id="rect84221-1-5"
+         width="8.7485504"
+         height="3.0068469"
+         x="-1063.7965"
+         y="-1186.6663"
+         inkscape:label="#mesh"
+         transform="rotate(-179.96146)"
+         inkscape:transform-center-x="-7.4246192"
+         inkscape:transform-center-y="-5.3032994">
+        <title
+           id="title27477">barricade</title>
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-72">template = barricade; </desc>
+      </rect>
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer51"
+       inkscape:label="objects" />
   </g>
   <g
      style="display:inline"
@@ -17647,8 +17689,8 @@ key = deco_car2_grey.vehicle;</desc>
          id="rect10340-4-5-7-9-9-8-7-5-6-5"
          width="4.3719435"
          height="10.752926"
-         x="1158.2825"
-         y="-1024.8997"
+         x="1176.5189"
+         y="-1012.879"
          inkscape:label="#mesh"
          transform="rotate(89.935238)">
         <desc
