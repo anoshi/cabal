@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<static_object key="env_barricade.static_object" destroy_on_blast="1" destroy_on_drive_over="1" destroy_on_stab="0" undestroy_on_block_activate="0">
+<static_object key="env_barricade.static_object" destroy_on_blast="1" destroy_on_drive_over="1" destroy_on_stab="1" undestroy_on_block_activate="0">
 
 	<effect event_key="destroy" key="other" ref="SmokeMinor" post_processing="1" />
 	<effect event_key="destroy" key="other" ref="ShadowSmokeMinor" shadow="1" />

@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="31.999999"
-     inkscape:cx="1071.5433"
-     inkscape:cy="801.86983"
+     inkscape:zoom="11.313708"
+     inkscape:cx="1073.8677"
+     inkscape:cy="816.97871"
      inkscape:document-units="px"
-     inkscape:current-layer="layer33"
+     inkscape:current-layer="layer37"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -7258,6 +7258,34 @@
          x="1"
          style="fill:black;stroke:none" />
     </pattern>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-73-6-0-9-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;marker-start:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path8786-8-6-3-9-4-8"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend-4-73-6-0-9-3-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;marker-start:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path8786-8-6-3-9-4-8-2"
+         inkscape:connector-curvature="0" />
+    </marker>
   </defs>
   <metadata
      id="metadata7">
@@ -8014,10 +8042,47 @@
          style="font-size:8px;line-height:1.25;font-family:sans-serif">If you change the size, only use the F2 tool.</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-       d="m 3786.0277,418.48016 46.3114,-0.0147"
+       d="m 3786.0277,528.48016 46.3114,-0.0147"
        id="path21113-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
+    <text
+       id="text21155-8"
+       y="316.42404"
+       x="3846.0083"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ff0000;fill-opacity:1;stroke:none;enable-background:new"
+       xml:space="preserve"><tspan
+         sodipodi:role="line"
+         id="tspan21191-9"
+         x="3846.0083"
+         y="316.42404"
+         style="font-size:8px;line-height:1.25;font-family:sans-serif"><tspan
+           dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+           id="tspan21285"
+           style="font-size:8px;line-height:1.25;font-family:sans-serif">AI Avoidance area. Place in the 'other' layer of your map's primary layer. The area is invisible in game</tspan></tspan><tspan
+         sodipodi:role="line"
+         id="tspan21193-0"
+         x="3846.0083"
+         y="326.42404"
+         style="font-size:8px;line-height:1.25;font-family:sans-serif">but AI units will avoid entering it where possible. The ID of the path should begin with 'avoid'.</tspan><tspan
+         sodipodi:role="line"
+         id="tspan21195-5"
+         x="3846.0083"
+         y="332.4631"
+         style="font-size:8px;line-height:1.25;font-family:sans-serif" /></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path21151-2"
+       d="m 3792.5945,316.00727 46.3114,-0.0147"
+       style="display:inline;fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new" />
+    <rect
+       y="287.00394"
+       x="3718.4817"
+       height="61.741974"
+       width="74.037109"
+       id="rect21153-2"
+       style="display:inline;fill:#ffff00;fill-opacity:0.07843137;fill-rule:nonzero;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new" />
   </g>
   <g
      style="display:inline;opacity:0.92000002"
@@ -8787,18 +8852,6 @@ see_through = 1;</desc>
        transform="rotate(179.77313,2929.7593,931.34588)">
       <desc
          id="desc10349-9-4-79-8-4">name = streetlight; mesh_name = streetlight.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 0 1 128 128; collision_model_type = 0; collision_model_size = .3 7 .3;</desc>
-    </rect>
-    <rect
-       style="display:inline;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
-       id="rect10340-4-5-7-9-9-8"
-       width="4.4683914"
-       height="3.811275"
-       x="-2739.0569"
-       y="-1338.9302"
-       inkscape:label="#mesh"
-       transform="rotate(-179.86726)">
-      <desc
-         id="desc10349-9-4-79-8-4-8">template = streetlight;</desc>
     </rect>
     <rect
        transform="matrix(-0.0237697,1.85613,-1.85613,-0.0237697,-3013.6673,-1366.9355)"
@@ -13377,7 +13430,14 @@ climb_type = 0;
       <title
          id="title12407-7">barell_red</title>
       <desc
-         id="desc16653-2-9-3-3-8-7-0-7-9">name = barell_red; mesh_name = barell.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 10 16 32 32; collision_model_type = 0; collision_model_size = 1.2 1.4 1.2; penetrability = 0.4;</desc>
+         id="desc16653-2-9-3-3-8-7-0-7-9">name = barell_red;
+static_object_type_key=fuel_barrel.static_object;
+mesh_name = barell.mesh; 
+texture0 = world_atlas1.png; 
+texture0_atlas_cell = 10 16 32 32; 
+collision_model_type = 0; 
+collision_model_size = 1.2 1.4 1.2; 
+penetrability = 0.4;</desc>
     </rect>
     <rect
        style="display:inline;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#ffff00;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.00000122, 1.00000122;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
@@ -13418,22 +13478,14 @@ climb_type = 0;
       <title
          id="title12409-61">barell_green</title>
       <desc
-         id="desc16653-2-9-3-3-8-7-0-7-4-5">name = barell_green; mesh_name = barell.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 8 16 32 32; collision_model_type = 0; collision_model_size = 1.2 1.4 1.2; penetrability = 0.4;</desc>
-    </rect>
-    <rect
-       style="display:inline;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#008eff;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:7;stroke-opacity:1;enable-background:new"
-       id="rect16633-4-8-7-6-9-7-2-8-8-1-8-4"
-       width="2.3240652"
-       height="2.2873633"
-       x="-2775.541"
-       y="-1590.0131"
-       inkscape:label="#mesh_template"
-       transform="rotate(-179.77602)"
-       ry="0">
-      <title
-         id="title12411-1">barell_blue</title>
-      <desc
-         id="desc16653-2-9-3-3-8-7-0-7-4-6-3">name = barell_blue; mesh_name = barell.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 9 16 32 32; collision_model_type = 0; collision_model_size = 1.2 1.4 1.2; penetrability = 0.4;</desc>
+         id="desc16653-2-9-3-3-8-7-0-7-4-5">name = barell_green; 
+static_object_type_key=fuel_barrel.static_object;
+mesh_name = barell.mesh; 
+texture0 = world_atlas1.png; 
+texture0_atlas_cell = 8 16 32 32; 
+collision_model_type = 0; 
+collision_model_size = 1.2 1.4 1.2; 
+penetrability = 0.4;</desc>
     </rect>
     <rect
        rx="1"
@@ -14829,7 +14881,7 @@ base_wall_template = BrickWall1;</desc>
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path7290"
-       d="M 3808.9701,143.29367 V 300.19702"
+       d="m 3808.9701,143.29367 0,218.06809"
        style="display:inline;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new" />
     <path
        sodipodi:nodetypes="cc"
@@ -14984,7 +15036,7 @@ tag = speeder;</desc>
          id="flowPara20806-2"
          style="font-size:10px;line-height:1.25;font-family:sans-serif">speeder</flowPara></flowRoot>    <rect
        inkscape:label="#rect36349"
-       y="409.76093"
+       y="519.76093"
        x="3739.793"
        height="16.478903"
        width="32.412472"
@@ -14992,28 +15044,28 @@ tag = speeder;</desc>
        style="display:inline;opacity:0.4;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#787878;stroke-width:1.32283461;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.32283465, 2.64566929;stroke-dashoffset:0;stroke-opacity:0.97247709;enable-background:new" />
     <text
        id="text7284-3"
-       y="381.77829"
+       y="491.77832"
        x="3634.3806"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        xml:space="preserve"><tspan
          sodipodi:role="line"
          id="tspan7288-8"
          x="3634.3806"
-         y="381.77829"
-         style="font-size:40px;line-height:1.25;font-family:sans-serif">SECESSION </tspan></text>
+         y="491.77832"
+         style="font-size:40px;line-height:1.25;font-family:sans-serif">CABAL</tspan></text>
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path7290-0"
-       d="m 3809.1833,401.89297 0,425.59531"
+       d="M 3809.1833,511.89297 V 937.48829"
        style="display:inline;opacity:0.93000034;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3665.9692"
-       y="420.04169"
+       y="530.04169"
        id="text107814-1-4-7"><tspan
-         y="420.04169"
+         y="530.04169"
          x="3665.9692"
          id="tspan7719-9"
          sodipodi:role="line"
@@ -15023,8 +15075,8 @@ tag = speeder;</desc>
        id="spawn_terminal-1-3"
        width="3.3321514"
        height="3.3363316"
-       x="-3772.0981"
-       y="-416.84341"
+       x="-3772.9758"
+       y="-526.8399"
        inkscape:label=""
        transform="rotate(-179.54277)">
       <desc
@@ -15034,9 +15086,9 @@ tag = speeder;</desc>
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3674.1631"
-       y="449.75916"
+       y="559.75916"
        id="text107814-1-4-7-7"><tspan
-         y="449.75916"
+         y="559.75916"
          x="3674.1631"
          id="tspan7719-9-0"
          sodipodi:role="line"
@@ -15047,7 +15099,7 @@ tag = speeder;</desc>
        width="11.324673"
        height="22.097088"
        x="3764.9434"
-       y="553.33459"
+       y="663.33459"
        inkscape:label="">
       <desc
          id="desc8927-8-9">type = vehicle;
@@ -15059,7 +15111,7 @@ key = veh_repair_bay_large.vehicle;</desc>
        width="12.105957"
        height="15.065857"
        x="3766.5059"
-       y="600.60022"
+       y="710.60022"
        inkscape:label="">
       <desc
          id="desc8927-8-22">type = vehicle;
@@ -15069,9 +15121,9 @@ key = veh_repair_bay_small.vehicle;</desc>
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3662.0667"
-       y="569.29816"
+       y="679.29816"
        id="text107814-1-4-7-7-9"><tspan
-         y="569.29816"
+         y="679.29816"
          x="3662.0667"
          id="tspan7719-3-9"
          sodipodi:role="line"
@@ -15080,9 +15132,9 @@ key = veh_repair_bay_small.vehicle;</desc>
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3664.3167"
-       y="610.89191"
+       y="720.89191"
        id="text107814-1-4-7-0"><tspan
-         y="610.89191"
+         y="720.89191"
          x="3664.3167"
          id="tspan7719-3-2"
          sodipodi:role="line"
@@ -15091,21 +15143,21 @@ key = veh_repair_bay_small.vehicle;</desc>
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#ff0000;fill-opacity:1;stroke:none;enable-background:new"
        x="3840.7808"
-       y="410.63052"
+       y="520.63055"
        id="text21117-2-3"><tspan
          sodipodi:role="line"
          id="tspan21181-5-9"
          x="3840.7808"
-         y="410.63052"
+         y="520.63055"
          style="font-size:8px;line-height:1.25;font-family:sans-serif">Trigger area. Ensure each is named 'hitbox_trigger_&lt;value&gt;' in</tspan><tspan
          sodipodi:role="line"
          x="3840.7808"
-         y="420.63052"
+         y="530.63055"
          style="font-size:8px;line-height:1.25;font-family:sans-serif"
          id="tspan3935-0">order for the game to detect them as a trigger area the player</tspan><tspan
          sodipodi:role="line"
          x="3840.7808"
-         y="430.63052"
+         y="540.63055"
          style="font-size:8px;line-height:1.25;font-family:sans-serif"
          id="tspan3937-5">can collide with. Valid values are: jumppad, repairbay, trap</tspan></text>
     <rect
@@ -15113,8 +15165,8 @@ key = veh_repair_bay_small.vehicle;</desc>
        id="spawn_terminal-1-3-7-3-4"
        width="3.3321514"
        height="3.3363316"
-       x="-3018.5935"
-       y="2335.6501"
+       x="-3099.1174"
+       y="2260.7112"
        inkscape:label=""
        transform="rotate(-132.9425)">
       <desc
@@ -15125,8 +15177,8 @@ key = veh_repair_bay_small.vehicle;</desc>
        id="spawn_camera-1-0"
        width="3.3321514"
        height="3.3363316"
-       x="-3775.6973"
-       y="-444.49411"
+       x="-3776.575"
+       y="-554.4906"
        inkscape:label=""
        transform="rotate(-179.54277)">
       <desc
@@ -15136,9 +15188,9 @@ key = veh_repair_bay_small.vehicle;</desc>
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3649.6599"
-       y="476.39999"
+       y="586.40002"
        id="text107814-1-4-7-7-3-8"><tspan
-         y="476.39999"
+         y="586.40002"
          x="3649.6599"
          id="tspan7719-9-0-0"
          sodipodi:role="line"
@@ -15148,8 +15200,8 @@ key = veh_repair_bay_small.vehicle;</desc>
        id="spawn_terminal-1-3-7-0"
        width="3.3321514"
        height="3.3363316"
-       x="-3105.3599"
-       y="2205.5161"
+       x="-3181.9353"
+       y="2126.5464"
        inkscape:label=""
        transform="rotate(-135.88181)">
       <desc
@@ -15917,9 +15969,9 @@ roof_cutout_texture = cutout.png; roof_cutout_texture_channel = 1; roof_cutout_t
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3666.6631"
-       y="662.25916"
+       y="772.25916"
        id="text107814-1-4-7-2"><tspan
-         y="662.25916"
+         y="772.25916"
          x="3666.6631"
          sodipodi:role="line"
          style="font-size:10px;line-height:1.25;font-family:sans-serif"
@@ -15928,20 +15980,20 @@ roof_cutout_texture = cutout.png; roof_cutout_texture_channel = 1; roof_cutout_t
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3679.8308"
-       y="516.86755"
+       y="626.86755"
        id="text82319-7"><tspan
          sodipodi:role="line"
          id="tspan82321-9"
          x="3679.8308"
-         y="516.86755"
+         y="626.86755"
          style="font-size:10px;line-height:1.25;font-family:sans-serif">turret (offline)</tspan></text>
     <rect
        style="display:inline;opacity:0.93000034;fill:#b41e1e;fill-opacity:1;fill-rule:nonzero;stroke:#1e1e1e;stroke-width:1.79999995;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
        id="spawn_turret_offline-1-0"
        width="2.7343748"
        height="2.7343748"
-       x="3767.6448"
-       y="513.04608"
+       x="3767.6284"
+       y="623.04608"
        inkscape:label=""
        transform="rotate(-0.00852511)">
       <desc
@@ -15956,7 +16008,7 @@ key = empl_turret_offline.vehicle;</desc>
        x="3084.7515"
        y="504.43643"
        inkscape:label="#mesh_template"
-       transform="rotate(-89.853636,3522.2929,268.88216)">
+       transform="rotate(-89.853636,3577.4336,323.88217)">
       <desc
          id="desc10349-9-4-79-8-4-6">name = ramp; 
 mesh_name = obj_ramp.mesh; 
@@ -15970,9 +16022,9 @@ backline = 1;</desc>
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3718.3457"
-       y="706.69849"
+       y="816.69849"
        id="text107814-1-4-7-2-2"><tspan
-         y="706.69849"
+         y="816.69849"
          x="3718.3457"
          sodipodi:role="line"
          style="font-size:10px;line-height:1.25;font-family:sans-serif"
@@ -16041,20 +16093,20 @@ climbable = 0;</desc>
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3649.1445"
-       y="743.76062"
+       y="853.76062"
        id="text107814-1-4-7-2-2-2"><tspan
-         y="743.76062"
+         y="853.76062"
          x="3649.1445"
          sodipodi:role="line"
          style="font-size:10px;line-height:1.25;font-family:sans-serif"
          id="tspan4956-8-4">destroyable building</tspan></text>
     <rect
-       style="display:inline;enable-background:new;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369000000000;stroke-dashoffset:7.01102591;stroke-opacity:1"
+       style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
        id="spawn2_6-9-4-3-6-8"
        width="31.138823"
        height="14.218333"
-       x="715.60278"
-       y="-3777.5273"
+       x="825.60236"
+       y="-3777.814"
        inkscape:label=""
        transform="rotate(90.149388)">
       <desc
@@ -16065,27 +16117,96 @@ key = env_building.vehicle;</desc>
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
        x="3641.7427"
-       y="784.50769"
+       y="894.50769"
        id="text107814-1-4-7-2-2-2-5"><tspan
-         y="784.50769"
+         y="894.50769"
          x="3641.7427"
          sodipodi:role="line"
          style="font-size:10px;line-height:1.25;font-family:sans-serif"
          id="tspan4956-8-4-5">destroyable barricade</tspan></text>
+    <path
+       sodipodi:nodetypes="ccccccccccc"
+       inkscape:label="#path7528"
+       inkscape:connector-curvature="0"
+       id="avoid1-0-8-0-8-6-2-3-8-4"
+       d="m 3765.097,290.82872 13.0527,8.3174 4.3436,17.6845 -6.0833,15.6965 -13.4603,9.3996 -21.2109,-0.3347 -11.9653,-11.5333 -1.2779,-16.458 9.465,-15.9162 10.4743,-6.1428 z"
+       style="display:inline;opacity:0.56300001;fill:none;stroke:#0000ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Mend-4-73-6-0-9-3-0);enable-background:new" />
     <rect
-       style="display:inline;enable-background:new;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983000000016;stroke-dashoffset:0.79370105;stroke-opacity:1"
-       id="spawn2_6-9-4-3-6-79-7-3"
-       width="5.498096"
-       height="2.2590594"
-       x="-3771.6211"
-       y="-779.45953"
-       inkscape:label=""
+       style="display:inline;opacity:0.92000002;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:1.20000002, 1.20000002;stroke-dashoffset:1.89999998;stroke-opacity:1;enable-background:new"
+       id="rect10340-4-5-7-9-9-8-7-8-5-7-7"
+       width="2.2580423"
+       height="3.6793866"
+       x="-2737.8999"
+       y="-1337.0751"
+       inkscape:label="#mesh"
+       transform="rotate(-179.8222)">
+      <desc
+         id="desc10349-9-4-79-8-4-8-9-2-2-9-3">template = streetlight;</desc>
+    </rect>
+    <rect
+       style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
+       id="rect84221-1"
+       width="8.6231298"
+       height="2.3819616"
+       x="-3772.6602"
+       y="-889.90637"
+       inkscape:label="#mesh_template"
        transform="rotate(-179.96146)"
        inkscape:transform-center-x="-7.4246192"
        inkscape:transform-center-y="-5.3032994">
+      <title
+         id="title4384-8">barricade</title>
       <desc
-         id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-6">type = vehicle;
-key = env_barricade.vehicle;</desc>
+         id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-6">name = barricade; 
+static_object_type_key=env_barricade.static_object; 
+#mesh_name = env_barricade.mesh; 
+#texture0 = env_building.png; 
+#collision_model_type = 0; 
+#collision_model_size = 3 0.7 1; 
+#penetrability = 0.4; 
+mesh_name = barell.mesh; 
+texture0 = world_atlas1.png; 
+texture0_atlas_cell = 9 16 32 32; 
+collision_model_type = 0; 
+collision_model_size = 1.2 1.4 1.2; 
+penetrability = 0.4;</desc>
+    </rect>
+    <rect
+       style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
+       id="rect84221-1-0"
+       width="8.6231298"
+       height="2.3819616"
+       x="-3835.1611"
+       y="-891.11432"
+       inkscape:label="#mesh"
+       transform="rotate(-179.96146)"
+       inkscape:transform-center-x="-7.4246192"
+       inkscape:transform-center-y="-5.3032994">
+      <title
+         id="title4384-8-7">barricade</title>
+      <desc
+         id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-6-6">template = barricade; </desc>
+    </rect>
+    <rect
+       style="display:inline;enable-background:new;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#008eff;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:7;stroke-opacity:1"
+       id="rect16633-4-8-7-6-9-7-2-8-8-1-8-4-1"
+       width="2.3240652"
+       height="2.2873633"
+       x="-2776.8667"
+       y="-1589.9994"
+       inkscape:label="#mesh_template"
+       transform="rotate(-179.77602)"
+       ry="0">
+      <title
+         id="title12411-1-4">barell_blue</title>
+      <desc
+         id="desc16653-2-9-3-3-8-7-0-7-4-6-3-7">name = barell_blue; 
+static_object_type_key=fuel_barrel.static_object; mesh_name = barell.mesh; 
+texture0 = world_atlas1.png; 
+texture0_atlas_cell = 9 16 32 32; 
+collision_model_type = 0; 
+collision_model_size = 1.2 1.4 1.2; 
+penetrability = 0.4;</desc>
     </rect>
   </g>
   <g
@@ -16308,7 +16429,7 @@ capturable = 1;</desc>
        inkscape:groupmode="layer">
       <rect
          inkscape:label="#rect36349"
-         y="648.23059"
+         y="758.23059"
          x="3761.864"
          height="17.539602"
          width="18.270266"
@@ -16355,7 +16476,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1103.6075,1242.3803 v 1.5238 l -48.4317,-0.2005 v -1.3429"
+         d="m 1110.0081,1239.8803 v 1.5238 l -58.5823,-0.2005 v -1.3429"
          id="wall37832-1-7-0-43-24-4-7"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16365,7 +16486,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1030.5246,1207.0548 1.9761,-0.011 23.4651,37.0087 -2.0022,0.014"
+         d="m 1018.2904,1194.3269 1.9761,-0.011 32.9593,45.9801 -2.0022,0.014"
          id="wall37832-1-7-0-43-24-4-0"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16385,7 +16506,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1018.2091,1044.7394 2.0627,0.1303 -0.04,99.4653 -2.0758,9e-4"
+         d="m 1018.2091,1044.7394 2.0627,0.1303 -0.04,149.5307 -2.0758,9e-4"
          id="wall37832-1-7-0-43-24-4-0-4"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16405,7 +16526,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1104.2654,1243.5047 -2.0405,-0.013 -0.155,-91.6209 h 2.1097"
+         d="m 1110.6294,1241.1525 -2.0405,-0.013 -0.155,-88.9151 h 2.1097"
          id="wall37832-1-7-0-43-24-4-0-3-8"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16415,7 +16536,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1057.0627,1242.8035 1.9761,-0.011 -0.103,11.0282 -2.0022,0.014"
+         d="m 1057.0627,1241.0357 1.9761,-0.011 -0.103,12.796 -2.0022,0.014"
          id="wall37832-1-7-0-43-24-4-0-9"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16425,7 +16546,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1090.2631,1242.7415 1.9761,-0.011 -0.103,11.0282 -2.0022,0.014"
+         d="m 1090.2631,1240.797 1.9761,-0.011 -0.103,12.9727 -2.0022,0.014"
          id="wall37832-1-7-0-43-24-4-0-9-2"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16435,17 +16556,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1032.7308,1206.5722 0.028,1.9759 H 1021.73 l -0.032,-2.002"
-         id="wall37832-1-7-0-43-24-4-0-9-7"
-         inkscape:connector-curvature="0"
-         inkscape:label=""
-         sodipodi:nodetypes="cccc">
-        <desc
-           id="desc37834-46-7-1-8-5-8-2-05-3">template = InvisibleWallPlayer;</desc>
-      </path>
-      <path
-         style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1009.9985,1206.2793 0.028,1.9759 h -77.02875 l -0.032,-2.002"
+         d="m 1005.1235,1206.2793 0.028,1.9759 h -21.94917 l -0.032,-2.002"
          id="wall37832-1-7-0-43-24-4-0-9-7-7"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16455,7 +16566,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1180.2485,1222.0293 0.028,1.9759 h -77.0288 l -0.032,-2.002"
+         d="m 1176.1826,1222.0293 0.028,1.9759 -67.4828,0 -0.032,-2.002"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-0"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16465,7 +16576,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1178.7485,1277.5293 0.028,1.9759 -202.02875,0 -0.032,-2.002"
+         d="m 1176.0085,1277.5293 0.028,1.9759 -192.57124,0 -0.032,-2.002"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-3"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16475,7 +16586,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1173.8989,1214.0057 1.9758,-0.035 0.2599,67.7783 -2.0019,0.039"
+         d="m 1173.8989,1222.757 2.3294,0.053 -0.094,56.4637 -2.0019,0.039"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-9"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16485,7 +16596,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 982.63548,1205.0061 1.9758,-0.035 0.2599,77.0283 -2.0019,0.039"
+         d="m 982.63548,1206.9436 1.9758,-0.035 0.2599,72.6159 -2.0019,0.039"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-9-0"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16495,7 +16606,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#fffffd;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1133.9985,1151.5293 0.028,1.9759 h -31.6538 l -0.032,-2.002"
+         d="m 1133.9985,1151.5293 0.028,1.9759 -25.5288,0 -0.032,-2.002"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-0-6"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16515,8 +16626,8 @@ capturable = 1;</desc>
          id="buildingrect6406-7-4-1-3-8-0-15-7-2-74-5-3-27-8-82-4-6-5-98-3"
          width="20.4319"
          height="44.360584"
-         x="-1045.8575"
-         y="-129.57129"
+         x="-1045.8416"
+         y="-117.37371"
          inkscape:label="#rect6406"
          transform="rotate(-179.9248)">
         <desc
@@ -16527,8 +16638,8 @@ capturable = 1;</desc>
          id="buildingrect6406-7-4-1-3-8-0-15-7-2-74-5-3-27-8-82-4-6-5-98-3-7-"
          width="20.133688"
          height="19.695774"
-         x="-1045.2878"
-         y="-160.24509"
+         x="-1041.3898"
+         y="-142.57935"
          inkscape:label="#rect6406"
          transform="rotate(-179.82347)">
         <desc
@@ -16541,20 +16652,20 @@ capturable = 1;</desc>
          id="mesh_template1-2-8-6-7"
          width="4"
          height="4"
-         x="1039.6897"
-         y="137.10208"
+         x="1035.6753"
+         y="119.46243"
          inkscape:label="#mesh_template"
          transform="rotate(0.55420551)">
         <desc
            id="desc7569-86-7-2-8-1-4-7-3-9-1">name = pipe; mesh_name = pipe.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 5 3 32 32; collision_model_type = 1; collision_model_size = 1.0 1.2 1.0;</desc>
       </rect>
       <rect
-         style="display:inline;opacity:0.92000002;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;enable-background:new"
+         style="display:inline;opacity:0.92000002;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:1.20000002, 1.20000002;stroke-dashoffset:1.89999998;stroke-opacity:1;enable-background:new"
          id="rect10340-4-5-7-9-9-8-7-8-5"
-         width="4.4683914"
-         height="3.811275"
-         x="-130.26479"
-         y="1094.173"
+         width="2.1257615"
+         height="3.8477135"
+         x="-128.98083"
+         y="1095.3889"
          inkscape:label="#mesh"
          transform="rotate(-89.873063)">
         <desc
@@ -16565,36 +16676,12 @@ capturable = 1;</desc>
          id="buildingrect6406-7-4-1-3-8-0-1"
          width="65.366531"
          height="12.058491"
-         x="-185.37823"
-         y="1010.2206"
+         x="-185.25471"
+         y="1005.5725"
          inkscape:label="#rect6406"
          transform="rotate(-89.981592)">
         <desc
            id="desc6462-7-9-9-5-9-0-4-3-7-6-0-1-6-9-2-6-9-2-2-7">height=6; material = SecessionBuilding1Busy; offset=0 0 0;</desc>
-      </rect>
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
-         id="rect16633_1-1"
-         width="8.6231298"
-         height="2.3819616"
-         x="-1069.4188"
-         y="-219.64842"
-         inkscape:label="#mesh_template"
-         transform="rotate(-179.96146)"
-         inkscape:transform-center-x="-7.4246192"
-         inkscape:transform-center-y="-5.3032994">
-        <title
-           id="title4384">Barricade</title>
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7">name=Barricade
-static_object_type_key = env_barricade.static_object;
-mesh_name = env_barricade.mesh; 
-texture0 = env_building.png; 
-collision_model_type = 0; 
-collision_model_size = 3 0.7 1; 
-penetrability = 0.9;
-climbable = 1;
-walkable = 1;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
@@ -16631,56 +16718,16 @@ separator_over_height = 0.1;
 separator_depth = 0.9;</desc>
       </rect>
       <rect
-         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
-         id="rect16633_1-1-3"
-         width="8.6231298"
-         height="2.3819616"
-         x="-1084.5591"
-         y="-211.64513"
-         inkscape:label="#mesh_template"
-         transform="rotate(-179.96146)"
-         inkscape:transform-center-x="-7.4246192"
-         inkscape:transform-center-y="-5.3032994">
-        <title
-           id="title4384-9">Barricade</title>
+         style="display:inline;opacity:0.92000002;fill:#fad219;fill-opacity:1;fill-rule:evenodd;stroke:#323232;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:1.20000002,1.20000002;stroke-opacity:1;enable-background:new;stroke-dashoffset:1.90000003"
+         id="rect10340-4-5-7-9-9-8-7-8-5-7"
+         width="2.2580423"
+         height="3.6793866"
+         x="-1024.3711"
+         y="-147.28584"
+         inkscape:label="#mesh"
+         transform="rotate(-179.8222)">
         <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-0">name=Barricade
-static_object_type_key = env_barricade.static_object;
-mesh_name = env_barricade.mesh; 
-texture0 = env_building.png; 
-collision_model_type = 0; 
-collision_model_size = 3 0.7 1; 
-penetrability = 0.9;
-climbable = 1;
-walkable = 1;
-destroyable = 1;
-destroy_on_blast=1;</desc>
-      </rect>
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
-         id="rect16633_1-1-5"
-         width="8.6231298"
-         height="2.3819616"
-         x="-1086.1554"
-         y="-219.599"
-         inkscape:label="#mesh_template"
-         transform="rotate(-179.96146)"
-         inkscape:transform-center-x="-7.4246192"
-         inkscape:transform-center-y="-5.3032994">
-        <title
-           id="title4384-2">Barricade</title>
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-2">name=Barricade
-static_object_type_key = env_barricade.static_object;
-mesh_name = env_barricade.mesh; 
-texture0 = env_building.png; 
-collision_model_type = 0; 
-collision_model_size = 3 0.7 1; 
-penetrability = 0.9;
-climbable = 1;
-walkable = 1;
-destroyable = 1;
-destroy_on_blast=1;</desc>
+           id="desc10349-9-4-79-8-4-8-9-2-2-9">template = streetlight;</desc>
       </rect>
     </g>
     <g
@@ -16705,8 +16752,8 @@ destroy_on_blast=1;</desc>
          id="rect5814-8-9-12-71-9-9-1-4-253-9"
          width="14"
          height="14"
-         x="1108.8142"
-         y="1189.6437" />
+         x="1110.2284"
+         y="1189.2902" />
       <rect
          rx="7"
          ry="7"
@@ -16771,6 +16818,76 @@ destroy_on_blast=1;</desc>
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-6">type = vehicle;
 tag = speeder;</desc>
+      </rect>
+      <path
+         sodipodi:nodetypes="ccccccccccc"
+         inkscape:label="#path7528"
+         inkscape:connector-curvature="0"
+         id="avoid1-0-8-0-8-6-2-3-8"
+         d="m 1157.9572,1229.8885 -0.5723,47.0674 -46.1564,8.5595 -76.9583,1.3215 -33.9603,-13.4754 10.1641,-37.5847 13.4097,-30.9083 21.5971,33.917 58.59,-0.4162 13.2243,-22.0178 z"
+         style="display:inline;opacity:0.56300001;fill:none;stroke:#0000ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Mend-4-73-6-0-9-3);enable-background:new" />
+      <rect
+         ry="0"
+         transform="rotate(-179.77602)"
+         inkscape:label="#mesh"
+         y="-1218.2061"
+         x="-1090.7406"
+         height="2.2873633"
+         width="2.3240652"
+         id="rect16633-4-8-7-6-9-7-2-8-8-1-8-5-3-6"
+         style="display:inline;opacity:1;fill:#6a6a6a;fill-opacity:1;fill-rule:nonzero;stroke:#008eff;stroke-width:1.00000119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:7;stroke-opacity:1;enable-background:new">
+        <title
+           id="title12411-5-3-1">barell_blue</title>
+        <desc
+           id="desc16653-2-9-3-3-8-7-0-7-4-6-1-5-4">template = barell_blue;</desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
+         id="rect84221-1-3"
+         width="8.6231298"
+         height="2.3819616"
+         x="-1072.1405"
+         y="-1243.5585"
+         inkscape:label="#mesh"
+         transform="rotate(-179.96146)"
+         inkscape:transform-center-x="-7.4246192"
+         inkscape:transform-center-y="-5.3032994">
+        <title
+           id="title4384">barricade</title>
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7">template = barricade; </desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
+         id="rect84221-1-1"
+         width="8.6231298"
+         height="2.3819616"
+         x="-1085.51"
+         y="-1231.0486"
+         inkscape:label="#mesh"
+         transform="rotate(-179.96146)"
+         inkscape:transform-center-x="-7.4246192"
+         inkscape:transform-center-y="-5.3032994">
+        <title
+           id="title4384-9">barricade</title>
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-0">template = barricade;</desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
+         id="rect84221-1-2"
+         width="8.6231298"
+         height="2.3819616"
+         x="-1087.2861"
+         y="-1243.6427"
+         inkscape:label="#mesh"
+         transform="rotate(-179.96146)"
+         inkscape:transform-center-x="-7.4246192"
+         inkscape:transform-center-y="-5.3032994">
+        <title
+           id="title4384-2">barricade</title>
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-2">template = barricade;</desc>
       </rect>
     </g>
     <g
@@ -16865,14 +16982,6 @@ tag = speeder;</desc>
        style="opacity:0.98000004">
       <rect
          inkscape:label="#spawnrect10748"
-         y="1247.167"
-         x="1066.6921"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-1"
-         style="display:inline;opacity:0.93000034;fill:#216db5;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
          y="1071.8004"
          x="1077.8547"
          height="2.0679491"
@@ -16913,14 +17022,6 @@ tag = speeder;</desc>
          style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1247.167"
-         x="1080.7606"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-4"
-         style="display:inline;opacity:0.93000034;fill:#df1a20;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
          y="1097.9663"
          x="1078.6008"
          height="2.0679491"
@@ -16954,7 +17055,7 @@ tag = speeder;</desc>
       <rect
          inkscape:label="#spawnrect10748"
          y="1247.167"
-         x="1071.4169"
+         x="1070.0419"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-2"
@@ -16962,7 +17063,7 @@ tag = speeder;</desc>
       <rect
          inkscape:label="#spawnrect10748"
          y="1247.1674"
-         x="1076.0826"
+         x="1078.2076"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-3"
@@ -17041,8 +17142,8 @@ tag = speeder;</desc>
          style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1094.6703"
-         x="1044.3082"
+         y="1071.8661"
+         x="1029.6357"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-8-6-42-7-9-6-0-2-37"
@@ -17127,6 +17228,150 @@ tag = speeder;</desc>
          width="2.2977724"
          id="rect4878-8-6-42-7-9-6-0-2-91"
          style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1064.0875"
+         x="1114.3121"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-7"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1057.37"
+         x="1095.5737"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-9"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1056.663"
+         x="1077.5425"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-3"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1058.7843"
+         x="1043.2478"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-8"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1089.5435"
+         x="1033.3484"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-0"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1088.1292"
+         x="1055.6222"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-2"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1113.5851"
+         x="1063.7539"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-4"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1113.9386"
+         x="1084.26"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-83"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1124.8988"
+         x="1099.4629"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-90"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1127.7272"
+         x="1070.8251"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-5"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1109.6959"
+         x="1101.2306"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-22"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1125.9595"
+         x="1115.7263"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-73"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1130.202"
+         x="1104.7661"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-79"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1095.3771"
+         x="1070.2947"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-02"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1063.3805"
+         x="1032.9948"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-39"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1056.663"
+         x="1062.6932"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-97"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1064.7947"
+         x="1075.7748"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-03"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+      <rect
+         inkscape:label="#spawnrect10748"
+         y="1063.3805"
+         x="1104.0591"
+         height="2.0679491"
+         width="2.2977724"
+         id="rect4878-8-6-42-7-9-6-0-2-02-98"
+         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
     </g>
   </g>
   <g
@@ -17136,7 +17381,7 @@ tag = speeder;</desc>
     <g
        inkscape:groupmode="layer"
        id="layer47"
-       inkscape:label="destroyable_bldg">
+       inkscape:label="destroyable">
       <rect
          style="display:inline;opacity:0.93000034;fill:#e9ddaf;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000111, 4.00000111;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
          id="spawn4_3-2"
@@ -17183,8 +17428,8 @@ key = env_building.vehicle;</desc>
          id="spawn2_6-9-4-3-6-79-9"
          width="31.138823"
          height="14.218333"
-         x="-1134.8386"
-         y="-1150.8568"
+         x="-1132.2133"
+         y="-1150.2335"
          inkscape:label=""
          transform="rotate(-179.96146)"
          inkscape:transform-center-x="-7.4246192"
@@ -17195,17 +17440,19 @@ key = env_building.vehicle;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
-         id="rect_6-9-4-3-6-79-7-91"
+         id="rect84221-1-5"
          width="8.7485504"
          height="3.0068469"
-         x="-1057.8037"
-         y="-1197.4203"
-         inkscape:label=""
+         x="-1063.7965"
+         y="-1186.6663"
+         inkscape:label="#mesh"
          transform="rotate(-179.96146)"
          inkscape:transform-center-x="-7.4246192"
          inkscape:transform-center-y="-5.3032994">
+        <title
+           id="title27477">barricade</title>
         <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-72">template = Barricade; height=0.7; merge = 1;</desc>
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-72">template = barricade; </desc>
       </rect>
     </g>
     <g
@@ -17222,7 +17469,7 @@ key = env_building.vehicle;</desc>
     <g
        inkscape:groupmode="layer"
        id="layer49"
-       inkscape:label="destroyable_bldg">
+       inkscape:label="destroyable">
       <rect
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
          id="spawn1_8-1"
@@ -17262,17 +17509,17 @@ key = deco_car1_white.vehicle;</desc>
 tag = speeder;</desc>
       </rect>
       <rect
-         style="display:inline;enable-background:new;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369000000000;stroke-dashoffset:7.01102591;stroke-opacity:1"
+         style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
          id="spawn2_6-9-4-3-6-7"
          width="31.138823"
          height="14.218333"
-         x="1186.5973"
-         y="-1047.4968"
+         x="1169.7129"
+         y="-1048.3367"
          inkscape:label=""
          transform="rotate(90.149388)">
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-9">type = vehicle;
-tag = building;</desc>
+key = env_building.vehicle;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000109, 4.00000109;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
@@ -17289,18 +17536,19 @@ key = deco_car2_grey.vehicle;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.10483941;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.10483942, 2.51614584;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
-         id="spawn2_6-9-4-3-6-79-7-9"
+         id="rect84221-1-4"
          width="8.6316557"
          height="2.3895857"
          x="-1060.5479"
          y="-1230.4724"
-         inkscape:label=""
+         inkscape:label="#mesh"
          transform="matrix(-0.99999972,-7.5239493e-4,6.0135679e-4,-0.99999982,0,0)"
          inkscape:transform-center-x="-6.4910165"
          inkscape:transform-center-y="-5.1861037">
+        <title
+           id="title27475">barricade</title>
         <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-9">type = vehicle;
-key = env_barricade.vehicle;</desc>
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-9">template = barricade; </desc>
       </rect>
     </g>
     <g
@@ -17326,8 +17574,8 @@ key = env_barricade.vehicle;</desc>
          id="mesh_template1-2-8-8"
          width="4"
          height="4"
-         x="1044.005"
-         y="1109.5997"
+         x="1043.887"
+         y="1097.4027"
          inkscape:label="#mesh_template"
          transform="rotate(0.55420551)">
         <desc
@@ -17340,8 +17588,8 @@ key = env_barricade.vehicle;</desc>
          id="mesh_template1-2-8-80"
          width="4"
          height="4"
-         x="1044.621"
-         y="1132.2798"
+         x="1044.5029"
+         y="1120.0828"
          inkscape:label="#mesh_template"
          transform="rotate(0.55420551)">
         <desc
@@ -17399,8 +17647,8 @@ key = env_barricade.vehicle;</desc>
          id="rect10340-4-5-7-9-9-8-7-5-6-5"
          width="4.3719435"
          height="10.752926"
-         x="1175.9663"
-         y="-1030.4026"
+         x="1158.2825"
+         y="-1024.8997"
          inkscape:label="#mesh"
          transform="rotate(89.935238)">
         <desc

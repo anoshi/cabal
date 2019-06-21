@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources clear_weapons="1">
-    <projectile key="c4.projectile" enabled="1" />
-	<projectile key="grenadier_imp.projectile" enabled="1" />
-</resources>
