@@ -51,6 +51,7 @@
     <capacity source="rank" source_value="0.025" value="1" />
   </weapon>
   <weapon file="bandage.weapon" />
+  <weapon file="riot_shield.weapon" />
   <!-- end SHARED / generic weapons -->
 
   <!-- VEHICULAR / MOUNTED weapons -->

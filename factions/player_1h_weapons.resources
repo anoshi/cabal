@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 1-handed weapon resources available to Player troops -->
-<resources>
-  <weapon key='player_smg_pri.weapon' />
-  <weapon key='player_sa_sil_pri.weapon' />
-
-  <weapon key='player_smg.weapon' />
-  <weapon key='player_sa_sil.weapon' />
-</resources>

@@ -173,10 +173,9 @@ class BasicCommandHandler : Tracker {
 			spawnInstanceNearPlayer(senderId, "veh_speeder.vehicle", "vehicle");
 		} else if (checkCommand(message, "barricade")) {
 			spawnInstanceNearPlayer(senderId, "env_barricade.static_object", "static_object");
-		} else if (checkCommand(message, "laserd")) {
-			spawnInstanceNearPlayer(senderId, "all_laser_designator_resource.weapon", "weapon");
+		} else if (checkCommand(message, "shield")) {
+			spawnInstanceNearPlayer(senderId, "riot_shield.weapon", "weapon");
 		} else  if(checkCommand(message, "suitcase")) {
-
 			// .. create suitcase near local player
 			spawnInstanceNearPlayer(senderId, "suitcase.carry_item", "carry_item");
 		} else  if(checkCommand(message, "laptop")) {
