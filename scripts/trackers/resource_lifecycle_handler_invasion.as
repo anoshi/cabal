@@ -283,7 +283,7 @@ class ResourceLifecycleHandler : Tracker {
 			} else if (charXP > 0.4) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
 			} else if (charXP > 0.2) {
-				dropPowerUp(dropPos.toString(), "grenade", "grenadier_imp.projectile"); // drop grenade
+				dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
 			}
 			// revert to default weapon after X seconds have elapsed...
 			else {

@@ -214,7 +214,7 @@
 
 		<models file="cabal_soldier.models" />
 
-		<resources file="common_medic.resources" />
+		<resources file="cabal_medic.resources" />
 		<resources file="cabal_light.resources" />
 
 		<item_class_existence_config>
@@ -235,7 +235,6 @@
 	<!-- supply box group -->
 	<!-- //////////////// -->
 	<soldier name="supply" spawn_score="0.0">
-		<resources file="common_supply.resources" />
 		<resources file="cabal_supply.resources" />
 
 		<attribute_config class="xp">

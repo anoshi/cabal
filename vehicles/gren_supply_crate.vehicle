@@ -33,9 +33,9 @@
 		<trigger class="destroy" />
   		<result class="spawn" instance_class="visual_item" instance_key="burning_piece_mortar_ammunition_crates5.visual_item" min_amount="3" max_amount="7" offset="0 0.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.2" />
 	</event>
-	
+
 	<event>
 		<trigger class="destroy" />
-		<result class="spawn" instance_class="grenade" instance_key="grenadier_imp.projectile" min_amount="2" max_amount="4" activated="0" offset="0 0.0 0" position_spread="1.5 1.5" direction_spread="0.0 0.1" />
+		<result class="spawn" instance_class="grenade" instance_key="player_grenade.projectile" min_amount="2" max_amount="4" activated="0" offset="0 0.0 0" position_spread="1.5 1.5" direction_spread="0.0 0.1" />
 	</event>
 </vehicle>

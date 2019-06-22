@@ -6,7 +6,7 @@
 	<projectile file="artillery_shell.projectile" />
 
 	<!-- CABAL PROJECTILES -->
-	<projectile file="grenadier_imp.projectile" />
+	<projectile file="player_grenade.projectile" />
 	<projectile file="cabal_grenade.projectile" />
 
 	<!-- FACTION-SPECIFIC THROWABLES -->

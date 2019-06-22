@@ -102,7 +102,6 @@
 	<!-- supply box group -->
 	<!-- //////////////// -->
 	<soldier name="supply" spawn_score="0.0">
-		<resources file="common_supply.resources" />
 		<resources file="player_supply.resources" />
 
 		<attribute_config class="xp">
