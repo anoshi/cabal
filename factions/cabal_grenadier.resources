@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Resources available to Cabal Grenadiers -->
 <resources clear_weapons="1">
+  <weapon key="cabal_gl.weapon" />
+
   <projectile key="cabal_grenade.projectile" enabled="1" />
 
   <carry_item key="cabal_vest_1.carry_item" enabled="1" />

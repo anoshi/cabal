@@ -185,7 +185,7 @@
 		<resources file="cabal_grenadier.resources" />
 
 		<item_class_existence_config>
-			<!-- grenades -->
+			<!-- grenade forced as primary via cabal_gl.weapon -->
 			<item_class_existence class="weapon" slot="0" probability="1.0" />
 			<!-- secondary weapon -->
 			<item_class_existence class="weapon" slot="1" probability="1.0" />

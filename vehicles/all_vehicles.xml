@@ -57,7 +57,6 @@
   <vehicle file="wiesel_spawn.vehicle" />
 
   <!-- CABAL vehicles -->
-  <vehicle file="veh_dropship.vehicle" />
   <vehicle file="veh_speeder.vehicle" />
 
   <!-- CABAL destroyable buildings -->

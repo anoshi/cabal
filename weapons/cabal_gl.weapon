@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapon file="base_primary.weapon" key="cabal_gl.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="0.0">
+  <tag name="assault" />
+  <specification
+    retrigger_time="5.0"
+    accuracy_factor="0.8"
+    sustained_fire_grow_step="3.0"
+    sustained_fire_diminish_rate="0.2"
+    magazine_size="1"
+    can_shoot_standing="1"
+    can_shoot_crouching="1"
+    can_shoot_prone="0"
+    suppressed="0"
+    name="Grenade Launcher"
+    class="4"
+    projectile_speed="100.0"
+    barrel_offset="0.3"
+    spread_range="0.05"
+    sight_range_modifier="1"/>
+
+    <ballistics curve_height="3.0" near_far_distance="0.0" speed_estimation_near="9.0" speed_estimation_far="17.0" max_speed="60.0" randomness="0.0" tweak_factor="1.1" />
+
+    <animation key="recoil" ref="12" />
+    <animation key="recoil" ref="13" />
+    <animation key="recoil" ref="14" />
+    <animation state_key="reload" animation_key="reloading, m79" />
+    <sound key="fire" fileref="m79_shot.wav" pitch_variety="0.1" volume="0.5" />
+    <sound key="magazine_out" fileref="m79_clip_out.wav" volume="0.7" />
+    <sound key="magazine_in" fileref="m79_reload.wav" volume="0.7"/>
+    <sound key="cycle" fileref="m79_cycle.wav" volume="0.7"/>
+    <sound class="impact" fileref="rifle_drop.wav" />
+
+    <!-- <model filename="m79.xml" />-->
+
+    <projectile file="cabal_grenade.projectile" />
+
+    <capacity value="1" source="rank" source_value="0.0" />
+
+    <hud_icon filename="hud_m79.png" />
+    <commonness value="0.001" in_stock="0" can_respawn_with="1" />
+    <inventory encumbrance="10.0" price="50.0" />
+
+    <effect class="muzzle" ref="LawMuzzle" />
+    <effect class="muzzle" ref="UpDust" />
+
+    <stance state_key="running" accuracy="0.4" />
+    <stance state_key="walking" accuracy="0.6" />
+    <stance state_key="crouch_moving" accuracy="0.35" />
+    <stance state_key="prone_moving" accuracy="0.3" />
+    <stance state_key="standing" accuracy="0.8" />
+    <stance state_key="crouching" accuracy="1.0" />
+    <stance state_key="prone" accuracy="1.0" />
+    <stance state_key="over_wall" accuracy="0.8" />
+
+    <modifier class="speed" value="-0.12" />
+
+</weapon>
