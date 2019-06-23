@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Resources available to Cabal Snipers -->
-<resources>
-	<weapon key='cabal_sr.weapon' />
-
-	<vehicle key="cabal_ap_crate.vehicle" />
-</resources>

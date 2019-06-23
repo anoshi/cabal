@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<faction name="Cabal" color="0.2 0.4 0.2" firstnames_file="cabal_firstnames.txt" lastnames_file="cabal_lastnames.txt" chat_icon_filename="cabal_chat_icon_soldier.png" chat_icon_commander_filename="cabal_chat_icon_commander.png" campaign_completion_icon_filename="cabal_campaign_win.png">
+<faction name="Cabal"
+	color="0.2 0.4 0.2"
+	firstnames_file="cabal_firstnames.txt"
+	lastnames_file="noname.txt"
+	chat_icon_filename="cabal_chat_icon_soldier.png"
+	chat_icon_commander_filename="cabal_chat_icon_commander.png"
+	campaign_completion_icon_filename="cabal_campaign_win.png">
 	<rank xp="0.0" name="Cabal Civilian">
 		<hud_icon filename="hud_rank0.png" />
 	</rank>
@@ -55,28 +61,21 @@
 		<hud_icon filename="hud_rank17.png" />
 	</rank>
 
-	<!-- ///////////// -->
-	<!-- default group -->
-	<!-- ///////////// -->
+	<!-- /////// -->
+	<!-- DEFAULT -->
+	<!-- /////// -->
 	<soldier name="default" spawn_score="0.0">
 		<character filename="default_male.character" />
-		<ai filename="ai_default.ai" />
+		<ai filename="cabal_rifleman.ai" />
 
-		<models file="cabal_soldier.models" />
+		<model filename="cabal_rifleman.xml" />
 
 		<resources file="common.resources" />
-		<resources file="cabal_light.resources" />
-		<resources file="cabal_heavy.resources" />
-		<resources file="cabal_sniper.resources" />
-		<resources file="cabal_grenadier.resources" />
 		<resources file="cabal_default.resources" />
 
 		<item_class_existence_config>
-			<!-- secondaries -->
 			<item_class_existence class="weapon" slot="1" probability="0.4" />
-			<!-- wearables -->
-			<item_class_existence class="carry_item" slot="1" probability="1.00" />
-			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="1" probability="0.5" />
 			<item_class_existence class="carry_item" slot="0" probability="0.03" />
 		</item_class_existence_config>
 
@@ -88,17 +87,16 @@
 		<attribute_config class="xp">
 			<attribute weight="1.0" min="0.05" max="0.45" />
 		</attribute_config>
-
 	</soldier>
 
-	<!-- ////////// -->
-	<!-- LIGHT FOOT -->
-	<!-- ////////// -->
-	<soldier name="lightfoot" spawn_score="0.35">
+	<!-- //////// -->
+	<!-- RIFLEMAN -->
+	<!-- //////// -->
+	<soldier name="rifleman" spawn_score="0.5">
 		<character filename="default_male.character" />
-		<ai filename="ai_light.ai" />
-		<models file="cabal_soldier.models" />
-		<resources file="cabal_light.resources" />
+		<ai filename="cabal_rifleman.ai" />
+		<model filename="cabal_rifleman.xml" />
+		<resources file="cabal_rifleman.resources" />
 
 		<item_class_existence_config>
 			<!-- secondary weapon -->
@@ -119,14 +117,15 @@
 		</attribute_config>
 	</soldier>
 
-	<!-- ///////////// -->
-	<!-- HEAVY TROOPER -->
-	<!-- ///////////// -->
-	<soldier name="heavytrooper" spawn_score="0.2">
+	<!-- ////////// -->
+	<!-- COVERT OPS -->
+	<!-- ////////// -->
+	<!-- rifleman with custom skin and animations (roll) and better combat skills -->
+	<soldier name="covert ops" spawn_score="0.2">
 		<character filename="default_male.character" />
-		<ai filename="ai_heavy.ai" />
-		<models file="cabal_soldier.models" />
-		<resources file="cabal_heavy.resources" />
+		<ai filename="cabal_covertops.ai" />
+		<model filename="cabal_covertops.xml" />
+		<resources file="cabal_rifleman.resources" />
 
 		<item_class_existence_config>
 			<!-- secondary weapon -->
@@ -147,41 +146,13 @@
 		</attribute_config>
 	</soldier>
 
-	<!-- ////// -->
-	<!-- SNIPER -->
-	<!-- ////// -->
-	<soldier name="sniper" spawn_score="0.2">
-		<character filename="default_male.character" />
-		<ai filename="ai_sniper.ai" />
-		<model filename="cabal_soldier_elite_1.xml" /><!-- this faction's best group/class -->
-		<resources file="cabal_sniper.resources" />
-
-		<item_class_existence_config>
-			<!-- secondary weapon -->
-			<item_class_existence class="weapon" slot="1" probability="1.0" />
-			<!-- wearables -->
-			<item_class_existence class="carry_item" slot="1" probability="1.0" />
-			<!-- backpack -->
-			<item_class_existence class="carry_item" slot="0" probability="0.0" />
-		</item_class_existence_config>
-
-		<attribute_config class="rp">
-			<attribute weight="0.3" min="80.0" max="300.0" />
-			<attribute weight="0.7" min="0.0" max="0.0" />
-		</attribute_config>
-
-		<attribute_config class="xp">
-			<attribute weight="1.0" min="0.05" max="0.45" />
-		</attribute_config>
-	</soldier>
-
 	<!-- ///////// -->
 	<!-- GRENADIER -->
 	<!-- ///////// -->
-	<soldier name="grenadier" spawn_score="0.15">
+	<soldier name="grenadier" spawn_score="0.2">
 		<character filename="default_male.character" />
-		<ai filename="ai_grenadier.ai" />
-		<models file="cabal_soldier.models" />
+		<ai filename="cabal_grenadier.ai" />
+		<model filename="cabal_grenadier.xml" />
 		<resources file="cabal_grenadier.resources" />
 
 		<item_class_existence_config>
@@ -205,17 +176,47 @@
 		</attribute_config>
 	</soldier>
 
+	<!-- //////// -->
+	<!-- COMMANDO -->
+	<!-- //////// -->
+	<!-- grenadier with custom skin and animations (roll) and better combat skills -->
+	<soldier name="commando" spawn_score="0.1">
+		<character filename="default_male.character" />
+		<ai filename="cabal_commando.ai" />
+		<model filename="cabal_commando.xml" />
+		<resources file="cabal_grenadier.resources" />
+
+		<item_class_existence_config>
+			<!-- grenade forced as primary via cabal_gl.weapon -->
+			<item_class_existence class="weapon" slot="0" probability="1.0" />
+			<!-- secondary weapon -->
+			<item_class_existence class="weapon" slot="1" probability="1.0" />
+			<!-- wearables -->
+			<item_class_existence class="carry_item" slot="1" probability="1.0" />
+			<!-- backpack -->
+			<item_class_existence class="carry_item" slot="0" probability="0.03" />
+		</item_class_existence_config>
+
+		<attribute_config class="rp">
+			<attribute weight="0.3" min="80.0" max="300.0" />
+			<attribute weight="0.7" min="0.0" max="0.0" />
+		</attribute_config>
+
+		<attribute_config class="xp">
+			<attribute weight="1.0" min="0.50" max="0.60" />
+		</attribute_config>
+	</soldier>
+
 	<!-- ///// -->
 	<!-- MEDIC -->
 	<!-- ///// -->
-	<soldier name="medic" spawn_score="0.1">
+	<!-- Scripted. Medics spawn (offscreen) near a wounded commando or covert ops unit -->
+	<soldier name="medic" spawn_score="0.0">
 		<character filename="default_male.character" />
-		<ai filename="ai_medic.ai" />
+		<ai filename="cabal_medic.ai" />
 
-		<models file="cabal_soldier.models" />
-
+		<model filename="cabal_medic.xml" />
 		<resources file="cabal_medic.resources" />
-		<resources file="cabal_light.resources" />
 
 		<item_class_existence_config>
 			<!-- secondaries -->
@@ -228,17 +229,6 @@
 
 		<attribute_config class="xp">
 			<attribute weight="1.0" min="0.05" max="0.2" />
-		</attribute_config>
-	</soldier>
-
-	<!-- //////////////// -->
-	<!-- supply box group -->
-	<!-- //////////////// -->
-	<soldier name="supply" spawn_score="0.0">
-		<resources file="cabal_supply.resources" />
-
-		<attribute_config class="xp">
-			<attribute weight="1.0" min="0.0" max="0.05" />
 		</attribute_config>
 	</soldier>
 

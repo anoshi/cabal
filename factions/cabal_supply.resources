@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources clear_weapons="1" clear_vehicles="1" clear_calls="1">
-	<!-- always load common first; it's the one that clears the initial weapon resources -->
-	<weapon key='medikit.weapon' />
-	<weapon key='cover_resource.weapon' />
-
-	<projectile key="cabal_grenade.projectile" enabled="1" />
-</resources>

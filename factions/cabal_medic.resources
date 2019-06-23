@@ -2,7 +2,6 @@
 <resources clear_weapons="1">
 	<weapon key='medikit.weapon' />
 	<weapon key='bandage.weapon' />
-	<weapon key='cabal_lr.weapon' />
 
   <carry_item key="cabal_vest_1.carry_item" enabled="1" />
 </resources>

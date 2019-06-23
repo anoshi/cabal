@@ -30,7 +30,7 @@
     <sound key="cycle" fileref="m79_cycle.wav" volume="0.7"/>
     <sound class="impact" fileref="rifle_drop.wav" />
 
-    <!-- <model filename="m79.xml" />-->
+    <model />
 
     <projectile file="cabal_grenade.projectile" />
 
