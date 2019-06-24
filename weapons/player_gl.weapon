@@ -14,7 +14,7 @@
     projectile_speed="120.0"
     barrel_offset="0.3"
     spread_range="0.05"
-    sight_range_modifier="1"/>
+    sight_range_modifier="0.0"/>
 
     <ballistics curve_height="3.0" near_far_distance="0.0" speed_estimation_near="9.0" speed_estimation_far="17.0" max_speed="60.0" randomness="0.0" tweak_factor="1.1" />
 
