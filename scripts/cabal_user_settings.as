@@ -2,7 +2,7 @@
 
 class CabalUserSettings : UserSettings {
 	int m_difficulty = 0;
-	bool m_permadeath = true;
+	bool m_permadeath = false;
 	int m_maxPlayers = 2;
 
 	// --------------------------------------------
@@ -25,7 +25,7 @@ class CabalUserSettings : UserSettings {
 				m_fellowCapacityFactor = 0.99;
 				m_fellowAiAccuracyFactor = 0.95;
 				m_enemyCapacityFactor = 1.0;
-				m_enemyAiAccuracyFactor = 0.74;
+				m_enemyAiAccuracyFactor = 0.90;
 				m_xpFactor = 1.0;
 				m_rpFactor = 1.0;
 				m_fov = false;
@@ -35,7 +35,7 @@ class CabalUserSettings : UserSettings {
 				m_fellowCapacityFactor = 0.99;
 				m_fellowAiAccuracyFactor = 0.94;
 				m_enemyCapacityFactor = 1.0;
-				m_enemyAiAccuracyFactor = 0.84;
+				m_enemyAiAccuracyFactor = 0.94;
 				m_xpFactor = 1.0;
 				m_rpFactor = 1.0;
 				m_fov = false;
@@ -45,7 +45,7 @@ class CabalUserSettings : UserSettings {
 				m_fellowCapacityFactor = 0.99;
 				m_fellowAiAccuracyFactor = 0.94;
 				m_enemyCapacityFactor = 1.0;
-				m_enemyAiAccuracyFactor = 0.93;
+				m_enemyAiAccuracyFactor = 0.99;
 				m_xpFactor = 1.0;
 				m_rpFactor = 1.0;
 				m_fov = false;
