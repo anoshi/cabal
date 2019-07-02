@@ -101,6 +101,13 @@ class ResourceLifecycleHandler : Tracker {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
+		} else {
+			_log("*** CABAL: Player still has lives available. Allow respawn", 1);
+			XmlElement allowSpawn("command");
+			allowSpawn.setStringAttribute("class", "set_soldier_spawn");
+			allowSpawn.setIntAttribute("faction_id", 0);
+			allowSpawn.setBoolAttribute("enabled", true);
+			m_metagame.getComms().send(allowSpawn);
 		}
 
 		// tidy up assets
@@ -275,10 +282,25 @@ class ResourceLifecycleHandler : Tracker {
 			return;
 		}
 		curXP += charXP;
+		int levelCompletePercent = curXP / goalXP * 100;
 		_log("*** CABAL: current XP is: " + int(curXP) + " of " + int(goalXP), 1);
-		_log("*** CABAL: Level completion: " + int(curXP / goalXP * 100) + "%", 1);
-		string statusReport = "<command class='notify' text='" + "Level completion: " + int(curXP / goalXP * 100) + "%' />";
+		_log("*** CABAL: Level completion: " + levelCompletePercent + "%", 1);
+
+		// notify text
+		string statusReport = "<command class='notify' text='" + "Level completion: " + levelCompletePercent + "%' />";
 		m_metagame.getComms().send(statusReport);
+
+		// scoreboard text
+		string levelCompleteText = "";
+		for (int i = 0; i < levelCompletePercent / 3; ++i) {
+			levelCompleteText += "\u0023";
+		}
+		for (int j = levelCompletePercent / 3; j < 34; ++j) {
+			levelCompleteText += "\u002D";
+		}
+		string scoreBoardText = "<command class='update_score_display' id='0' text='ENEMY: " + levelCompleteText + "'></command>";
+		m_metagame.getComms().send(scoreBoardText);
+
 		if (curXP >= goalXP) {
 			_log("*** CABAL: LEVEL COMPLETE!", 1);
 			m_metagame.getComms().send("<command class='set_match_status' faction_id='1' lose='1' />");
