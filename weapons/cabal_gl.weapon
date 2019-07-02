@@ -18,7 +18,7 @@
     spread_range="0.05"
     sight_range_modifier="1"/>
 
-    <ballistics curve_height="3.0" near_far_distance="0.0" speed_estimation_near="9.0" speed_estimation_far="17.0" max_speed="60.0" randomness="0.0" tweak_factor="1.1" />
+    <ballistics curve_height="6.0" near_far_distance="0.0" speed_estimation_near="9.0" speed_estimation_far="17.0" max_speed="60.0" randomness="0.0" tweak_factor="1.1" />
 
     <animation key="recoil" ref="12" />
     <animation key="recoil" ref="13" />
