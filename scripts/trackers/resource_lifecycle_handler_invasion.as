@@ -321,7 +321,7 @@ class ResourceLifecycleHandler : Tracker {
 		for (int i = 0; i < levelCompletePercent / 3; ++i) {
 			levelCompleteText += "\u0023";
 		}
-		for (int j = levelCompletePercent / 5; j < 34; ++j) {
+		for (int j = levelCompletePercent / 3; j < 34; ++j) {
 			levelCompleteText += "\u002D";
 		}
 		string scoreBoardText = "<command class='update_score_display' id='0' text='ENEMY: " + levelCompleteText + "'></command>";
