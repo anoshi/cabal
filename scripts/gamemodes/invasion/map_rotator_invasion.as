@@ -87,7 +87,7 @@ class MapRotatorInvasion : MapRotator {
 	// --------------------------------------------
 	// --------------------------------------------
 	protected void handleFactionLoseEvent(const XmlElement@ event) {
-		// if green lost a battle, start over
+		_log("*** CABAL: map_rotator_invsion.as handleFactionLoseEvent", 1);
 		int factionId = -1;
 
 		const XmlElement@ loseCondition = event.getFirstElementByTagName("lose_condition");

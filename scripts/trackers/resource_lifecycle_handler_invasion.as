@@ -16,7 +16,7 @@ class ResourceLifecycleHandler : Tracker {
 
 	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area
 	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area
-	protected float MIN_GOAL_XP = 3.0;
+	protected float MIN_GOAL_XP = 3.5;
 	protected float MAX_GOAL_XP = 5.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
 	protected float curXP = 0.0;
@@ -44,10 +44,12 @@ class ResourceLifecycleHandler : Tracker {
 		// currently falls apart if a second player were to spawn.
 
 		// when the player spawns, he spawns alone...
+
 		XmlElement c("command");
 		c.setStringAttribute("class", "set_soldier_spawn");
 		c.setIntAttribute("faction_id", 0);
-		c.setBoolAttribute("enabled", false);
+		//c.setBoolAttribute("enabled", false);
+		c.setBoolAttribute("enabled", true);
 		m_metagame.getComms().send(c);
 
 		// now, work with the spawned player character
@@ -70,7 +72,7 @@ class ResourceLifecycleHandler : Tracker {
 						// i.setStringAttribute("key", "player_vest1.carry_item");
 						charInv.appendChild(i);
 					}
-					m_metagame.getComms().send(c);
+					m_metagame.getComms().send(charInv);
 
 					string name = player.getStringAttribute("name");
 					m_playerCharacterId = characterId;
@@ -105,7 +107,7 @@ class ResourceLifecycleHandler : Tracker {
 				}
 			}
 		}
-		if (allWounded) {
+		if ((allWounded) && (player1Lives < 1) && (player2Lives < 1)) {
 			processGameOver();
 		}
 	}
@@ -152,6 +154,7 @@ class ResourceLifecycleHandler : Tracker {
 
 	// ----------------------------------------------------
 	protected void processGameOver() {
+		_log("*** CABAL: Running processGameOver", 1);
 		if (levelComplete) return;
 
 		{
@@ -321,7 +324,7 @@ class ResourceLifecycleHandler : Tracker {
 		for (int i = 0; i < levelCompletePercent / 3; ++i) {
 			levelCompleteText += "\u0023";
 		}
-		for (int j = levelCompletePercent / 3; j < 34; ++j) {
+		for (int j = levelCompletePercent / 3; j < 33; ++j) {
 			levelCompleteText += "\u002D";
 		}
 		string scoreBoardText = "<command class='update_score_display' id='0' text='ENEMY: " + levelCompleteText + "'></command>";

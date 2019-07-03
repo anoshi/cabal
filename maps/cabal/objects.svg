@@ -13432,11 +13432,11 @@ climb_type = 0;
       <desc
          id="desc16653-2-9-3-3-8-7-0-7-9">name = barell_red;
 static_object_type_key=fuel_barrel.static_object;
-mesh_name = barell.mesh; 
-texture0 = world_atlas1.png; 
-texture0_atlas_cell = 10 16 32 32; 
-collision_model_type = 0; 
-collision_model_size = 1.2 1.4 1.2; 
+mesh_name = barell.mesh;
+texture0 = world_atlas1.png;
+texture0_atlas_cell = 10 16 32 32;
+collision_model_type = 0;
+collision_model_size = 1.2 1.4 1.2;
 penetrability = 0.4;</desc>
     </rect>
     <rect
@@ -13478,13 +13478,13 @@ penetrability = 0.4;</desc>
       <title
          id="title12409-61">barell_green</title>
       <desc
-         id="desc16653-2-9-3-3-8-7-0-7-4-5">name = barell_green; 
+         id="desc16653-2-9-3-3-8-7-0-7-4-5">name = barell_green;
 static_object_type_key=fuel_barrel.static_object;
-mesh_name = barell.mesh; 
-texture0 = world_atlas1.png; 
-texture0_atlas_cell = 8 16 32 32; 
-collision_model_type = 0; 
-collision_model_size = 1.2 1.4 1.2; 
+mesh_name = barell.mesh;
+texture0 = world_atlas1.png;
+texture0_atlas_cell = 8 16 32 32;
+collision_model_type = 0;
+collision_model_size = 1.2 1.4 1.2;
 penetrability = 0.4;</desc>
     </rect>
     <rect
@@ -15292,21 +15292,21 @@ color = stroke;
 color_variance = 0.02 0.2 0.2;
 # brick;
 detail_texture = wall_atlas1.png;
-detail_texture_atlas_cell = 2 0 8 8 0.0078125 0.0078125; detail_texture_scale = 3 3; 
+detail_texture_atlas_cell = 2 0 8 8 0.0078125 0.0078125; detail_texture_scale = 3 3;
 detail_cutout_texture = cutout.png;
-detail_cutout_texture_channel = 1; 
-detail_cutout_texture_scale = 10 10; 
+detail_cutout_texture_channel = 1;
+detail_cutout_texture_scale = 10 10;
 1st_floor_1 = apartment1_1st_floor_busy;
 1st_floor_2 = apartment1_1st_floor_really_empty;
 1st_floor_3 = apartment1_1st_floor_busy;
-1st_floor_4 = apartment1_1st_floor_busy; 
-other_floor_1 = apartment1; 
-other_floor_2 = apartment1; 
-other_floor_3 = apartment1; 
-other_floor_4 = apartment1; 
-roof_color = fill; 
-roof_color_variance = 0 0.1 0.1; 
-roof_texture = wall_atlas1.png; 
+1st_floor_4 = apartment1_1st_floor_busy;
+other_floor_1 = apartment1;
+other_floor_2 = apartment1;
+other_floor_3 = apartment1;
+other_floor_4 = apartment1;
+roof_color = fill;
+roof_color_variance = 0 0.1 0.1;
+roof_texture = wall_atlas1.png;
 roof_texture_atlas_cell = 1 2 4 4 0.004;
 roof_texture_scale = 5 5; </desc>
     </rect>
@@ -15419,10 +15419,10 @@ sequence = empty;</desc>
       <desc
          id="desc6587-6-2-2-5-3">name = apartment1_1st_floor;
 sequence = apartment1_1st_floor_door_wide1_l, apartment1_1st_floor_door_wide1_r;
-sequence = apartment1_1st_floor_door_wide1_l, apartment1_1st_floor_door_wide1_r; 
+sequence = apartment1_1st_floor_door_wide1_l, apartment1_1st_floor_door_wide1_r;
 sequence = apartment1_1st_floor_window;
 sequence = apartment1_1st_floor_window;
-sequence = apartment1_1st_floor_window; 
+sequence = apartment1_1st_floor_window;
 sequence = apartment1_1st_floor_empty;
 sequence = apartment1_1st_floor_empty;
 sequence = apartment1_1st_floor_window, apartment1_1st_floor_empty;</desc>
@@ -16010,8 +16010,8 @@ key = empl_turret_offline.vehicle;</desc>
        inkscape:label="#mesh_template"
        transform="rotate(-89.853636,3577.4336,323.88217)">
       <desc
-         id="desc10349-9-4-79-8-4-6">name = ramp; 
-mesh_name = obj_ramp.mesh; 
+         id="desc10349-9-4-79-8-4-6">name = ramp;
+mesh_name = obj_ramp.mesh;
 texture0 = obj_ramp.png;
 collision_model_type = 1;
 collision_model_size = 8.0 -0.2 4.0;
@@ -16111,7 +16111,7 @@ climbable = 0;</desc>
        transform="rotate(90.149388)">
       <desc
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0">type = vehicle;
-key = env_building.vehicle;</desc>
+key = env_building_1_3_3.vehicle;</desc>
     </rect>
     <text
        xml:space="preserve"
@@ -16157,13 +16157,13 @@ key = env_building.vehicle;</desc>
       <title
          id="title4384-8">barricade</title>
       <desc
-         id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-6">name = barricade; 
-static_object_type_key=env_barricade.static_object; 
-#mesh_name = env_barricade.mesh; 
+         id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-6-7-6">name = barricade;
+static_object_type_key=env_barricade.static_object;
+#mesh_name = env_barricade.mesh;
 mesh_name = hlf2_barrier.mesh;
-texture0 = env_building.png; 
-collision_model_type = 0; 
-collision_model_size = 3 0.7 1; 
+texture0 = env_building.png;
+collision_model_type = 0;
+collision_model_size = 3 0.7 1;
 penetrability = 0.4; </desc>
     </rect>
     <rect
@@ -16195,12 +16195,12 @@ penetrability = 0.4; </desc>
       <title
          id="title12411-1-4">barell_blue</title>
       <desc
-         id="desc16653-2-9-3-3-8-7-0-7-4-6-3-7">name = barell_blue; 
-static_object_type_key=fuel_barrel.static_object; mesh_name = barell.mesh; 
-texture0 = world_atlas1.png; 
-texture0_atlas_cell = 9 16 32 32; 
-collision_model_type = 0; 
-collision_model_size = 1.2 1.4 1.2; 
+         id="desc16653-2-9-3-3-8-7-0-7-4-6-3-7">name = barell_blue;
+static_object_type_key=fuel_barrel.static_object; mesh_name = barell.mesh;
+texture0 = world_atlas1.png;
+texture0_atlas_cell = 9 16 32 32;
+collision_model_type = 0;
+collision_model_size = 1.2 1.4 1.2;
 penetrability = 0.4;</desc>
     </rect>
   </g>
@@ -17383,7 +17383,7 @@ key = deco_pickup_khaki.vehicle;</desc>
          transform="rotate(90.149388)">
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9">type = vehicle;
-key = env_building.vehicle;</desc>
+key = env_building_1_3_3.vehicle;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
@@ -17398,7 +17398,7 @@ key = env_building.vehicle;</desc>
          inkscape:transform-center-y="-5.3032994">
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3">type = vehicle;
-key = env_building.vehicle;</desc>
+key = env_building_1_3_3.vehicle;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
@@ -17413,7 +17413,7 @@ key = env_building.vehicle;</desc>
          inkscape:transform-center-y="-5.3032994">
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-8">type = vehicle;
-key = env_building.vehicle;</desc>
+key = env_building_1_3_3.vehicle;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#ed6d24;fill-opacity:1;stroke:#171b21;stroke-width:0.11338583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.11338583, 2.72125983;stroke-dashoffset:0.79370105;stroke-opacity:1;enable-background:new"
@@ -17558,7 +17558,7 @@ tag = speeder;</desc>
          transform="rotate(90.149388)">
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-9">type = vehicle;
-key = env_building.vehicle;</desc>
+key = env_building_1_3_3.vehicle;</desc>
       </rect>
     </g>
     <g
