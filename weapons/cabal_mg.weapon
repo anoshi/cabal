@@ -12,7 +12,8 @@
   suppressed="0"
   name="Cabal Machine Gun"
   class="0"
-  projectile_speed="10.0" />
+  projectile_speed="10.0"
+  burst_shots="3" />
 
     <animation key="recoil" ref="12" />
     <animation key="recoil" ref="13" />
