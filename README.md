@@ -29,7 +29,7 @@ Enemy units are constantly firing upon the player characters, who must evade the
 
 ## Technology
 
-Cabalesque operates as an add-on modification to the gam *Running With Rifles*, which is built using the OGRE 3D engine. Cabal interfaces with the parent game via AngelScript, XML, shader, and OGRE material code.
+Cabalesque operates as an add-on modification to the game *Running With Rifles*, which is built using the OGRE 3D engine. Cabal interfaces with the parent game via AngelScript, XML, shader, and OGRE material code.
 
 ## Target Audience
 
@@ -43,10 +43,10 @@ Males 13+. Older gamers will immediately appreciate the way Cabalesque focuses o
 * Find hidden supply caches and use your enemies' best weapons against them.
 * Tackle even more complex scenarios in the downloadable expansion packs!
 
-### Author
+### Authors
 
-anoshi, *[Lurker's Craft](http://lurkerscraft.com)*
+anoshi, cevius *[Lurker's Craft](http://lurkerscraft.com)*
 
 ### Document Version
 
-0.2.0
+0.2.1
