@@ -60,7 +60,25 @@
   <vehicle file="veh_speeder.vehicle" />
 
   <!-- CABAL destroyable buildings -->
-  <vehicle file="env_building_1_3_3.vehicle" />
+  <vehicle file="env_building_1_1_1.vehicle" />
+  <vehicle file="env_building_1_2_1.vehicle" />
+  <vehicle file="env_building_1_3_1.vehicle" />
+  <vehicle file="env_building_1_5_1.vehicle" />
+
+  <vehicle file="env_building_2_1_1.vehicle" />
+  <vehicle file="env_building_2_2_1.vehicle" />
+  <vehicle file="env_building_2_3_1.vehicle" />
+  <vehicle file="env_building_2_5_1.vehicle" />
+
+  <vehicle file="env_building_3_1_1.vehicle" />
+  <vehicle file="env_building_3_2_1.vehicle" />
+  <vehicle file="env_building_3_3_1.vehicle" />
+  <vehicle file="env_building_3_5_1.vehicle" />
+
+  <vehicle file="env_building_3_1_3.vehicle" />
+  <vehicle file="env_building_3_2_3.vehicle" />
+  <vehicle file="env_building_3_3_3.vehicle" />
+  <vehicle file="env_building_3_5_3.vehicle" />
 
   <!-- DUMMY vehicles (for tracking purposes) -->
 

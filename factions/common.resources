@@ -153,10 +153,28 @@
 	<!-- end RWR vehicles -->
 
 	<!-- CABAL vehicles -->
-	<vehicle key="veh_speeder.vehicle" />
 
 	<!-- CABAL buildings -->
-	<vehicle key="env_building_1_3_3.vehicle" />
+	<vehicle key="veh_speeder.vehicle" />
+	<vehicle key="env_building_1_1_1.vehicle" />
+	<vehicle key="env_building_1_2_1.vehicle" />
+	<vehicle key="env_building_1_3_1.vehicle" />
+	<vehicle key="env_building_1_5_1.vehicle" />
+
+	<vehicle key="env_building_2_1_1.vehicle" />
+	<vehicle key="env_building_2_2_1.vehicle" />
+	<vehicle key="env_building_2_3_1.vehicle" />
+	<vehicle key="env_building_2_5_1.vehicle" />
+
+	<vehicle key="env_building_3_1_1.vehicle" />
+	<vehicle key="env_building_3_2_1.vehicle" />
+	<vehicle key="env_building_3_3_1.vehicle" />
+	<vehicle key="env_building_3_5_1.vehicle" />
+
+	<vehicle key="env_building_3_1_3.vehicle" />
+	<vehicle key="env_building_3_2_3.vehicle" />
+	<vehicle key="env_building_3_3_3.vehicle" />
+	<vehicle key="env_building_3_5_3.vehicle" />
 
 	<!-- CABAL DUMMY vehicles -->
 	<!-- end CABAL vehicles -->
