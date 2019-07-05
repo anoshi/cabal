@@ -57,7 +57,6 @@
   <vehicle file="wiesel_spawn.vehicle" />
 
   <!-- CABAL vehicles -->
-  <vehicle file="veh_speeder.vehicle" />
 
   <!-- CABAL destroyable buildings -->
   <vehicle file="env_building_1_1_1.vehicle" />
@@ -83,21 +82,8 @@
   <!-- DUMMY vehicles (for tracking purposes) -->
 
   <!-- CLASS-SPECIFIC vehicles -->
-  <!-- Rifleman -->
-  <!-- Heavy Trooper -->
-  <!-- Sniper -->
-  <!-- Grenadier -->
-  <vehicle file="gren_supply_crate.vehicle" />
-  <!-- Demolitions Trooper -->
-  <vehicle file="demo_supply_crate.vehicle" />
-  <!-- Medic -->
-  <vehicle file="medic_supply_crate.vehicle" />
-  <!-- Communications Technician -->
-  <!-- Civilian -->
 
   <!-- FACTION-SPECIFIC vehicles -->
   <!-- Player -->
   <!-- Cabal -->
-  <vehicle file="cabal_ap_crate.vehicle" />
-  <vehicle file="cabal_exp_crate.vehicle" />
 </vehicles>

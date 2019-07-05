@@ -155,7 +155,6 @@
 	<!-- CABAL vehicles -->
 
 	<!-- CABAL buildings -->
-	<vehicle key="veh_speeder.vehicle" />
 	<vehicle key="env_building_1_1_1.vehicle" />
 	<vehicle key="env_building_1_2_1.vehicle" />
 	<vehicle key="env_building_1_3_1.vehicle" />

@@ -169,8 +169,6 @@ class BasicCommandHandler : Tracker {
 			spawnInstanceNearPlayer(senderId, "special_cargo_vehicle1.vehicle", "vehicle");
 		} else if (checkCommand(message, "jeep")) {
 			spawnInstanceNearPlayer(senderId, "jeep.vehicle", "vehicle");
-		} else if (checkCommand(message, "speeder")) {
-			spawnInstanceNearPlayer(senderId, "veh_speeder.vehicle", "vehicle");
 		} else if (checkCommand(message, "barricade")) {
 			spawnInstanceNearPlayer(senderId, "env_barricade.static_object", "static_object");
 		} else if (checkCommand(message, "shield")) {

@@ -6,8 +6,6 @@
  	<vehicle key="apc_2.vehicle" />
  	<vehicle key="tank_2.vehicle" />
  	<vehicle key="transport_truck_2.vehicle" />
-	<vehicle key="cabal_ap_crate.vehicle" />
-	<vehicle key="cabal_exp_crate.vehicle" />
 
 	<projectile key="player_grenade.projectile" enabled="0" /> <!-- not yours! -->
 </resources>

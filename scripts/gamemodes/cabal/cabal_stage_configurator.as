@@ -227,6 +227,8 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map3";
 
+		stage.m_includeLayers.insertLast("layer1.map3");
+
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
