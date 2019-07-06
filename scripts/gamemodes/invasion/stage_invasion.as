@@ -2,7 +2,7 @@
 #include "intel_manager.as"
 
 // --------------------------------------------
-XmlElement@ createFellowCommanderAiCommand(int factionId, float base = 0.62, float border = 0.14, bool active = true) {
+XmlElement@ createFellowCommanderAiCommand(int factionId, float base = 1.0, float border = 0.00, bool active = true) {
 	XmlElement command("command");
 	command.setStringAttribute("class", "commander_ai");
 	command.setIntAttribute("faction", factionId);
@@ -14,7 +14,7 @@ XmlElement@ createFellowCommanderAiCommand(int factionId, float base = 0.62, flo
 
 // --------------------------------------------
 // enemy will defend a bit harder than attack by default --> makes it easier for player
-XmlElement@ createCommanderAiCommand(int factionId, float base = 0.70, float border = 0.14, bool active = true) {
+XmlElement@ createCommanderAiCommand(int factionId, float base = 0.30, float border = 0.14, bool active = true) {
 	XmlElement command("command");
 	command.setStringAttribute("class", "commander_ai");
 	command.setIntAttribute("faction", factionId);
@@ -238,15 +238,6 @@ class Stage {
 	}
 
 	// --------------------------------------------
-	protected void appendJournal(XmlElement@ mapConfig) const {
-		if (m_userSettings.m_journalEnabled) {
-			XmlElement journal("journal");
-			journal.setStringAttribute("filename", "journal.xml");
-			mapConfig.appendChild(journal);
-		}
-	}
-
-	// --------------------------------------------
 	protected void appendMapLegend(XmlElement@ mapConfig) const {
 		XmlElement legend("map_legend");
 		legend.setStringAttribute("filename", "invasion_map_legend.xml");
@@ -301,7 +292,6 @@ class Stage {
 		appendFactions(mapConfig);
 		appendResources(mapConfig);
 		appendScene(mapConfig);
-		appendJournal(mapConfig);
 		appendMapLegend(mapConfig);
 
 		XmlElement command("command");
