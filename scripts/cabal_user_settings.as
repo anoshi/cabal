@@ -2,7 +2,7 @@
 
 class CabalUserSettings : UserSettings {
 	int m_difficulty = 0;
-	bool m_permadeath = false;
+	//bool m_permadeath = false;
 	int m_maxPlayers = 2;
 
 	// --------------------------------------------
@@ -30,7 +30,7 @@ class CabalUserSettings : UserSettings {
 				m_xpFactor = 1.0;
 				m_rpFactor = 1.0;
 				m_fov = false;
-				m_permadeath = false;
+				//m_permadeath = false;
 			} else if (m_difficulty == 1) {
 				// Professional
 				m_fellowCapacityFactor = 0.99;
@@ -40,7 +40,7 @@ class CabalUserSettings : UserSettings {
 				m_xpFactor = 1.0;
 				m_rpFactor = 1.0;
 				m_fov = false;
-				m_permadeath = false;
+				//m_permadeath = false;
 			} else if (m_difficulty == 2) {
 				// Veteran
 				m_fellowCapacityFactor = 0.99;
@@ -49,8 +49,8 @@ class CabalUserSettings : UserSettings {
 				m_enemyAiAccuracyFactor = 0.99;
 				m_xpFactor = 1.0;
 				m_rpFactor = 1.0;
-				m_fov = false;
-				m_permadeath = false;
+				m_fov = true;
+				//m_permadeath = false;
 			}
 			if (settings.hasAttribute("continue_as_new_campaign") && settings.getIntAttribute("continue_as_new_campaign") != 0) {
 				m_continueAsNewCampaign = true;

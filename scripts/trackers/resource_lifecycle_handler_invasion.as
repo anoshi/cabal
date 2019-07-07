@@ -20,6 +20,8 @@ class ResourceLifecycleHandler : Tracker {
 	protected float MAX_GOAL_XP = 5.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
 	protected float curXP = 0.0;
+
+	protected int playerCoins = 3; // coins / restart level attempts left
 	protected int player1Lives = 3;
 	protected int player2Lives = 3; // placeholder. Will be handy when coop mode is implemented
 
@@ -44,12 +46,10 @@ class ResourceLifecycleHandler : Tracker {
 		// currently falls apart if a second player were to spawn.
 
 		// when the player spawns, he spawns alone...
-
 		XmlElement c("command");
 		c.setStringAttribute("class", "set_soldier_spawn");
 		c.setIntAttribute("faction_id", 0);
-		//c.setBoolAttribute("enabled", false);
-		c.setBoolAttribute("enabled", true);
+		c.setBoolAttribute("enabled", false);
 		m_metagame.getComms().send(c);
 
 		// now, work with the spawned player character
@@ -103,7 +103,8 @@ class ResourceLifecycleHandler : Tracker {
 			if (character !is null) {
 				if (!character.getBoolAttribute("wounded")) {
 					allWounded = false;
-					break;
+				} else {
+					// kill on a 1 sec timer - no medikit/revive in Cabal. 
 				}
 			}
 		}
@@ -139,7 +140,8 @@ class ResourceLifecycleHandler : Tracker {
 				processGameOver();
 			}
 		} else {
-			_log("*** CABAL: Player still has lives available. Allow respawn", 1);
+			_log("*** CABAL: Player still has " + player1Lives + " lives available. Allow respawn", 1);
+			// this isn't having the desired effect. Spawn blocking occurring somewhere else :-/
 			XmlElement allowSpawn("command");
 			allowSpawn.setStringAttribute("class", "set_soldier_spawn");
 			allowSpawn.setIntAttribute("faction_id", 0);
@@ -156,7 +158,7 @@ class ResourceLifecycleHandler : Tracker {
 	protected void processGameOver() {
 		_log("*** CABAL: Running processGameOver", 1);
 		if (levelComplete) return;
-
+		// no more respawning allowed
 		{
 			XmlElement c("command");
 			c.setStringAttribute("class", "set_soldier_spawn");
@@ -164,14 +166,19 @@ class ResourceLifecycleHandler : Tracker {
 			c.setBoolAttribute("enabled", false);
 			m_metagame.getComms().send(c);
 		}
-
-		// campaign ends
-		XmlElement c("command");
-		c.setStringAttribute("class", "set_campaign_status");
-		c.setStringAttribute("key", "lose");
-		// delay this for 2-3 seconds. It's a little abrupt when you lose :-|
-		m_metagame.getComms().send(c);
-
+		// check if players still have some coins/continues? If so, can restart level
+		if (playerCoins < 1) {
+			playerCoins -= 1;
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
+			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
+		} 
+		else { // no coins / continues left, campaign lost / game over
+			XmlElement c("command");
+			c.setStringAttribute("class", "set_campaign_status");
+			c.setStringAttribute("key", "lose");
+			// delay this for 2-3 seconds. It's a little abrupt when you lose :-|
+			m_metagame.getComms().send(c);
+		}
 		levelComplete = true;
 	}
 
@@ -311,8 +318,9 @@ class ResourceLifecycleHandler : Tracker {
 			return;
 		}
 		curXP += charXP;
-		int levelCompletePercent = curXP / goalXP * 100;
+		int levelCompletePercent = int(curXP / goalXP * 100);
 		_log("*** CABAL: current XP is: " + int(curXP) + " of " + int(goalXP), 1);
+		if (levelCompletePercent > 100) { levelCompletePercent = 100; }
 		_log("*** CABAL: Level completion: " + levelCompletePercent + "%", 1);
 
 		// notify text
@@ -322,10 +330,10 @@ class ResourceLifecycleHandler : Tracker {
 		// scoreboard text
 		string levelCompleteText = "";
 		for (int i = 0; i < levelCompletePercent / 3; ++i) {
-			levelCompleteText += "\u0023";
+			levelCompleteText += "\u0023"; // #
 		}
 		for (int j = levelCompletePercent / 3; j < 33; ++j) {
-			levelCompleteText += "\u002D";
+			levelCompleteText += "\u002D"; // -
 		}
 		string scoreBoardText = "<command class='update_score_display' id='0' text='ENEMY: " + levelCompleteText + "'></command>";
 		m_metagame.getComms().send(scoreBoardText);
@@ -356,9 +364,7 @@ class ResourceLifecycleHandler : Tracker {
             Vector3 v3Posi = stringToVector3(vehPosi);
 
 			// identify the dummy vehicle and process accordingly
-            if (vehKey == "dummy_terminal.vehicle") {
-                _log("*** CABAL: Terminal at " + vehPosi + " has been activated... Locating nearby equipment", 1);
-            } else if (vehKey == "dummy_next.vehicle") {
+            if (vehKey == "dummy_next.vehicle") {
 				// do stuff
 			} // etc.
         }

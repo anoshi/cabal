@@ -381,11 +381,6 @@ class MapRotatorInvasion : MapRotator {
 					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "radio tower or truck objective", a));
 				}
 
-				// aa?
-				if (hasAaObjective()) {
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "aa objective", a));
-				}
-
 				m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 0.0, 0, "map start, ending", a));
 
 			}
@@ -422,45 +417,6 @@ class MapRotatorInvasion : MapRotator {
 
 		// finally enable "in game commander" radio, battle and event reports
 		m_metagame.getTaskSequencer().add(CallFloat(CALL_FLOAT(this.setCommanderAiReports), 1.0));
-	}
-
-	// --------------------------------------------
-	protected bool hasAaObjective() const {
-		bool result = false;
-
-		// query enemy vehicles and check for aa_emplacement
-		Stage@ stage = m_stages[m_currentStageIndex];
-
-		for (uint j = 0; j < stage.m_factions.size(); ++j) {
-			Faction@ f = stage.m_factions[j];
-			if (f.m_config.m_index != 0 &&
-				// skip neutral
-				!f.isNeutral()) {
-
-				array<const XmlElement@> list = getVehicles(m_metagame, j, "aa_emplacement.vehicle");
-				for (uint i = 0; i < list.size() && !result; i++) {
-					const XmlElement@ info = list[i];
-					int id = info.getIntAttribute("id");
-					if (id >= 0) {
-						const XmlElement@ vehicle = getVehicleInfo(m_metagame, id);
-						if (vehicle !is null && vehicle.getIntAttribute("id") >= 0) {
-							// require being alive
-							float health = vehicle.getFloatAttribute("health");
-							_log("aa emplacement found, faction " + j + " = " + f.m_config.m_name + ", health=" + health, 2);
-							if (health > 0.0) {
-								result = true;
-							}
-						}
-					}
-				}
-
-				if (result) {
-					break;
-				}
-			}
-		}
-
-		return result;
 	}
 
 	// --------------------------------------------
@@ -575,6 +531,7 @@ class MapRotatorInvasion : MapRotator {
 
 	// ----------------------------------------------------
 	protected void handleBaseOwnerChangeEvent(const XmlElement@ event) {
+		_log("*** CABAL: handleBaseOwnerChangeEvent", 1);
 		// only do the additional dialogue in capture type maps
 		if (!m_stages[m_currentStageIndex].isCapture()) {
 			return;
@@ -632,6 +589,7 @@ class MapRotatorInvasion : MapRotator {
 
 	// ----------------------------------------------------
 	protected void handleAttackChangeEvent(const XmlElement@ event) {
+		_log("*** CABAL: handleAttackChangeEvent", 1);
 		if (event.getIntAttribute("faction_id") != 0) return;
 
 		int baseId = event.getIntAttribute("base_id");
@@ -648,15 +606,6 @@ class MapRotatorInvasion : MapRotator {
 	// --------------------------------------------
     void startMapEx(int index) {
 		startMap(index);
-	}
-
-	// --------------------------------------------
-	void handleFactionResourceConfigChangeCommands() {
-		array<XmlElement@>@ commands = m_configurator.getFactionResourceConfigChangeCommands(getCompletionPercentage(), m_stages[m_currentStageIndex]);
-		for (uint i = 0; i < commands.size(); ++i) {
-			const XmlElement@ value = commands[i];
-			m_metagame.getComms().send(value);
-		}
 	}
 
 	// --------------------------------------------
@@ -691,12 +640,6 @@ class MapRotatorInvasion : MapRotator {
 				$doc = $this->metagame->comms->query($query_doc);
 			}
 			*/
-
-			// as we change the map, we also need to set the faction resources
-			// but only then -- otherwise we continue with whatever
-			// was set in the match already
-
-			handleFactionResourceConfigChangeCommands();
 
 			// if continuing a game, don't clear queue - we already have e.g. vehicle spawn events there as game loaded before the script,
 			// we can't lose those, otherwise some trackers may fail to be notified of the events
@@ -792,8 +735,6 @@ class MapRotatorInvasion : MapRotator {
 		_log("restart_map, index=" + index);
 
 		m_metagame.setFactions(m_stages[index].m_factions);
-
-		handleFactionResourceConfigChangeCommands();
 
 		m_metagame.getComms().clearQueue();
 		m_metagame.preBeginMatch();
