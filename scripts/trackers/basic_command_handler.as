@@ -47,6 +47,9 @@ class BasicCommandHandler : Tracker {
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='1' />");
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='2' />");
 			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
+		} else if (checkCommand(message, "0_lose")) {
+			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
+			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
 		}
 
 		// admin only from here on
@@ -54,14 +57,7 @@ class BasicCommandHandler : Tracker {
 			return;
 		}
 		// it's a silent server command, check which one
-		if (checkCommand(message, "test2")) {
-			string command = "<command class='set_marker' faction_id='0' position='512 0 512' color='0 0 1' atlas_index='0' text='hello!' />";
-			m_metagame.getComms().send(command);
-		} else if (checkCommand(message, "test")) {
-			dictionary dict = {{"TagName", "command"},{"class", "chat"},{"text", "test yourself!"}};
-			m_metagame.getComms().send(XmlElement(dict));
-
-		} else if (checkCommand(message, "defend")) {
+		if (checkCommand(message, "defend")) {
 			// make ai defend only, both sides
 			for (int i = 0; i < 2; ++i) {
 				string command =
@@ -123,16 +119,6 @@ class BasicCommandHandler : Tracker {
 				}
 			} else {
 				_log("player info not ok", 1);
-			}
-		} else  if(checkCommand(message, "kill_aa")) {
-			for (uint f = 1; f < 3; ++f) {
-				array<const XmlElement@>@ vehicles = getVehicles(m_metagame, f, "aa_emplacement.vehicle");
-
-				for (uint i = 0; i < vehicles.size(); ++i) {
-					const XmlElement@ vehicle = vehicles[i];
-					int id = vehicle.getIntAttribute("id");
-					destroyVehicle(m_metagame, id);
-				}
 			}
 		} else if(checkCommand(message, "suicide")) {
 			const XmlElement@ info = getPlayerInfo(m_metagame, senderId);

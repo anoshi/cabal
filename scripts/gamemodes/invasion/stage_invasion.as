@@ -47,7 +47,7 @@ class Faction {
 		m_overCapacity = 0;
 		m_capacityMultiplier = 1.0;
 		m_capacityOffset = 0;
-		m_loseWithoutBases = false; // true
+		m_loseWithoutBases = true; // false;
 	}
 
 	bool isNeutral() const {
@@ -344,7 +344,7 @@ class Stage {
 		command.setStringAttribute("base_capture_system", m_userSettings.m_baseCaptureSystem);
 		command.setBoolAttribute("friendly_fire", m_userSettings.m_friendlyFire);
 		command.setFloatAttribute("max_rp", m_userSettings.m_maxRp);
-		command.setBoolAttribute("lose_last_base_without_spawnpoints", false);
+		command.setBoolAttribute("lose_last_base_without_spawnpoints", true); // false);
 		command.setFloatAttribute("player_damage_modifier", m_userSettings.m_playerDamageModifier);
 		command.setBoolAttribute("fov", m_userSettings.m_fov);
 

@@ -71,7 +71,7 @@
 	<comment key="Shield up" text="" />
 	<comment key="overencumbered" text="" />
 	<comment key="Where to, chief?" text="" />
-	<comment key="Press SPACE to continue!" text="" />
+	<comment key="Press SPACE to continue!" text="Continue? 3... 2... 1..." />
 	<comment key="celebrating" text="" />
 	<comment key="about to drive over a friendly" text="" />
   	<comment key="this is as close as i can get" text="" />
@@ -149,15 +149,6 @@
 	<comment key="map advance, friendly map" text="" />
 
 	<!-- boss maps -->
-	<!--
-	<comment key="final map advance, held by enemy, part 1" text="The remaining %faction_name forces have barricaded themselves at %map_name" />
-	<comment key="final map advance, held by enemy, part 2" text="Expecting heavy resistance!" />
-
-	<comment key="final map start with 1 base, part 1" text="Attention, incoming commander briefing" />
-	<comment key="final map start with 1 base, part 2" text="This is it, the remaining enemy forces will fall at %map_name" />
-	<comment key="final map start with 1 base, part 3" text="Finish 'em!" />
-	-->
-
 	<comment key="Cabal Final Mission advance, held by enemy, part 1" text="Good job! %faction_name have been pushed back successfully" />
 	<comment key="Cabal Final Mission advance, held by enemy, part 2" text="The surviving enemy officers have been spotted hiding in an isolated town a fair distance away from here" />
 	<comment key="Cabal Final Mission advance, held by enemy, part 3" text="A group of our finest men will be sent on a mission to destroy the base and eliminate the remaining forces" />
