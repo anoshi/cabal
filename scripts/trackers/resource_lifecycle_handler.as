@@ -174,6 +174,7 @@ class ResourceLifecycleHandler : Tracker {
 		// dead						int (0 / 1)
 		// wounded					int (0 / 1)
 		// faction_id				int (0 .. num factions -1)
+		// soldier_group_name       string (anti_tank)
 		// xp						real
 		// rp						int
 		// leader					int (0 / 1)
@@ -282,8 +283,9 @@ class ResourceLifecycleHandler : Tracker {
 			return;
 		}
 		curXP += charXP;
-		int levelCompletePercent = curXP / goalXP * 100;
+		int levelCompletePercent = int(curXP / goalXP * 100);
 		_log("*** CABAL: current XP is: " + int(curXP) + " of " + int(goalXP), 1);
+		if (levelCompletePercent > 100) { levelCompletePercent = 100; }
 		_log("*** CABAL: Level completion: " + levelCompletePercent + "%", 1);
 
 		// notify text

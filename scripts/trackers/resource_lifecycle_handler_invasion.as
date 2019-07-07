@@ -104,7 +104,7 @@ class ResourceLifecycleHandler : Tracker {
 				if (!character.getBoolAttribute("wounded")) {
 					allWounded = false;
 				} else {
-					// kill on a 1 sec timer - no medikit/revive in Cabal. 
+					// kill on a 1 sec timer - no medikit/revive in Cabal.
 				}
 			}
 		}
@@ -116,6 +116,9 @@ class ResourceLifecycleHandler : Tracker {
 	// ----------------------------------------------------
 	protected void handlePlayerDieEvent(const XmlElement@ event) {
 		_log("*** CABAL: ResourceLifecycleHandler::handlePlayerDieEvent", 1);
+
+		// skip die event processing if disconnected
+		if (event.getBoolAttribute("combat") == false) return;
 
 		// level already won/lost? bug out
 		if (levelComplete) {
@@ -171,7 +174,7 @@ class ResourceLifecycleHandler : Tracker {
 			playerCoins -= 1;
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
 			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
-		} 
+		}
 		else { // no coins / continues left, campaign lost / game over
 			XmlElement c("command");
 			c.setStringAttribute("class", "set_campaign_status");
@@ -227,6 +230,7 @@ class ResourceLifecycleHandler : Tracker {
 		// dead						int (0 / 1)
 		// wounded					int (0 / 1)
 		// faction_id				int (0 .. num factions -1)
+		// soldier_group_name       string (anti_tank)
 		// xp						real
 		// rp						int
 		// leader					int (0 / 1)
@@ -381,7 +385,7 @@ class ResourceLifecycleHandler : Tracker {
 		_log("*** CABAL: item placed at " + position, 1);
 
 		// ensure all dropped items have a short TTL e.g 5 seconds
-        // ensure only rare weapons are dropped
+        // ensure only player weapons are dropped
 	}
 
 	// --------------------------------------------
@@ -393,9 +397,6 @@ class ResourceLifecycleHandler : Tracker {
     // ----------------------------------------------------
     void update(float time) {
         ensureValidLocalPlayer(time);
-		// updateScoreBoard();
-		// Every so often we may want to clear the battlefield
-		// _log("*** CABAL: removing dead characters from play", 1);
     }
 
 	// ----------------------------------------------------
@@ -408,7 +409,6 @@ class ResourceLifecycleHandler : Tracker {
 	void save(XmlElement@ root) {
 		XmlElement@ parent = root;
 
-		//XmlElement subroot("player_life_span_handler");
 		XmlElement subroot("resource_life_cycle_handler");
 
 		for (uint i = 0; i < m_playersSpawned.size(); ++i) {
@@ -423,7 +423,6 @@ class ResourceLifecycleHandler : Tracker {
 	// ----------------------------------------------------
 	void load(const XmlElement@ root) {
 		m_playersSpawned.clear();
-		//const XmlElement@ subroot = root.getFirstElementByTagName("player_life_span_handler");
 		const XmlElement@ subroot = root.getFirstElementByTagName("resource_life_cycle_handler");
 		if (subroot !is null) {
 			array<const XmlElement@> list = subroot.getElementsByTagName("player");

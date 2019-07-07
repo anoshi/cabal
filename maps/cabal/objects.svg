@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9999999"
-     inkscape:cx="1073.4288"
-     inkscape:cy="840.32396"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="-1873.8499"
+     inkscape:cy="1706.099"
      inkscape:document-units="px"
-     inkscape:current-layer="layer49"
+     inkscape:current-layer="layer29"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -15554,7 +15554,7 @@ sequence = apartment1_1st_floor_window, apartment1_1st_floor_empty;</desc>
          id="desc9346-4-7-4">day_color = fill;
 night_color = stroke;
 name = Cabal;
-description = Secession: Cabal mission 1;
+description = Area 1;
 randomize_faction_index=0;
 flip = 1;
 visible_in_menu = 1;

@@ -8,12 +8,11 @@
 #include "cabal_stage_configurator.as"
 #include "cabal_user_settings.as"
 #include "resource_lifecycle_handler_invasion.as"
+#include "player_manager.as"
 
 // generic trackers
 #include "basic_command_handler.as"
 #include "autosaver.as"
-#include "prison_break_objective.as"
-// #include "special_vehicle_manager.as" // if we choose to use this
 
 
 // --------------------------------------------
@@ -26,6 +25,8 @@ class GameModeInvasion : GameMode {
 	string m_gameMapPath = "";
 
 	protected CabalUserSettings@ m_userSettings;
+	protected ResourceLifecycleHandler@ m_resourceLifecycleHandler;
+	protected PlayerManager@ m_playerManager;
 
 	// --------------------------------------------
 	GameModeInvasion(CabalUserSettings@ settings) {
@@ -38,12 +39,10 @@ class GameModeInvasion : GameMode {
 	void init() {
 		GameMode::init();
 
-		// @m_playerLifeSpanHandler = PlayerLifeSpanHandler(this); // cabal dedicated server only
+		@m_resourceLifecycleHandler = ResourceLifecycleHandler(this); // cabal dedicated server only
 
 		setupMapRotator();
-		// setupPlayerManager(); // cabal dedicated server only
-
-		//setupSpecialCrateManager(); // if we choose to use it
+		setupPlayerManager(); // cabal dedicated server only
 
 		if (m_userSettings.m_continue) {
 			_log("* restoring old game");
@@ -90,7 +89,7 @@ class GameModeInvasion : GameMode {
 		return m_userSettings;
 	}
 
-	/* // cabal dedicated server only
+	// cabal dedicated server only
 	// --------------------------------------------
 	protected void setupPlayerManager() {
 		@m_playerManager = PlayerManager(this);
@@ -100,34 +99,7 @@ class GameModeInvasion : GameMode {
 	PlayerManager@ getPlayerManager() const {
 		return m_playerManager;
 	}
-
-	// --------------------------------------------
-	// may want to do something in the future with destroyable crates that spawn goodies.
-	protected void setupSpecialCrateManager() {
-		array<string> trackedCrates;
-		trackedCrates.push_back("special_crate1.vehicle");
-		trackedCrates.push_back("special_crate2.vehicle");
-		trackedCrates.push_back("special_crate3.vehicle");
-		trackedCrates.push_back("special_crate4.vehicle");
-		trackedCrates.push_back("special_crate5.vehicle");
-		trackedCrates.push_back("special_crate6.vehicle");
-		trackedCrates.push_back("special_crate7.vehicle");
-		trackedCrates.push_back("special_crate8.vehicle");
-		trackedCrates.push_back("special_crate9.vehicle");
-		trackedCrates.push_back("special_crate10.vehicle");
-		trackedCrates.push_back("special_crate_wood1.vehicle");
-		trackedCrates.push_back("special_crate_wood2.vehicle");
-		trackedCrates.push_back("special_crate_wood3.vehicle");
-		trackedCrates.push_back("special_crate_wood4.vehicle");
-		trackedCrates.push_back("special_crate_wood5.vehicle");
-		trackedCrates.push_back("special_crate_wood6.vehicle");
-		trackedCrates.push_back("special_crate_wood7.vehicle");
-		trackedCrates.push_back("special_crate_wood8.vehicle");
-		trackedCrates.push_back("special_crate_wood9.vehicle");
-		trackedCrates.push_back("special_crate_wood10.vehicle");
-		@m_specialCrateManager = SpecialVehicleManager(this, "special_crate_manager", trackedCrates);
-	}
-	*/
+	// end cabal dedicated server only
 
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle is about to start
@@ -138,12 +110,6 @@ class GameModeInvasion : GameMode {
 		GameMode::preBeginMatch();
 
 		addTracker(m_mapRotator);
-
-		// again, if decide to use special crates
-		/*if (m_specialCrateManager !is null) {
-			addTracker(m_specialCrateManager);
-			m_specialCrateManager.applyAvailability();
-		}*/
 	}
 
 	// --------------------------------------------
@@ -155,7 +121,6 @@ class GameModeInvasion : GameMode {
 		updateGeneralInfo();
 		save();
 
-		addTracker(PrisonBreakObjective(this, 0)); // save your friends, unleash comedic carnage!
 		addTracker(AutoSaver(this));
 		addTracker(BasicCommandHandler(this));
 
@@ -219,29 +184,9 @@ class GameModeInvasion : GameMode {
 			// friendly faction
 			multiplier = m_userSettings.m_fellowCapacityFactor * f.m_capacityMultiplier;
 
-			if (m_userSettings.m_completionVarianceEnabled) {
-				// drain friendly faction power the farther the game goes;
-				// player will gain power and will become more effective, so this works as an attempt to counter that a bit
-				_log("completion: " + completionPercentage);
-				if (completionPercentage > 0.8f) {
-					multiplier *= 0.9f;
-				} else if (completionPercentage > 0.6f) {
-					multiplier *= 0.93f;
-				} else if (completionPercentage > 0.4f) {
-					multiplier *= 0.97f;
-				}
-			}
-
 		} else {
 			// enemy
 			multiplier = m_userSettings.m_enemyCapacityFactor * f.m_capacityMultiplier;
-
-			if (m_userSettings.m_completionVarianceEnabled) {
-				// first map: reduce enemies a bit, let it flow easier
-				if (completionPercentage < 0.09f) {
-					multiplier *= 0.97f;
-				}
-			}
 		}
 
 		return multiplier;

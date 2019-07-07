@@ -121,7 +121,7 @@
 	<!-- COVERT OPS -->
 	<!-- ////////// -->
 	<!-- rifleman with custom skin and animations (roll) and better combat skills -->
-	<soldier name="covert ops" spawn_score="0.2">
+	<soldier name="covert_ops" spawn_score="0.2">
 		<character filename="default_male.character" />
 		<ai filename="cabal_covertops.ai" />
 		<model filename="cabal_covertops.xml" />
