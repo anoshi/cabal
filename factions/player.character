@@ -117,5 +117,5 @@
 	<!-- <animation key="running" target_key="walking2" add="1"/> -->
 
 	<animation key="dive" target_key="diveroll" />
-	<animation key="prone" target_key="crouch still" />
+	<!-- <animation key="prone" target_key="crouch still" /> -->
 </character>
