@@ -83,7 +83,7 @@
 			<!-- secondary -->
 			<item_class_existence class="weapon" slot="1" probability="0.4" />
 			<!-- armour -->
-			<item_class_existence class="carry_item" slot="1" probability="1.0" />
+			<item_class_existence class="carry_item" slot="1" probability="0.0" />
 			<!-- backpack -->
 			<item_class_existence class="carry_item" slot="0" probability="0.03" />
 		</item_class_existence_config>

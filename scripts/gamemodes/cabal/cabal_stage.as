@@ -43,7 +43,7 @@ class CabalStage : Stage {
 		command.setBoolAttribute("randomize_base_owner_faction_index", false);
 
 		command.setIntAttribute("clear_profiles_at_start", m_clearProfiles ? 1 : -1);
-		command.setBoolAttribute("ensure_alive_local_player_for_save", false);
+		command.setBoolAttribute("ensure_alive_local_player_for_save", true);
 
 		return command;
 	}

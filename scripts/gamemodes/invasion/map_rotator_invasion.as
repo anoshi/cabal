@@ -366,20 +366,12 @@ class MapRotatorInvasion : MapRotator {
 
 				}
 
-				// intel objectives
-				if (stage.hasIntelManager()) {
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "intel objectives", a));
+				/*
+				// Boss Level?
+				if (stage.hasBoss()) {
+					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "boss objective", a));
 				}
-
-				// loot / cargo trucks?
-				if (stage.hasLootObjective()) {
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "loot objective", a));
-				}
-
-				// radio tower / truck?
-				if (stage.hasRadioObjective()) {
-					m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 5.0, 0, "radio tower or truck objective", a));
-				}
+				*/
 
 				m_metagame.getTaskSequencer().add(AnnounceTask(m_metagame, 0.0, 0, "map start, ending", a));
 
@@ -421,8 +413,8 @@ class MapRotatorInvasion : MapRotator {
 
 	// --------------------------------------------
 	void setCommanderAiReports(float percentage) {
-		// $percentage = 1.0 -> all are shown
-		// $percentage = 0.0 -> none but 1.0 priority reports are shown
+		// percentage = 1.0 -> all are shown
+		// percentage = 0.0 -> none but 1.0 priority reports are shown
 		string command =
 			"<command\n" +
 			"  class='commander_ai'" +
@@ -692,10 +684,6 @@ class MapRotatorInvasion : MapRotator {
 			}
 		}
 
-		// moved from MapRotatorCampaign to here to automatically share it with MVSW:
-		// for unknown reason, after map1 was completed, the game was quit and restarted,
-		// the metagame wasn't agreeing that the map had been already completed, while the match was over,
-		// resulting in no extraction point to the next map, map3 in that case
 		if (beginOnly && m_currentStageIndex >= 0) {
 			// here's a failsafe
 			// - check if the game considers the game over, set the map completed

@@ -64,6 +64,7 @@ class ResourceLifecycleHandler : Tracker {
 					charInv.setStringAttribute("class", "update_inventory");
 
 					charInv.setIntAttribute("character_id", m_playerCharacterId);
+					/* cheat vest
 					charInv.setIntAttribute("container_type_id", 4); // vest
 					{
 						XmlElement i("item");
@@ -73,7 +74,7 @@ class ResourceLifecycleHandler : Tracker {
 						charInv.appendChild(i);
 					}
 					m_metagame.getComms().send(charInv);
-
+					*/
 					string name = player.getStringAttribute("name");
 					m_playerCharacterId = characterId;
 					_log("*** CABAL: player " + name + " (" + m_playerCharacterId + ") spawned.", 1);
@@ -86,30 +87,7 @@ class ResourceLifecycleHandler : Tracker {
 				// existing player. Take no action
 			}
 		} else {
-			_log("*** CABAL: CRITICAL WARNING, player not found in event");
-		}
-	}
-
-	// ----------------------------------------------------
-	protected void handlePlayerWoundEvent(const XmlElement@ event) {
-		_log("*** CABAL: ResourceLifecycleSpanHandler::handlePlayerWoundEvent", 1);
-
-		// if all players are wounded, end game
-		array<const XmlElement@> players = getPlayers(m_metagame);
-		bool allWounded = true;
-		for (uint i = 0; i < players.size(); ++i) {
-			const XmlElement@ player = players[i];
-			const XmlElement@ character = getCharacterInfo(m_metagame, player.getIntAttribute("character_id"));
-			if (character !is null) {
-				if (!character.getBoolAttribute("wounded")) {
-					allWounded = false;
-				} else {
-					// kill on a 1 sec timer - no medikit/revive in Cabal.
-				}
-			}
-		}
-		if ((allWounded) && (player1Lives < 1) && (player2Lives < 1)) {
-			processGameOver();
+			_log("*** CABAL: CRITICAL WARNING, player not found in Player Spawn Event");
 		}
 	}
 
@@ -132,13 +110,13 @@ class ResourceLifecycleHandler : Tracker {
 
 		if (player1Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 1", 1);
-			if (player2Lives <= 0) {
+			if (m_playersSpawned.size() > 1 && player2Lives <= 0) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else if (player2Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 2", 1);
-			if (player1Lives <= 0) {
+			if (m_playersSpawned.size() > 1 && player1Lives <= 0) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
@@ -182,6 +160,7 @@ class ResourceLifecycleHandler : Tracker {
 			// delay this for 2-3 seconds. It's a little abrupt when you lose :-|
 			m_metagame.getComms().send(c);
 		}
+
 		levelComplete = true;
 	}
 
@@ -223,7 +202,7 @@ class ResourceLifecycleHandler : Tracker {
 		// character_id				int (character who died)
 
 		// TagName					string (character)
-		// id						int (character's id)
+		// id						int (dead character's id)
 		// name						string (First Last)
 		// position					string (xxx.xxx yy.yyy zzz.zzz)
 		// block					string (AA BB)
@@ -314,6 +293,20 @@ class ResourceLifecycleHandler : Tracker {
 		}
 	}
 
+	///////////////////////
+	// POWERUP LIFECYCLE //
+	///////////////////////
+	protected void dropPowerUp(string position, string instanceClass, string instanceKey) {
+		// between the invisible walls the the player character is locked within (enemyX, playerY+2, playerZ)
+        _log("*** CABAL: dropping an item at " + position, 1);
+        string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
+        m_metagame.getComms().send(creator);
+		_log("*** CABAL: item placed at " + position, 1);
+
+		// ensure all dropped items have a short TTL e.g 5 seconds
+        // ensure only player weapons are dropped
+	}
+
 	///////////////////
 	// MAP LIFECYCLE //
 	///////////////////
@@ -373,20 +366,6 @@ class ResourceLifecycleHandler : Tracker {
 			} // etc.
         }
     }
-
-	/////////////////////////
-	// POWERUP DISTRIBUTOR //
-	/////////////////////////
-	protected void dropPowerUp(string position, string instanceClass, string instanceKey) {
-		// between the invisible walls the the player character is locked within (enemyX, playerY+2, playerZ)
-        _log("*** CABAL: dropping an item at " + position, 1);
-        string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
-        m_metagame.getComms().send(creator);
-		_log("*** CABAL: item placed at " + position, 1);
-
-		// ensure all dropped items have a short TTL e.g 5 seconds
-        // ensure only player weapons are dropped
-	}
 
 	// --------------------------------------------
 	bool hasStarted() const { return true; }

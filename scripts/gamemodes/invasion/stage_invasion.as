@@ -95,12 +95,6 @@ class Stage {
 	// metadata, mostly for instructions comment selection logic
 	string m_primaryObjective;
 	string m_kothTargetBase;
-	bool m_radioObjectivePresent;
-
-	int m_minRandomCrates;
-	int m_maxRandomCrates;
-
-	IntelManager@ m_intelManager;
 
 	// --------------------------------------------
 	Stage(const UserSettings@ userSettings) {
@@ -113,11 +107,10 @@ class Stage {
 		m_soldierCapacityModel = "variable";
 		m_defenseWinTime = -1;
 		m_defenseWinTimeMode = "hold_bases";
-		m_playerAiCompensation = 8;
-		m_playerAiReduction = 0;
-		m_primaryObjective = "capture";
+		m_playerAiCompensation = 0;
+		m_playerAiReduction = 5;
+		m_primaryObjective = "survive";
 		m_kothTargetBase = "center base";
-		m_radioObjectivePresent = true;
 
 		m_includeLayers.insertLast("bases.default");
 		m_includeLayers.insertLast("layer1.default");
@@ -127,10 +120,6 @@ class Stage {
 		m_fogOffset = -25.0;
 		m_fogRange = 150.0;
 
-		m_minRandomCrates = 5;
-		m_maxRandomCrates = 5;
-
-		@m_intelManager = null;
 	}
 
 	// --------------------------------------------
@@ -159,21 +148,6 @@ class Stage {
 		if (i != -1) {
 			m_trackers.removeAt(i);
 		}
-	}
-
-	// --------------------------------------------
-	bool hasSideObjectives() const {
-		return true;
-	}
-
-	// --------------------------------------------
-	bool hasLootObjective() const {
-		return true;
-	}
-
-	// --------------------------------------------
-	bool hasRadioObjective() const {
-		return m_radioObjectivePresent;
 	}
 
 	// --------------------------------------------
@@ -230,11 +204,6 @@ class Stage {
 		{ XmlElement e("call");			e.setStringAttribute("file", "invasion_all_calls.xml"); mapConfig.appendChild(e); }
 		{ XmlElement e("vehicle");		e.setStringAttribute("file", "invasion_all_vehicles.xml"); mapConfig.appendChild(e); }
 		{ XmlElement e("achievement");	e.setStringAttribute("file", "achievements.xml"); mapConfig.appendChild(e); }
-
-		if (m_userSettings.m_testingToolsEnabled) {
-			{ XmlElement e("carry_item");	e.setStringAttribute("file", "cheat_items.xml"); mapConfig.appendChild(e); }
-			{ XmlElement e("projectile");	e.setStringAttribute("file", "cheat_throwables.xml"); mapConfig.appendChild(e); }
-		}
 	}
 
 	// --------------------------------------------
@@ -334,7 +303,7 @@ class Stage {
 		command.setStringAttribute("base_capture_system", m_userSettings.m_baseCaptureSystem);
 		command.setBoolAttribute("friendly_fire", m_userSettings.m_friendlyFire);
 		command.setFloatAttribute("max_rp", m_userSettings.m_maxRp);
-		command.setBoolAttribute("lose_last_base_without_spawnpoints", true); // false);
+		command.setBoolAttribute("lose_last_base_without_spawnpoints", false);
 		command.setFloatAttribute("player_damage_modifier", m_userSettings.m_playerDamageModifier);
 		command.setBoolAttribute("fov", m_userSettings.m_fov);
 
@@ -391,35 +360,11 @@ class Stage {
 	}
 
 	// --------------------------------------------
-	void setIntelManager(IntelManager@ intelManager) {
-		if (intelManager !is null) {
-			addTracker(intelManager);
-		} else {
-			// clearing intel manager
-			if (m_intelManager !is null) {
-				removeTracker(m_intelManager);
-			}
-		}
-		@m_intelManager = @intelManager;
-	}
-
-	// --------------------------------------------
-	bool hasIntelManager() const {
-		return m_intelManager !is null;
-	}
-
-	// --------------------------------------------
 	void save(XmlElement@ root) {
-		if (m_intelManager !is null) {
-			m_intelManager.save(root);
-		}
 	}
 
 	// --------------------------------------------
 	void load(const XmlElement@ root) {
-		if (m_intelManager !is null) {
-			m_intelManager.load(root);
-		}
 	}
 }
 

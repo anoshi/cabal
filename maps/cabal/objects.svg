@@ -28,15 +28,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="-1873.8499"
-     inkscape:cy="1706.099"
+     inkscape:zoom="8"
+     inkscape:cx="1065.367"
+     inkscape:cy="849.01318"
      inkscape:document-units="px"
-     inkscape:current-layer="layer29"
+     inkscape:current-layer="layer53"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
-     inkscape:window-x="1061"
+     inkscape:window-x="1062"
      inkscape:window-y="335"
      inkscape:window-maximized="0"
      inkscape:snap-bbox="false"
@@ -16854,7 +16854,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1176.1826,1222.0293 0.028,1.9759 -67.4828,0 -0.032,-2.002"
+         d="m 1176.1826,1222.0293 0.028,1.9759 h -67.4828 l -0.032,-2.002"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-0"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -16864,7 +16864,7 @@ capturable = 1;</desc>
       </path>
       <path
          style="display:inline;opacity:0.93000034;fill:#bebebe;fill-opacity:1;stroke:#bebebe;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-         d="m 1176.0085,1277.5293 0.028,1.9759 -192.57124,0 -0.032,-2.002"
+         d="m 1176.0085,1277.5293 0.028,1.9759 H 983.46526 l -0.032,-2.002"
          id="wall37832-1-7-0-43-24-4-0-9-7-7-3"
          inkscape:connector-curvature="0"
          inkscape:label=""
@@ -17316,7 +17316,7 @@ tag = apc;</desc>
       <rect
          inkscape:label="#spawnrect10748"
          y="1247.167"
-         x="1070.0419"
+         x="1067.2919"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-2"
@@ -17324,7 +17324,7 @@ tag = apc;</desc>
       <rect
          inkscape:label="#spawnrect10748"
          y="1247.1674"
-         x="1078.2076"
+         x="1081.2076"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-3"
@@ -17638,7 +17638,8 @@ tag = apc;</desc>
   <g
      inkscape:groupmode="layer"
      id="layer46"
-     inkscape:label="layer1.map1">
+     inkscape:label="layer1.map1"
+     style="display:none">
     <g
        inkscape:groupmode="layer"
        id="layer47"
@@ -17699,7 +17700,7 @@ key = env_building_1_3_3.vehicle;</desc>
 key = deco_car1_white.vehicle;</desc>
       </rect>
       <rect
-         style="display:inline;enable-background:new;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000109, 4.00000108999999959;stroke-dashoffset:7.00000238;stroke-opacity:1"
+         style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:4.00000109, 4.00000109;stroke-dashoffset:7.00000238;stroke-opacity:1;enable-background:new"
          id="spawn2_6-9"
          width="5.7888808"
          height="6.6684999"
@@ -17738,7 +17739,7 @@ key = env_building_2_5_1.vehicle;</desc>
 key = env_building_1_1_1.vehicle;</desc>
       </rect>
       <rect
-         style="display:inline;enable-background:new;opacity:0.93000034;fill:#0a1ea5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369000000000;stroke-dashoffset:7.01102591;stroke-opacity:1"
+         style="display:inline;opacity:0.93000034;fill:#0a1ea5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
          id="spawn2_1-2-1-1"
          width="15.22704"
          height="14.218262"
@@ -17751,7 +17752,7 @@ key = env_building_1_1_1.vehicle;</desc>
 key = env_building_1_2_1.vehicle;</desc>
       </rect>
       <rect
-         style="display:inline;enable-background:new;opacity:0.93000034;fill:#0a1ea5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369000000000;stroke-dashoffset:7.01102591;stroke-opacity:1"
+         style="display:inline;opacity:0.93000034;fill:#0a1ea5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
          id="spawn2_1-3-1-1"
          width="15.22704"
          height="14.218262"
@@ -17800,7 +17801,7 @@ key = env_building_1_5_1.vehicle;</desc>
      inkscape:groupmode="layer"
      id="layer48"
      inkscape:label="layer1.map2"
-     style="display:inline">
+     style="display:none">
     <g
        inkscape:groupmode="layer"
        id="layer49"
@@ -17852,7 +17853,7 @@ key = env_building_3_3_1.vehicle;</desc>
        style="display:inline" />
   </g>
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:label="layer1.map3"
      id="g27529"
      inkscape:groupmode="layer">
@@ -17860,7 +17861,7 @@ key = env_building_3_3_1.vehicle;</desc>
        inkscape:groupmode="layer"
        id="layer52"
        inkscape:label="destroyable"
-       style="display:inline">
+       style="display:none">
       <rect
          style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
          id="spawn2_3-3-1-3"
@@ -17880,7 +17881,67 @@ key = env_building_3_3_1.vehicle;</desc>
     <g
        inkscape:groupmode="layer"
        id="layer51"
-       inkscape:label="objects" />
+       inkscape:label="objects"
+       style="display:none" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g3767"
+     inkscape:label="layer1.map4"
+     style="display:inline">
+    <g
+       style="display:inline"
+       inkscape:label="destroyable"
+       id="g3763"
+       inkscape:groupmode="layer" />
+    <g
+       inkscape:label="objects"
+       id="g3765"
+       inkscape:groupmode="layer"
+       style="display:inline" />
+    <g
+       inkscape:groupmode="layer"
+       id="layer53"
+       inkscape:label="offroad">
+      <path
+         inkscape:label="#path1133"
+         sodipodi:nodetypes="cccccccccc"
+         inkscape:connector-curvature="0"
+         id="path1133_navigation-2-7"
+         d="m 1033.6601,1192.3268 0.218,-23.6374 69.4802,-0.4081 0.084,18.1403 -69.489,0.4879 -0.1566,13.4989 69.7118,-0.6483 -0.1266,22.1097 -57.382,0.057 -10.317,-21.1333"
+         style="display:inline;opacity:0.92000002;fill:none;stroke:#956011;stroke-width:8;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter11732);enable-background:new" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer54"
+       inkscape:label="boss">
+      <rect
+         transform="rotate(-90.80015)"
+         inkscape:label=""
+         y="1015.794"
+         x="-1184.8794"
+         height="7.3961515"
+         width="3.982286"
+         id="spawn1-1-1-1-8-8-9"
+         style="display:inline;opacity:0.92000002;fill:#ff7f2a;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999964, 11.99999964;stroke-dashoffset:4.5999999;stroke-opacity:1;enable-background:new">
+        <desc
+           id="desc7082-740-7-7-8-0-3">type = vehicle;
+key = vulcan_tank.vehicle;</desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.92000002;fill:#4d4d4d;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:12.00000106, 12.00000106;stroke-dashoffset:4.60000038;stroke-opacity:1;enable-background:new"
+         id="spawn1-1-4-2-1-0-9-8"
+         width="3.982286"
+         height="7.3961515"
+         x="1186.8677"
+         y="-1110.7842"
+         inkscape:label=""
+         transform="rotate(90.579756)">
+        <desc
+           id="desc7082-7-0-45-7-94-8-0">type = vehicle;
+tag = tank;</desc>
+      </rect>
+    </g>
   </g>
   <g
      style="display:inline"

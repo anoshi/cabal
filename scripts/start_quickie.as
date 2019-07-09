@@ -14,6 +14,9 @@ void main(dictionary@ inputData) {
 	_log("*** CABAL: start_quickie.as running...",1);
 	settings.print();
 
+	array<string> overlays = { "media/packages/cabal" };
+    settings.m_overlayPaths = overlays;
+
 	Cabal metagame(settings);
 
 	metagame.init();

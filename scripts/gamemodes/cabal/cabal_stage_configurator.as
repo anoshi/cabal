@@ -193,14 +193,17 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		_log("*** CABAL: adding map layer1.map1", 1);
 		stage.m_includeLayers.insertLast("layer1.map1"); // this is intentional
 
-
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
-		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
+		stage.m_maxSoldiers = 2; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
+		stage.m_playerAiReduction = 0; // nfi
+		stage.m_playerAiCompensation = 0; // again, nfi
 
 		{
 			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0));
-			f.m_capacityOffset = 0;
-			f.m_capacityMultiplier = 0.0001;
+			f.m_overCapacity = 1;
+			f.m_capacityOffset = 2;
+			//f.m_capacityMultiplier = 0.0001;
+			f.m_capacityMultiplier = 0.5000;
 			f.m_bases = 1;
 			stage.m_factions.insertLast(f);
 		}
@@ -212,8 +215,7 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 			stage.m_factions.insertLast(f);
 		}
 
-		stage.m_primaryObjective = "capture"; // "attrition";
-		stage.m_radioObjectivePresent = false;
+		stage.m_primaryObjective = "survive"; // "attrition";
 
 		return stage;
 	}
@@ -232,11 +234,12 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
-		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
+		stage.m_maxSoldiers = 6; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
 		{
 			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0));
-			f.m_capacityOffset = 0;
+			f.m_capacityOffset = 1;
+			f.m_overCapacity = 0;
 			f.m_capacityMultiplier = 0.0001;
 			f.m_bases = 1;
 			stage.m_factions.insertLast(f);
@@ -249,7 +252,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "capture"; // "attrition";
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -282,7 +284,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -293,6 +294,9 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		stage.m_mapInfo.m_name = "Cabal M2A1";
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map4";
+
+		_log("*** CABAL: adding map layer1.map4", 1);
+		stage.m_includeLayers.insertLast("layer1.map4");
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
@@ -313,7 +317,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -344,7 +347,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -375,7 +377,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -406,7 +407,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -437,7 +437,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -468,7 +467,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -499,7 +497,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -531,7 +528,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -562,7 +558,6 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
 
 		return stage;
 	}
@@ -592,7 +587,7 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		}
 
 		stage.m_primaryObjective = "attrition"; // "capture"
-		stage.m_radioObjectivePresent = false;
+
 
 		// enforce no calls for friendly faction in the last map
 		{

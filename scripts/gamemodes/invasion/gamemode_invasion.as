@@ -6,7 +6,8 @@
 // cabal gamemode-specific
 #include "cabal_map_rotator.as"
 #include "cabal_stage_configurator.as"
-#include "cabal_user_settings.as"
+//#include "cabal_user_settings.as"
+#include "user_settings.as"
 #include "resource_lifecycle_handler_invasion.as"
 #include "player_manager.as"
 

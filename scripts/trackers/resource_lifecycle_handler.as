@@ -10,15 +10,17 @@ class ResourceLifecycleHandler : Tracker {
 
 	protected int m_playerCharacterId;
 	protected array<string> m_playersSpawned;
+
     protected float m_localPlayerCheckTimer;
     protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
 
 	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area
 	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area
-	protected float MIN_GOAL_XP = 3.0;
+	protected float MIN_GOAL_XP = 3.5;
 	protected float MAX_GOAL_XP = 5.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
 	protected float curXP = 0.0;
+
 	protected int player1Lives = 3;
 	protected int player2Lives = 3; // placeholder. Will be handy when coop mode is implemented
 
@@ -62,6 +64,7 @@ class ResourceLifecycleHandler : Tracker {
 			charInv.setStringAttribute("class", "update_inventory");
 
 			charInv.setIntAttribute("character_id", m_playerCharacterId);
+			/* cheat vest
 			charInv.setIntAttribute("container_type_id", 4); // vest
 			{
 				XmlElement i("item");
@@ -71,6 +74,7 @@ class ResourceLifecycleHandler : Tracker {
 				charInv.appendChild(i);
 			}
 			m_metagame.getComms().send(c);
+			*/
 		} else {
 			_log("*** CABAL: CRITICAL WARNING, player not found in Player Spawn Event");
 		}
@@ -80,8 +84,12 @@ class ResourceLifecycleHandler : Tracker {
 	protected void handlePlayerDieEvent(const XmlElement@ event) {
 		_log("*** CABAL: ResourceLifecycleHandler::handlePlayerDieEvent", 1);
 
+		// skip die event processing if disconnected
+		if (event.getBoolAttribute("combat") == false) return;
+
 		// level already won/lost? bug out
 		if (levelComplete) {
+			_log("*** CABAL: Level already won or lost. Dropping out of method", 1);
 			return;
 		}
 
@@ -91,18 +99,18 @@ class ResourceLifecycleHandler : Tracker {
 
 		if (player1Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 1", 1);
-			if (player2Lives <= 0) {
+			if (m_playersSpawned.size() > 1 && player2Lives <= 0) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else if (player2Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 2", 1);
-			if (player1Lives <= 0) {
+			if (m_playersSpawned.size() > 1 && player1Lives <= 0) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else {
-			_log("*** CABAL: Player still has lives available. Allow respawn", 1);
+			_log("*** CABAL: Player still has " + player1Lives + " lives available. Allow respawn", 1);
 			XmlElement allowSpawn("command");
 			allowSpawn.setStringAttribute("class", "set_soldier_spawn");
 			allowSpawn.setIntAttribute("faction_id", 0);
@@ -117,8 +125,9 @@ class ResourceLifecycleHandler : Tracker {
 
 	// ----------------------------------------------------
 	protected void processGameOver() {
+		_log("*** CABAL: Running processGameOver", 1);
 		if (levelComplete) return;
-
+		// no more respawning allowed
 		{
 			XmlElement c("command");
 			c.setStringAttribute("class", "set_soldier_spawn");
@@ -295,10 +304,10 @@ class ResourceLifecycleHandler : Tracker {
 		// scoreboard text
 		string levelCompleteText = "";
 		for (int i = 0; i < levelCompletePercent / 3; ++i) {
-			levelCompleteText += "\u0023";
+			levelCompleteText += "\u0023"; // #
 		}
-		for (int j = levelCompletePercent / 3; j < 34; ++j) {
-			levelCompleteText += "\u002D";
+		for (int j = levelCompletePercent / 3; j < 33; ++j) {
+			levelCompleteText += "\u002D"; // -
 		}
 		string scoreBoardText = "<command class='update_score_display' id='0' text='ENEMY: " + levelCompleteText + "'></command>";
 		m_metagame.getComms().send(scoreBoardText);
@@ -313,14 +322,16 @@ class ResourceLifecycleHandler : Tracker {
 
 	protected void handleMatchEndEvent(const XmlElement@ event) {
 		m_metagame.getTaskSequencer().add(TimeAnnouncerTask(m_metagame, 15.0, true));
+		_log("*** CABAL: quickmatch restarting", 1);
 		// Clear the battlefield
 		// _log("*** CABAL: removing dead characters from play", 1);
 		// kill the player character
-		_log("*** CABAL: quickmatch restarting. Killing player", 1);
+		/*_log("*** CABAL: quickmatch restarting. Killing player", 1);
 		string killChar = "<command class='update_character' id='" + m_playerCharacterId + "' dead='1' /></command>";
 		m_metagame.getComms().send(killChar);
 		levelComplete = false;
 		m_metagame.getTaskSequencer().add(Call(CALL(m_metagame.requestRestart)));
+		*/
 	}
 
 	////////////////////////
@@ -340,9 +351,7 @@ class ResourceLifecycleHandler : Tracker {
             Vector3 v3Posi = stringToVector3(vehPosi);
 
 			// identify the dummy vehicle and process accordingly
-            if (vehKey == "dummy_terminal.vehicle") {
-                _log("*** CABAL: Terminal at " + vehPosi + " has been activated... Locating nearby equipment", 1);
-            } else if (vehKey == "dummy_next.vehicle") {
+            if (vehKey == "dummy_next.vehicle") {
 				// do stuff
 			} // etc.
         }
@@ -357,6 +366,6 @@ class ResourceLifecycleHandler : Tracker {
     // ----------------------------------------------------
     void update(float time) {
         ensureValidLocalPlayer(time);
-		// updateScoreBoard(); // if managing hud overlay is possible
+
     }
 }

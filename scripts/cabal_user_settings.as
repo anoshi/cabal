@@ -23,7 +23,7 @@ class CabalUserSettings : UserSettings {
 
 			if (m_difficulty == 0) {
 				// Recruit
-				m_fellowCapacityFactor = 0.99;
+				m_fellowCapacityFactor = 1.0;
 				m_fellowAiAccuracyFactor = 0.95;
 				m_enemyCapacityFactor = 1.0;
 				m_enemyAiAccuracyFactor = 0.94;
@@ -33,7 +33,7 @@ class CabalUserSettings : UserSettings {
 				//m_permadeath = false;
 			} else if (m_difficulty == 1) {
 				// Professional
-				m_fellowCapacityFactor = 0.99;
+				m_fellowCapacityFactor = 1.0;
 				m_fellowAiAccuracyFactor = 0.95;
 				m_enemyCapacityFactor = 1.0;
 				m_enemyAiAccuracyFactor = 0.96;
@@ -81,6 +81,7 @@ class CabalUserSettings : UserSettings {
 		// we can use this to provide difficulty settings, user faction, etc
 		_log(" * using fellow capacity: " + m_fellowCapacityFactor);
 		_log(" * using fellow ai accuracy: " + m_fellowAiAccuracyFactor);
+		_log(" * using fellow ai reduction: " + m_playerAiReduction);
 		_log(" * using enemy capacity: " + m_enemyCapacityFactor);
 		_log(" * using enemy ai accuracy: " + m_enemyAiAccuracyFactor);
 		_log(" * using xp factor: " + m_xpFactor);
