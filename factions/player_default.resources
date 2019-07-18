@@ -16,6 +16,6 @@
 	<weapon key="player_rl.weapon" />
 
 	<!-- explicitly enable this faction's carry items (listed as disabled in common.resources) -->
-	<carry_item key="player_impervavest.carry_item" enabled="1" />
-	<carry_item key="player_power_armour.carry_item" enabled="1" />
+	<!--<carry_item key="player_impervavest.carry_item" enabled="1" />-->
+	<!--<carry_item key="player_power_armour.carry_item" enabled="1" />-->
 </resources>
