@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="1065.367"
-     inkscape:cy="849.01318"
+     inkscape:zoom="5.6568543"
+     inkscape:cx="1047.702"
+     inkscape:cy="805.70822"
      inkscape:document-units="px"
-     inkscape:current-layer="layer53"
+     inkscape:current-layer="layer33"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -16568,20 +16568,6 @@ key = env_building_3_5_1.vehicle;</desc>
      inkscape:groupmode="layer">
     <rect
        inkscape:label="#rect11324_base"
-       y="-1091.4022"
-       x="1243.1886"
-       height="30.270367"
-       width="7.64431"
-       id="rect4874-8-1-8-0-11"
-       style="display:inline;opacity:0.72566373;fill:#ffff00;fill-opacity:1;stroke:none;enable-background:new"
-       transform="rotate(90.067586)">
-      <desc
-         id="desc4876-3-1-3-9-78">name=Other Guys;
-faction_index=0;
-capturable = 0;</desc>
-    </rect>
-    <rect
-       inkscape:label="#rect11324_base"
        y="-1092.7474"
        x="1113.9052"
        height="39.116478"
@@ -16592,7 +16578,21 @@ capturable = 0;</desc>
       <desc
          id="desc4876-3-1-3-9-78-9">name=Bad Guys;
 faction_index=1;
-capturable = 1;</desc>
+capturable=0;</desc>
+    </rect>
+    <rect
+       inkscape:label="#rect11324_base"
+       y="-1091.3568"
+       x="1243.1592"
+       height="30.270367"
+       width="7.64431"
+       id="rect4874-8-1-8-0-11-3"
+       style="display:inline;opacity:0.72566373;fill:#ffff00;fill-opacity:1;stroke:none;enable-background:new"
+       transform="rotate(90.067586)">
+      <desc
+         id="desc4876-3-1-3-9-78-8">name=;
+faction_index=0;
+capturable = 0;</desc>
     </rect>
   </g>
   <g
@@ -16618,15 +16618,6 @@ capturable = 1;</desc>
      inkscape:label="map_view_bases"
      id="layer39"
      inkscape:groupmode="layer">
-    <rect
-       inkscape:label=""
-       y="1242.5708"
-       x="1060.655"
-       height="9.1968946"
-       width="33.622101"
-       id="rect91923-7-88"
-       style="display:inline;opacity:0.5;fill:none;stroke:#afafaf;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:4.99999988, 4.99999988;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
-       transform="rotate(0.08978138)" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot3482-1"
@@ -17146,13 +17137,14 @@ tag = apc;</desc>
     <g
        inkscape:groupmode="layer"
        id="layer27"
-       inkscape:label="avoid">
+       inkscape:label="avoid"
+       style="display:inline">
       <path
-         sodipodi:nodetypes="ccccccccccccccc"
+         sodipodi:nodetypes="cccccccccccccccccccc"
          inkscape:label="#path7528"
          inkscape:connector-curvature="0"
          id="avoid1-0-8-0-8-6-2-3-8"
-         d="m 1175.1045,1183.2195 20.909,28.0089 -38.6286,65.7275 -46.1564,8.5595 -76.9583,1.3215 -51.10764,-40.8758 23.59914,-17.0786 -0.042,-38.9395 8.6782,1.6672 30.0824,47.1753 59.2971,-0.4162 8.4513,-17.0681 -0.5081,-57.229 28.32,4.9751 z"
+         d="m 1166.322,1154.7489 19.8545,-109.864 43.337,167.3435 -14.6286,73.9775 -103.6564,-0.6905 -76.9583,1.3215 -71.10764,-3.3758 -28.10022,-88.2795 -4.6511,-154.7445 20.80948,0.455 25.94631,188.2433 29.59467,-0.2529 -0.042,-38.9395 8.6782,1.6672 30.0824,47.1753 59.2971,-0.4162 8.4513,-17.0681 -0.5081,-57.229 28.32,4.9751 z"
          style="display:inline;opacity:0.56300001;fill:none;stroke:#0000ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:url(#Arrow1Mend-4-73-6-0-9-3);enable-background:new" />
     </g>
     <g
@@ -17639,7 +17631,12 @@ tag = apc;</desc>
      inkscape:groupmode="layer"
      id="layer46"
      inkscape:label="layer1.map1"
-     style="display:none">
+     style="display:inline">
+    <g
+       inkscape:groupmode="layer"
+       id="layer50"
+       inkscape:label="objects"
+       style="display:inline" />
     <g
        inkscape:groupmode="layer"
        id="layer47"
@@ -17791,17 +17788,17 @@ key = env_building_1_1_1.vehicle;</desc>
 key = env_building_1_5_1.vehicle;</desc>
       </rect>
     </g>
-    <g
-       inkscape:groupmode="layer"
-       id="layer50"
-       inkscape:label="objects"
-       style="display:inline" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer48"
      inkscape:label="layer1.map2"
-     style="display:none">
+     style="display:inline">
+    <g
+       inkscape:label="objects"
+       id="g3628"
+       inkscape:groupmode="layer"
+       style="display:inline" />
     <g
        inkscape:groupmode="layer"
        id="layer49"
@@ -17846,63 +17843,22 @@ tag = jeep;</desc>
 key = env_building_3_3_1.vehicle;</desc>
       </rect>
     </g>
-    <g
-       inkscape:label="objects"
-       id="g3628"
-       inkscape:groupmode="layer"
-       style="display:inline" />
   </g>
   <g
-     style="display:none"
+     style="display:inline"
      inkscape:label="layer1.map3"
      id="g27529"
      inkscape:groupmode="layer">
     <g
        inkscape:groupmode="layer"
-       id="layer52"
-       inkscape:label="destroyable"
-       style="display:none">
-      <rect
-         style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
-         id="spawn2_3-3-1-3"
-         width="31.138823"
-         height="14.218333"
-         x="-1106.4434"
-         y="-1176.7238"
-         inkscape:label=""
-         transform="rotate(-179.96146)"
-         inkscape:transform-center-x="-7.4246192"
-         inkscape:transform-center-y="-5.3032994">
-        <desc
-           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3">type = vehicle;
-key = env_building_3_3_1.vehicle;</desc>
-      </rect>
-    </g>
-    <g
-       inkscape:groupmode="layer"
        id="layer51"
        inkscape:label="objects"
-       style="display:none" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="g3767"
-     inkscape:label="layer1.map4"
-     style="display:inline">
-    <g
-       style="display:inline"
-       inkscape:label="destroyable"
-       id="g3763"
-       inkscape:groupmode="layer" />
-    <g
-       inkscape:label="objects"
-       id="g3765"
-       inkscape:groupmode="layer"
        style="display:inline" />
     <g
        inkscape:groupmode="layer"
        id="layer53"
-       inkscape:label="offroad">
+       inkscape:label="offroad"
+       style="display:inline">
       <path
          inkscape:label="#path1133"
          sodipodi:nodetypes="cccccccccc"
@@ -17942,6 +17898,43 @@ key = vulcan_tank.vehicle;</desc>
 tag = tank;</desc>
       </rect>
     </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer52"
+       inkscape:label="destroyable"
+       style="display:inline">
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
+         id="spawn2_3-3-1-3"
+         width="31.138823"
+         height="14.218333"
+         x="-1075.3589"
+         y="-1218.6407"
+         inkscape:label=""
+         transform="rotate(-179.96146)"
+         inkscape:transform-center-x="-7.4246192"
+         inkscape:transform-center-y="-5.3032994">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3">type = vehicle;
+key = env_building_3_3_1.vehicle;</desc>
+      </rect>
+    </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g3767"
+     inkscape:label="layer1.map4"
+     style="display:inline">
+    <g
+       inkscape:label="objects"
+       id="g3765"
+       inkscape:groupmode="layer"
+       style="display:inline" />
+    <g
+       style="display:inline"
+       inkscape:label="destroyable"
+       id="g3763"
+       inkscape:groupmode="layer" />
   </g>
   <g
      style="display:inline"

@@ -45,11 +45,13 @@ class ResourceLifecycleHandler : Tracker {
 		// currently falls apart if a second player were to spawn.
 
 		// when the player spawns, he spawns alone...
+		/*
 		XmlElement c("command");
 		c.setStringAttribute("class", "set_soldier_spawn");
 		c.setIntAttribute("faction_id", 0);
 		c.setBoolAttribute("enabled", false);
 		m_metagame.getComms().send(c);
+		*/
 
 		// now, work with the spawned player character
 		const XmlElement@ player = event.getFirstElementByTagName("player");
@@ -99,23 +101,20 @@ class ResourceLifecycleHandler : Tracker {
 
 		if (player1Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 1", 1);
+			// can we prevent player 1 (p1) model from spawning again (and don't let p1 spawn with p2 model)?
 			if (m_playersSpawned.size() > 1 && player2Lives <= 0) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else if (player2Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 2", 1);
+			// can we prevent player 2 (p2) model from spawning again (and don't let p2 spawn with p1 model)?
 			if (m_playersSpawned.size() > 1 && player1Lives <= 0) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else {
-			_log("*** CABAL: Player still has " + player1Lives + " lives available. Allow respawn", 1);
-			XmlElement allowSpawn("command");
-			allowSpawn.setStringAttribute("class", "set_soldier_spawn");
-			allowSpawn.setIntAttribute("faction_id", 0);
-			allowSpawn.setBoolAttribute("enabled", true);
-			m_metagame.getComms().send(allowSpawn);
+			_log("*** CABAL: Player still has " + player1Lives + " lives available. Respawning still allowed", 1);
 		}
 
 		// tidy up assets
