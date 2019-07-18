@@ -3,7 +3,7 @@
     <tag name="grenade" />
 
     <trigger class="impact" />
-    <result class="blast" radius="1.5" damage="1.2" push="0.8" decal="1" character_state="death" />
+    <result class="blast" radius="2.0" damage="1.2" push="0.8" decal="1" character_state="death" />
     <rotation class="random" />
 
     <model mesh_filename="impact_grenade.xml" />

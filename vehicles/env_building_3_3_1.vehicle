@@ -1,4 +1,4 @@
-<vehicle file="vehicle_base.vehicle" name="Building" key="env_building_3_3_1.vehicle" usable_for_cover="1" respawn_time="600" map_view_atlas_index="0" spottable="0" >
+<vehicle file="vehicle_base.vehicle" name="" key="env_building_3_3_1.vehicle" usable_for_cover="1" respawn_time="600" map_view_atlas_index="0" spottable="0" >
 	<tag name="metal_thin" />
 	<tag name="building" />
 
