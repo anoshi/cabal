@@ -3,7 +3,7 @@
 	<command
 		class="start_game"
 		vehicles="1"
-		max_soldiers="20"
+		max_soldiers="44"
 		player_bot_compensation="0"
 		xp_multiplier="1.0"
 		rp_multiplier="1.0"
@@ -23,7 +23,7 @@
 		score_mode="0"
 		clear_profiles_at_start="-1"
 		allow_spawn_point_selection="0"
-		fov="1"
+		fov="0"
 		preserve_items_on_team_kill="1"
 		preserve_items_on_disconnect="1"
 		lose_last_base_without_spawnpoints="0"

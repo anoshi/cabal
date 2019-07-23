@@ -16,8 +16,8 @@ class ResourceLifecycleHandler : Tracker {
 
 	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area
 	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area
-	protected float MIN_GOAL_XP = 3.5;
-	protected float MAX_GOAL_XP = 5.0;
+	protected float MIN_GOAL_XP = 4.0;
+	protected float MAX_GOAL_XP = 6.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
 	protected float curXP = 0.0;
 
@@ -122,13 +122,14 @@ class ResourceLifecycleHandler : Tracker {
 			allowSpawn.setBoolAttribute("enabled", true);
 			m_metagame.getComms().send(allowSpawn);
 
+			/*
 			// let's try spawning a character instead
 			const XmlElement@ playerCharInfo = event.getFirstElementByTagName("target");
 			string playerPos = playerCharInfo.getStringAttribute("position");
 			_log("*** CABAL: Player died, Spawning a new friendly at location", 1);
-			//string spawnChar = "<command class='create_instance' faction_id='0' position='" + playerPos + "' instance_class='character' instance_key='default' /></command>";
-			string spawnChar = "<command class='create_instance' faction_id='0' position='" + playerPos + "' instance_class='player' instance_key='default' /></command>";
+			string spawnChar = "<command class='create_instance' faction_id='0' position='" + playerPos + "' instance_class='character' instance_key='default' /></command>";
 			m_metagame.getComms().send(spawnChar);
+			*/
 		}
 
 		// tidy up assets
