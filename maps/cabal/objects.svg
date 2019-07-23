@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568543"
-     inkscape:cx="1047.702"
-     inkscape:cy="805.70822"
+     inkscape:zoom="16"
+     inkscape:cx="1082.9252"
+     inkscape:cy="817.42623"
      inkscape:document-units="px"
-     inkscape:current-layer="layer33"
+     inkscape:current-layer="layer47"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -16488,6 +16488,30 @@ key = env_building_3_2_1.vehicle;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-37-2">type = vehicle;
 key = env_building_3_5_1.vehicle;</desc>
     </rect>
+    <rect
+       style="display:inline;enable-background:new;opacity:0.93000034;fill:#d21e1e;fill-opacity:1;stroke:#000000;stroke-width:0.28346458;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.07086614, 0.07086613999999999;stroke-dashoffset:1.98425269;stroke-opacity:1"
+       id="spawn_wall_1-1-1"
+       width="3.0295005"
+       height="14.218262"
+       x="880.09625"
+       y="-3675.7688"
+       inkscape:label=""
+       transform="rotate(90.149388)">
+      <desc
+         id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-5-4-9-8">type = vehicle;
+key = env_wall_1_1_1.vehicle;</desc>
+    </rect>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+       x="3565.1895"
+       y="893.93213"
+       id="text107814-1-4-7-2-2-2-5-0"><tspan
+         y="893.93213"
+         x="3565.1895"
+         sodipodi:role="line"
+         style="font-size:10px;line-height:1.25;font-family:sans-serif"
+         id="tspan4956-8-4-5-2">destroyable wall</tspan></text>
   </g>
   <g
      style="display:none"
@@ -17670,7 +17694,7 @@ key = env_building_3_3_1.vehicle;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#a5a5a5;fill-opacity:1;stroke:#000000;stroke-width:1.00157475;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25039369, 0.25039369;stroke-dashoffset:7.01102591;stroke-opacity:1;enable-background:new"
-         id="spawn2_1-3-3-1"
+         id="spawn2_3-3-1-1"
          width="31.138823"
          height="14.218333"
          x="-1132.2133"
@@ -17681,7 +17705,7 @@ key = env_building_3_3_1.vehicle;</desc>
          inkscape:transform-center-y="-5.3032994">
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-3-8">type = vehicle;
-key = env_building_1_3_3.vehicle;</desc>
+key = env_building_3_3_1.vehicle;</desc>
       </rect>
       <rect
          style="display:inline;opacity:0.93000034;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.99999912, 3.99999912;stroke-dashoffset:6.99999809;stroke-opacity:1;enable-background:new"
@@ -17786,6 +17810,19 @@ key = env_building_1_1_1.vehicle;</desc>
         <desc
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-5-0-2">type = vehicle;
 key = env_building_1_5_1.vehicle;</desc>
+      </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#d21e1e;fill-opacity:1;stroke:#000000;stroke-width:0.28346458;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.07086614, 0.07086614;stroke-dashoffset:1.98425269;stroke-opacity:1;enable-background:new"
+         id="spawn_wall_1-1-1-1"
+         width="13.664063"
+         height="0.85705566"
+         x="1077.9342"
+         y="1230.0227"
+         inkscape:label=""
+         transform="rotate(0.10760949)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-5-4-9">type = vehicle;
+key = env_wall_1_1_1.vehicle;</desc>
       </rect>
     </g>
   </g>

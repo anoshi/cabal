@@ -194,6 +194,7 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		stage.m_includeLayers.insertLast("layer1.map1"); // this is intentional
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+/* was using this
 		stage.m_maxSoldiers = 2; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 		stage.m_playerAiReduction = 0; // nfi
 		stage.m_playerAiCompensation = 0; // again, nfi
@@ -207,10 +208,26 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 			f.m_bases = 1;
 			stage.m_factions.insertLast(f);
 		}
+following section uses map 11 / final stage 1 as ref */
+		stage.m_maxSoldiers = 57 ;
+		stage.m_playerAiCompensation = 3;
+		stage.m_playerAiReduction = 0;
+
+		//stage.addTracker(Spawner(m_metagame, 1, Vector3(367,0,702), 15, "default_ai")); // to spawn 15 bads under faction 1 at pos, default ai behaviours)
+
+		{
+			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0, 0.0, 0.0, false));
+			f.m_overCapacity = 0; // spawn this many more units at start than capacity offset
+			f.m_capacityOffset = 2; // reserve this many units of maxSoldiers for this faction
+			f.m_capacityMultiplier = 0.0001;
+			f.m_bases = 1;
+			stage.m_factions.insertLast(f);
+		}
+
 		{
 			Faction f(getFactionConfigs()[1], createCommanderAiCommand(1,0,0,true));
 			//f.m_overCapacity = 5;
-			f.m_overCapacity = 55;
+			f.m_overCapacity = 54;
 			f.m_capacityMultiplier = 0.0001;
 			stage.m_factions.insertLast(f);
 		}

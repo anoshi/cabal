@@ -128,6 +128,14 @@ class ResourceLifecycleHandler : Tracker {
 			allowSpawn.setIntAttribute("faction_id", 0);
 			allowSpawn.setBoolAttribute("enabled", true);
 			m_metagame.getComms().send(allowSpawn);
+
+			// let's try spawning a character instead
+			const XmlElement@ playerCharInfo = event.getFirstElementByTagName("target");
+			string playerPos = playerCharInfo.getStringAttribute("position");
+			_log("*** CABAL: Player died, Spawning a new friendly at location", 1);
+			//string spawnChar = "<command class='create_instance' faction_id='0' position='" + playerPos + "' instance_class='character' instance_key='default' /></command>";
+			string spawnChar = "<command class='create_instance' faction_id='0' position='" + playerPos + "' instance_class='player' instance_key='default' /></command>";
+			m_metagame.getComms().send(spawnChar);
 		}
 
 		// tidy up assets
@@ -158,6 +166,7 @@ class ResourceLifecycleHandler : Tracker {
 			c.setStringAttribute("class", "set_campaign_status");
 			c.setStringAttribute("key", "lose");
 			// delay this for 2-3 seconds. It's a little abrupt when you lose :-|
+			//sleep(2); // will liekly need to code something into update function
 			m_metagame.getComms().send(c);
 		}
 
@@ -234,6 +243,13 @@ class ResourceLifecycleHandler : Tracker {
         // _log("*** CABAL: store details of dead character " + charId, 1);
 		charId = deadCharInfo.getIntAttribute("id");
 		string charName = deadCharInfo.getStringAttribute("name");
+
+		// sanity sanity, to be sure to be sure.
+		if (charName == "Player") {
+			_log("*** CABAL: dead character name is 'Player'. Player deaths are handled elsewhere", 1);
+			return;
+		}
+
         string charPos = deadCharInfo.getStringAttribute("position");
 		Vector3 v3charPos = stringToVector3(charPos);
 
@@ -243,15 +259,25 @@ class ResourceLifecycleHandler : Tracker {
 		float charXP = deadCharInfo.getFloatAttribute("xp");
 		int charRP = deadCharInfo.getIntAttribute("rp");
 		int charLeader = deadCharInfo.getIntAttribute("leader");
-		_log("*** CABAL: Character " + charId + " (" + charName + "), with " + charXP + " XP, has died.", 1);
+		string charGroup = deadCharInfo.getStringAttribute("soldier_group_name");
 
-		// add enemy's XP to total score for level
-		approachGoalXP(charXP);
+		_log("*** CABAL: Character " + charId + " (" + charName + ", " + charGroup + "), with " + charXP + " XP, has died.", 1);
 
 		// _log("*** CABAL: store player character's info", 1);
 		const XmlElement@ playerInfo = getPlayerInfo(m_metagame, 0); // this may not work in all cases. Coop: player IDs?
+
+		// Run an alive/dead check on Player character(s)
 		int playerCharId = playerInfo.getIntAttribute("character_id");
 		const XmlElement@ playerCharInfo = getCharacterInfo(m_metagame, playerCharId);
+		int playerCharIsDead = playerCharInfo.getIntAttribute("dead");
+		if (playerCharIsDead == 1) {
+			_log("*** CABAL: Player character is dead. No rewards given");
+			return;
+		}
+
+		// Player is alive and well. Add enemy's XP to total score for level
+		approachGoalXP(charXP);
+
 		string playerPos = playerCharInfo.getStringAttribute("position");
         _log("*** CABAL: Player Character id: " + m_playerCharacterId + " is at: " + playerPos);
 		Vector3 v3playerPos = stringToVector3(playerPos);
@@ -334,7 +360,6 @@ class ResourceLifecycleHandler : Tracker {
 		}
 		string scoreBoardText = "<command class='update_score_display' id='0' text='ENEMY: " + levelCompleteText + "'></command>";
 		m_metagame.getComms().send(scoreBoardText);
-
 
 		if (curXP >= goalXP) {
 			_log("*** CABAL: LEVEL COMPLETE!", 1);
