@@ -265,6 +265,15 @@ class ResourceLifecycleHandler : Tracker {
 
 		_log("*** CABAL: Character " + charId + " (" + charName + charGroup + "), with " + charXP + " XP, has died.", 1);
 
+		// if commando killed, create a new one in wounded state
+		if (charGroup == "commando") {
+			// let's try spawning a character instead
+			_log("*** CABAL: enemy commando killed, Spawning a wounded replacement at " + charPos, 1);
+			string spawnChar = "<command class='create_instance' faction_id='1' position='" + charPos + "' instance_class='character' instance_key='commando' wounded='1' /></command>";
+			m_metagame.getComms().send(spawnChar);
+			// Now spawn some medics off-screen to attempt a heal
+		}
+
 		// _log("*** CABAL: store player character's info", 1);
 		const XmlElement@ playerInfo = getPlayerInfo(m_metagame, 0); // this may not work in all cases. Coop: player IDs?
 
@@ -298,11 +307,16 @@ class ResourceLifecycleHandler : Tracker {
 
 		// based on these details, set a probability for a weapon/power-up/etc. to spawn
 		if (charLeader == 1) { // artificially bump XP for greater chance of drop and reward when a squad leader dies
-			charXP += 0.2;
+			charXP += 0.1;
 		}
 
-		// XP-based drop chance logic
-		if (rand(1, 100) > 60) {
+		// Group-based drop logic (special enemies always drop specific equipment on death)
+		if (charGroup == "commando") {
+			dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile");
+		} else if (charGroup == "covert_ops") {
+			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon");
+		} // XP-based drop chance logic
+		else if (rand(1, 100) > 80) {
 			if (charXP > 1.0) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_gl.weapon"); // drop grenade launcher.
 			} else if (charXP > 0.8) {

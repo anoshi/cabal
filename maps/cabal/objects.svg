@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="16"
-     inkscape:cx="1082.9252"
-     inkscape:cy="817.42623"
+     inkscape:zoom="8"
+     inkscape:cx="1050.1936"
+     inkscape:cy="856.18215"
      inkscape:document-units="px"
-     inkscape:current-layer="layer47"
+     inkscape:current-layer="layer55"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -16488,19 +16488,6 @@ key = env_building_3_2_1.vehicle;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-37-2">type = vehicle;
 key = env_building_3_5_1.vehicle;</desc>
     </rect>
-    <rect
-       style="display:inline;enable-background:new;opacity:0.93000034;fill:#d21e1e;fill-opacity:1;stroke:#000000;stroke-width:0.28346458;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.07086614, 0.07086613999999999;stroke-dashoffset:1.98425269;stroke-opacity:1"
-       id="spawn_wall_1-1-1"
-       width="3.0295005"
-       height="14.218262"
-       x="880.09625"
-       y="-3675.7688"
-       inkscape:label=""
-       transform="rotate(90.149388)">
-      <desc
-         id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-5-4-9-8">type = vehicle;
-key = env_wall_1_1_1.vehicle;</desc>
-    </rect>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'Sans, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.93000034;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
@@ -16512,6 +16499,19 @@ key = env_wall_1_1_1.vehicle;</desc>
          sodipodi:role="line"
          style="font-size:10px;line-height:1.25;font-family:sans-serif"
          id="tspan4956-8-4-5-2">destroyable wall</tspan></text>
+    <rect
+       style="display:inline;opacity:0.93000034;fill:#d21e1e;fill-opacity:1;stroke:#000000;stroke-width:0.28346458;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.07086614, 0.07086614;stroke-dashoffset:1.98425269;stroke-opacity:1;enable-background:new"
+       id="spawn_wall_1-1-1"
+       width="13.664063"
+       height="0.85705566"
+       x="3662.334"
+       y="883.18182"
+       inkscape:label=""
+       transform="rotate(0.10760949)">
+      <desc
+         id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-5-4-9-0">type = vehicle;
+key = env_wall_1_1_1.vehicle;</desc>
+    </rect>
   </g>
   <g
      style="display:none"
@@ -16583,6 +16583,13 @@ key = env_wall_1_1_1.vehicle;</desc>
        inkscape:connector-curvature="0"
        id="path1133_navigation-2"
        d="m 1140.5909,1155.3413 14.1873,-7.0738 9.4622,-26.0782 -23.6761,-84.0116 -135.7008,-0.4181 -29.28312,88.4472 29.57192,31.3021 129.7523,-0.7833"
+       style="display:inline;opacity:0.92000002;fill:none;stroke:#956011;stroke-width:8;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter11732);enable-background:new" />
+    <path
+       inkscape:label="#path1133"
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path1133_navigation-3"
+       d="m 1028.7076,1195.25 h 43.8349"
        style="display:inline;opacity:0.92000002;fill:none;stroke:#956011;stroke-width:8;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter11732);enable-background:new" />
   </g>
   <g
@@ -17157,6 +17164,19 @@ tag = jeep;</desc>
            id="desc7082-740-7-7-8-0">type = vehicle;
 tag = apc;</desc>
       </rect>
+      <rect
+         style="display:inline;opacity:0.92000002;fill:#00ff00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:11.99999879, 11.99999879;stroke-dashoffset:4.59999943;stroke-opacity:1;enable-background:new"
+         id="spawn1-70-6-0-5-9-7"
+         width="3.982286"
+         height="7.3961515"
+         x="-1201.7185"
+         y="1030.5623"
+         inkscape:label=""
+         transform="rotate(-90.226744)">
+        <desc
+           id="desc7082-9-8-9-8-4-9">type = vehicle;
+tag = truck;</desc>
+      </rect>
     </g>
     <g
        inkscape:groupmode="layer"
@@ -17663,6 +17683,10 @@ tag = apc;</desc>
        style="display:inline" />
     <g
        inkscape:groupmode="layer"
+       id="layer55"
+       inkscape:label="offroad" />
+    <g
+       inkscape:groupmode="layer"
        id="layer47"
        inkscape:label="destroyable"
        style="display:inline">
@@ -17830,7 +17854,7 @@ key = env_wall_1_1_1.vehicle;</desc>
      inkscape:groupmode="layer"
      id="layer48"
      inkscape:label="layer1.map2"
-     style="display:inline">
+     style="display:none">
     <g
        inkscape:label="objects"
        id="g3628"
@@ -17882,7 +17906,7 @@ key = env_building_3_3_1.vehicle;</desc>
     </g>
   </g>
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:label="layer1.map3"
      id="g27529"
      inkscape:groupmode="layer">

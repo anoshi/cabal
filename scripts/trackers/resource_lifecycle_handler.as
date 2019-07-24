@@ -275,11 +275,16 @@ class ResourceLifecycleHandler : Tracker {
 
 		// based on these details, set a probability for a weapon/power-up/etc. to spawn
 		if (charLeader == 1) { // artificially bump XP for greater chance of drop and reward when a squad leader dies
-			charXP += 0.2;
+			charXP += 0.1;
 		}
 
-		// XP-based drop chance logic
-		if (rand(1, 100) > 60) {
+		// Group-based drop logic (special enemies always drop specific equipment on death)
+		if (charGroup == "commando") {
+			dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile");
+		} else if (charGroup == "covert_ops") {
+			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon");
+		} // XP-based drop chance logic
+		else if (rand(1, 100) > 80) {
 			if (charXP > 1.0) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_gl.weapon"); // drop grenade launcher.
 			} else if (charXP > 0.8) {
