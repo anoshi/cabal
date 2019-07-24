@@ -3,7 +3,7 @@
     <tag name="cqb" />
     <specification
     retrigger_time="0.40"
-    accuracy_factor="0.79"
+    accuracy_factor="0.99"
     sustained_fire_grow_step="2.0"
     sustained_fire_diminish_rate="0.6"
     magazine_size="10"
@@ -13,7 +13,7 @@
     class="4"
     reload_one_at_a_time="1"
     sight_range_modifier="1.0"
-    projectile_speed="15.0"
+    projectile_speed="12.0"
     projectiles_per_shot="3"
     spread_range="0.35"
     burst_shots="1" />
@@ -32,7 +32,7 @@
 
     <weak_hand_hold offset="0.2" />
     <projectile file="cabal_laser.projectile">
-        <result class="hit" kill_probability="0.59" kill_decay_start_time="0.23" kill_decay_end_time="0.32" />
+        <result class="hit" kill_probability="0.99" kill_decay_start_time="7.00" kill_decay_end_time="10.00" />
     </projectile>
 
     <modifier class="speed" value="+0.0" />

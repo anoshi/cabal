@@ -1,0 +1,78 @@
+<vehicle file="vehicle_base.vehicle" name="" key="env_building_3_5_3.vehicle" usable_for_cover="1" respawn_time="600" map_view_atlas_index="0" spottable="0" >
+	<tag name="metal_thin" />
+	<tag name="building" />
+
+	<tire_set offset="9 0.0 9" radius="0.65" />
+	<tire_set offset="9 0.0 -9" radius="0.65" />
+
+	<control max_speed="3.0" acceleration="1.0" max_reverse_speed="1.0" max_rotation="0.0" max_water_depth="10.0" />
+
+	<physics max_health="3"
+	mass="3000"
+	blast_damage_threshold="0.0"
+	extent="15 19.9 15"
+	offset="0 0 0"
+	top_offset="0 19.9 0"
+	collision_model_pos="0 7.5 0"
+	collision_model_extent="15 12.5 15"
+	visual_offset="0.0 0.0 0.0"/>
+
+	<visual class="chassis" mesh_filename="env_building_3_5_3.mesh" material="env_building.material" />
+	<!--<visual class="chassis" key="broken" mesh_filename="env_building_3_5_3.mesh" texture_filename="jeep_body_broken.png" />-->
+
+	<!-- sound handling -->
+	<sound key="hit" filename="car_hit1.wav" />
+	<sound key="hit" filename="car_hit2.wav" />
+	<sound key="hit" filename="car_hit3.wav" />
+	<sound key="destroy" filename="vehicle_explosion_1.wav" />
+	<sound key="cleanup" filename="vehicle_explosion_1.wav" />
+
+	<!-- particle effects on damaged, destroyed -->
+	<effect event_key="health" value="0.7" ref="SmallSmokeVehicle" offset="-0.4 1.8 2.64" />
+	<effect event_key="destroyed" ref="SmallSmokeVehicle" offset="0.4 1.8 2.64" />
+	<effect event_key="destroyed" ref="SmallFireRepeat" offset="0.4 1.2 2.64" />
+	<effect event_key="destroy" key="other" ref="woosh" post_processing="0" shadow="0" />
+	<effect event_key="cleanup" key="other" ref="woosh" post_processing="0" shadow="0" />
+
+
+	<!--
+	<effect event_key="destroyed" ref="BurstRepeat" bind="0" />
+	<effect event_key="destroyed" ref="BurstRepeat" bind="1" />
+	-->
+
+	<event key="receive_damage_xp_reward">
+		<trigger class="receive_damage" />
+		<result class="reward" xp="0.0015" />
+	</event>
+
+	<event>
+		<trigger class="destroy" />
+  	<result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep1.visual_item" min_amount="1" max_amount="3" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.15 0.3" />
+	</event>
+	<event>
+		<trigger class="destroy" />
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep2.visual_item" min_amount="0" max_amount="1" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.3" />
+	</event>
+  <event>
+		<trigger class="destroy" />
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep3.visual_item" min_amount="1" max_amount="2" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.25" />
+	</event>
+  <event>
+		<trigger class="destroy" />
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep4.visual_item" min_amount="1" max_amount="3" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.15 0.25" />
+	</event>
+  <event>
+		<trigger class="destroy" />
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep5.visual_item" min_amount="2" max_amount="3" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.3" />
+	</event>
+  <event>
+		<trigger class="destroy" />
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_jeep6.visual_item" min_amount="2" max_amount="3" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.2" />
+  </event>
+
+  <event>
+		<trigger class="cleanup" />
+    <result class="spawn" instance_class="visual_item" instance_key="burning_piece_cleanup.visual_item" min_amount="20" max_amount="30" offset="0 2.0 0" position_spread="1.5 1.5" direction_spread="0.1 0.1" />
+  </event>
+
+</vehicle>

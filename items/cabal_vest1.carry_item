@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <carry_items>
-    <carry_item key="cabal_vest1.carry_item" name="CabalVest, type I" slot="1" transform_on_consume="cabal_vest1_2" time_to_live_out_in_the_open="120.0">
+    <carry_item key="cabal_vest1.carry_item" name="Cabal Vest, type I" slot="1" transform_on_consume="cabal_vest1_2" time_to_live_out_in_the_open="120.0">
         <hud_icon filename="hud_vest1.png" />
         <capacity value="1" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.05" />
@@ -21,7 +21,7 @@
         <modifier class="speed" value="-0.25" />
     </carry_item>
 
-    <carry_item key="cabal_vest1_2" name="CabalVest, type I, 50%" slot="1" time_to_live_out_in_the_open="120.0">
+    <carry_item key="cabal_vest1_2" name="Cabal Vest, type I, 50%" slot="1" time_to_live_out_in_the_open="120.0">
         <hud_icon filename="hud_vest1_hole1.png" />
         <capacity value="0" source="rank" source_value="0.0" />
         <capacity value="1" source="rank" source_value="0.05" />

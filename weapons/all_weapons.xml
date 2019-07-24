@@ -14,10 +14,6 @@
     <capacity source="rank" source_value="0.0" value="0" />
     <capacity source="rank" source_value="0.05" value="1" />
   </weapon>
-  <weapon file="player_sr.weapon"> <!-- sniper rifle -->
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.05" value="1" />
-  </weapon>
   <weapon file="player_sg.weapon"> <!-- shotgun -->
     <capacity source="rank" source_value="0.0" value="0" />
     <capacity source="rank" source_value="0.05" value="1" />
@@ -38,16 +34,16 @@
     <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="cabal_mg.weapon"> <!-- machine gun -->
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.05" value="1" />
+    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="cabal_sr.weapon"> <!-- sniper rifle -->
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.05" value="1" />
+    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="cabal_sg.weapon"> <!-- shotgun -->
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.05" value="1" />
+    <capacity source="rank" source_value="0.0" value="1" />
+  </weapon>
+  <weapon file="cabal_gl.weapon"> <!-- grenade (grenadier and commando only) -->
+    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <!-- end Cabal weapons -->
 
@@ -61,10 +57,9 @@
   <!-- end SHARED / generic weapons -->
 
   <!-- VEHICULAR / MOUNTED weapons -->
-  <weapon file="empl_turret.weapon" />
   <weapon file="apc_hmg.weapon" />
   <weapon file="apc_hmg_1.weapon" />
-  <weapon file="apc_hmg_2.weapon" />
+  <weapon file="apc_hmg_2.weapon" /><!-- CABAL apc heavy machine gun -->
   <weapon file="tank_cannon.weapon" />
   <weapon file="tank_mg.weapon" />
   <weapon file="tank_cannon_1.weapon" />

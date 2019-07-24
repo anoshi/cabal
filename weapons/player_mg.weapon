@@ -10,7 +10,7 @@
     magazine_size="2000"
     can_shoot_standing="1"
     can_shoot_crouching="1"
-    can_shoot_prone="0"
+    can_shoot_prone="1"
     suppressed="0"
     name="Minigun"
     class="0"
@@ -19,23 +19,25 @@
     projectile_speed="120.0"
     projectiles_per_shot="1" />
 
-	<animation state_key="recoil"	animation_key="recoil, hip fire" />
-	<animation state_key="hold" animation_key="hold, hip fire" />
-	<animation state_key="crouching" animation_key="crouch, hold, hip fire" />
-	<animation state_key="crouch_moving" animation_key="crouching forwards, hip fire" />
-    <animation state_key="walking_backwards" animation_key="walking backwards, hip fire" />
-    <animation state_key="reload" animation_key="reloading, microgun" volume="0.7" />
-	<animation state_key="hold_on_wall" animation_key="hold, hip fire" />
-    <animation state_key="still_against_wall" 	animation_key="hold, hip fire" />
-	<animation state_key="walking" animation_key="walking, hip fire" />
-	<animation state_key="running" animation_key="walking, hip fire" />
+	<animation state_key="recoil"	            animation_key="recoil, hip fire" />
+	<animation state_key="hold"                 animation_key="hold, hip fire" />
+	<animation state_key="crouching"            animation_key="crouch, hold, hip fire" />
+    <animation state_key="prone"                animation_key="crouch, hold, hip fire" />
+	<animation state_key="crouch_moving"        animation_key="crouching forwards, hip fire" />
+    <animation state_key="walking_backwards"    animation_key="walking backwards, hip fire" />
+    <animation state_key="reload"               animation_key="reloading, microgun" volume="0.7" />
+	<animation state_key="hold_on_wall"         animation_key="hold, hip fire" />
+    <animation state_key="still_against_wall"   animation_key="hold, hip fire" />
+	<animation state_key="walking"              animation_key="walking, hip fire" />
+	<animation state_key="running"              animation_key="walking, hip fire" />
 
     <!--<sound key="fire" fileref="microgun_shot.wav" pitch_variety="0.05" volume="0.85"/>-->
-    <sound key="fire" fileref="player_mg_2.wav" pitch_variety="0.05" volume="0.85"/>
-    <sound key="magazine_out" fileref="mg_clip_out.wav" />
-    <sound key="magazine_in" fileref="mg_clip_in.wav" />
-    <sound key="cycle" fileref="rifle_chamber.wav" />
-    <sound class="impact" fileref="rifle_drop.wav" />
+    <sound key="fire"           fileref="player_mg_2.wav" pitch_variety="0.05" volume="0.85"/>
+    <sound key="magazine_out"   fileref="mg_clip_out.wav" />
+    <sound key="magazine_in"    fileref="mg_clip_in.wav" />
+    <sound key="cycle"          fileref="rifle_chamber.wav" />
+    <sound class="impact"       fileref="rifle_drop.wav" />
+
     <model filename="player_mg.xml" />
 
     <hud_icon filename="hud_microgun.png" />

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons>
+  <weapon file="bandage.weapon">
+    <commonness value="0.05" in_stock="0" />  
+    <capacity source="rank" source_value="0.0" value="2" />
+    <capacity source="rank" source_value="0.5" value="3" />    
+  </weapon>  
+</weapons>

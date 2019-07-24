@@ -6,17 +6,6 @@
  	<vehicle key="apc_2.vehicle" />
  	<vehicle key="tank_2.vehicle" />
  	<vehicle key="transport_truck_2.vehicle" />
-	<vehicle key="cabal_ap_crate.vehicle" />
-	<vehicle key="cabal_exp_crate.vehicle" />
 
-	<!-- faction-specific calls (not listed in common.resources) -->
-	<call key="cabal_ap_rounds_1.call" />
-	<call key="cabal_exp_rounds_1.call" />
-	<call key="cabal_probe_1.call" />
-	<call key="cabal_x-ray_1.call" />
-
-	<!-- class-specific calls (allow player 'default' class access to these as well) -->
-	<call key="resupply_demo.call" />
-	<call key="resupply_gren.call" />
-	<call key="resupply_medic.call" />
+	<projectile key="player_grenade.projectile" enabled="0" /> <!-- not yours! -->
 </resources>

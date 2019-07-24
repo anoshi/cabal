@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="base_primary.weapon" key="player_smg_pri.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="10.0">
+<weapon file="base_primary.weapon" key="player_mp.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="10.0">
     <tag name="assault" />
     <specification
     retrigger_time="0.09"
@@ -18,17 +18,18 @@
     barrel_offset="0"
     slot="0" />
 
-	<animation state_key="recoil"	animation_key="recoil, pistol" />
-    <animation state_key="reload"	animation_key="reloading, pistol" />
-	<animation state_key="hold"	animation_key="hold, pistol" />
-	<animation state_key="hold_casual"	animation_key="hold_casual, pistol" />
-	<animation state_key="hold_on_wall"	animation_key="hold, pistol" />
-	<animation state_key="crouching"	animation_key="crouch, pistol" />
-	<animation state_key="running"	animation_key="running, pistol" />
-	<animation state_key="walking"	animation_key="walking, pistol" />
+	<animation state_key="recoil"	            animation_key="recoil, pistol" />
+    <animation state_key="reload"	            animation_key="reloading, pistol" />
+	<animation state_key="hold"	                animation_key="hold, pistol" />
+	<animation state_key="hold_casual"	        animation_key="hold_casual, pistol" />
+	<animation state_key="hold_on_wall"	        animation_key="hold, pistol" />
+	<animation state_key="crouching"	        animation_key="crouch, pistol" />
+    <animation state_key="prone"                animation_key="crouch, pistol" />
+	<animation state_key="running"          	animation_key="running, pistol" />
+	<animation state_key="walking"          	animation_key="walking, pistol" />
     <animation state_key="changing_weapon_in" 	animation_key="change weapon in, single hand carry" />
-    <animation state_key="prone_still" animation_key="prone_still, pistol" />
-    <animation state_key="walking_backwards" animation_key="walking backwards, pistol" />
+    <animation state_key="prone_still"          animation_key="crouch, pistol" />
+    <animation state_key="walking_backwards"    animation_key="walking backwards, pistol" />
 
     <sound key="fire" fileref="tmp_shot.wav" volume="0.6" />
     <sound key="magazine_out" fileref="pistol_clip_out.wav" />

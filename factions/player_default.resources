@@ -9,30 +9,13 @@
 
 	<!-- faction-specific weapons (not listed in common.resources) -->
 	<weapon key="player_lr.weapon" />
-	<weapon key="player_lrx.weapon" />
 	<weapon key="player_sg.weapon" />
 	<weapon key="player_mg.weapon" />
 	<weapon key="player_gl.weapon" />
 	<weapon key="player_mp.weapon" />
 	<weapon key="player_rl.weapon" />
-	<weapon key="player_sr.weapon" />
-
-	<!-- faction-specific calls (not listed in common.resources) -->
-	<call key="player_annihilator_1.call" />
-	<call key="player_grenade_launcher_turret_1.call" />
-	<call key="player_hot_potato_1.call" />
-	<call key="player_minigun_turret_1.call" />
-	<call key="player_power_armour_1.call" />
-
-	<!-- class-specific calls (allow player 'default' class access to these as well) -->
-	<call key="resupply_demo.call" />
-	<call key="resupply_gren.call" />
-	<call key="resupply_medic.call" />
 
 	<!-- explicitly enable this faction's carry items (listed as disabled in common.resources) -->
-	<carry_item key="player_vest1.carry_item" enabled="1" />
-	<carry_item key="player_vest2.carry_item" enabled="1" />
-	<carry_item key="player_vest3.carry_item" enabled="1" />
-	<carry_item key="player_impervavest.carry_item" enabled="1" />
-	<carry_item key="player_power_armour.carry_item" enabled="1" />
+	<!--<carry_item key="player_impervavest.carry_item" enabled="1" />-->
+	<!--<carry_item key="player_power_armour.carry_item" enabled="1" />-->
 </resources>

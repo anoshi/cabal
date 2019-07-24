@@ -10,11 +10,9 @@
 #include "autosaver.as"
 
 // cabal helpers
-#include "cabal_helpers.as" // rename to cabal_helpers.as
+#include "cabal_helpers.as"
 
 // cabal trackers
-#include "call_handler.as"
-#include "dummy_vehicle_handler.as"
 #include "resource_lifecycle_handler.as"
 
 // --------------------------------------------
@@ -76,9 +74,7 @@ class Cabal : GameMode {
 		addTracker(BasicCommandHandler(this));
 
 		// Cabal handlers
-		addTracker(CallHandler(this));				//
-		addTracker(DummyVehicleHandler(this));		// Performs tasks when (dummy) vehicles are destroyed
-		addTracker(ResourceLifecycleHandler(this)); // using this method instead to create a chance to drop an item near player after killing bad guys
+		addTracker(ResourceLifecycleHandler(this));
 
 		getUserSettings();
 	}

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <weapon key='player_rl.weapon' enabled="1" />
-  <weapon key='player_smg.weapon' enabled="1" />
-  <weapon key='player_sa_sil.weapon' enabled="1" />
+  <weapon key='player_mp.weapon' enabled="1" />
 </resources>
