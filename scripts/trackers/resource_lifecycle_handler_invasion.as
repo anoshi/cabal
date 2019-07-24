@@ -77,9 +77,8 @@ class ResourceLifecycleHandler : Tracker {
 					*/
 					string name = player.getStringAttribute("name");
 					m_playerCharacterId = characterId;
-					_log("*** CABAL: player " + name + " (" + m_playerCharacterId + ") spawned.", 1);
-
 					m_playersSpawned.insertLast(playerHash);
+					_log("*** CABAL: player " + name + " (" + m_playerCharacterId + ") spawned as player" + int(m_playersSpawned.size()), 1);
 				} else {
 					kickPlayer(player.getIntAttribute("player_id"), "Only " + m_metagame.getUserSettings().m_maxPlayers + " players allowed");
 				}
@@ -104,40 +103,59 @@ class ResourceLifecycleHandler : Tracker {
 			return;
 		}
 
-		// decrement lives left
-		_log("*** CABAL: Player 1 lost a life!", 1);
-		player1Lives -= 1;
+		const XmlElement@ deadPlayer = event.getFirstElementByTagName("target");
+		// use profile_hash stored in m_playersSpawned array to id which char died
+		int playerCharId = deadPlayer.getIntAttribute("character_id");
+		string playerHash = deadPlayer.getStringAttribute("profile_hash");
+		int playerNum = m_playersSpawned.find(playerHash); // should return the index or negative if not found
+
+		if (playerNum == 0) { // player 1
+			// decrement lives left
+			_log("*** CABAL: Player 1 lost a life!", 1);
+			player1Lives -= 1;
+		} else if (playerNum == 1) { // player 2
+			_log("*** CABAL: Player 2 lost a life!", 1);
+			player2Lives -= 1;
+		} else {
+			// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
+		}
 
 		if (player1Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 1", 1);
-			if (m_playersSpawned.size() > 1 && player2Lives <= 0) {
+			if ((int(m_playersSpawned.size()) <= 1) || (int(m_playersSpawned.size()) > 1 && player2Lives <= 0)) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else if (player2Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 2", 1);
-			if (m_playersSpawned.size() > 1 && player1Lives <= 0) {
+			if ((int(m_playersSpawned.size()) <= 1) || (int(m_playersSpawned.size()) > 1 && player1Lives <= 0)) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else {
-			_log("*** CABAL: Player still has " + player1Lives + " lives available. Allow respawn", 1);
-			// this isn't having the desired effect. Spawn blocking occurring somewhere else :-/
+			_log("*** CABAL: Player" + (playerNum + 1) + " still has " + (playerNum > 0 ? player2Lives : player1Lives) + " lives available.", 1);
+
+			// allow spawns
 			XmlElement allowSpawn("command");
 			allowSpawn.setStringAttribute("class", "set_soldier_spawn");
 			allowSpawn.setIntAttribute("faction_id", 0);
 			allowSpawn.setBoolAttribute("enabled", true);
 			m_metagame.getComms().send(allowSpawn);
 
-			/*
-			// let's try spawning a character instead
-			const XmlElement@ deadPlayerInfo = event.getFirstElementByTagName("target");
-			const XmlElement@ playerCharInfo = getCharacterInfo(m_metagame, deadPlayerInfo.getIntAttribute("character_id"));
-			string playerPos = playerCharInfo.getStringAttribute("position");
-			_log("*** CABAL: Player died, Spawning a new friendly at location", 1);
-			string spawnChar = "<command class='create_instance' faction_id='0' position='" + playerPos + "' instance_class='character' instance_key='default' /></command>";
-			m_metagame.getComms().send(spawnChar);
-			*/
+
+        	// We're about to kill a lot of people. Stop character_die tracking for the moment
+        	string trackCharDeathOff = "<command class='set_metagame_event' name='character_die' enabled='0' />";
+        	m_metagame.getComms().send(trackCharDeathOff);
+			// kill enemies anywhere near player to allow respawn
+			const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerCharId);
+			if (characterInfo !is null) {
+				_log("*** CABAL: Killing enemies near dead player character", 1);
+				Vector3 position = stringToVector3(characterInfo.getStringAttribute("position"));
+				killCharactersNearPosition(m_metagame, position, 1, 70.0f); // kill faction 1 (cabal)
+			}
+			// Reenable character_die tracking
+        	string trackCharDeathOn = "<command class='set_metagame_event' name='character_die' enabled='1' />";
+        	m_metagame.getComms().send(trackCharDeathOn);
 		}
 
 		// tidy up assets
@@ -267,10 +285,14 @@ class ResourceLifecycleHandler : Tracker {
 
 		// if commando killed, create a new one in wounded state
 		if (charGroup == "commando") {
+			string spawnChar = "<command class='update_character' id='" + charId + "' dead='0' wounded='1' /></command>";
+			m_metagame.getComms().send(spawnChar);
+			/*
 			// let's try spawning a character instead
 			_log("*** CABAL: enemy commando killed, Spawning a wounded replacement at " + charPos, 1);
 			string spawnChar = "<command class='create_instance' faction_id='1' position='" + charPos + "' instance_class='character' instance_key='commando' wounded='1' /></command>";
 			m_metagame.getComms().send(spawnChar);
+			*/
 			// Now spawn some medics off-screen to attempt a heal
 		}
 
