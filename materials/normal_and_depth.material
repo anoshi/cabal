@@ -1,0 +1,64 @@
+material NormalAndDepth {
+	technique NormalAndDepth {
+		scheme normal_and_depth
+
+		pass Basic { 
+			lighting off
+            fog_override true
+
+			vertex_program_ref NormalAndDepthVP {
+			}
+
+			fragment_program_ref NormalAndDepthFP {
+			}
+		}
+	}
+}
+
+
+material FakeNormalAndDepth {
+	technique FakeNormalAndDepth {
+		scheme normal_and_depth
+
+		pass FakeNormalAndDepth { 
+			lighting off
+            fog_override true
+
+			vertex_program_ref FakeNormalAndDepthVP {
+			}
+
+			fragment_program_ref NormalAndDepthFP {
+			}
+		}
+	}
+}
+
+
+material FakeNormalAndDepthWithTexture {
+	technique FakeNormalAndDepth {
+		scheme normal_and_depth
+
+		pass FakeNormalAndDepth { 
+			lighting off
+            fog_override true none
+			cull_hardware none
+
+			vertex_program_ref FakeNormalAndDepthWithTextureVP {
+			}
+
+			fragment_program_ref NormalAndDepthWithTextureFP {
+			}
+
+		}
+	}
+}
+
+
+material FakeNormalAndDepthWithTextureBillboard : FakeNormalAndDepthWithTexture {
+	technique FakeNormalAndDepth {
+		pass FakeNormalAndDepth { 
+			fragment_program_ref NormalAndDepthWithTextureBillboardFP {
+			}
+		}
+	}
+}

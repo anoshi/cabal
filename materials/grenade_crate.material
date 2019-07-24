@@ -1,0 +1,14 @@
+import NormalAndDepth from "normal_and_depth.material"
+
+material GrenadeCrate : NormalAndDepth {
+	receive_shadows off
+	technique Basic {
+		pass {
+			texture_unit {
+			  tex_address_mode clamp
+			  texture grenade_crate.png
+			}
+		} 
+	}
+}
+

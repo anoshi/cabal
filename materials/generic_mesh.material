@@ -1,0 +1,176 @@
+import NormalAndDepth from "normal_and_depth.material"
+import FakeNormalAndDepthWithTexture from "normal_and_depth.material"
+
+material GenericMesh : NormalAndDepth {
+	technique ShadersShadows {
+		pass Color {
+			lighting off
+			fog_override true none
+
+			vertex_program_ref DecalVertexColorTextureShadowsVP {	
+				param_named_auto textureMatrix1 texture_matrix 1
+			}
+
+			fragment_program_ref DecalColorTextureShadowsFP {
+			}
+ 
+			texture_unit {
+				content_type shadow
+				tex_address_mode clamp
+				filtering none
+			}	
+
+			texture_unit Decal {
+				tex_address_mode clamp
+				texture none.png				
+			}	
+
+		}
+	}
+
+	technique NoShaders {	
+		pass Color {	
+			lighting on
+		        ambient 0.5 0.5 0.5 1.0 
+		        diffuse 0.5 0.5 0.5 1.0 
+			texture_unit Decal {
+				tex_address_mode clamp
+				texture none.png		
+			}	
+		}
+
+	}
+
+}
+
+
+// --------------------------------------------------
+
+material GenericFoliage : FakeNormalAndDepthWithTexture {
+	receive_shadows off
+	transparency_casts_shadows on
+
+	technique FakeNormalAndDepth {
+		pass FakeNormalAndDepth {
+			//alpha_rejection greater 128
+			texture_unit Decal {
+				texture bushplant.png
+				tex_address_mode clamp
+			}
+		}
+	} 
+
+	technique ShadersShadows {
+		pass Color {
+			lighting off
+			fog_override true none
+			cull_hardware none
+			alpha_rejection greater 128
+
+			vertex_program_ref DecalVertexColorTextureShadowsVP {	
+				param_named_auto textureMatrix1 texture_matrix 1
+			}
+
+			fragment_program_ref DecalColorTextureShadowsFP {
+			}
+ 
+			texture_unit {
+				content_type shadow
+				tex_address_mode clamp
+				filtering none
+			}	
+
+			texture_unit Decal {
+				texture bushplant.png
+				tex_address_mode clamp
+			}	
+			
+		}
+	}
+
+	technique NoShaders {	
+		pass Color {	
+			lighting on
+		        ambient vertexcolour
+		        diffuse vertexcolour
+			cull_hardware none
+			alpha_rejection greater 128
+
+			texture_unit Decal {
+				//tex_address_mode clamp
+				texture bushplant.png
+			}	
+
+		}
+	}
+
+}
+
+
+/*
+material GenericFoliage : FakeNormalAndDepthWithTexture {
+	receive_shadows off
+	transparency_casts_shadows on
+
+	technique FakeNormalAndDepth {
+		pass FakeNormalAndDepth {
+			alpha_rejection greater 128
+
+			texture_unit Decal {
+				texture bushplant.png
+				tex_address_mode clamp
+			}
+		}
+	} 
+
+	technique ShadersShadows {
+		pass Color {
+			lighting off
+			fog_override true none
+			cull_hardware none
+			alpha_rejection greater 128
+
+			vertex_program_ref DecalVertexColorTextureShadowsVP {	
+				param_named_auto textureMatrix1 texture_matrix 1
+			}
+
+			fragment_program_ref DecalColorTextureShadowsFP {
+			}
+ 
+			texture_unit {
+				content_type shadow
+				tex_address_mode clamp
+				filtering none
+			}	
+
+			texture_unit Decal {
+				texture bushplant.png
+				tex_address_mode clamp
+			}	
+			
+		}
+	}
+
+	technique NoShaders {	
+		pass Color {	
+			lighting on
+		        ambient vertexcolour
+		        diffuse vertexcolour
+			cull_hardware none
+			alpha_rejection greater 128
+
+			texture_unit Decal {
+				//tex_address_mode clamp
+				texture bushplant.png
+			}	
+
+		}
+	}
+
+}
+*/
+
+
+
+// --------------------------------------------------
+

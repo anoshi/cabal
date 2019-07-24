@@ -1,0 +1,40 @@
+import NormalAndDepth from "normal_and_depth.material"
+
+material GenericColoredMesh : NormalAndDepth {	
+	technique ShadersShadows {
+		pass Color {
+			lighting off
+			fog_override true none
+			//diffuse vertexcolour
+
+			vertex_program_ref DecalVertexColorTextureShadowsVP {	
+			        param_named_auto textureMatrix1 texture_matrix 1
+			}
+ 
+			fragment_program_ref DecalColorTextureShadowsFP {
+			}
+ 
+			texture_unit {
+				content_type shadow
+				tex_address_mode clamp
+				filtering none
+			}	
+
+			texture_unit Decal {
+				texture pipe.png
+       			}
+		}
+	}
+
+	technique NoShaders {
+		pass Color {
+			lighting on
+			ambient vertexcolour
+			diffuse vertexcolour
+			texture_unit Decal {
+				texture pipe.png
+       			}
+		} 
+	}
+}
+
