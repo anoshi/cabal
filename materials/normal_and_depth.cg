@@ -1,0 +1,176 @@
+void normal_and_depth_vp(float4 position : POSITION,
+		    float4 normal : NORMAL,
+
+		    uniform float4x4 worldViewProj,
+		    uniform float3x3 worldView,
+//		    uniform float4 camera,
+
+                    out float4 oPosition : POSITION,
+		    out float4 oNormalDepth : TEXCOORD0) {
+
+    // just the usual stuff
+    oPosition = mul(worldViewProj, position);
+    oNormalDepth.xyz = mul(worldView, normal.xyz);
+
+    oNormalDepth.w = oPosition.z;
+    
+    // instead of depth, use height
+    //oNormalDepth.w = abs(camera.y - position.y);
+
+}
+
+
+void fake_normal_and_depth_vp(float4 position : POSITION,
+		    float4 normal : NORMAL,
+
+		    uniform float4x4 worldViewProj,
+
+                    out float4 oPosition : POSITION,
+		    out float4 oNormalDepth : TEXCOORD0) {
+
+    oPosition = mul(worldViewProj, position);
+
+    oNormalDepth.x = 0.0;
+    oNormalDepth.y = 0.0;
+    oNormalDepth.z = -1.0;
+
+    oNormalDepth.w = oPosition.z;
+}
+
+
+void normal_and_depth_fp(float4 normalDepth : TEXCOORD0,
+                         uniform float nearDepth,
+                         uniform float farDepth,
+		         out float4 oColor : COLOR) {
+
+    // output normal and depth
+    //oColor.rgb = normalDepth.xyz;
+
+    oColor.r = (normalDepth.x + 1.0) * 0.5;
+    oColor.g = (normalDepth.y + 1.0) * 0.5;
+    oColor.b = (normalDepth.z + 1.0) * 0.5;
+
+    normalDepth.w = saturate((normalDepth.w - nearDepth) / (farDepth - nearDepth));
+
+    oColor.a = normalDepth.w;
+
+
+/*
+    // put height on a range
+    float height = normalDepth.w;
+    float nearPlane = 35.0;
+    float farPlane = 65.0;
+    float range = farPlane - nearPlane;
+    height = 1.0 - (height - nearPlane) / range;
+    height = max(min(height, 1.0), 0.0);
+    normalDepth.w = height; 
+*/
+
+    //oColor.rgb = normalDepth.www;
+    //oColor.a = 1.0;
+}
+
+
+
+
+void fake_normal_and_depth_with_tex_vp(
+                    float4 position : POSITION,
+					float4 normal : NORMAL,
+                    float2 uv : TEXCOORD0,
+                    float4 color : COLOR,
+
+					uniform float4x4 worldViewProj,
+
+                    out float4 oPosition : POSITION,
+                    out float2 oUv : TEXCOORD0,
+					out float4 oNormalDepth : TEXCOORD1,
+                    out float4 oColor : COLOR) {
+
+    oPosition = mul(worldViewProj, position);
+
+    oNormalDepth.x = 0.0;
+    oNormalDepth.y = 0.0;
+    oNormalDepth.z = 1.0;
+
+	oNormalDepth.w = oPosition.z;
+
+    oUv = uv;
+
+    oColor = color;
+}
+
+
+void normal_and_depth_tex_billboard_atlas_fp(
+                        float4 color : COLOR,
+                        float2 uv : TEXCOORD0,
+                        float4 normalDepth : TEXCOORD1,
+                        uniform sampler2D texture,
+                        uniform float nearDepth,
+                        uniform float farDepth,
+                        uniform float alphaRejection,
+						out float4 oColor : COLOR) {
+
+    float4 pixel = tex2D(texture, uv);
+
+    if ((pixel.a * color.a) > alphaRejection) {
+		// it's a 2x2 grid, cell center points are at 0.25 and 0.75
+		float tcu = 0.25 + (0.50 * color.r);
+		float tcv = 0.25 + (0.50 * color.g);
+		// max distance from center is 0.25, *4 will get it back to [0,1] range
+		float a = 1.0 - (((abs(tcu - uv.x) + abs(tcv - uv.y)) * 4.0) * 0.5);
+		a = a * 3.0;
+		normalDepth.w += a;
+
+	    oColor.r = (normalDepth.x + 1.0) * 0.5;
+	    oColor.g = (normalDepth.y + 1.0) * 0.5;
+	    oColor.b = (normalDepth.z + 1.0) * 0.5;
+
+	    normalDepth.w = saturate((normalDepth.w - nearDepth) / (farDepth - nearDepth));
+	    oColor.a = normalDepth.w;
+
+    } else {
+	    // else output pixel with alpha=0 -> will be rejected
+	    oColor.r = 0.0;
+	    oColor.g = 0.0;
+	    oColor.b = 0.0;
+	    oColor.a = 0.0;
+        discard;
+    }
+
+}
+
+
+
+void normal_and_depth_tex_fp(
+                        float4 color : COLOR,
+                        float2 uv : TEXCOORD0,
+                        float4 normalDepth : TEXCOORD1,
+                        uniform sampler2D texture,
+                        uniform float nearDepth,
+                        uniform float farDepth,
+                        uniform float alphaRejection,
+						out float4 oColor : COLOR) {
+
+    float4 pixel = tex2D(texture, uv);
+
+    if ((pixel.a * color.a) > alphaRejection) {
+	    oColor.r = (normalDepth.x + 1.0) * 0.5;
+	    oColor.g = (normalDepth.y + 1.0) * 0.5;
+	    oColor.b = (normalDepth.z + 1.0) * 0.5;
+
+	    normalDepth.w = saturate((normalDepth.w - nearDepth) / (farDepth - nearDepth));
+	    oColor.a = normalDepth.w;
+
+    } else {
+	    // else output pixel with alpha=0 -> will be rejected
+	    oColor.r = 0.0;
+	    oColor.g = 0.0;
+	    oColor.b = 0.0;
+	    oColor.a = 0.0;
+        discard;
+    }
+
+}
+
+
+

@@ -1,0 +1,86 @@
+vertex_program NormalAndDepthVP cg 
+{
+    source normal_and_depth.cg
+    entry_point normal_and_depth_vp
+    profiles vs_1_1 arbvp1
+
+    default_params 
+    {
+        param_named_auto worldViewProj worldviewproj_matrix
+	param_named_auto worldView worldview_matrix
+	//param_named_auto camera camera_position_object_space
+    }
+}
+
+fragment_program NormalAndDepthFP cg 
+{
+    source normal_and_depth.cg
+    entry_point normal_and_depth_fp
+    profiles ps_2_0 arbfp1
+
+    default_params 
+    {
+        param_named_auto nearDepth near_clip_distance
+	param_named_auto farDepth far_clip_distance
+	//param_named nearDepth float 25.0
+	//param_named farDepth float 60.0
+    }
+}
+
+
+vertex_program FakeNormalAndDepthVP cg 
+{
+    source normal_and_depth.cg
+    entry_point fake_normal_and_depth_vp
+    profiles vs_1_1 arbvp1
+
+    default_params 
+    {
+        param_named_auto worldViewProj worldviewproj_matrix
+	//param_named_auto worldView inverse_transpose_worldview_matrix
+    }
+}
+
+
+
+vertex_program FakeNormalAndDepthWithTextureVP cg 
+{
+    source normal_and_depth.cg
+    entry_point fake_normal_and_depth_with_tex_vp
+    profiles vs_1_1 arbvp1
+
+    default_params 
+    {
+        param_named_auto worldViewProj worldviewproj_matrix
+	//param_named_auto worldView worldview_matrix
+    }
+}
+
+fragment_program NormalAndDepthWithTextureFP cg 
+{
+    source normal_and_depth.cg
+    entry_point normal_and_depth_tex_fp
+    profiles ps_2_0 arbfp1
+
+    default_params 
+    {
+        param_named_auto nearDepth near_clip_distance
+		param_named_auto farDepth far_clip_distance
+		param_named alphaRejection float 0.5
+    }
+}
+
+
+fragment_program NormalAndDepthWithTextureBillboardFP cg 
+{
+    source normal_and_depth.cg
+    entry_point normal_and_depth_tex_billboard_atlas_fp
+    profiles ps_2_0 arbfp1
+
+    default_params 
+    {
+        param_named_auto nearDepth near_clip_distance
+		param_named_auto farDepth far_clip_distance
+		param_named alphaRejection float 0.5
+    }
+}
