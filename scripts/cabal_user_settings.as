@@ -17,7 +17,9 @@ class CabalUserSettings : UserSettings {
 		} else {
 			m_savegame = settings.getStringAttribute("savegame");
 			m_username = settings.getStringAttribute("username");
-			m_difficulty = settings.getIntAttribute("difficulty");
+			if (settings.hasAttribute("difficulty")) {
+				m_difficulty = settings.getIntAttribute("difficulty");
+			}
 			m_baseCaptureSystem = "single";
 
 			if (m_difficulty == 0) {
