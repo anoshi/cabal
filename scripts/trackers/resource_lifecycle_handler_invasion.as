@@ -1,5 +1,6 @@
 // internal
 #include "tracker.as"
+#include "cabal_helpers.as"
 #include "gamemode_invasion.as"
 // --------------------------------------------
 
@@ -56,25 +57,9 @@ class ResourceLifecycleHandler : Tracker {
 		const XmlElement@ player = event.getFirstElementByTagName("player");
 		if (player !is null) {
 			string playerHash = player.getStringAttribute("profile_hash");
+			int characterId = player.getIntAttribute("character_id");
 			if (m_playersSpawned.find(playerHash) < 0) {
 				if (int(m_playersSpawned.size()) < m_metagame.getUserSettings().m_maxPlayers) {
-					int characterId = player.getIntAttribute("character_id");
-					// assign / override equipment to player character
-					XmlElement charInv("command");
-					charInv.setStringAttribute("class", "update_inventory");
-
-					charInv.setIntAttribute("character_id", m_playerCharacterId);
-					/* cheat vest
-					charInv.setIntAttribute("container_type_id", 4); // vest
-					{
-						XmlElement i("item");
-						i.setStringAttribute("class", "carry_item");
-						i.setStringAttribute("key", "player_impervavest.carry_item"); // oh yeah a nasty hack for tests
-						// i.setStringAttribute("key", "player_vest1.carry_item");
-						charInv.appendChild(i);
-					}
-					m_metagame.getComms().send(charInv);
-					*/
 					string name = player.getStringAttribute("name");
 					m_playerCharacterId = characterId;
 					m_playersSpawned.insertLast(playerHash);
@@ -86,6 +71,9 @@ class ResourceLifecycleHandler : Tracker {
 				// existing player.
 				_log("*** CABAL: existing player spawned", 1);
 			}
+
+			// TEST PURPOSES: add cheat vest
+			setPlayerInventory(m_metagame, characterId);
 
 			_log("*** CABAL: spawning enemies", 1);
 			// start enemy spawning from specific locations (as per passed map layer name, for level)
@@ -411,19 +399,15 @@ class ResourceLifecycleHandler : Tracker {
 
 		// Group-based drop logic (special enemies always drop specific equipment on death)
 		if (charGroup == "commando") {
-			dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile");
+			dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
 		} else if (charGroup == "covert_ops") {
-			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon");
+			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
 		} // XP-based drop chance logic
 		else if (rand(1, 100) > 80) {
 			if (charXP > 1.0) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_gl.weapon"); // drop grenade launcher.
 			} else if (charXP > 0.8) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop minigun
-			} else if (charXP > 0.6) {
-				dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop lmg
-			} else if (charXP > 0.4) {
-				dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
 			} else if (charXP > 0.2) {
 				dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
 			}
