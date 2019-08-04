@@ -72,7 +72,7 @@ class ResourceLifecycleHandler : Tracker {
 			}
 
 			// TEST PURPOSES: add cheat vest
-			setPlayerInventory(m_metagame, characterId);
+			//setPlayerInventory(m_metagame, characterId);
 
 			_log("*** CABAL: spawning enemies", 1);
 			// start enemy spawning from specific locations (as per passed map layer name, for level)
