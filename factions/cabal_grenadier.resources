@@ -4,6 +4,4 @@
   <weapon key="cabal_gl.weapon" />
 
   <projectile key="cabal_grenade.projectile" enabled="1" />
-
-  <carry_item key="cabal_vest_1.carry_item" enabled="1" />
 </resources>

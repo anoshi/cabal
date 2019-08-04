@@ -2,12 +2,9 @@
 <carry_items>
 <!-- FACTION GEAR (see factions/<faction>_default.resources to enable and disable these items)-->
 	<!-- Common Items -->
-	<carry_item file="commstech_radio_1.carry_item" />
 
 	<!-- Player -->
-	<carry_item file="player_vest1.carry_item" />
 	<carry_item file="player_impervavest.carry_item" />
-	<carry_item file="player_power_armour.carry_item" />
 
 	<!-- Cabal -->
 	<carry_item file="cabal_vest1.carry_item" />

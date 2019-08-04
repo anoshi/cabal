@@ -1,39 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <models>
+	<!-- /////  BLUE  ///// -->
 	<model filename="player_blue.xml">
-		<requirement class="carry_item" slot="1" key="commstech_radio_1.carry_item"/>
+		<requirement class="carry_item" slot="1" key="player_impervavest.carry_item"/>
 		<requirement class="rank" range="0 10000" />
 	</model>
 
-	<model filename="player_blue.xml">
-		<requirement class="carry_item" slot="1" key="player_vest1.carry_item"/>
-		<requirement class="rank" range="0 10000" />
-	</model>
-	<model filename="player_blue.xml">
-		<requirement class="carry_item" slot="1" key="player_vest1_2"/>
-		<requirement class="rank" range="0 10000" />
-	</model>
-	<model filename="player_blue.xml">
-		<requirement class="carry_item" slot="1" key="player_vest1_3"/>
-		<requirement class="rank" range="0 10000" />
-	</model>
-
-	<!-- ////////////////////////// -->
+	<!-- /////  RED  ///// -->
 	<model filename="player_red.xml">
-		<requirement class="carry_item" slot="1" key="commstech_radio_1.carry_item"/>
-		<requirement class="rank" range="0 10000" />
-	</model>
-
-	<model filename="player_red.xml">
-		<requirement class="carry_item" slot="1" key="player_vest1.carry_item"/>
-		<requirement class="rank" range="0 10000" />
-	</model>
-	<model filename="player_red.xml">
-		<requirement class="carry_item" slot="1" key="player_vest1_2"/>
-		<requirement class="rank" range="0 10000" />
-	</model>
-	<model filename="player_red.xml">
-		<requirement class="carry_item" slot="1" key="player_vest1_3"/>
+		<requirement class="carry_item" slot="1" key="player_impervavest.carry_item"/>
 		<requirement class="rank" range="0 10000" />
 	</model>
 </models>

@@ -2,10 +2,6 @@
 <!-- Player-specific Vehicles, Radio Calls, and Carry Items -->
 <resources>
 	<!-- faction-specific vehicles (not listed in common.resources) -->
- 	<vehicle key="jeep_1.vehicle" />
- 	<vehicle key="apc_1.vehicle" />
- 	<vehicle key="tank_1.vehicle" />
- 	<vehicle key="transport_truck_1.vehicle" />
 
 	<!-- faction-specific weapons (not listed in common.resources) -->
 	<weapon key="player_lr.weapon" />
