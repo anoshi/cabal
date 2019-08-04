@@ -134,17 +134,20 @@ class ResourceLifecycleHandler : Tracker {
 			_log("*** CABAL: Player 2 lost a life!", 1);
 			player2Lives -= 1;
 		} else {
+			_log("*** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
 			// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
 		}
 
 		if (player1Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 1", 1);
+			// can we prevent player 1 (p1) model from spawning again (and don't let p1 spawn with p2 model)?
 			if ((int(m_playersSpawned.size()) <= 1) || (int(m_playersSpawned.size()) > 1 && player2Lives <= 0)) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else if (player2Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 2", 1);
+			// can we prevent player 2 (p2) model from spawning again (and don't let p2 spawn with p1 model)?
 			if ((int(m_playersSpawned.size()) <= 1) || (int(m_playersSpawned.size()) > 1 && player1Lives <= 0)) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
@@ -155,7 +158,6 @@ class ResourceLifecycleHandler : Tracker {
 			// player can't respawn if enemies are within ~70.0 units of the intended base. Need to forcibly remove enemy
 			// units from player's base area...
         	// We're about to kill a lot of people. Stop character_die tracking for the moment
-
         	string trackCharDeathOff = "<command class='set_metagame_event' name='character_die' enabled='0' />";
         	m_metagame.getComms().send(trackCharDeathOff);
 			// kill enemies anywhere near player to allow respawn
@@ -217,8 +219,6 @@ class ResourceLifecycleHandler : Tracker {
 			allowSpawn.setIntAttribute("faction_id", 0);
 			allowSpawn.setBoolAttribute("enabled", true);
 			m_metagame.getComms().send(allowSpawn);
-
-			//
 		}
 		// reset stuffs as required
 	}
@@ -350,8 +350,6 @@ class ResourceLifecycleHandler : Tracker {
 
 		// if commando killed, create a new one in wounded state
 		if (charGroup == "commando") {
-			string spawnChar = "<command class='update_character' id='" + charId + "' dead='0' wounded='1' /></command>";
-			m_metagame.getComms().send(spawnChar);
 			/*
 			// let's try spawning a character instead
 			_log("*** CABAL: enemy commando killed, Spawning a wounded replacement at " + charPos, 1);
@@ -423,6 +421,9 @@ class ResourceLifecycleHandler : Tracker {
 	///////////////////////
 	protected void dropPowerUp(string position, string instanceClass, string instanceKey) {
 		// between the invisible walls the the player character is locked within (enemyX, playerY+2, playerZ)
+		if (levelComplete) {
+			return;
+		}
         _log("*** CABAL: dropping an item at " + position, 1);
         string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
         m_metagame.getComms().send(creator);

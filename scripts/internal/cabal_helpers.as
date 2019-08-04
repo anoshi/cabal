@@ -67,6 +67,7 @@ void setPlayerInventory(const Metagame@ metagame, int characterId) {
 		charInv.appendChild(i);
 	}
 	metagame.getComms().send(charInv);
+	_log("*** CABAL: Impervavest equipped", 1);
 }
 
 ///////////////////////////////
