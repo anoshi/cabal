@@ -29,10 +29,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6568543"
-     inkscape:cx="1127.8095"
-     inkscape:cy="834.93576"
+     inkscape:cx="1071.237"
+     inkscape:cy="851.52429"
      inkscape:document-units="px"
-     inkscape:current-layer="layer17"
+     inkscape:current-layer="layer33"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -17276,17 +17276,6 @@ tag = truck;</desc>
          transform="rotate(-89.765408)" />
       <rect
          inkscape:label=""
-         y="1112.3477"
-         x="1102.6448"
-         height="2.0679491"
-         width="2.2977724"
-         id="generic_node1-7"
-         style="display:inline;enable-background:new;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none">
-        <desc
-           id="desc9795-3">tag=cabal_spawn;</desc>
-      </rect>
-      <rect
-         inkscape:label=""
          y="1566.5558"
          x="436.62744"
          height="3.442385"
@@ -17350,7 +17339,7 @@ tag = truck;</desc>
        inkscape:label="spawnpoints"
        id="layer33"
        inkscape:groupmode="layer"
-       style="opacity:0.98000004">
+       style="display:inline;opacity:0.98000004">
       <rect
          inkscape:label="#spawnrect10748"
          y="1247.167"
@@ -17390,9 +17379,97 @@ tag = truck;</desc>
          height="2.0679491"
          width="2.2977724"
          id="generic_node1-2"
-         style="display:inline;enable-background:new;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none">
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
         <desc
            id="desc9795-2">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label=""
+         y="1112.3477"
+         x="1102.6448"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7"
+         style="display:inline;enable-background:new;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none">
+        <desc
+           id="desc9795-3">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label=""
+         y="1163.4661"
+         x="1025.6011"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-7"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-9">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label=""
+         y="1163.9661"
+         x="1013.1011"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-3"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-8">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label=""
+         y="1169.9661"
+         x="1057.7261"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-0"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-2">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label=""
+         y="1093.079"
+         x="1030.1664"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-4"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-83">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label=""
+         y="1178.8157"
+         x="1077.0122"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-9"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-0">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label=""
+         y="1184.4725"
+         x="1101.5841"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-5"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-22">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label=""
+         y="1194.7256"
+         x="1044.662"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-73"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-7">tag=cabal_spawn;</desc>
       </rect>
     </g>
   </g>
