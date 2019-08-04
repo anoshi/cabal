@@ -9,6 +9,7 @@
 //#include "cabal_user_settings.as"
 #include "user_settings.as"
 #include "resource_lifecycle_handler_invasion.as"
+#include "cabal_spawner_invasion.as"
 #include "player_manager.as"
 
 // generic trackers
@@ -127,6 +128,7 @@ class GameModeInvasion : GameMode {
 
 		// Cabal handlers:
 		addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
+		addTracker(CabalSpawner(this));
 
 		for (uint i = 0; i < m_factions.size(); ++i) {
 			if (i != 0) {

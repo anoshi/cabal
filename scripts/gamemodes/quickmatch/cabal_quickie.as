@@ -14,6 +14,7 @@
 
 // cabal trackers
 #include "resource_lifecycle_handler.as"
+#include "cabal_spawner.as"
 
 // --------------------------------------------
 class Cabal : GameMode {
@@ -75,6 +76,7 @@ class Cabal : GameMode {
 
 		// Cabal handlers
 		addTracker(ResourceLifecycleHandler(this));
+		addTracker(CabalSpawner(this));
 
 		getUserSettings();
 	}

@@ -74,34 +74,6 @@ class ResourceLifecycleHandler : Tracker {
 
 			// TEST PURPOSES: add cheat vest
 			//setPlayerInventory(m_metagame, characterId);
-
-			_log("*** CABAL: spawning enemies", 1);
-			// start enemy spawning from specific locations (as per passed map layer name, for level)
-			// after player character has spawned. i.e. no enemy spawn until player is on the map
-			int m_spawnCount = 9;
-			string m_genericNodeTag = "cabal_spawn";
-			//string layerName = "layer1.map1";
-			string layerName = "";
-			array<const XmlElement@>@ nodes = getGenericNodes(m_metagame, layerName, m_genericNodeTag);
-
-			_log("*** CABAL: Spawning " + m_spawnCount + " enemies at " + nodes.size() + " " + m_genericNodeTag + " points.", 1);
-			for (int i = 0; i < m_spawnCount && nodes.size() > 0; ++i) {
-				XmlElement command("command");
-				command.setStringAttribute("class", "create_instance");
-				command.setIntAttribute("faction_id", 1);
-				command.setStringAttribute("instance_class", "character");
-				command.setStringAttribute("instance_key", "rifleman");
-
-				// logic to use each generic_node only once
-				int index = rand(0, nodes.size() - 1);
-				const XmlElement@ node = nodes[index];
-				nodes.erase(index);
-
-				// location and bearing of spawnpoint
-				command.setStringAttribute("position", node.getStringAttribute("position"));
-				command.setStringAttribute("orientation", node.getStringAttribute("orientation"));
-				m_metagame.getComms().send(command);
-			}
 		} else {
 			_log("*** CABAL: CRITICAL WARNING, player not found in Player Spawn Event");
 		}
