@@ -11,19 +11,19 @@ class CabalSpawner : Tracker {
 
     protected float SPAWN_DELAY_MAX = 10.00; // make this a dynamic value. Shorter as map increases in duration and at higher levels.
     protected float SPAWN_DELAY_MIN = 5.00;
-	protected float spawnDelay; // randomise time between story delivery
+	protected float spawnDelay; // randomise time between enemy spawns
 
 	protected int m_playerCharacterId;
 
 	// ----------------------------------------------------
 	CabalSpawner(Cabal@ metagame) {
 		@m_metagame = @metagame;
-		queueCabalSpawn(); // start the countdown to next story item reveal
+		queueCabalSpawn(); // start the countdown to next enemy spawn event
 	}
 
 	protected void queueCabalSpawn() {
 		spawnDelay = rand(SPAWN_DELAY_MIN, SPAWN_DELAY_MAX);
-		_log("*** CABAL units spawning in: " + spawnDelay + " seconds." ,1);
+		_log("*** CABAL: units spawning in: " + spawnDelay + " seconds." ,1);
 	}
 
 	protected void spawnCabalUnits() {
@@ -112,7 +112,7 @@ class CabalSpawner : Tracker {
 	void update(float time) {
 		spawnDelay -= time;
 		if (spawnDelay <= 0.0) {
-			_log("*** CABAL story update incoming!", 1);
+			_log("*** CABAL: enemy units spawning!", 1);
 			spawnCabalUnits();
 			queueCabalSpawn();
 		}

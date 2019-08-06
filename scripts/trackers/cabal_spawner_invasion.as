@@ -3,6 +3,9 @@
 #include "log.as"
 #include "gamemode.as"
 
+// public
+#include "cabal_helpers.as"
+
 // --------------------------------------------
 
 
@@ -12,19 +15,19 @@ class CabalSpawner : Tracker {
 
     protected float SPAWN_DELAY_MAX = 10.00; // make this a dynamic value. Shorter as map increases in duration and at higher levels.
     protected float SPAWN_DELAY_MIN = 5.00;
-	protected float spawnDelay; // randomise time between story delivery
+	protected float spawnDelay; // randomise time between enemy spawns
 
 	protected int m_playerCharacterId;
 
 	// ----------------------------------------------------
 	CabalSpawner(GameModeInvasion@ metagame) {
 		@m_metagame = @metagame;
-		queueCabalSpawn(); // start the countdown to next story item reveal
+		queueCabalSpawn(); // start the countdown to next enemy spawn event
 	}
 
 	protected void queueCabalSpawn() {
 		spawnDelay = rand(SPAWN_DELAY_MIN, SPAWN_DELAY_MAX);
-		_log("*** CABAL units spawning in: " + spawnDelay + " seconds." ,1);
+		_log("*** CABAL: units spawning in: " + spawnDelay + " seconds." ,1);
 	}
 
 	protected void spawnCabalUnits() {
@@ -36,9 +39,8 @@ class CabalSpawner : Tracker {
 			// after player character has spawned. i.e. no enemy spawn until player is on the map
 			int m_spawnCount = 4;
 			string m_genericNodeTag = "cabal_spawn";
-			// string layerName = "cabal_spawns"; // can't get this to work at all.
-			string layerName = "";
-			array<const XmlElement@>@ nodes = getGenericNodes(m_metagame, layerName, m_genericNodeTag);
+			string layerName = thisStage();
+			array<const XmlElement@> nodes = getGenericNodes(m_metagame, layerName, m_genericNodeTag);
 			_log("*** CABAL: Spawning " + m_spawnCount + " enemies at " + nodes.size() + " " + m_genericNodeTag + " points.", 1);
 			string randKey = ''; // random character 'Key' name
 			for (int i = 0; i < m_spawnCount && nodes.size() > 0; ++i) {
@@ -113,7 +115,7 @@ class CabalSpawner : Tracker {
 	void update(float time) {
 		spawnDelay -= time;
 		if (spawnDelay <= 0.0) {
-			_log("*** CABAL story update incoming!", 1);
+			_log("*** CABAL: enemy units spawning!", 1);
 			spawnCabalUnits();
 			queueCabalSpawn();
 		}
