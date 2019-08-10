@@ -70,6 +70,17 @@ void setPlayerInventory(const Metagame@ metagame, int characterId) {
 	_log("*** CABAL: Impervavest equipped", 1);
 }
 
+string curStage;
+
+void whichStage(string stageNum) {
+	// each stage reports its stage name e.g. "map1"
+	string curStage = stageNum;
+	_log("*** CABAL: Current stage is: " + curStage, 1);
+}
+
+string thisStage() {
+	return curStage;
+}
 ///////////////////////////////
 // ----- TRIGGER AREAS ----- //
 ///////////////////////////////

@@ -1,6 +1,8 @@
 #include "phase_controller.as"
 #include "intel_manager.as"
 
+#include "cabal_helpers.as"
+
 // --------------------------------------------
 XmlElement@ createFellowCommanderAiCommand(int factionId, float base = 1.0, float border = 0.00, bool active = true) {
 	XmlElement command("command");
@@ -219,6 +221,8 @@ class Stage {
 		appendCamera(scene);
 		appendFog(scene);
 		mapConfig.appendChild(scene);
+		// here will do...
+		whichStage(m_mapInfo.m_id); // passes a string to cabal_helpers.as
 	}
 
 	// --------------------------------------------

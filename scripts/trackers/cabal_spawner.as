@@ -35,7 +35,6 @@ class CabalSpawner : Tracker {
 			// after player character has spawned. i.e. no enemy spawn until player is on the map
 			int m_spawnCount = 4;
 			string m_genericNodeTag = "cabal_spawn";
-			// string layerName = "cabal_spawns"; // can't get this to work at all.
 			string layerName = "";
 			array<const XmlElement@>@ nodes = getGenericNodes(m_metagame, layerName, m_genericNodeTag);
 			_log("*** CABAL: Spawning " + m_spawnCount + " enemies at " + nodes.size() + " " + m_genericNodeTag + " points.", 1);

@@ -214,11 +214,10 @@ class ResourceLifecycleHandler : Tracker {
 			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
 		}
 		else { // no coins / continues left, campaign lost / game over
+			sleep(2.0f); // brief pause before delivering the bad news
 			XmlElement c("command");
 			c.setStringAttribute("class", "set_campaign_status");
 			c.setStringAttribute("key", "lose");
-			// delay this for 2-3 seconds. It's a little abrupt when you lose :-|
-			//sleep(2); // will liekly need to code something into update function
 			m_metagame.getComms().send(c);
 		}
 

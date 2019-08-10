@@ -235,6 +235,9 @@ class ResourceLifecycleHandler : Tracker {
 			c.setBoolAttribute("enabled", false);
 			m_metagame.getComms().send(c);
 		}
+
+		sleep(2.0f); // brief pause before delivering the bad news
+
 		{
 			XmlElement comm("command");
 			comm.setStringAttribute("class", "set_match_status");
