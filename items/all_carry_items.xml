@@ -5,6 +5,8 @@
 
 	<!-- Player -->
 	<carry_item file="player_impervavest.carry_item" />
+	<carry_item file="player_blue.carry_item" />
+	<carry_item file="player_red.carry_item" />
 
 	<!-- Cabal -->
 	<carry_item file="cabal_vest1.carry_item" />

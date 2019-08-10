@@ -15,8 +15,8 @@ class ResourceLifecycleHandler : Tracker {
     protected float m_localPlayerCheckTimer;
     protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
 
-	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area
-	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area
+	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area (see /maps/cabal/objects.svg)
+	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area (see /maps/cabal/objects.svg)
 	protected float MIN_GOAL_XP = 4.0;
 	protected float MAX_GOAL_XP = 6.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
@@ -69,11 +69,24 @@ class ResourceLifecycleHandler : Tracker {
 				}
 			} else {
 				// existing player.
-				_log("*** CABAL: existing player spawned", 1);
+				_log("*** CABAL: existing player spawned. Equipping coloured vest", 1);
 			}
 
-			// TEST PURPOSES: add cheat vest
-			//setPlayerInventory(m_metagame, characterId);
+			_log("*** CABAL: Equipping spawned player with appropriately-coloured vest", 1);
+			// TEST PURPOSES: if cheat enabled, add cheat vest
+			//if (cheatMode) {
+			//	setPlayerInventory(m_metagame, characterId, "player_impervavest.carry_item");
+			//}
+			switch (m_playersSpawned.find(playerHash)) {
+				case 0:
+					setPlayerInventory(m_metagame, characterId, "player_blue.carry_item");
+					break;
+				case 1:
+					setPlayerInventory(m_metagame, characterId, "player_red.carry_item");
+					break;
+				default: // shouldn't ever get here, but sanity
+					_log("*** CABAL: WARNING existing player spanwed but profile hash not stored in m_playersSpawned array", 1);
+			}
 		} else {
 			_log("*** CABAL: CRITICAL WARNING, player not found in Player Spawn Event");
 		}
@@ -98,16 +111,18 @@ class ResourceLifecycleHandler : Tracker {
 		string playerHash = deadPlayer.getStringAttribute("profile_hash");
 		int playerNum = m_playersSpawned.find(playerHash); // should return the index or negative if not found
 
-		if (playerNum == 0) { // player 1
-			// decrement lives left
-			_log("*** CABAL: Player 1 lost a life!", 1);
-			player1Lives -= 1;
-		} else if (playerNum == 1) { // player 2
-			_log("*** CABAL: Player 2 lost a life!", 1);
-			player2Lives -= 1;
-		} else {
-			_log("*** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
-			// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
+		switch (playerNum) {
+			case 0 : // player 1
+				_log("*** CABAL: Player 1 lost a life!", 1);
+				player1Lives --;
+				break;
+			case 1 : // player 2
+				_log("*** CABAL: Player 2 lost a life!", 1);
+				player2Lives --;
+				break;
+			default :
+				_log("*** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
+				// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
 		}
 
 		if (player1Lives <= 0) {
@@ -199,6 +214,8 @@ class ResourceLifecycleHandler : Tracker {
 	protected void processGameOver() {
 		_log("*** CABAL: Running processGameOver", 1);
 		if (levelComplete) return;
+		// stop cabal spawning
+		m_metagame.removeTracker(CabalSpawner(m_metagame));
 		// no more respawning allowed
 		{
 			XmlElement c("command");

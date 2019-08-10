@@ -31,6 +31,8 @@
 	<!-- CABAL FACTION carry items -->
 	<!-- List all faction-specific carry items as disabled. Enable in factions/<faction>_default.resources -->
 	<carry_item key="player_impervavest.carry_item" enabled="0" />
+	<carry_item key="player_blue.carry_item" enabled="0" />
+	<carry_item key="player_red.carry_item" enabled="0" />
 	<carry_item key="cabal_vest1.carry_item" enabled="0" />
 	<!-- end CABAL FACTION carry items -->
 	<!-- end ALL CARRY ITEMS -->

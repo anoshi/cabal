@@ -52,9 +52,9 @@ array<const XmlElement@>@ getVehiclesNearPosition(const Metagame@ metagame, cons
 	return vehNearPos;
 }
 
-void setPlayerInventory(const Metagame@ metagame, int characterId) {
+void setPlayerInventory(const Metagame@ metagame, int characterId, string vest) {
 	// assign / override equipment to player character
-	_log("*** CABAL: Equipping player (id: " + characterId + ") with impervavest", 1);
+	_log("*** CABAL: Equipping player (id: " + characterId + ") with " + vest, 1);
 	XmlElement charInv("command");
 	charInv.setStringAttribute("class", "update_inventory");
 
@@ -63,11 +63,11 @@ void setPlayerInventory(const Metagame@ metagame, int characterId) {
 	{
 		XmlElement i("item");
 		i.setStringAttribute("class", "carry_item");
-		i.setStringAttribute("key", "player_impervavest.carry_item");
+		i.setStringAttribute("key", vest);
 		charInv.appendChild(i);
 	}
 	metagame.getComms().send(charInv);
-	_log("*** CABAL: Impervavest equipped", 1);
+	_log("*** CABAL: " + vest + " equipped on character " + characterId, 1);
 }
 
 string curStage;

@@ -15,8 +15,8 @@ class ResourceLifecycleHandler : Tracker {
     protected float m_localPlayerCheckTimer;
     protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
 
-	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area
-	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area
+	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area (see /maps/cabal/objects.svg)
+	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area (see /maps/cabal/objects.svg)
 	protected float MIN_GOAL_XP = 4.0;
 	protected float MAX_GOAL_XP = 6.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
@@ -125,16 +125,18 @@ class ResourceLifecycleHandler : Tracker {
 		string playerHash = deadPlayer.getStringAttribute("profile_hash");
 		int playerNum = m_playersSpawned.find(playerHash); // should return the index or negative if not found
 
-		if (playerNum == 0) { // player 1
-			// decrement lives left
-			_log("*** CABAL: Player 1 lost a life!", 1);
-			player1Lives -= 1;
-		} else if (playerNum == 1) { // player 2
-			_log("*** CABAL: Player 2 lost a life!", 1);
-			player2Lives -= 1;
-		} else {
-			_log("*** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
-			// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
+		switch (playerNum) {
+			case 0 : // player 1
+				_log("*** CABAL: Player 1 lost a life!", 1);
+				player1Lives --;
+				break;
+			case 1 : // player 2
+				_log("*** CABAL: Player 2 lost a life!", 1);
+				player2Lives --;
+				break;
+			default :
+				_log("*** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
+				// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
 		}
 
 		if (player1Lives <= 0) {
@@ -227,6 +229,8 @@ class ResourceLifecycleHandler : Tracker {
 	protected void processGameOver() {
 		_log("*** CABAL: Running processGameOver", 1);
 		if (levelComplete) return;
+		// stop cabal spawning
+		m_metagame.removeTracker(CabalSpawner);
 		// no more respawning allowed
 		{
 			XmlElement c("command");
@@ -501,6 +505,5 @@ class ResourceLifecycleHandler : Tracker {
     // ----------------------------------------------------
     void update(float time) {
         ensureValidLocalPlayer(time);
-
     }
 }
