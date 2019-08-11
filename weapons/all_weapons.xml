@@ -7,20 +7,20 @@
     <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_mp.weapon"> <!-- machine pistol -->
-    <capacity source="rank" source_value="0.0" value="1" />
+    <capacity source="rank" source_value="0.01" value="1" />
   </weapon>
   <weapon file="player_mg.weapon"> <!-- machine gun -->
-    <capacity source="rank" source_value="0.0" value="1" />
+    <capacity source="rank" source_value="0.01" value="1" />
   </weapon>
   <weapon file="player_sg.weapon"> <!-- shotgun -->
-    <capacity source="rank" source_value="0.0" value="1" />
+    <capacity source="rank" source_value="0.01" value="1" />
   </weapon>
   <weapon file="player_rl.weapon"> <!-- rocket launcher -->
-    <capacity source="rank" source_value="0.0" value="1" />
+    <capacity source="rank" source_value="0.01" value="1" />
     <capacity source="rank" source_value="0.2" value="2" />
   </weapon>
   <weapon file="player_gl.weapon"> <!-- (sticky) grenade launcher -->
-    <capacity source="rank" source_value="0.0" value="1" />
+    <capacity source="rank" source_value="0.01" value="1" />
   </weapon>
   <!-- end Player weapons -->
 
