@@ -28,11 +28,11 @@ class ResourceLifecycleHandler : Tracker {
 
 	protected bool levelComplete;
 
-	// ----------------------------------------------------
+	// ---------------------------------------------------
 	ResourceLifecycleHandler(GameModeInvasion@ metagame) {
 		@m_metagame = @metagame;
 		levelComplete = false;
-        // enable character_die tracking for cabal game mode (off by default)
+		// enable character_die tracking for cabal game mode (off by default)
         string trackCharDeath = "<command class='set_metagame_event' name='character_die' enabled='1' />";
         m_metagame.getComms().send(trackCharDeath);
 	}
@@ -92,7 +92,7 @@ class ResourceLifecycleHandler : Tracker {
 		}
 	}
 
-	// ----------------------------------------------------
+	// -----------------------------------------------------------
 	protected void handlePlayerDieEvent(const XmlElement@ event) {
 		_log("*** CABAL: ResourceLifecycleHandler::handlePlayerDieEvent", 1);
 
@@ -140,7 +140,9 @@ class ResourceLifecycleHandler : Tracker {
 				processGameOver();
 			}
 		} else {
-			_log("*** CABAL: Player" + (playerNum + 1) + " still has " + (playerNum > 0 ? player2Lives : player1Lives) + " lives available.", 1);
+			_log("*** CABAL: Player " + (playerNum + 1) + " still has " + (playerNum > 0 ? player2Lives : player1Lives) + " lives available.", 1);
+			_log("*** CABAL: Saving Game", 1);
+			m_metagame.save();
 
 			// player can't respawn if enemies are within ~70.0 units of the intended base. Need to forcibly remove enemy
 			// units from player's base area...
@@ -210,7 +212,7 @@ class ResourceLifecycleHandler : Tracker {
 		// reset stuffs as required
 	}
 
-	// ----------------------------------------------------
+	// --------------------------------------------
 	protected void processGameOver() {
 		_log("*** CABAL: Running processGameOver", 1);
 		if (levelComplete) return;
@@ -225,10 +227,15 @@ class ResourceLifecycleHandler : Tracker {
 			m_metagame.getComms().send(c);
 		}
 		// check if players still have some coins/continues? If so, can restart level
-		if (playerCoins < 1) {
-			playerCoins -= 1;
+		if (playerCoins > 0) {
+			playerCoins --;
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
 			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
+
+			player1Lives = 3;
+			player2Lives = 3;
+
+			_log("*** CABAL: using coin / continue.", 1);
 		}
 		else { // no coins / continues left, campaign lost / game over
 			sleep(2.0f); // brief pause before delivering the bad news
@@ -481,23 +488,34 @@ class ResourceLifecycleHandler : Tracker {
     }
 
 	// --------------------------------------------
+	XmlElement@ toXmlElement(string name) const {
+	_log("*** CABAL: Exporting ResourceLifecycle data to XML. player1Lives = " + player1Lives, 1);
+	// create an XmlElement object to store campaign data that persists from level to level
+	XmlElement campaignData(name);
+	// add kv pairs to XmlElement
+	campaignData.setIntAttribute("player1Lives", player1Lives);
+	return campaignData;
+	}
+
+	// --------------------------------------------
 	bool hasStarted() const { return true; }
 
 	// --------------------------------------------
 	bool hasEnded() const { return false; }
 
-    // ----------------------------------------------------
+    // --------------------------------------------
     void update(float time) {
         ensureValidLocalPlayer(time);
     }
 
-	// ----------------------------------------------------
+	// --------------------------------------------
 	void onRemove() {
 		// clear spawn counting when removing tracker - happens at map change or restart
 		m_playersSpawned.clear();
 	}
 
-	// ----------------------------------------------------
+	/*
+	// --------------------------------------------
 	void save(XmlElement@ root) {
 		XmlElement@ parent = root;
 
@@ -512,7 +530,7 @@ class ResourceLifecycleHandler : Tracker {
 		parent.appendChild(subroot);
 	}
 
-	// ----------------------------------------------------
+	// --------------------------------------------
 	void load(const XmlElement@ root) {
 		m_playersSpawned.clear();
 		const XmlElement@ subroot = root.getFirstElementByTagName("resource_life_cycle_handler");
@@ -527,4 +545,5 @@ class ResourceLifecycleHandler : Tracker {
 			}
 		}
 	}
+	*/
 }
