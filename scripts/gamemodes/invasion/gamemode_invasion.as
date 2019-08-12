@@ -14,8 +14,6 @@
 
 // generic trackers
 #include "basic_command_handler.as"
-#include "autosaver.as"
-
 
 // --------------------------------------------
 class GameModeInvasion : GameMode {
@@ -123,7 +121,6 @@ class GameModeInvasion : GameMode {
 		updateGeneralInfo();
 		save();
 
-		addTracker(AutoSaver(this));
 		addTracker(BasicCommandHandler(this));
 
 		// Cabal handlers:
@@ -198,7 +195,7 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	void save() {
 		// save metagame status now:
-		_log("saving metagame", 1);
+		_log("*** CABAL: GameModeInvasion::saving metagame", 1);
 
 		XmlElement commandRoot("command");
 		commandRoot.setStringAttribute("class", "save_data");

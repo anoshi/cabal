@@ -203,7 +203,6 @@ class MapRotatorInvasion : MapRotator {
 			// friendly faction won, advance to next map
 			_log("advance", 1);
 
-			// not real data to add about it, is there a "set" in php?
 			setStageCompleted(m_currentStageIndex);
 
 			if (m_world !is null) {
