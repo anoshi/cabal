@@ -126,7 +126,8 @@ class GameModeInvasion : GameMode {
 		addTracker(BasicCommandHandler(this));
 
 		// Cabal handlers:
-		addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
+		addTracker(m_resourceLifecycleHandler);
+		//addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
 		addTracker(CabalSpawner(this));
 
 		// multiplayer handler

@@ -87,7 +87,7 @@ class CabalSpawner : Tracker {
 	// Get player character ID //
 	// /////////////////////// //
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
-		_log("** CABAL CabalSpawner::handlePlayerSpawnEvent", 1);
+		_log("*** CABAL: CabalSpawner::handlePlayerSpawnEvent", 1);
 
 		const XmlElement@ element = event.getFirstElementByTagName("player");
 		string name = element.getStringAttribute("name");

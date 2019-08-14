@@ -12,7 +12,6 @@ class ResourceLifecycleHandler : Tracker {
 	protected int m_playerCharacterId;
 	protected array<string> m_playersSpawned;		// stores the unique 'hash' for each active player
 	protected array<int> m_playerLives = {3,3};		// players 1 and 2 have 3 lives each
-	protected array<bool> m_playerOut = {true, true};	// element stores true when player is out of lives
 	protected int playerCoins = 3; 					// coins on hand / restart level attempts left
 
     protected float m_localPlayerCheckTimer;
@@ -63,7 +62,6 @@ class ResourceLifecycleHandler : Tracker {
 					string name = player.getStringAttribute("name");
 					m_playerCharacterId = characterId;
 					m_playersSpawned.insertLast(playerHash);
-					m_playerOut[m_playersSpawned.size()] = false;
 					_log("*** CABAL: player " + name + " (" + m_playerCharacterId + ") spawned as player" + int(m_playersSpawned.size()), 1);
 				} else {
 					kickPlayer(player.getIntAttribute("player_id"), "Only " + m_metagame.getUserSettings().m_maxPlayers + " players allowed");
@@ -113,8 +111,35 @@ class ResourceLifecycleHandler : Tracker {
 		string playerHash = deadPlayer.getStringAttribute("profile_hash");
 		int playerNum = m_playersSpawned.find(playerHash); // should return the index or negative if not found
 
-		loseALife(playerNum);
-		gotALife();
+		// lose a life
+		switch (playerNum) {
+			case 0 :
+			case 1 :
+				_log("*** CABAL: Player " + (playerNum + 1) + " lost a life!", 1);
+				m_playerLives[playerNum] -= 1;
+				_log("*** CABAL: Player " + (playerNum + 1) + " still has " + (playerNum > 0 ? m_playerLives[1] : m_playerLives[0]) + " lives available.", 1);
+				break;
+			default :
+				_log("*** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
+				// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
+		}
+
+		// check if any player has any lives remaining
+		for (uint i = 0; i < m_playersSpawned.size(); ++ i) {
+			if (m_playerLives[i] <= 0) {
+				_log("*** CABAL: GAME OVER for Player " + (i+1), 1); // can't actually stop them from respawning. All or nothing
+			}
+		}
+		if ((m_playersSpawned.size() == 1) && (m_playerLives[0] <= 0)) {
+			_log("*** GAME OVER!", 1);
+			processGameOver();
+		} else if ((m_playersSpawned.size() == 2) && (m_playerLives[0] <= 0 && m_playerLives[1] <= 0)) {
+			_log("*** GAME OVER!", 1);
+			processGameOver();
+		} else {
+			_log("*** CABAL: Saving Game", 1);
+			m_metagame.save();
+		}
 
 		// player can't respawn if enemies are within ~70.0 units of the intended base. Need to forcibly remove enemy
 		// units from player's base area...
@@ -182,38 +207,6 @@ class ResourceLifecycleHandler : Tracker {
 		m_metagame.getComms().send(allowSpawn);
 	}
 
-	// -----------------------------------------------------------
-	protected void loseALife (int playerNum) {
-		switch (playerNum) {
-			case 0 :
-			case 1 :
-				_log("*** CABAL: Player " + (playerNum + 1) + " lost a life!", 1);
-				m_playerLives[playerNum] -= 1;
-				_log("*** CABAL: Player " + (playerNum + 1) + " still has " + (playerNum > 0 ? m_playerLives[1] : m_playerLives[0]) + " lives available.", 1);
-				break;
-			default :
-				_log("*** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
-				// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
-		}
-	}
-
-	// -----------------------------------------------------------
-	protected void gotALife () {
-		for (uint i = 0; i < m_playersSpawned.size(); ++i) {
-			if (m_playerLives[i] <= 0) {
-				_log("*** CABAL: GAME OVER for Player " + (i+1), 1);
-				m_playerOut[i] = true;
-			}
-		}
-		if (m_playerOut[0] && m_playerOut[1]) {
-				_log("*** GAME OVER!", 1);
-				processGameOver();
-		} else {
-			_log("*** CABAL: Saving Game", 1);
-			m_metagame.save();
-		}
-	}
-
 	// --------------------------------------------
 	protected void processGameOver() {
 		_log("*** CABAL: Running processGameOver", 1);
@@ -228,27 +221,39 @@ class ResourceLifecycleHandler : Tracker {
 			c.setBoolAttribute("enabled", false);
 			m_metagame.getComms().send(c);
 		}
+
+		sleep(2.0f); // brief pause before delivering the bad news
+
 		// check if players still have some coins/continues? If so, can restart level
 		if (playerCoins > 0) {
 			playerCoins --;
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
 			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
-			// reset each player's lives to 3
-			for (uint i = 0; i < m_playersSpawned.size(); ++ i) {
-				m_playerLives[i] = 3;
-			}
 			_log("*** CABAL: using coin / continue. " + playerCoins + " continues remaining!", 1);
+			// prep for restart
+			resetLevelStats();
 		}
 		else { // no coins / continues left, campaign lost / game over
 			_log("*** CABAL: no more coins / continues. GAME OVER", 1);
-			sleep(2.0f); // brief pause before delivering the bad news
 			XmlElement c("command");
 			c.setStringAttribute("class", "set_campaign_status");
 			c.setStringAttribute("key", "lose");
 			m_metagame.getComms().send(c);
+			levelComplete = true;
 		}
+	}
 
-		levelComplete = true;
+	// ----------------------------------------------------
+	protected void resetLevelStats() {
+		// player lives to 3
+		for (uint i = 0; i < m_playersSpawned.size(); ++ i) {
+			m_playerLives[i] = 3;
+		}
+		// reset level complete %
+		curXP = 0.0;
+		approachGoalXP(0.0);
+		// level is not complete
+		levelComplete = false;
 	}
 
 	// ----------------------------------------------------
@@ -445,8 +450,10 @@ class ResourceLifecycleHandler : Tracker {
 		_log("*** CABAL: Level completion: " + levelCompletePercent + "%", 1);
 
 		// notify text
-		string statusReport = "<command class='notify' text='" + "Level completion: " + levelCompletePercent + "%' />";
-		m_metagame.getComms().send(statusReport);
+		if (levelCompletePercent > 0) {
+			string statusReport = "<command class='notify' text='" + "Level completion: " + levelCompletePercent + "%' />";
+			m_metagame.getComms().send(statusReport);
+		}
 
 		// scoreboard text
 		string levelCompleteText = "";
@@ -522,20 +529,17 @@ class ResourceLifecycleHandler : Tracker {
 		// called by /scripts/gamemodes/campaign/cabal_campaign.as
 		// includes a section in savegames/campaign[0-999].save/metagame_invasion.xml
 		// named '<campaign_data>'
-
 		_log("*** CABAL: RLH::saveCampaignData() running", 1);
-		_log("*** CABAL: Player 1 has " + m_playerLives[0] + " lives remaining", 1);
 
-		//for (uint i = 0; i < m_playersSpawned.size(); ++i) {
-		//	string pNum = "player" + (i + 1);
-		//	XmlElement playerData(pNum);
 		if (m_playersSpawned.size() > 0) {
-			XmlElement playerData("player1");
-			playerData.setStringAttribute("hash", m_playersSpawned[0]); //m_playersSpawned[i]
-			playerData.setIntAttribute("lives", m_playerLives[0]); // m_playerLives[0]
-
-			_log("*** CABAL: RLH Saving player1 --> lives as " + playerData.getIntAttribute("lives"), 1);
-			campaignData.appendChild(playerData);
+			for (uint i = 0; i < m_playersSpawned.size(); ++i) {
+				string pNum = "player" + (i + 1);
+				XmlElement playerData(pNum);
+				playerData.setStringAttribute("hash", m_playersSpawned[i]);
+				playerData.setIntAttribute("lives", m_playerLives[i]);
+				campaignData.appendChild(playerData);
+				_log("*** CABAL: Player" + (i + 1) + " data saved to metagame_invasion.xml", 1);
+			}
 		} else {
 			_log("*** CABAL: no data in m_playersSpawned. No character info to save.", 1);
 		}
