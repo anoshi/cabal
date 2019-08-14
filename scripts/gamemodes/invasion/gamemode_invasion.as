@@ -7,7 +7,7 @@
 #include "cabal_map_rotator.as"
 #include "cabal_stage_configurator.as"
 //#include "cabal_user_settings.as"
-#include "user_settings.as"
+//#include "user_settings.as"
 #include "resource_lifecycle_handler_invasion.as"
 #include "cabal_spawner_invasion.as"
 #include "player_manager.as"
@@ -18,7 +18,6 @@
 // --------------------------------------------
 class GameModeInvasion : GameMode {
 	protected MapRotatorInvasion@ m_mapRotator;
-
 	protected array<Faction@> m_factions;
 
 	// TODO: can we avoid this?
@@ -39,10 +38,9 @@ class GameModeInvasion : GameMode {
 	void init() {
 		GameMode::init();
 
-		@m_resourceLifecycleHandler = ResourceLifecycleHandler(this); // cabal dedicated server only
-
 		setupMapRotator();
 		setupPlayerManager(); // cabal dedicated server only
+		setupResourceLifecycle();
 
 		if (m_userSettings.m_continue) {
 			_log("* restoring old game");
@@ -74,6 +72,10 @@ class GameModeInvasion : GameMode {
 	protected void setupMapRotator() {
 		@m_mapRotator = CabalMapRotator(this);
 		CabalStageConfigurator configurator(this, m_mapRotator);
+	}
+
+	protected void setupResourceLifecycle() {
+		@m_resourceLifecycleHandler = ResourceLifecycleHandler(this);
 	}
 
 	// --------------------------------------------
@@ -126,6 +128,9 @@ class GameModeInvasion : GameMode {
 		// Cabal handlers:
 		addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
 		addTracker(CabalSpawner(this));
+
+		// multiplayer handler
+		addTracker(PlayerManager(this));
 
 		for (uint i = 0; i < m_factions.size(); ++i) {
 			if (i != 0) {

@@ -41,9 +41,8 @@ class Cabal : GameModeInvasion {
 		// append user-settings in too
 		XmlElement@ settings = m_userSettings.toXmlElement("settings");
 		root.appendChild(settings);
-		// save campaign-specific/persistent data (player lives, etc.)
-		XmlElement@ campaignData = m_resourceLifecycleHandler.toXmlElement("campaignData");
-		root.appendChild(campaignData);
+
+		m_resourceLifecycleHandler.save(root);
 
 		commandRoot.appendChild(root);
 
