@@ -28,15 +28,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="1050.1936"
-     inkscape:cy="856.18215"
+     inkscape:zoom="4"
+     inkscape:cx="1080.7685"
+     inkscape:cy="883.76484"
      inkscape:document-units="px"
-     inkscape:current-layer="layer55"
+     inkscape:current-layer="layer49"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
-     inkscape:window-x="1062"
+     inkscape:window-x="1057"
      inkscape:window-y="335"
      inkscape:window-maximized="0"
      inkscape:snap-bbox="false"
@@ -7416,8 +7416,8 @@
     <rect
        y="172.78105"
        x="2908.0869"
-       height="155.50772"
-       width="64.480774"
+       height="175.3067"
+       width="64.480713"
        id="rect43431-1-8"
        style="display:inline;fill:#ffff00;fill-opacity:0.07843137;fill-rule:nonzero;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new" />
     <rect
@@ -8003,7 +8003,7 @@
          id="tspan21189"
          x="3739.7188"
          y="265.53369"
-         style="font-size:8px;line-height:1.25;font-family:sans-serif">This is an &quot;offorad&quot; path. Put it in the offroad layer.</tspan><tspan
+         style="font-size:8px;line-height:1.25;font-family:sans-serif">This is an &quot;offroad&quot; path. Put it in the offroad layer.</tspan><tspan
          sodipodi:role="line"
          id="tspan21191"
          x="3739.7188"
@@ -8083,6 +8083,35 @@
        width="74.037109"
        id="rect21153-2"
        style="display:inline;fill:#ffff00;fill-opacity:0.07843137;fill-rule:nonzero;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new" />
+    <text
+       id="text44461-3-4"
+       y="317.34134"
+       x="3126.2148"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:sans-serif;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#ff0000;fill-opacity:1;stroke:none;enable-background:new"
+       xml:space="preserve"><tspan
+         y="317.34134"
+         x="3126.2148"
+         sodipodi:role="line"
+         style="font-size:8px;line-height:1.25;font-family:sans-serif"
+         id="tspan9862">Objects with an ID attribute beginning with 'generic_node' can be used as spawn</tspan><tspan
+         y="327.34134"
+         x="3126.2148"
+         sodipodi:role="line"
+         style="font-size:8px;line-height:1.25;font-family:sans-serif"
+         id="tspan9870">points for any instance via scripts. See trackers/spawn_at_node.as for details </tspan></text>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path44459-2-0"
+       d="m 2950.7388,330.74309 168.1304,-17.46016"
+       style="display:inline;fill:none;stroke:#ff0000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new" />
+    <rect
+       style="display:inline;fill:#ffff00;fill-opacity:0.07843137;fill-rule:nonzero;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;enable-background:new"
+       id="rect12863-5"
+       width="21.864014"
+       height="19.384033"
+       x="2928.9429"
+       y="324.05798" />
   </g>
   <g
      style="display:inline;opacity:0.92000002"
@@ -8998,7 +9027,7 @@ see_through = 1;</desc>
          id="title9786-13-5-7-8-6">venus</title>
     </rect>
     <rect
-       transform="rotate(0.07879261,-1939154.2,3857662.8)"
+       transform="rotate(0.07879261,-1939154.2,3857662.4)"
        inkscape:label="#mesh_template"
        y="-1522.1748"
        x="-2658.7271"
@@ -9010,7 +9039,7 @@ see_through = 1;</desc>
          id="desc10092-7-0-4-9-8-24">name = sunchair_red; mesh_name = sunchair.mesh; texture0 = world_atlas1.png; texture0_atlas_cell = 7 1 32 32; collision_model_type = 1; collision_model_size = 1.3 1.5 1.6; penetrability = 0.7; see_through = 1</desc>
     </rect>
     <rect
-       transform="rotate(0.00494255,-30908972,61538942)"
+       transform="rotate(0.00494255,-30908972,61533611)"
        inkscape:label="#mesh_template"
        y="-1522.1748"
        x="-2658.7271"
@@ -11970,7 +11999,7 @@ key = radar_truck.vehicle;</desc>
          style="font-size:40px;line-height:1.25;font-family:sans-serif">spawn, base</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
-       d="M 2992.4899,171.57794 V 328.48129"
+       d="M 2992.4899,171.57794 V 347.21962"
        id="path8566-5-8-1-1-5"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
@@ -15549,7 +15578,7 @@ sequence = apartment1_1st_floor_window, apartment1_1st_floor_empty;</desc>
        height="50.507629"
        width="77.781746"
        id="rect9344-6-8-0"
-       style="display:inline;opacity:0.92000002;fill:#ece2cb;fill-opacity:1;fill-rule:nonzero;stroke:#0b373e;stroke-width:5;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.94117647;enable-background:new">
+       style="display:inline;opacity:0.92000002;fill:#ece2cb;fill-opacity:1;fill-rule:nonzero;stroke:#0b373e;stroke-width:5.00031519;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.94117647;enable-background:new">
       <desc
          id="desc9346-4-7-4">day_color = fill;
 night_color = stroke;
@@ -16183,7 +16212,7 @@ penetrability = 0.4;</desc>
     <flowRoot
        xml:space="preserve"
        id="flowRoot3712"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:'Damage Inc';font-style:normal;font-weight:normal;font-size:32px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Damage Inc, Normal';font-stretch:normal;font-variant:normal;text-anchor:middle;text-align:center;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal"><flowRegion
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:125%;font-family:'Damage Inc';-inkscape-font-specification:'Damage Inc, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
          id="flowRegion3714"><rect
            id="rect3716"
            width="232.50002"
@@ -16512,6 +16541,28 @@ key = env_building_3_5_1.vehicle;</desc>
          id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-5-4-9-0">type = vehicle;
 key = env_wall_1_1_1.vehicle;</desc>
     </rect>
+    <rect
+       inkscape:label=""
+       y="332.66364"
+       x="2938.5884"
+       height="2.0679491"
+       width="2.2977724"
+       id="generic_node1"
+       style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+      <desc
+         id="desc9795">tag = enemy_spawn;</desc>
+    </rect>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:0.92000002;fill:#000000;fill-opacity:1;stroke:none;enable-background:new"
+       x="3012.603"
+       y="335.31775"
+       id="text133353-0"><tspan
+         sodipodi:role="line"
+         id="tspan133355-2"
+         x="3012.603"
+         y="335.31775"
+         style="font-size:10px;line-height:1.25;font-family:sans-serif">programmatic spawn</tspan></text>
   </g>
   <g
      style="display:none"
@@ -17061,8 +17112,8 @@ separator_depth = 0.9;</desc>
          id="rect5814-8-9-12-71-9-9-1-4-253-7"
          width="14"
          height="14"
-         x="1052.2206"
-         y="1167.9452" />
+         x="1051.1599"
+         y="1171.6575" />
       <rect
          rx="7"
          ry="7"
@@ -17169,8 +17220,8 @@ tag = apc;</desc>
          id="spawn1-70-6-0-5-9-7"
          width="3.982286"
          height="7.3961515"
-         x="-1201.7185"
-         y="1030.5623"
+         x="-1200.9646"
+         y="1029.5652"
          inkscape:label=""
          transform="rotate(-90.226744)">
         <desc
@@ -17201,8 +17252,8 @@ tag = truck;</desc>
          id="craterect10748-4-29-6-8-48-7-1-7-4-8-5-5-8"
          width="4"
          height="4"
-         x="-1214.8914"
-         y="1081.21"
+         x="-1219.7531"
+         y="1084.4799"
          inkscape:label="#rect10748"
          transform="rotate(-89.765408)" />
       <rect
@@ -17276,79 +17327,7 @@ tag = truck;</desc>
        inkscape:label="spawnpoints"
        id="layer33"
        inkscape:groupmode="layer"
-       style="opacity:0.98000004">
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1071.8004"
-         x="1077.8547"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1078.4119"
-         x="1067.5852"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-5"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1098.1882"
-         x="1061.5422"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-57"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1088.1882"
-         x="1088.7924"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-0"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1067.6882"
-         x="1046.2924"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-7"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1097.9663"
-         x="1078.6008"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-57-5"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1095.2163"
-         x="1100.6008"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-57-2"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1119.2163"
-         x="1106.1008"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-57-27"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1075.7163"
-         x="1056.3508"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-57-3"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
+       style="display:inline;opacity:0.98000004">
       <rect
          inkscape:label="#spawnrect10748"
          y="1247.167"
@@ -17367,307 +17346,19 @@ tag = truck;</desc>
          style="display:inline;opacity:0.93000034;fill:#df1a20;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1061.5848"
-         x="1055.5664"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-3"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1087.4938"
-         x="1068.0179"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-8"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1069.7218"
-         x="1100.3997"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1133.3422"
-         x="1052.9904"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-4"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1108.9037"
-         x="1090.4171"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-83"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1085.1243"
-         x="1108.6549"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-9"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1103.3726"
-         x="1108.3389"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-05"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1107.799"
-         x="1072.5333"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-2"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1096.7266"
-         x="1116.6149"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-27"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1071.8661"
-         x="1029.6357"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-37"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1079.1382"
-         x="1094.6835"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-90"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1078.0627"
-         x="1037.05"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-23"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1120.8907"
-         x="1083.5709"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-99"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1120.6564"
-         x="1059.511"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-70"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1086.4067"
-         x="1048.8931"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-39"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1135.8986"
-         x="1079.7761"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-86"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1106.0116"
-         x="1053.5781"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-576"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1066.0325"
-         x="1064.1072"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-270"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1065.1788"
-         x="1085.3109"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-399"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1076.0784"
-         x="1109.6632"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-91"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1064.0875"
-         x="1114.3121"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-7"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1057.37"
-         x="1095.5737"
+         y="1131.2161"
+         x="1060.1011"
          height="2.0679491"
          width="2.2977724"
          id="rect4878-8-6-42-7-9-6-0-2-02-9"
          style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
       <rect
          inkscape:label="#spawnrect10748"
-         y="1056.663"
-         x="1077.5425"
+         y="1130.9661"
+         x="1104.8511"
          height="2.0679491"
          width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-3"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1058.7843"
-         x="1043.2478"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-8"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1089.5435"
-         x="1033.3484"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-0"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1088.1292"
-         x="1055.6222"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-2"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1113.5851"
-         x="1063.7539"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-4"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1113.9386"
-         x="1084.26"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-83"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1124.8988"
-         x="1099.4629"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-90"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1127.7272"
-         x="1070.8251"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-5"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1109.6959"
-         x="1101.2306"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-22"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1125.9595"
-         x="1115.7263"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-73"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1130.202"
-         x="1104.7661"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-79"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1095.3771"
-         x="1070.2947"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-02"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1063.3805"
-         x="1032.9948"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-39"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1056.663"
-         x="1062.6932"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-97"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1064.7947"
-         x="1075.7748"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-03"
-         style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
-      <rect
-         inkscape:label="#spawnrect10748"
-         y="1063.3805"
-         x="1104.0591"
-         height="2.0679491"
-         width="2.2977724"
-         id="rect4878-8-6-42-7-9-6-0-2-02-98"
+         id="rect4878-8-6-42-7-9-6-0-2-02-9-7"
          style="display:inline;opacity:0.93000034;fill:#de7524;fill-opacity:1;stroke:none;enable-background:new" />
     </g>
   </g>
@@ -17848,13 +17539,88 @@ key = env_building_1_5_1.vehicle;</desc>
            id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-5-4-9">type = vehicle;
 key = env_wall_1_1_1.vehicle;</desc>
       </rect>
+      <rect
+         style="display:inline;opacity:0.93000034;fill:#d21e1e;fill-opacity:1;stroke:#000000;stroke-width:0.28346458;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.07086614, 0.07086614;stroke-dashoffset:1.98425269;stroke-opacity:1;enable-background:new"
+         id="spawn_wall_1-1-1-1-9"
+         width="13.664063"
+         height="0.85705566"
+         x="1093.7202"
+         y="1161.1655"
+         inkscape:label=""
+         transform="rotate(0.10760949)">
+        <desc
+           id="desc9788-45-3-6-1-6-7-2-09-4-7-2-82-2-4-4-2-4-7-5-1-7-0-2-9-9-9-0-5-4-9-3">type = vehicle;
+key = env_wall_1_1_1.vehicle;</desc>
+      </rect>
+    </g>
+    <g
+       inkscape:label="spawnpoints"
+       id="layer40"
+       inkscape:groupmode="layer"
+       style="display:inline">
+      <rect
+         inkscape:label="#rect10748"
+         y="1178.8157"
+         x="1077.0122"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-9"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-0">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1194.7256"
+         x="1044.662"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-73"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-7">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1184.4725"
+         x="1101.5841"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-5"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-22">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1173.5016"
+         x="1057.1958"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-0"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-2">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1567.4967"
+         x="437.28403"
+         height="1.7647586"
+         width="1.9347446"
+         id="generic_node1-3"
+         style="display:inline;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new"
+         transform="rotate(-25.734744)">
+        <desc
+           id="desc5002-4-7-1-8-13-1">tag = cabal_spawn;</desc>
+      </rect>
     </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer48"
      inkscape:label="layer1.map2"
-     style="display:none">
+     style="display:inline">
     <g
        inkscape:label="objects"
        id="g3628"
@@ -17870,8 +17636,8 @@ key = env_wall_1_1_1.vehicle;</desc>
          id="spawn3_2-6"
          width="5.7888808"
          height="6.6684999"
-         x="1075.5856"
-         y="1185.1705"
+         x="1073.4298"
+         y="1196.439"
          inkscape:label=""
          transform="rotate(0.47999757)">
         <desc
@@ -17895,8 +17661,8 @@ tag = jeep;</desc>
          id="spawn2_3-3-1-4"
          width="31.138823"
          height="14.218333"
-         x="1175.9557"
-         y="-1051.1029"
+         x="1159.3547"
+         y="-1089.8097"
          inkscape:label=""
          transform="rotate(90.149388)">
         <desc
@@ -17904,9 +17670,48 @@ tag = jeep;</desc>
 key = env_building_3_3_1.vehicle;</desc>
       </rect>
     </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer57"
+       inkscape:label="spawnpoints"
+       style="display:inline">
+      <rect
+         inkscape:label="#rect10748"
+         y="1217.9661"
+         x="1043.3511"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-9-7"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-0-9">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1223.2161"
+         x="1100.6011"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-9-7-3"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-0-9-8">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1219.2161"
+         x="1057.1011"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-9-7-0"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-0-9-2">tag=cabal_spawn;</desc>
+      </rect>
+    </g>
   </g>
   <g
-     style="display:none"
+     style="display:inline"
      inkscape:label="layer1.map3"
      id="g27529"
      inkscape:groupmode="layer">
@@ -17980,12 +17785,72 @@ tag = tank;</desc>
 key = env_building_3_3_1.vehicle;</desc>
       </rect>
     </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer58"
+       inkscape:label="spawnpoints">
+      <rect
+         inkscape:label="#rect10748"
+         y="1117.6509"
+         x="1113.9585"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-2"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-2">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1201.0977"
+         x="1050.1448"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1093.079"
+         x="1030.1664"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-4"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-83">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1163.4661"
+         x="1025.6011"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-7"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-9">tag=cabal_spawn;</desc>
+      </rect>
+      <rect
+         inkscape:label="#rect10748"
+         y="1163.9661"
+         x="1013.1011"
+         height="2.0679491"
+         width="2.2977724"
+         id="generic_node1-7-3"
+         style="display:inline;opacity:0.93000034;fill:#dc1414;fill-opacity:1;stroke:none;enable-background:new">
+        <desc
+           id="desc9795-3-8">tag=cabal_spawn;</desc>
+      </rect>
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="g3767"
      inkscape:label="layer1.map4"
-     style="display:inline">
+     style="display:none">
     <g
        inkscape:label="objects"
        id="g3765"
@@ -18067,10 +17932,6 @@ key = env_building_3_3_1.vehicle;</desc>
        inkscape:label="crates"
        id="layer15"
        inkscape:groupmode="layer" />
-    <g
-       inkscape:label="spawnpoints"
-       id="layer40"
-       inkscape:groupmode="layer" />
   </g>
   <g
      style="display:inline"
@@ -18105,14 +17966,4 @@ key = env_building_3_3_1.vehicle;</desc>
        id="layer14"
        inkscape:groupmode="layer" />
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer26"
-     inkscape:label="path"
-     style="display:inline" />
-  <g
-     inkscape:groupmode="layer"
-     id="layer13"
-     inkscape:label="divider"
-     style="display:inline" />
 </svg>

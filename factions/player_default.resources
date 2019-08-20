@@ -2,10 +2,6 @@
 <!-- Player-specific Vehicles, Radio Calls, and Carry Items -->
 <resources>
 	<!-- faction-specific vehicles (not listed in common.resources) -->
- 	<vehicle key="jeep_1.vehicle" />
- 	<vehicle key="apc_1.vehicle" />
- 	<vehicle key="tank_1.vehicle" />
- 	<vehicle key="transport_truck_1.vehicle" />
 
 	<!-- faction-specific weapons (not listed in common.resources) -->
 	<weapon key="player_lr.weapon" />
@@ -16,6 +12,7 @@
 	<weapon key="player_rl.weapon" />
 
 	<!-- explicitly enable this faction's carry items (listed as disabled in common.resources) -->
-	<!--<carry_item key="player_impervavest.carry_item" enabled="1" />-->
-	<!--<carry_item key="player_power_armour.carry_item" enabled="1" />-->
+	<carry_item key="player_impervavest.carry_item" enabled="1" />
+	<carry_item key="player_blue.carry_item" enabled="1" />
+	<carry_item key="player_red.carry_item" enabled="1" />
 </resources>

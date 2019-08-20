@@ -67,7 +67,7 @@
 	<!-- ///////////// -->
 	<!-- default group -->
 	<!-- ///////////// -->
-	<soldier name="default" spawn_score="1.0">
+	<soldier name="default" spawn_score="0.0">
 		<character filename="player_male.character" />
 		<ai filename="default.ai" />
 
@@ -82,6 +82,8 @@
 			<item_class_existence class="weapon" slot="0" probability="1.0" />
 			<!-- secondary -->
 			<item_class_existence class="weapon" slot="1" probability="0.4" />
+			<!-- grenade -->
+			<item_class_existence class="grenade" slot="0" probability="1.0" />
 			<!-- armour -->
 			<item_class_existence class="carry_item" slot="1" probability="0.0" />
 			<!-- backpack -->
@@ -89,12 +91,11 @@
 		</item_class_existence_config>
 
 		<attribute_config class="rp">
-			<attribute weight="0.3" min="80.0" max="300.0" />
-			<attribute weight="0.7" min="0.0" max="0.0" />
+			<attribute weight="1.0" min="0.0" max="0.0" />
 		</attribute_config>
 
 		<attribute_config class="xp">
-			<attribute weight="1.0" min="0.05" max="0.45" />
+			<attribute weight="1.0" min="0.0" max="0.0" />
 		</attribute_config>
 	</soldier>
 

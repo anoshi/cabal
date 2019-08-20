@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Player 2 (red) skin -->
+
+<carry_items>
+    <carry_item key="player_red.carry_item" name="Player 2" slot="1" time_to_live_out_in_the_open="0.0">
+        <hud_icon filename="hud_blackops.png" /><!-- change to icon of blue player, count lives left -->
+        <capacity value="1" source="rank" source_value="0.0" />
+        <inventory encumbrance="20" price="75" />
+
+        <model mesh_filename="player_red.xml" />
+
+        <commonness value="0.00001" in_stock="0" can_respawn_with="0" />
+    </carry_item>
+</carry_items>

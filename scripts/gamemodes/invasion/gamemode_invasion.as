@@ -7,19 +7,17 @@
 #include "cabal_map_rotator.as"
 #include "cabal_stage_configurator.as"
 //#include "cabal_user_settings.as"
-#include "user_settings.as"
+//#include "user_settings.as"
 #include "resource_lifecycle_handler_invasion.as"
+#include "cabal_spawner_invasion.as"
 #include "player_manager.as"
 
 // generic trackers
 #include "basic_command_handler.as"
-#include "autosaver.as"
-
 
 // --------------------------------------------
 class GameModeInvasion : GameMode {
 	protected MapRotatorInvasion@ m_mapRotator;
-
 	protected array<Faction@> m_factions;
 
 	// TODO: can we avoid this?
@@ -40,10 +38,9 @@ class GameModeInvasion : GameMode {
 	void init() {
 		GameMode::init();
 
-		@m_resourceLifecycleHandler = ResourceLifecycleHandler(this); // cabal dedicated server only
-
 		setupMapRotator();
 		setupPlayerManager(); // cabal dedicated server only
+		setupResourceLifecycle();
 
 		if (m_userSettings.m_continue) {
 			_log("* restoring old game");
@@ -77,6 +74,10 @@ class GameModeInvasion : GameMode {
 		CabalStageConfigurator configurator(this, m_mapRotator);
 	}
 
+	protected void setupResourceLifecycle() {
+		@m_resourceLifecycleHandler = ResourceLifecycleHandler(this);
+	}
+
 	// --------------------------------------------
 	protected void updateGeneralInfo() {
 		const XmlElement@ general = getGeneralInfo(this);
@@ -105,7 +106,7 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle is about to start
 	void preBeginMatch() {
-		_log("preBeginMatch", 1);
+		_log("*** CABAL: preBeginMatch", 1);
 
 		// all trackers are cleared when match is about to begin
 		GameMode::preBeginMatch();
@@ -116,17 +117,23 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle has started
 	void postBeginMatch() {
+		_log("*** CABAL: postBeginMatch", 1);
+
 		GameMode::postBeginMatch();
 
 		// query for basic match data -- we mostly need the savegame location
 		updateGeneralInfo();
-		save();
+		//save(); // let me control the save timing thank you computer
 
-		addTracker(AutoSaver(this));
 		addTracker(BasicCommandHandler(this));
 
 		// Cabal handlers:
-		addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
+		addTracker(m_resourceLifecycleHandler);
+		//addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
+		addTracker(CabalSpawner(this));
+
+		// multiplayer handler
+		addTracker(PlayerManager(this));
 
 		for (uint i = 0; i < m_factions.size(); ++i) {
 			if (i != 0) {
@@ -196,7 +203,7 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	void save() {
 		// save metagame status now:
-		_log("saving metagame", 1);
+		_log("*** CABAL: GameModeInvasion::saving metagame", 1);
 
 		XmlElement commandRoot("command");
 		commandRoot.setStringAttribute("class", "save_data");

@@ -87,7 +87,7 @@ class MapRotatorInvasion : MapRotator {
 	// --------------------------------------------
 	// --------------------------------------------
 	protected void handleFactionLoseEvent(const XmlElement@ event) {
-		_log("*** CABAL: map_rotator_invsion.as handleFactionLoseEvent", 1);
+		_log("*** CABAL: map_rotator_invasion.as handleFactionLoseEvent", 1);
 		int factionId = -1;
 
 		const XmlElement@ loseCondition = event.getFirstElementByTagName("lose_condition");
@@ -203,7 +203,6 @@ class MapRotatorInvasion : MapRotator {
 			// friendly faction won, advance to next map
 			_log("advance", 1);
 
-			// not real data to add about it, is there a "set" in php?
 			setStageCompleted(m_currentStageIndex);
 
 			if (m_world !is null) {

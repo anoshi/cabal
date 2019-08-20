@@ -16,8 +16,8 @@ array<const XmlElement@>@ getVehiclesNearPosition(const Metagame@ metagame, cons
 
 	_log("*** CABAL getVehiclesNearPosition running", 1);
 
-// querying 'vehicles' doesn't support a range variable, like 'characters' does.
-// Must grab all vehicles and check their proximity to event, in turn.
+	// querying 'vehicles' doesn't support a range variable, like 'characters' does.
+	// Must grab all vehicles and check their proximity to event, in turn.
 
 	XmlElement@ query = XmlElement(
 		makeQuery(metagame, array<dictionary> = {
@@ -52,6 +52,35 @@ array<const XmlElement@>@ getVehiclesNearPosition(const Metagame@ metagame, cons
 	return vehNearPos;
 }
 
+void setPlayerInventory(const Metagame@ metagame, int characterId, string vest) {
+	// assign / override equipment to player character
+	_log("*** CABAL: Equipping player (id: " + characterId + ") with " + vest, 1);
+	XmlElement charInv("command");
+	charInv.setStringAttribute("class", "update_inventory");
+
+	charInv.setIntAttribute("character_id", characterId);
+	charInv.setIntAttribute("container_type_id", 4); // vest
+	{
+		XmlElement i("item");
+		i.setStringAttribute("class", "carry_item");
+		i.setStringAttribute("key", vest);
+		charInv.appendChild(i);
+	}
+	metagame.getComms().send(charInv);
+	_log("*** CABAL: " + vest + " equipped on character " + characterId, 1);
+}
+
+string curStage;
+
+void whichStage(string stageNum) {
+	// each stage reports its stage name e.g. "map1" in stage_invasion.as.
+	string curStage = stageNum;
+	_log("*** CABAL: Current stage is: " + curStage, 1);
+}
+
+string thisStage() {
+	return curStage;
+}
 ///////////////////////////////
 // ----- TRIGGER AREAS ----- //
 ///////////////////////////////

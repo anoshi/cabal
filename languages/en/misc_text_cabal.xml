@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<translation>
+	<text key="Player"/>
+	<text key="Cabal"/>
+	<text key="Cabal Civilian"/>
+	<text key="Cabal One"/>
+	<text key="Cabal Two"/>
+	<text key="Cabal Three"/>
+	<text key="Cabal Four"/>
+	<text key="Cabal Five"/>
+	<text key="Cabal Six"/>
+	<text key="Cabal Seven"/>
+	<text key="Cabal Eight"/>
+	<text key="Cabal Nine"/>
+	<text key="Cabal Ten"/>
+	<text key="Cabal Eleven"/>
+	<text key="Cabal Twelve"/>
+	<text key="Cabal Thirteen"/>
+	<text key="Cabal Fourteen"/>
+	<text key="Cabal Fifteen"/>
+	<text key="Cabal Sixteen"/>
+	<text key="Cabal Seventeen"/>
+	<text key="Player ImpervaVest"/>
+	<text key="player_laser"/>
+	<text key="player_laser_short"/>
+	<text key="Laser Rifle"/>
+	<text key="Machine Pistol"/>
+	<text key="Shotgun"/>
+	<text key="Rocket Launcher"/>
+	<text key="Player Sticky Grenade"/>
+	<text key="cabal_laser"/>
+	<text key="Cabal Laser Rifle"/>
+	<text key="Cabal Machine Gun"/>
+	<text key="Cabal Sniper Rifle"/>
+	<text key="Cabal Shotgun"/>
+	<text key="Grenade"/>
+	<text key="Bandage"/>
+	<text key="Cabal Vest, type I"/>
+	<text key="Cabal Vest, type I, 50%"/>
+
+	<text key="?"/>
+	<text key="Minigun"/>
+	<text key="rocket"/>
+	<text key="Medikit"/>
+	<text key="Cover deploy"/>
+	<text key="APC HMG"/>
+	<text key="Tank cannon"/>
+	<text key="Tank MG"/>
+	<text key="default"/>
+	<text key="M240"/>
+	<text key="D40mm-Flak"/>
+	<text key="PS Mortar"/>
+	<text key="MG"/>
+	<text key="MG deploy"/>
+	<text key="Mortar"/>
+	<text key="mortar shell"/>
+	<text key="artillery shell"/>
+	<text key="stun grenade"/>
+	<text key="grenade"/>
+	<text key="Jeep"/>
+	<text key="SIK-AP APC"/>
+	<text key="Spawn truck"/>
+	<text key="Rubber boat"/>
+	<text key="RWR1a1 Tank"/>
+	<text key="TOW"/>
+	<text key="Humvee"/>
+	<text key="Humvee MG"/>
+	<text key="Radar Tower"/>
+	<text key="Transport truck"/>
+	<text key="Fuel tank"/>
+	<text key="Armory truck"/>
+	<text key="Radio jammer"/>
+	<text key="Water Tower"/>
+	<text key="?"/>
+	<text key="Buggy"/>
+
+	<text key="cover drop" />
+	<text key="I need sandbags" />
+	<text key="Confirmed" />
+	<text key="Sandbags on the way" />
+	<text key="mortar strike (1x8)" />
+	<text key="Fire mission" />
+	<text key="fire one round." />
+	<text key="Roger, wait one." />
+	<text key="Round on the way." />
+	<text key="4 paratroopers" />
+	<text key="Reinforcements" />
+	<text key="requesting 4" />
+	<text key="Roger" />
+	<text key="4 airborne" />
+	<text key="Greenbelts" />
+	<text key="Graycollars" />
+	<text key="Brownpants" />
+
+	<text key="ground" />
+	<text key="equipment" />
+	<text key="armory" />
+	<text key="stash" />
+	<text key="backpack" />
+
+	<text key="World view updated" />
+	<text key="Game saved" />
+
+	<text key="Battle of" text="Battle of " />
+	<text key="Total casualties" text="Total casualties " />
+	<text key="Dismiss" />
+	<text key="Soldiers killed" />
+	<text key="Casualties" />
+	<text key="Vehicles destroyed" />
+	<text key="Targets destroyed" />
+	<text key="Completed" />
+	<text key="Defeated" />
+	<text key="In operation" />
+
+	<text key="east" />
+	<text key="northeast" />
+	<text key="north" />
+	<text key="northwest" />
+	<text key="west" />
+	<text key="southwest" />
+	<text key="south" />
+	<text key="southeast" />
+
+	<text key="hold %control" />
+
+	<text key="Game started" />
+
+	<text key="AK47" />
+	<text key="G36"/>
+	<text key="PKM"/>
+	<text key="FAMAS G1"/>
+	<text key="Dragunov SVD"/>
+	<text key="SPAS-12"/>
+	<text key="QCW-05"/>
+	<text key="PSG-90"/>
+	<text key="RPG-7"/>
+	<text key="M2 Carl Gustav"/>
+	<text key="L85A2"/>
+	<text key="SG 552"/>
+	<text key="IMI Negev"/>
+	<text key="QBS-09"/>
+	<text key="Scorpion Evo III"/>
+	<text key="MiniGun deploy"/>
+	<text key="Mortar deploy"/>
+	<text key="XM-25"/>
+	<text key="TOW deploy"/>
+	<text key="D40mm-Flak-proto"/>
+	<text key="Missile launcher"/>
+	<text key="briefcase"/>
+	<text key="Cargo truck"/>
+	<text key="Prisoner transport"/>
+	<text key="Prison door"/>
+	<text key="Anti-Air"/>
+	<text key="Mortar Ammunition"/>
+	<text key="Cargo vehicle"/>
+	<text key="Tractor"/>
+	<text key="Pigeon P5"/>
+	<text key="Urbal UAS"/>
+	<text key="GT-C APC"/>
+	<text key="BTX APC"/>
+	<text key="Leopold II Tank"/>
+	<text key="TroX-80 Tank"/>
+	<text key="DarkCat Tank"/>
+	<text key="Vulcan Tank"/>
+	<text key="mortar strike (3x8)"/>
+	<text key="fire three rounds."/>
+	<text key="Roger, wait three."/>
+	<text key="Rounds on the way."/>
+	<text key="8 paratroopers"/>
+	<text key="requesting 8"/>
+	<text key="8 airborne"/>
+	<text key="artillery strike (2x16)"/>
+	<text key="fire two rounds, artillery advised."/>
+	<text key="Roger, wait two."/>
+	<text key="Rounds on the way."/>
+	<text key="artillery strike (10x16)"/>
+	<text key="fire eight rounds, artillery advised."/>
+	<text key="Roger, wait eight."/>
+	<text key="Rounds on the way."/>
+	<text key="Rubber boat drop"/>
+	<text key="I need water transport!"/>
+	<text key="Confirmed, rubber boat is in the air."/>
+	<text key="Airdropping rubber boat now."/>
+	<text key="spawn Humvee"/>
+	<text key="spawn Buggy"/>
+	<text key="I need combat transportation"/>
+	<text key="Confirmed, Humvee's in the air."/>
+	<text key="Airdropping Humvee now."/>
+	<text key="spawn tank"/>
+	<text key="I need armoured support!"/>
+	<text key="Confirmed, tank is in the air."/>
+	<text key="Airdropping tank now."/>
+	<text key="not much of a destroyer"/>
+	<text key="* destroy %target_count vehicles"/>
+	<text key="Rookie destroyer"/>
+	<text key="Master destroyer"/>
+	<text key="Elite destroyer"/>
+	<text key="barely a saboteur"/>
+	<text key="* destroy %target_count structures or deployed weapons"/>
+	<text key="* destroy %target_count radio towers"/>
+	<text key="Rookie saboteur"/>
+	<text key="Master saboteur"/>
+	<text key="Elite saboteur"/>
+	<text key="wannabe tracker"/>
+	<text key="* locate %target_count secret crates"/>
+	<text key="* deliver %target_count hidden vehicles"/>
+	<text key="Rookie tracker"/>
+	<text key="Master tracker"/>
+	<text key="Elite tracker"/>
+	<text key="combat student"/>
+	<text key="* kill %target_count enemy soldiers"/>
+	<text key="Rookie killer"/>
+	<text key="Master combatant"/>
+	<text key="Elite marksman"/>
+	<text key="learning stealth"/>
+	<text key="* stab %target_count enemy soldiers, silently"/>
+	<text key="* shoot %target_count enemy soldiers, silently"/>
+	<text key="* locate %target_count important enemy targets"/>
+	<text key="Special Forces Trainee"/>
+	<text key="Spec Ops Expert"/>
+	<text key="Elite Commando"/>
+
+	<text key="Binoculars"/>
+	<text key="mini UZI"/>
+	<text key="Steyr TMP"/>
+	<text key="AEK-919k"/>
+	<text key="WB-II Microgun"/>
+	<text key="Vest, type I" />
+	<text key="Vest, type I, 50%" />
+
+	<text key="Camouflage suit" />
+
+	<text key="Stolen" />
+	<text key="Locked" />
+
+	<text key="Rank challenge completed" text="Rank challenge completed: %rank_title" />
+
+	<text key="Click to respawn" />
+
+	<text key="AT mine" />
+	<text key="tank trap deploy" />
+
+	<text key="worn underpants" />
+	<text key="kamasutra" />
+	<text key="unreleased Justin Beerbar CD" />
+
+  <text key="I need fast combat transportation" />
+  <text key="Confirmed, Buggy's in the air." />
+  <text key="Airdropping Buggy now." />
+
+	<text key="Javelin" />
+	<text key="EOD armor" />
+
+	<text key="stab kill notification" text="%name1 stabbed %name2 with a knife" />
+	<text key="blast kill notification" text="%name1 killed %name2 with %weapon" />
+	<text key="shot kill notification, no weapon name" text="%name1 shot %name2" />
+	<text key="shot kill notification" text="%name1 shot %name2 with %weapon" />
+	<text key="drive kill notification" text="%name1 drove over %name2 with %vehicle" />
+
+	<text key="wrench" />
+	<text key="large wrench" />
+	<text key="small wrench" />
+
+	<text key="gold bar" />
+
+
+
+	<text key="quad" />
+	<text key="supply quad" />
+  <text key="mortar tank" />
+
+	<text key="MK23 SOCOM" />
+	<text key="AAC Honey Badger" />
+
+  <text key="blue box" />
+  <text key="purple box" />
+  <text key="titan box" />
+
+  <text key="black ops vest" />
+
+  <text key="spawn supplies" />
+  <text key="I need supplies!" />
+  <text key="Confirmed, supply is in the air." />
+  <text key="Airdropping supply quad now." />
+
+	<text key="Disabled" text="Spawn disabled" />
+
+ <text key="kicking player" text="Kicking %player_name!" />
+ <text key="flamethrower" />
+ <text key="tracer" />
+ <text key="tracer dart" />
+ <text key="tracer missile" />
+ <text key="taser" />
+ <text key="community box" />
+ <text key="mustela" />
+
+ <text key="bandage" />
+ <text key="president" />
+
+ <text key="Click RMB: move to backpack" />
+ <text key="Click LMB: equip" />
+ <text key="Click RMB: move to armory" />
+ <text key="Click RMB: move to stash" />
+ <text key="Click RMB: drop on ground" />
+ <text key="Hold CTRL: operate on single item" />
+
+	<text key="1 new item accessible in container" text="%item_name (%container_name): XP requirement reached!" />
+	<text key="2 new items accessible in container" text="%item_name1, %item_name2 (%container_name): XP requirement reached!" />
+	<text key="new items accessible in container" text="%item_amount new items (%container_name): XP requirement reached!" />
+
+	<text key="flare" text="spawn flare" />
+
+	<text key="New entry:" />
+
+	<text key="Spawn point" />
+	<text key="Recon target" />
+	<text key="Capturable target" />
+	<text key="Main attack target" />
+	<text key="Main attack route" />
+	<text key="Base under attack" />
+	<text key="Defense target" />
+	<text key="Extraction point" />
+
+	<text key="Medical Dart Gun" />
+	<text key="FN FAL - bayonet" />
+	<text key="M16A4 - shield and scope" />
+	<text key="Golden Knife" />
+	<text key="L30P-GUNFU" />
+	<text key="Javelin, anti-personnel" />
+	<text key="TTI-Combat Shield" />
+	<text key="Banana peel" />
+	<text key="Doom's Hammer" />
+	<text key="AAV-G17/A1 Drop" />
+	<text key="AAV-G17/A1" />
+	<text key="Bananza" />
+	<text key="Banana Car Drop" />
+	<text key="Camouflaged Vest" />
+	<text key="costume, banana" />
+	<text key="community box 2" />
+	<text key="godmode" />
+
+	<text key="your penalty has started" text="You have been penalized!" />
+	<text key="your penalty has expired" />
+	<text key="Disconnected from server - kicked from server" />
+	<text key="Disconnected from server" />
+	<text key="Online terminated" />
+	<text key="Server created" />
+	<text key="Server restarted" />
+
+    <text key="community box 3"/>
+	<text key="GL Deploy"/>
+	<text key="Grenade Launcher"/>
+    <text key="Mustela Drop"/>
+    <text key="gun truck drop"/>
+    <text key="FST ACAV Drop"/>
+    <text key="30mm"/>
+    <text key="Dragon fire"/>
+    <text key="EMP grenade"/>
+    <text key="shuriken"/>
+    <text key="Kamasutra"/>
+    <text key="EOD armor, 80%"/>
+    <text key="EOD armor, 60%"/>
+    <text key="EOD armor, 40%"/>
+    <text key="EOD armor, 20%"/>
+    <text key="EOD armor, destroyed"/>
+    <text key="Pickashoe"/>
+    <text key="costume, werewolf"/>
+    <text key="costume, clown"/>
+    <text key="costume, santa"/>
+    <text key="black ops vest, damaged"/>
+    <text key="Laptop"/>
+    <text key="Mutagen, Lizard"/>
+    <text key="Camouflaged Vest, 80%"/>
+    <text key="Camouflaged Vest, 50%"/>
+    <text key="Camouflaged Vest, 20%"/>
+    <text key="Camouflaged Vest, destroyed"/>
+    <text key="Psycho Butcher"/>
+    <text key="Chainsaw"/>
+	<text key="Chain SAW" text="KAC ChainSAW"/>
+    <text key="GL"/>
+    <text key="KRISS Vector"/>
+    <text key="Buckshot Bess Musket"/>
+    <text key="Vulcan HMG"/>
+    <text key="Buggy MG"/>
+    <text key="44 Magnum"/>
+    <text key="M712 Schnellfeuer"/>
+    <text key="MG-42"/>
+    <text key="Lahti L-39"/>
+    <text key="Sawn-Off Shotgun"/>
+    <text key="Milkor MGL"/>
+    <text key="M202 flash"/>
+    <text key="Beretta 93R"/>
+    <text key="APR"/>
+    <text key="Steyr AUG"/>
+    <text key="SCAR SSR"/>
+    <text key="MP7"/>
+    <text key="Pecheneg Bullpup"/>
+    <text key=".50 cal"/>
+    <text key="M60"/>
+    <text key="Jackhammer"/>
+    <text key="UTS-15"/>
+    <text key="SMAW"/>
+    <text key="ARES Shrike"/>
+    <text key="PAW-20"/>
+    <text key="20mm"/>
+    <text key="Stoner 62"/>
+    <text key="MG-3"/>
+    <text key="AA-12 Frag"/>
+    <text key="Frag-12"/>
+    <text key="AAV7 GL"/>
+    <text key="AAV7 MG"/>
+    <text key="medical dart"/>
+    <text key="Radar Tank HMG"/>
+    <text key="UMP40"/>
+    <text key="MX4 Storm"/>
+    <text key="PP-19 Bizon"/>
+    <text key="trauma kit"/>
+    <text key="Dragons breath"/>
+    <text key="M711-LA Enforcer"/>
+    <text key="GPS laptop"/>
+    <text key="Hornet"/>
+    <text key="Hornet deploy"/>
+    <text key="Repair crane"/>
+    <text key="Repair crane deploy"/>
+    <text key="Squall"/>
+    <text key="Vest Repair Kit"/>
+    <text key="ACAV minigun" />
+    <text key="Radar Tank"/>
+    <text key="Prison hatch"/>
+    <text key="Pink Panda"/>
+    <text key="Cover drop"/>
+    <text key="FST ACAV"/>
+    <text key="Ice cream van"/>
+    <text key="Ice cream"/>
+    <text key="Lottery ticket"/>
+    <text key="Tracer dart missile"/>
+    <text key="Gun truck"/>
+    <text key="Satellite spotting"/>
+    <text key="Observation mission"/>
+    <text key="Scanning area for strategic targets."/>
+    <text key="Scanning area, open your maps, soldiers!"/>
+    <text key="Elite Reinforcements"/>
+
+</translation>

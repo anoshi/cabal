@@ -1,0 +1,114 @@
+material Weapon3dPixel {
+	receive_shadows off
+
+	technique Ghost {
+		scheme ghost
+
+		// stuff that shows through when soldier is hidden behind walls and roofs
+		pass Ghost {
+			lighting on
+ 			depth_write off
+			depth_check on
+			depth_func less
+			cull_hardware none
+			cull_software none
+
+			point_sprites on
+			point_size 2.4
+		} 
+	}
+
+	technique HighDetail2 {
+
+/*
+		pass Outline {
+			vertex_program_ref SoldierOutlineVP {
+				param_named_auto worldViewProj worldviewproj_matrix
+			}
+			cull_hardware none
+			cull_software none
+			lighting off	
+			depth_write on
+			point_sprites on
+			point_size 2.4
+		}
+*/
+		pass Basic {
+			vertex_program_ref VoxelVP {
+				param_named_auto worldViewProj worldviewproj_matrix
+			}
+			fragment_program_ref VoxelFP {
+    				param_named_auto fogColor fog_colour
+			}
+			lighting off
+			fog_override true none	
+			cull_hardware none
+			cull_software none
+			depth_write on
+			point_sprites on
+//			point_size 1.8
+			point_size 3.0
+		} 
+	}
+
+	technique HighDetail {
+		// stuff that shows through when soldier is hidden behind walls and roofs
+		pass Ghost {
+			lighting on
+ 			depth_write off
+			depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+
+			point_sprites on
+			point_size 2.4
+		} 
+
+		pass Outline {
+			vertex_program_ref SoldierOutlineVP {
+				param_named_auto worldViewProj worldviewproj_matrix
+			}
+			cull_hardware none
+			cull_software none
+			lighting off		
+			depth_write on
+			point_sprites on
+			point_size 2.4
+		}
+
+		pass Basic {
+			lighting off
+			cull_hardware none
+			cull_software none
+			depth_write on
+			point_sprites on
+			point_size 1.8
+		} 
+	}
+
+	// fallback technique for cards without vertex programs
+	technique LowDetail {
+		// stuff that shows through when soldier is hidden behind walls and roofs
+		pass Ghost {
+			lighting on
+			depth_write off
+			depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+
+			point_sprites on
+			point_size 2.4
+		} 
+
+		pass Basic {
+			lighting off
+			cull_hardware none
+			cull_software none
+			depth_write on
+			point_sprites on
+			point_size 1.2
+		} 
+	}
+}

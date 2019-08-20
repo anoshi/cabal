@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <weapon key='cabal_lr.weapon' />
-
-  <carry_item key="cabal_vest_1.carry_item" enabled="1" />
 </resources>

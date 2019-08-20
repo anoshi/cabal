@@ -8,4 +8,6 @@
  	<vehicle key="transport_truck_2.vehicle" />
 
 	<projectile key="player_grenade.projectile" enabled="0" /> <!-- not yours! -->
+
+	<carry_item key="cabal_vest_1.carry_item" enabled="1" />
 </resources>

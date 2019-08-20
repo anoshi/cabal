@@ -1,0 +1,90 @@
+material ZebraCrossing
+  {
+    receive_shadows off
+    technique
+    {
+      pass
+      {
+        lighting on
+
+	depth_write off
+	scene_blend alpha_blend
+	texture_unit {
+		texture zebracrossing.png
+	}
+
+      } 
+    }
+  }
+
+material RoadLine
+  {
+    receive_shadows off
+    technique
+    {
+      pass
+      {
+        lighting on
+
+	depth_write off
+	scene_blend alpha_blend
+	texture_unit {
+		texture roadline.png
+		mipmap_bias -1
+	}
+
+      } 
+    }
+  }
+
+material GenericDecal {
+	receive_shadows off
+	transparency_casts_shadows off
+
+	technique ShadersShadows {
+		pass Color {
+			lighting off
+			fog_override true none
+			cull_hardware none
+			scene_blend alpha_blend
+			depth_write off
+
+			vertex_program_ref DecalTextureShadowsVP {	
+				param_named_auto textureMatrix1 texture_matrix 1
+			}
+
+			fragment_program_ref DecalTextureShadowsFP {
+			}
+ 
+			texture_unit {
+				content_type shadow
+				tex_address_mode clamp
+				filtering none
+			}	
+
+			texture_unit Decal {
+				texture bushplant.png
+				mipmap_bias -1
+			}	
+			
+		}
+	}
+
+	technique NoShaders {	
+		pass Color {	
+			lighting on
+		        ambient 0.5 0.5 0.5 1.0 
+		        diffuse 0.5 0.5 0.5 1.0 
+			cull_hardware none
+			scene_blend alpha_blend
+			depth_write off
+
+			texture_unit Decal {
+				tex_address_mode clamp
+				texture bushplant.png
+				mipmap_bias -1
+				colour_op replace
+			}	
+		}
+	}
+}

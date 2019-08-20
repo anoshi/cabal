@@ -1,5 +1,6 @@
 // internal
 #include "tracker.as"
+#include "cabal_helpers.as"
 #include "time_announcer_task.as"
 // --------------------------------------------
 
@@ -14,8 +15,8 @@ class ResourceLifecycleHandler : Tracker {
     protected float m_localPlayerCheckTimer;
     protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
 
-	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area
-	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area
+	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area (see /maps/cabal/objects.svg)
+	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area (see /maps/cabal/objects.svg)
 	protected float MIN_GOAL_XP = 4.0;
 	protected float MAX_GOAL_XP = 6.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
@@ -45,38 +46,61 @@ class ResourceLifecycleHandler : Tracker {
 		// currently falls apart if a second player were to spawn.
 
 		// when the player spawns, he spawns alone...
-		/*
 		XmlElement c("command");
 		c.setStringAttribute("class", "set_soldier_spawn");
 		c.setIntAttribute("faction_id", 0);
 		c.setBoolAttribute("enabled", false);
 		m_metagame.getComms().send(c);
-		*/
 
 		// now, work with the spawned player character
 		const XmlElement@ player = event.getFirstElementByTagName("player");
 		if (player !is null) {
-			string name = player.getStringAttribute("name");
-			_log("*** CABAL: player " + name + " spawned.", 1);
-			m_playerCharacterId = player.getIntAttribute("character_id");
-			_log("*** CABAL: player character id is: " + m_playerCharacterId, 1);
-
-			// assign / override equipment to player character
-			XmlElement charInv("command");
-			charInv.setStringAttribute("class", "update_inventory");
-
-			charInv.setIntAttribute("character_id", m_playerCharacterId);
-			/* cheat vest
-			charInv.setIntAttribute("container_type_id", 4); // vest
-			{
-				XmlElement i("item");
-				i.setStringAttribute("class", "carry_item");
-				i.setStringAttribute("key", "player_impervavest.carry_item"); // oh yeah a nasty hack for tests
-				// i.setStringAttribute("key", "player_vest1.carry_item");
-				charInv.appendChild(i);
+			string playerHash = player.getStringAttribute("profile_hash");
+								int characterId = player.getIntAttribute("character_id");
+			if (m_playersSpawned.find(playerHash) < 0) {
+				if (int(m_playersSpawned.size()) < 2) { //m_metagame.getUserSettings().m_maxPlayers) {
+					string name = player.getStringAttribute("name");
+					m_playerCharacterId = characterId;
+					m_playersSpawned.insertLast(playerHash);
+					_log("*** CABAL: player " + name + " (" + m_playerCharacterId + ") spawned as player" + int(m_playersSpawned.size()), 1);
+				} else {
+					kickPlayer(player.getIntAttribute("player_id"), "Only 2 players allowed"); // "Only " + m_metagame.getUserSettings().m_maxPlayers + " players allowed");
+				}
+			} else {
+				// existing player.
+				_log("*** CABAL: existing player spawned", 1);
 			}
-			m_metagame.getComms().send(c);
-			*/
+
+			// TEST PURPOSES: add cheat vest
+			//setPlayerInventory(m_metagame, characterId);
+
+			_log("*** CABAL: spawning enemies", 1);
+			// start enemy spawning from specific locations (as per passed map layer name, for level)
+			// after player character has spawned. i.e. no enemy spawn until player is on the map
+			int m_spawnCount = 2;
+			string m_genericNodeTag = "cabal_spawn";
+			//string layerName = "layer1.map1";
+			string layerName = "";
+			array<const XmlElement@>@ nodes = getGenericNodes(m_metagame, layerName, m_genericNodeTag);
+
+			_log("*** CABAL: Spawning " + m_spawnCount + " enemies at " + nodes.size() + " " + m_genericNodeTag + " points.", 1);
+			for (int i = 0; i < m_spawnCount && nodes.size() > 0; ++i) {
+				XmlElement command("command");
+				command.setStringAttribute("class", "create_instance");
+				command.setIntAttribute("faction_id", 1);
+				command.setStringAttribute("instance_class", "character");
+				command.setStringAttribute("instance_key", "rifleman");
+
+				// logic to use each generic_node only once
+				int index = rand(0, nodes.size() - 1);
+				const XmlElement@ node = nodes[index];
+				nodes.erase(index);
+
+				// location and bearing of spawnpoint
+				command.setStringAttribute("position", node.getStringAttribute("position"));
+				command.setStringAttribute("orientation", node.getStringAttribute("orientation"));
+				m_metagame.getComms().send(command);
+			}
 		} else {
 			_log("*** CABAL: CRITICAL WARNING, player not found in Player Spawn Event");
 		}
@@ -95,45 +119,109 @@ class ResourceLifecycleHandler : Tracker {
 			return;
 		}
 
-		// decrement lives left
-		_log("*** CABAL: Player 1 lost a life!", 1);
-		player1Lives -= 1;
+		const XmlElement@ deadPlayer = event.getFirstElementByTagName("target");
+		// use profile_hash stored in m_playersSpawned array to id which char died
+		int playerCharId = deadPlayer.getIntAttribute("character_id");
+		string playerHash = deadPlayer.getStringAttribute("profile_hash");
+		int playerNum = m_playersSpawned.find(playerHash); // should return the index or negative if not found
+
+		switch (playerNum) {
+			case 0 : // player 1
+				_log("*** CABAL: Player 1 lost a life!", 1);
+				player1Lives --;
+				break;
+			case 1 : // player 2
+				_log("*** CABAL: Player 2 lost a life!", 1);
+				player2Lives --;
+				break;
+			default :
+				_log("*** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
+				// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
+		}
 
 		if (player1Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 1", 1);
 			// can we prevent player 1 (p1) model from spawning again (and don't let p1 spawn with p2 model)?
-			if (m_playersSpawned.size() > 1 && player2Lives <= 0) {
+			if ((int(m_playersSpawned.size()) <= 1) || (int(m_playersSpawned.size()) > 1 && player2Lives <= 0)) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else if (player2Lives <= 0) {
 			_log("*** CABAL: GAME OVER for Player 2", 1);
 			// can we prevent player 2 (p2) model from spawning again (and don't let p2 spawn with p1 model)?
-			if (m_playersSpawned.size() > 1 && player1Lives <= 0) {
+			if ((int(m_playersSpawned.size()) <= 1) || (int(m_playersSpawned.size()) > 1 && player1Lives <= 0)) {
 				_log("*** GAME OVER!", 1);
 				processGameOver();
 			}
 		} else {
-			_log("*** CABAL: Player still has " + player1Lives + " lives available. Allow respawn", 1);
-			// this isn't having the desired effect. Spawn blocking occurring somewhere else :-/
+			_log("*** CABAL: Player" + (playerNum + 1) + " still has " + (playerNum > 0 ? player2Lives : player1Lives) + " lives available.", 1);
+
+			// player can't respawn if enemies are within ~70.0 units of the intended base. Need to forcibly remove enemy
+			// units from player's base area...
+        	// We're about to kill a lot of people. Stop character_die tracking for the moment
+
+        	string trackCharDeathOff = "<command class='set_metagame_event' name='character_die' enabled='0' />";
+        	m_metagame.getComms().send(trackCharDeathOff);
+			// kill enemies anywhere near player to allow respawn
+			const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerCharId);
+			if (characterInfo !is null) {
+				_log("*** CABAL: Killing enemies near dead player character", 1);
+				Vector3 position = stringToVector3(characterInfo.getStringAttribute("position"));
+
+				// make an array of Xml Elements that stores affected enemy unit stats
+				// TagName =character, id=xx (99)
+				array<const XmlElement@> exchEnemies = getCharactersNearPosition(m_metagame, position, 1, 70.0f);
+				int exchEnemiesCount = exchEnemies.size();
+				// rewrite as new array where the position of each enemy has +70 to Z axis
+				// or just get the size of the array, then queue that many random enemy respawns shortly
+
+				// improve?: apply invisi-vest to characters in the kill zone to make them disappear, then kill them
+				killCharactersNearPosition(m_metagame, position, 1, 70.0f); // kill faction 1 (cabal)
+
+				// spawn enemies to replace the exchEnemies
+				_log("*** CABAL: Respawning " + exchEnemiesCount + " replacement enemy units.", 1);
+				string randKey = ''; // random character 'Key' name
+
+				float retX = position.get_opIndex(0);
+				float retY = position.get_opIndex(1);
+				float retZ = position.get_opIndex(2) - 80.0;
+				string randPos = Vector3(retX, retY, retZ).toString();
+				for (int k = 0; k < exchEnemiesCount; ++k) {
+					switch( rand(0, 5) )
+						{ // 5 types of enemy units, weighted to return more base level soldiers
+						case 0 :
+						case 1 :
+							randKey = "rifleman";
+							break;
+						case 2 :
+						case 3 :
+							randKey = "grenadier";
+							break;
+						case 4 :
+							randKey = "covert_ops";
+							break;
+						case 5 :
+							randKey = "commando";
+							break;
+						default:
+							randKey = "rifleman";
+						}
+					string spawnReps = "<command class='create_instance' faction_id='1' position='" + randPos + "' instance_class='character' instance_key='" + randKey + "' /></command>";
+					m_metagame.getComms().send(spawnReps);
+					_log("*** CABAL: Spawned a character at " + randPos, 1);
+				}
+			}
+			// Reenable character_die tracking
+        	string trackCharDeathOn = "<command class='set_metagame_event' name='character_die' enabled='1' />";
+        	m_metagame.getComms().send(trackCharDeathOn);
+
+			// allow player to respawn
 			XmlElement allowSpawn("command");
 			allowSpawn.setStringAttribute("class", "set_soldier_spawn");
 			allowSpawn.setIntAttribute("faction_id", 0);
 			allowSpawn.setBoolAttribute("enabled", true);
 			m_metagame.getComms().send(allowSpawn);
-
-			/*
-			// let's try spawning a character instead
-			const XmlElement@ playerCharInfo = event.getFirstElementByTagName("target");
-			string playerPos = playerCharInfo.getStringAttribute("position");
-			_log("*** CABAL: Player died, Spawning a new friendly at location", 1);
-			string spawnChar = "<command class='create_instance' faction_id='0' position='" + playerPos + "' instance_class='character' instance_key='default' /></command>";
-			m_metagame.getComms().send(spawnChar);
-			*/
 		}
-
-		// tidy up assets
-
 		// reset stuffs as required
 	}
 
@@ -141,6 +229,8 @@ class ResourceLifecycleHandler : Tracker {
 	protected void processGameOver() {
 		_log("*** CABAL: Running processGameOver", 1);
 		if (levelComplete) return;
+		// stop cabal spawning
+		m_metagame.removeTracker(CabalSpawner);
 		// no more respawning allowed
 		{
 			XmlElement c("command");
@@ -149,15 +239,14 @@ class ResourceLifecycleHandler : Tracker {
 			c.setBoolAttribute("enabled", false);
 			m_metagame.getComms().send(c);
 		}
-		for (uint i = 0; i < m_metagame.getFactionCount(); ++i) {
+
+		sleep(2.0f); // brief pause before delivering the bad news
+
+		{
 			XmlElement comm("command");
 			comm.setStringAttribute("class", "set_match_status");
-			if (i == 1) {
-				comm.setIntAttribute("win", 1);
-			} else {
-				comm.setIntAttribute("lose", 1);
-			}
-			comm.setIntAttribute("faction_id", i);
+			comm.setIntAttribute("lose", 1);
+			comm.setIntAttribute("faction_id", 0);
 			m_metagame.getComms().send(comm);
 		}
 
@@ -180,6 +269,18 @@ class ResourceLifecycleHandler : Tracker {
 				m_localPlayerCheckTimer = LOCAL_PLAYER_CHECK_TIME;
 			}
 		}
+	}
+
+	// --------------------------------------------
+	protected void kickPlayer(int playerId, string text = "") {
+		sendPrivateMessage(m_metagame, playerId, text);
+		kickPlayerImpl(playerId);
+	}
+
+	// --------------------------------------------
+	protected void kickPlayerImpl(int playerId) {
+		string command = "<command class='kick_player' player_id='" + playerId + "' />";
+		m_metagame.getComms().send(command);
 	}
 
 	//////////////////////////////
@@ -213,6 +314,11 @@ class ResourceLifecycleHandler : Tracker {
 		int charId = event.getIntAttribute("character_id");
 		const XmlElement@ deadCharInfo = event.getFirstElementByTagName("character");
 
+		// if faction 0 (player), don't process further
+		if (deadCharInfo.getIntAttribute("faction_id") == 0) {
+			_log("*** CABAL: dead character id is from friendly faction. Ignoring", 1);
+			return;
+		}
 		// make sure they're dead (sanity)
 		if (deadCharInfo.getIntAttribute("dead") != 1) {
 			_log("*** CABAL: character is not dead. Ignoring", 1);
@@ -240,7 +346,7 @@ class ResourceLifecycleHandler : Tracker {
 		int charLeader = deadCharInfo.getIntAttribute("leader");
 		string charGroup = deadCharInfo.getStringAttribute("soldier_group_name");
 
-		_log("*** CABAL: Character " + charId + " (" + charName + ", " + charGroup + "), with " + charXP + " XP, has died.", 1);
+		_log("*** CABAL: Character " + charId + " (" + charName + charGroup + "), with " + charXP + " XP, has died.", 1);
 
 		// _log("*** CABAL: store player character's info", 1);
 		const XmlElement@ playerInfo = getPlayerInfo(m_metagame, 0); // this may not work in all cases. Coop: player IDs?
@@ -280,19 +386,15 @@ class ResourceLifecycleHandler : Tracker {
 
 		// Group-based drop logic (special enemies always drop specific equipment on death)
 		if (charGroup == "commando") {
-			dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile");
+			dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
 		} else if (charGroup == "covert_ops") {
-			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon");
+			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
 		} // XP-based drop chance logic
 		else if (rand(1, 100) > 80) {
 			if (charXP > 1.0) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_gl.weapon"); // drop grenade launcher.
 			} else if (charXP > 0.8) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop minigun
-			} else if (charXP > 0.6) {
-				dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop lmg
-			} else if (charXP > 0.4) {
-				dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
 			} else if (charXP > 0.2) {
 				dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
 			}
@@ -362,7 +464,8 @@ class ResourceLifecycleHandler : Tracker {
 		// Clear the battlefield
 		// _log("*** CABAL: removing dead characters from play", 1);
 		// kill the player character
-		/*_log("*** CABAL: quickmatch restarting. Killing player", 1);
+		/*
+		_log("*** CABAL: quickmatch restarting. Killing player", 1);
 		string killChar = "<command class='update_character' id='" + m_playerCharacterId + "' dead='1' /></command>";
 		m_metagame.getComms().send(killChar);
 		levelComplete = false;
@@ -402,6 +505,5 @@ class ResourceLifecycleHandler : Tracker {
     // ----------------------------------------------------
     void update(float time) {
         ensureValidLocalPlayer(time);
-
     }
 }
