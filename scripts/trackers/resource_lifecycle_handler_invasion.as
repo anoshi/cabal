@@ -10,10 +10,10 @@ class ResourceLifecycleHandler : Tracker {
 	GameModeInvasion@ m_metagame;
 
 	protected int m_playerCharacterId;
-	protected array<string> m_playersSpawned;		// stores the unique 'hash' for each active player
-	protected array<int> m_playerLives = {3,3};		// players 1 and 2 have 3 lives each
-	protected array<float> m_playerXP = {0.0, 0.0}; // players 1 and 2 start with no XP
-	protected int playerCoins = 3; 					// coins on hand / restart level attempts left
+	protected array<string> m_playersSpawned;			// stores the unique 'hash' for each active player
+	protected array<int> m_playerLives = {3,3};			// players 1 and 2 have 3 lives each
+	protected array<float> m_playerScore = {0.0, 0.0};	// players 1 and 2 start with no XP
+	protected int playerCoins = 3; 						// coins on hand / restart level attempts left
 
     protected float m_localPlayerCheckTimer;
     protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
@@ -43,6 +43,11 @@ class ResourceLifecycleHandler : Tracker {
 	/////////////////////////////////
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
 		_log("*** CABAL: ResourceLifecycleHandler::handlePlayerSpawnEvent", 1);
+
+		if (curXP < goalXP) {
+			levelComplete = false;
+			_log("*** CABAL: Player spawning on incomplete level.", 1);
+		}
 
 		// how can this be improved to support 2-player co-op play?
 		// currently falls apart if a second player were to spawn.
@@ -335,80 +340,33 @@ class ResourceLifecycleHandler : Tracker {
 
 		const XmlElement@ killerInfo = event.getFirstElementByTagName("killer");
 		const XmlElement@ targetInfo = event.getFirstElementByTagName("target");
-		if (killerInfo.getStringAttribute("name") == "Player ") { // trailing space intentional
-			int playerKiller = killerInfo.getIntAttribute("player_id");
-			float xp = targetInfo.getFloatAttribute("xp");
-			awardXP(playerKiller, xp);
-		} else { _log("*** CABAL: killer name is " + killerInfo.getStringAttribute("name")); }
-	}
 
-	// -----------------------------------------------------------
-	protected void awardXP(int playerKiller, float xp) {
-		// match playerKiller's ID to the appropriateplayer
-		m_playerXP[playerKiller] += xp;
-		_log("*** CABAL: Player " + (playerKiller + 1) + " XP now at " + int(m_playerXP[playerKiller]), 1);
-	}
-
-	// -----------------------------------------------------------
-    protected void handleCharacterDieEvent(const XmlElement@ event) {
-		// TagName					string (character_die)
-		// character_id				int (character who died)
-
-		// TagName					string (character)
-		// id						int (dead character's id)
-		// name						string (First Last)
-		// position					string (xxx.xxx yy.yyy zzz.zzz)
-		// block					string (AA BB)
-		// dead						int (0 / 1)
-		// wounded					int (0 / 1)
-		// faction_id				int (0 .. num factions -1)
-		// soldier_group_name       string (anti_tank)
-		// xp						real
-		// rp						int
-		// leader					int (0 / 1)
-		// player_id				int (-1 (not a player), 0 (a player))
-
-        _log("*** CABAL: handleCharacterDieEvent fired!", 1);
-		// if it's the player character, don't process any further
-		if (event.getIntAttribute("character_id") == m_playerCharacterId) {
-			_log("*** CABAL: dead character id matches player character. Handled separately", 1);
+		// if a player character has died, don't process any further
+		if (targetInfo.getIntAttribute("player_id") >= 0) {
+			_log("*** CABAL: dead character id is a player character. Handled separately", 1);
 			return;
 		}
-
-		int charId = event.getIntAttribute("character_id");
-		const XmlElement@ deadCharInfo = event.getFirstElementByTagName("character");
 
 		// if faction 0 (player), don't process further
-		if (deadCharInfo.getIntAttribute("faction_id") == 0) {
+		if (targetInfo.getIntAttribute("faction_id") == 0) {
 			_log("*** CABAL: dead character id is from friendly faction. Ignoring", 1);
-			return;
-		}
-		// make sure they're dead (sanity)
-		if (deadCharInfo.getIntAttribute("dead") != 1) {
-			_log("*** CABAL: character is not dead. Ignoring", 1);
 			return;
 		}
 
         // _log("*** CABAL: store details of dead character " + charId, 1);
-		charId = deadCharInfo.getIntAttribute("id");
-		string charName = deadCharInfo.getStringAttribute("name");
+		int charId = targetInfo.getIntAttribute("id");
+		string charName = targetInfo.getStringAttribute("name");
 
-		// sanity sanity, to be sure to be sure.
-		if (charName == "Player") {
-			_log("*** CABAL: dead character name is 'Player'. Player deaths are handled elsewhere", 1);
-			return;
-		}
-
-        string charPos = deadCharInfo.getStringAttribute("position");
+        string charPos = targetInfo.getStringAttribute("position");
 		Vector3 v3charPos = stringToVector3(charPos);
 
-		string charBlock = deadCharInfo.getStringAttribute("block");
-		int charFactionId = deadCharInfo.getIntAttribute("faction_id");
+		string charBlock = targetInfo.getStringAttribute("block");
+		int charFactionId = targetInfo.getIntAttribute("faction_id");
 
-		float charXP = deadCharInfo.getFloatAttribute("xp");
-		int charRP = deadCharInfo.getIntAttribute("rp");
-		int charLeader = deadCharInfo.getIntAttribute("leader");
-		string charGroup = deadCharInfo.getStringAttribute("soldier_group_name");
+		float charXP = targetInfo.getFloatAttribute("xp");
+		int charRP = targetInfo.getIntAttribute("rp");
+		int charLeader = targetInfo.getIntAttribute("leader");
+		string charGroup = targetInfo.getStringAttribute("soldier_group_name");
 
 		_log("*** CABAL: Character " + charId + " (" + charName + charGroup + "), with " + charXP + " XP, has died.", 1);
 
@@ -424,19 +382,24 @@ class ResourceLifecycleHandler : Tracker {
 		}
 
 		// _log("*** CABAL: store player character's info", 1);
-		const XmlElement@ playerInfo = getPlayerInfo(m_metagame, 0); // this may not work in all cases. Coop: player IDs?
 
 		// Run an alive/dead check on Player character(s)
-		int playerCharId = playerInfo.getIntAttribute("character_id");
+		int playerCharId = killerInfo.getIntAttribute("id");
 		const XmlElement@ playerCharInfo = getCharacterInfo(m_metagame, playerCharId);
 		int playerCharIsDead = playerCharInfo.getIntAttribute("dead");
 		if (playerCharIsDead == 1) {
 			_log("*** CABAL: Player character is dead. No rewards given");
 			return;
 		}
-
 		// Player is alive and well. Add enemy's XP to total score for level
 		approachGoalXP(charXP);
+
+		// Increase player's score
+		if (killerInfo.getStringAttribute("name") == "Player ") { // trailing space intentional
+			int playerKiller = killerInfo.getIntAttribute("player_id");
+			float xp = targetInfo.getFloatAttribute("xp");
+			awardXP(playerKiller, xp);
+		} else { _log("*** CABAL: killer name is " + killerInfo.getStringAttribute("name")); }
 
 		string playerPos = playerCharInfo.getStringAttribute("position");
         _log("*** CABAL: Player Character id: " + m_playerCharacterId + " is at: " + playerPos);
@@ -478,6 +441,13 @@ class ResourceLifecycleHandler : Tracker {
 				_log("*** CABAL: XP too low, Nothing dropped", 1);
 			}
 		}
+	}
+
+	// -----------------------------------------------------------
+	protected void awardXP(int playerKiller, float xp) {
+		// match playerKiller's ID to the appropriateplayer
+		m_playerScore[playerKiller] += xp;
+		_log("*** CABAL: Player " + (playerKiller + 1) + " XP now at " + int(m_playerScore[playerKiller]), 1);
 	}
 
 	///////////////////////
@@ -529,6 +499,7 @@ class ResourceLifecycleHandler : Tracker {
 
 		if (curXP >= goalXP) {
 			_log("*** CABAL: LEVEL COMPLETE!", 1);
+			curXP = 0.0; // ready to start next level
 			m_metagame.getComms().send("<command class='set_match_status' faction_id='1' lose='1' />");
 			m_metagame.getComms().send("<command class='set_match_status' faction_id='0' win='1' />");
 			levelComplete = true;
@@ -589,11 +560,16 @@ class ResourceLifecycleHandler : Tracker {
 	protected void saveCampaignData(XmlElement@ campaignData) {
 		// writes <campaignData> section to savegames/campaign[0-999].save/metagame_invasion.xml
 		bool doSave = true;
-		_log("*** CABAL: saving campaignData with player 1 hash: " + m_playersSpawned[0] + ", lives: " + m_playerLives[0] + ", xp: " + m_playerXP[0], 1);
+		_log("*** CABAL: saving campaignData to metagame_invasion.xml", 1);
+
+		// level-specific info
+		XmlElement level("level");
+		level.setFloatAttribute("progress", curXP);
 
 		// save player hashes and lives
 		if (m_playersSpawned.size() > 0) {
 			XmlElement players("players");
+			players.setIntAttribute("continues", playerCoins);
 			for (uint i = 0; i < m_playersSpawned.size(); ++i) {
 				if (m_playersSpawned[i] == "") {
 					// if any spawned player doesn't have an associated hash, we're not in a position to save data
@@ -605,15 +581,20 @@ class ResourceLifecycleHandler : Tracker {
 					XmlElement playerData(pNum);
 					playerData.setStringAttribute("hash", m_playersSpawned[i]);
 					playerData.setIntAttribute("lives", m_playerLives[i]);
-					playerData.setFloatAttribute("xp", m_playerXP[i]);
+					playerData.setFloatAttribute("score", m_playerScore[i]);
 					players.appendChild(playerData);
 				}
 			}
-			campaignData.appendChild(players);
-			_log("*** CABAL: Player data saved to metagame_invasion.xml", 1);
+			if (doSave) {
+				campaignData.appendChild(level);
+				campaignData.appendChild(players);
+				_log("*** CABAL: Player data saved to metagame_invasion.xml", 1);
+			}
 		} else {
 			_log("*** CABAL: no data in m_playersSpawned. No character info to save.", 1);
 		}
+
+
 		// any more info to add here? Create and populate another XmlElement and append to the campaignData XmlElement
 		// campaignData.appendChild(another_XmlElement);
 		_log("*** CABAL: RLH::saveCampaignData() done", 1);
@@ -624,13 +605,18 @@ class ResourceLifecycleHandler : Tracker {
 		_log("*** CABAL: Loading Data", 1);
 		m_playersSpawned.clear();
 		m_playerLives.clear();
-		m_playerXP.clear();
+		m_playerScore.clear();
+
 		const XmlElement@ campaignData = root.getFirstElementByTagName("campaignData");
 		if (campaignData !is null) {
-			// load players tag elements (one element per saved player)
+			_log("*** CABAL: loading level data", 1);
+			const XmlElement@ levelData = campaignData.getFirstElementByTagName("level");
+			float levelProgress = levelData.getFloatAttribute("progress");
+			approachGoalXP(levelProgress);
+			_log("*** CABAL: loading player data", 1); // tag elements (one element per saved player)
 			array<const XmlElement@> playerData = campaignData.getElementsByTagName("players");
 			for (uint i = 0; i < playerData.size(); ++ i) {
-				// load player[1..999] tag elements
+				_log("*** CABAL: player" + (i + 1), 1); // load player[1..999] tag elements
 				array<const XmlElement@> curPlayer = playerData[i].getElementsByTagName("player" + (i + 1));
 
 				for (uint j = 0; j < curPlayer.size(); ++j) {
@@ -639,9 +625,8 @@ class ResourceLifecycleHandler : Tracker {
 					m_playersSpawned.insertLast(hash);
 					int lives = pData.getIntAttribute("lives");
 					m_playerLives.insertLast(lives);
-					float xp = pData.getFloatAttribute("xp");
-					m_playerXP.insertLast(xp);
-					approachGoalXP(xp);
+					float score = pData.getFloatAttribute("score");
+					m_playerScore.insertLast(score);
 				}
 			}
 		}
