@@ -24,7 +24,7 @@ class CabalSpawner : Tracker {
 
 	protected void queueCabalSpawn() {
 		spawnDelay = rand(SPAWN_DELAY_MIN, SPAWN_DELAY_MAX);
-		_log("*** CABAL: units spawning in: " + spawnDelay + " seconds." ,1);
+		_log("*** CABAL: Enemy units queued to spawn in: " + spawnDelay + " seconds." ,1);
 	}
 
 	protected void spawnCabalUnits() {
@@ -75,6 +75,8 @@ class CabalSpawner : Tracker {
 				command.setStringAttribute("orientation", node.getStringAttribute("orientation"));
 				m_metagame.getComms().send(command);
 			}
+		} else {
+			_log("*** CABAL: No enemies were spawned! No player characters alive in field." , 1);
 		}
 	}
 

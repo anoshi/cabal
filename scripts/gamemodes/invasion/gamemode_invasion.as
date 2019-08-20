@@ -106,7 +106,7 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle is about to start
 	void preBeginMatch() {
-		_log("preBeginMatch", 1);
+		_log("*** CABAL: preBeginMatch", 1);
 
 		// all trackers are cleared when match is about to begin
 		GameMode::preBeginMatch();
@@ -117,11 +117,13 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle has started
 	void postBeginMatch() {
+		_log("*** CABAL: postBeginMatch", 1);
+
 		GameMode::postBeginMatch();
 
 		// query for basic match data -- we mostly need the savegame location
 		updateGeneralInfo();
-		save();
+		//save(); // let me control the save timing thank you computer
 
 		addTracker(BasicCommandHandler(this));
 

@@ -73,7 +73,7 @@ void setPlayerInventory(const Metagame@ metagame, int characterId, string vest) 
 string curStage;
 
 void whichStage(string stageNum) {
-	// each stage reports its stage name e.g. "map1"
+	// each stage reports its stage name e.g. "map1" in stage_invasion.as.
 	string curStage = stageNum;
 	_log("*** CABAL: Current stage is: " + curStage, 1);
 }

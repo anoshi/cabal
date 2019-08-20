@@ -27,7 +27,7 @@ class CabalUserSettings : UserSettings {
 				m_fellowCapacityFactor = 1.0;
 				m_fellowAiAccuracyFactor = 0.95;
 				m_enemyCapacityFactor = 1.0;
-				m_enemyAiAccuracyFactor = 0.94;
+				m_enemyAiAccuracyFactor = 0.96;
 				m_xpFactor = 1.0;
 				m_rpFactor = 1.0;
 				m_fov = false;
@@ -36,7 +36,7 @@ class CabalUserSettings : UserSettings {
 				m_fellowCapacityFactor = 1.0;
 				m_fellowAiAccuracyFactor = 0.95;
 				m_enemyCapacityFactor = 1.0;
-				m_enemyAiAccuracyFactor = 0.96;
+				m_enemyAiAccuracyFactor = 0.98;
 				m_xpFactor = 1.0;
 				m_rpFactor = 1.0;
 				m_fov = false;

@@ -42,19 +42,20 @@ class Cabal : GameModeInvasion {
 		XmlElement@ settings = m_userSettings.toXmlElement("settings");
 		root.appendChild(settings);
 
+		// append campaign data
 		m_resourceLifecycleHandler.save(root);
 
 		commandRoot.appendChild(root);
 
 		// save through game
 		getComms().send(commandRoot);
-		_log("*** CABAL: just saved campaign settings and data", 1);
+		_log("*** CABAL: finished saving campaign settings and data", 1);
 	}
 
 	// --------------------------------------------
 	void load() {
 		// load metagame status now:
-		_log("** CABAL: Cabal::load() loading metagame", 1);
+		_log("*** CABAL: Cabal::load() loading metagame", 1);
 
 		XmlElement@ query = XmlElement(
 			makeQuery(this, array<dictionary> = {
@@ -71,6 +72,9 @@ class Cabal : GameModeInvasion {
 			}
 
 			m_userSettings.print();
+
+			// load saved campaign data
+			m_resourceLifecycleHandler.load(root);
 
 			m_mapRotator.init();
 			m_mapRotator.load(root);
