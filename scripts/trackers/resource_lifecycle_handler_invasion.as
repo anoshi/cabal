@@ -393,7 +393,7 @@ class ResourceLifecycleHandler : Tracker {
 			int playerKiller = killerInfo.getIntAttribute("player_id");
 			_log("*** CABAL: playerKiller id: " + playerKiller, 1);
 			float xp = targetInfo.getFloatAttribute("xp");
-			if (playerKiller >= 0 && playerKiller < m_metagame.getUserSettings().m_maxPlayers) {
+			if ((playerKiller >= 0) && (playerKiller < m_metagame.getUserSettings().m_maxPlayers)) {
 				awardXP(playerKiller, xp);
 			}
 		} else { _log("*** CABAL: killer name is " + killerInfo.getStringAttribute("name")); }
