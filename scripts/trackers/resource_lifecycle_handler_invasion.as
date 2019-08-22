@@ -52,12 +52,14 @@ class ResourceLifecycleHandler : Tracker {
 		// how can this be improved to support 2-player co-op play?
 		// currently falls apart if a second player were to spawn.
 
+		/* Alpha 0.1.1
 		// when the player spawns, he spawns alone...
 		XmlElement c("command");
 		c.setStringAttribute("class", "set_soldier_spawn");
 		c.setIntAttribute("faction_id", 0);
 		c.setBoolAttribute("enabled", false);
 		m_metagame.getComms().send(c);
+		*/
 
 		// now, work with the spawned player character
 		const XmlElement@ player = event.getFirstElementByTagName("player");
