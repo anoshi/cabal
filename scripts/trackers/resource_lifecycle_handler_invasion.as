@@ -4,6 +4,8 @@
 #include "gamemode_invasion.as"
 // --------------------------------------------
 
+// This tracker manages player and AI
+// lifecycles in CAMPAIGN mode only
 
 // --------------------------------------------
 class ResourceLifecycleHandler : Tracker {
@@ -20,8 +22,8 @@ class ResourceLifecycleHandler : Tracker {
 
 	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area (see /maps/cabal/objects.svg)
 	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area (see /maps/cabal/objects.svg)
-	protected float MIN_GOAL_XP = 4.0;
-	protected float MAX_GOAL_XP = 6.0;
+	protected float MIN_GOAL_XP = 8.0;
+	protected float MAX_GOAL_XP = 10.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
 	protected float curXP = 0.0;
 
@@ -31,9 +33,7 @@ class ResourceLifecycleHandler : Tracker {
 	ResourceLifecycleHandler(GameModeInvasion@ metagame) {
 		@m_metagame = @metagame;
 		levelComplete = false;
-		// enable character_die tracking for cabal game mode (off by default)
-        string trackCharDeath = "<command class='set_metagame_event' name='character_die' enabled='1' />";
-        m_metagame.getComms().send(trackCharDeath);
+		// enable character_kill tracking for cabal game mode (off by default)
 		string trackCharKill = "<command class='set_metagame_event' name='character_kill' enabled='1' />";
 		m_metagame.getComms().send(trackCharKill);
 	}
@@ -52,12 +52,14 @@ class ResourceLifecycleHandler : Tracker {
 		// how can this be improved to support 2-player co-op play?
 		// currently falls apart if a second player were to spawn.
 
+		/* Alpha 0.1.1
 		// when the player spawns, he spawns alone...
 		XmlElement c("command");
 		c.setStringAttribute("class", "set_soldier_spawn");
 		c.setIntAttribute("faction_id", 0);
 		c.setBoolAttribute("enabled", false);
 		m_metagame.getComms().send(c);
+		*/
 
 		// now, work with the spawned player character
 		const XmlElement@ player = event.getFirstElementByTagName("player");
@@ -141,9 +143,11 @@ class ResourceLifecycleHandler : Tracker {
 		if ((m_playersSpawned.size() == 1) && (m_playerLives[0] <= 0)) {
 			_log("*** GAME OVER!", 1);
 			processGameOver();
+			return;
 		} else if ((m_playersSpawned.size() == 2) && (m_playerLives[0] <= 0 && m_playerLives[1] <= 0)) {
 			_log("*** GAME OVER!", 1);
 			processGameOver();
+			return;
 		} else {
 			_log("*** CABAL: Saving Game", 1);
 			m_metagame.save();
@@ -151,9 +155,7 @@ class ResourceLifecycleHandler : Tracker {
 
 		// player can't respawn if enemies are within ~70.0 units of the intended base. Need to forcibly remove enemy
 		// units from player's base area...
-		// We're about to kill a lot of people. Stop character_die tracking for the moment
-		string trackCharDeathOff = "<command class='set_metagame_event' name='character_die' enabled='0' />";
-		m_metagame.getComms().send(trackCharDeathOff);
+		// We're about to kill a lot of people. Stop character_kill tracking for the moment
 		string trackCharKillOff = "<command class='set_metagame_event' name='character_kill' enabled='0' />";
 		m_metagame.getComms().send(trackCharKillOff);
 		// kill enemies anywhere near player to allow respawn
@@ -164,13 +166,13 @@ class ResourceLifecycleHandler : Tracker {
 
 			// make an array of Xml Elements that stores affected enemy unit stats
 			// TagName =character, id=xx (99)
-			array<const XmlElement@> exchEnemies = getCharactersNearPosition(m_metagame, position, 1, 70.0f);
+			array<const XmlElement@> exchEnemies = getCharactersNearPosition(m_metagame, position, 1, 80.0f);
 			int exchEnemiesCount = exchEnemies.size();
 			// rewrite as new array where the position of each enemy has +70 to Z axis
 			// or just get the size of the array, then queue that many random enemy respawns shortly
 
 			// improve?: apply invisi-vest to characters in the kill zone to make them disappear, then kill them
-			killCharactersNearPosition(m_metagame, position, 1, 70.0f); // kill faction 1 (cabal)
+			killCharactersNearPosition(m_metagame, position, 1, 80.0f); // kill faction 1 (cabal)
 
 			// spawn enemies to replace the exchEnemies
 			_log("*** CABAL: Respawning " + exchEnemiesCount + " replacement enemy units.", 1);
@@ -178,7 +180,7 @@ class ResourceLifecycleHandler : Tracker {
 
 			float retX = position.get_opIndex(0);
 			float retY = position.get_opIndex(1);
-			float retZ = position.get_opIndex(2) - 80.0;
+			float retZ = position.get_opIndex(2) - 90.0;
 			string randPos = Vector3(retX, retY, retZ).toString(); // spawns all replacements in same place...
 			for (int k = 0; k < exchEnemiesCount; ++k) {
 				switch( rand(0, 5) )
@@ -205,9 +207,7 @@ class ResourceLifecycleHandler : Tracker {
 				_log("*** CABAL: Spawned a character at " + randPos, 1);
 			}
 		}
-		// Reenable character_die tracking
-		string trackCharDeathOn = "<command class='set_metagame_event' name='character_die' enabled='1' />";
-		m_metagame.getComms().send(trackCharDeathOn);
+		// Reenable character_kill tracking
 		string trackCharKillOn = "<command class='set_metagame_event' name='character_kill' enabled='1' />";
 		m_metagame.getComms().send(trackCharKillOn);
 
@@ -241,7 +241,7 @@ class ResourceLifecycleHandler : Tracker {
 			playerCoins --;
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
 			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
-			_log("*** CABAL: using coin / continue. " + playerCoins + " continues remaining!", 1);
+			_log("*** CABAL: USING COIN / CONTINUE. " + playerCoins + " CONTINUES REMAINING!", 1);
 			// prep for restart
 			resetLevelStats();
 		}
@@ -301,7 +301,6 @@ class ResourceLifecycleHandler : Tracker {
 	//////////////////////////////
 	// ALL CHARACTER LIFECYCLES //
 	//////////////////////////////
-
 	protected void handleCharacterKillEvent(const XmlElement@ event) {
 		// When enabled, fires whenever an AI character is killed. Manually enabled via class constructor
 
@@ -339,7 +338,15 @@ class ResourceLifecycleHandler : Tracker {
 		_log("*** CABAL: ResourceLifecycleHandler::handleCharacterKillEvent", 1);
 
 		const XmlElement@ killerInfo = event.getFirstElementByTagName("killer");
+		if (killerInfo is null) {
+			_log("*** CABAL: Can't determine killer. Ignoring death", 1);
+			return;
+		}
 		const XmlElement@ targetInfo = event.getFirstElementByTagName("target");
+		if (targetInfo is null) {
+			_log("*** CABAL: Can't determine killed unit. Ignoring death", 1);
+			return;
+		}
 
 		// if a player character has died, don't process any further
 		if (targetInfo.getIntAttribute("player_id") >= 0) {
@@ -370,18 +377,7 @@ class ResourceLifecycleHandler : Tracker {
 
 		_log("*** CABAL: Character " + charId + " (" + charName + charGroup + "), with " + charXP + " XP, has died.", 1);
 
-		// if commando killed, create a new one in wounded state
-		if (charGroup == "commando") {
-			/*
-			// let's try spawning a character instead
-			_log("*** CABAL: enemy commando killed, Spawning a wounded replacement at " + charPos, 1);
-			string spawnChar = "<command class='create_instance' faction_id='1' position='" + charPos + "' instance_class='character' instance_key='commando' wounded='1' /></command>";
-			m_metagame.getComms().send(spawnChar);
-			*/
-			// Now spawn some medics off-screen to attempt a heal
-		}
-
-		// _log("*** CABAL: store player character's info", 1);
+		// TODO commando to be carted off the field by medics
 
 		// Run an alive/dead check on Player character(s)
 		int playerCharId = killerInfo.getIntAttribute("id");
@@ -397,8 +393,11 @@ class ResourceLifecycleHandler : Tracker {
 		// Increase player's score
 		if (killerInfo.getStringAttribute("name") == "Player ") { // trailing space intentional
 			int playerKiller = killerInfo.getIntAttribute("player_id");
+			_log("*** CABAL: playerKiller ID is: " + playerKiller, 1);
 			float xp = targetInfo.getFloatAttribute("xp");
-			awardXP(playerKiller, xp);
+			if ((playerKiller >= 0) && (playerKiller < m_metagame.getUserSettings().m_maxPlayers)) {
+				awardXP(playerKiller, xp);
+			}
 		} else { _log("*** CABAL: killer name is " + killerInfo.getStringAttribute("name")); }
 
 		string playerPos = playerCharInfo.getStringAttribute("position");
@@ -422,21 +421,19 @@ class ResourceLifecycleHandler : Tracker {
 			charXP += 0.1;
 		}
 
-		// Group-based drop logic (special enemies always drop specific equipment on death)
-		if (charGroup == "commando") {
-			dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
-		} else if (charGroup == "covert_ops") {
-			dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
-		} // XP-based drop chance logic
-		else if (rand(1, 100) > 80) {
-			if (charXP > 1.0) {
-				dropPowerUp(dropPos.toString(), "weapon", "player_gl.weapon"); // drop grenade launcher.
-			} else if (charXP > 0.8) {
+if (rand(1, 100) > 80) {
+			// Group-based drop logic (enemies may drop specific equipment on death)
+			if (charXP > 0.5) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop minigun
+			} else if (charXP > 0.3) {
+				dropPowerUp(dropPos.toString(), "weapon", "player_mp.weapon"); // drop machine pistol
 			} else if (charXP > 0.2) {
+				dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
+			} else if (charGroup == "rifleman") {
+				dropPowerUp(dropPos.toString(), "weapon", "player_lr.weapon"); // drop laser rifle
+			} else if (charGroup == "commando") {
 				dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
-			}
-			// revert to default weapon after X seconds have elapsed...
+			} // revert to default weapon after X seconds have elapsed...
 			else {
 				_log("*** CABAL: XP too low, Nothing dropped", 1);
 			}
@@ -445,7 +442,7 @@ class ResourceLifecycleHandler : Tracker {
 
 	// -----------------------------------------------------------
 	protected void awardXP(int playerKiller, float xp) {
-		// match playerKiller's ID to the appropriateplayer
+		// match playerKiller's ID to the appropriate player
 		m_playerScore[playerKiller] += xp;
 		_log("*** CABAL: Player " + (playerKiller + 1) + " XP now at " + int(m_playerScore[playerKiller]), 1);
 	}
@@ -458,7 +455,7 @@ class ResourceLifecycleHandler : Tracker {
 		if (levelComplete) {
 			return;
 		}
-        _log("*** CABAL: dropping an item at " + position, 1);
+        _log("*** CABAL: dropping a " + instanceKey + " at " + position, 1);
         string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
         m_metagame.getComms().send(creator);
 		_log("*** CABAL: item placed at " + position, 1);
