@@ -393,7 +393,7 @@ class ResourceLifecycleHandler : Tracker {
 		// Increase player's score
 		if (killerInfo.getStringAttribute("name") == "Player ") { // trailing space intentional
 			int playerKiller = killerInfo.getIntAttribute("player_id");
-			_log("*** CABAL: playerKiller id: " + playerKiller, 1);
+			_log("*** CABAL: playerKiller ID is: " + playerKiller, 1);
 			float xp = targetInfo.getFloatAttribute("xp");
 			if ((playerKiller >= 0) && (playerKiller < m_metagame.getUserSettings().m_maxPlayers)) {
 				awardXP(playerKiller, xp);
