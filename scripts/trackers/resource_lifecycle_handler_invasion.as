@@ -22,8 +22,8 @@ class ResourceLifecycleHandler : Tracker {
 
 	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area (see /maps/cabal/objects.svg)
 	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area (see /maps/cabal/objects.svg)
-	protected float MIN_GOAL_XP = 4.0;
-	protected float MAX_GOAL_XP = 6.0;
+	protected float MIN_GOAL_XP = 8.0;
+	protected float MAX_GOAL_XP = 10.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
 	protected float curXP = 0.0;
 
@@ -239,7 +239,7 @@ class ResourceLifecycleHandler : Tracker {
 			playerCoins --;
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
 			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
-			_log("*** CABAL: using coin / continue. " + playerCoins + " continues remaining!", 1);
+			_log("*** CABAL: USING COIN / CONTINUE. " + playerCoins + " CONTINUES REMAINING!", 1);
 			// prep for restart
 			resetLevelStats();
 		}
