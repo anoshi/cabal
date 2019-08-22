@@ -391,6 +391,7 @@ class ResourceLifecycleHandler : Tracker {
 		// Increase player's score
 		if (killerInfo.getStringAttribute("name") == "Player ") { // trailing space intentional
 			int playerKiller = killerInfo.getIntAttribute("player_id");
+			_log("*** CABAL: playerKiller id: " + playerKiller, 1);
 			float xp = targetInfo.getFloatAttribute("xp");
 			if (playerKiller >= 0) {
 				awardXP(playerKiller, xp);
