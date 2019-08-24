@@ -475,4 +475,90 @@ class ResourceLifecycleHandler : Tracker {
 		// clear spawn counting when removing tracker - happens at map change or restart
 		m_playersSpawned.clear();
 	}
+
+		// --------------------------------------------
+	void save(XmlElement@ root) {
+		// called by /scripts/gamemodes/quickmatch/cabal_quickie.as
+		XmlElement@ parent = root;
+
+		XmlElement quickmatchData("quickmatchData");
+		saveQuickmatchData(quickmatchData); // see protected method, below
+		parent.appendChild(quickmatchData);
+	}
+
+	// --------------------------------------------
+	protected void saveQuickmatchData(XmlElement@ quickmatchData) {
+		// writes <quickmatchData> section to savegames/quickmatch[0-999].save/metagame_invasion.xml
+		bool doSave = true;
+		_log("*** CABAL: saving quickmatchData to metagame_invasion.xml", 1);
+
+		// level-specific info
+		XmlElement level("level");
+		level.setFloatAttribute("progress", curXP);
+
+		// save player hashes and lives
+		if (m_playersSpawned.size() > 0) {
+			XmlElement players("players");
+			players.setIntAttribute("continues", playerCoins);
+			for (uint i = 0; i < m_playersSpawned.size(); ++i) {
+				if (m_playersSpawned[i] == "") {
+					// if any spawned player doesn't have an associated hash, we're not in a position to save data
+					_log("*** CABAL: Player " + i + " has no hash recorded. Skipping save.", 1);
+					doSave = false;
+					continue;
+				} else {
+					string pNum = "player" + (i + 1);
+					XmlElement playerData(pNum);
+					playerData.setStringAttribute("hash", m_playersSpawned[i]);
+					playerData.setIntAttribute("lives", m_playerLives[i]);
+					playerData.setFloatAttribute("score", m_playerScore[i]);
+					players.appendChild(playerData);
+				}
+			}
+			if (doSave) {
+				quickmatchData.appendChild(level);
+				quickmatchData.appendChild(players);
+				_log("*** CABAL: Player data saved to metagame_invasion.xml", 1);
+			}
+		} else {
+			_log("*** CABAL: no data in m_playersSpawned. No character info to save.", 1);
+		}
+
+
+		// any more info to add here? Create and populate another XmlElement and append to the quickmatchData XmlElement
+		// quickmatchData.appendChild(another_XmlElement);
+		_log("*** CABAL: RLH::savequickmatchData() done", 1);
+	}
+
+	// --------------------------------------------
+	void load(const XmlElement@ root) {
+		_log("*** CABAL: Loading Data", 1);
+		m_playersSpawned.clear();
+		m_playerLives.clear();
+		m_playerScore.clear();
+
+		const XmlElement@ quickmatchData = root.getFirstElementByTagName("quickmatchData");
+		if (quickmatchData !is null) {
+			_log("*** CABAL: loading level data", 1);
+			const XmlElement@ levelData = quickmatchData.getFirstElementByTagName("level");
+			float levelProgress = levelData.getFloatAttribute("progress");
+			approachGoalXP(levelProgress);
+			_log("*** CABAL: loading player data", 1); // tag elements (one element per saved player)
+			array<const XmlElement@> playerData = quickmatchData.getElementsByTagName("players");
+			for (uint i = 0; i < playerData.size(); ++ i) {
+				_log("*** CABAL: player" + (i + 1), 1); // load player[1..999] tag elements
+				array<const XmlElement@> curPlayer = playerData[i].getElementsByTagName("player" + (i + 1));
+
+				for (uint j = 0; j < curPlayer.size(); ++j) {
+					const XmlElement@ pData = curPlayer[i];
+					string hash = pData.getStringAttribute("hash");
+					m_playersSpawned.insertLast(hash);
+					int lives = pData.getIntAttribute("lives");
+					m_playerLives.insertLast(lives);
+					float score = pData.getFloatAttribute("score");
+					m_playerScore.insertLast(score);
+				}
+			}
+		}
+	}
 }

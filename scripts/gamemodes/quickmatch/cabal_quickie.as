@@ -19,7 +19,7 @@
 // --------------------------------------------
 class Cabal : GameMode {
 	protected UserSettings@ m_userSettings;
-	//protected ShortStory@ m_shortStory;
+	//protected ResourceLifecycleHandler@ m_resourceLifecycleHandler;
 
 	string m_gameMapPath = "";
 
@@ -69,13 +69,11 @@ class Cabal : GameMode {
 		GameMode::postBeginMatch();
 
 		updateGeneralInfo();
-		save();
 
-		addTracker(AutoSaver(this));
 		addTracker(BasicCommandHandler(this));
 
 		// Cabal handlers
-		addTracker(ResourceLifecycleHandler(this));
+		addTracker(ResourceLifecycleHandler(this)); // m_resourceLifecycleHandler));
 		addTracker(CabalSpawner(this));
 
 		getUserSettings();
@@ -96,7 +94,7 @@ class Cabal : GameMode {
 
 	// --------------------------------------------
 	void save() {
-		_log("*** CABAL: saving metagame", 1);
+		_log("*** CABAL: (quickmatch) saving metagame", 1);
 
 		XmlElement commandRoot("command");
 		commandRoot.setStringAttribute("class", "save_data");
@@ -105,13 +103,19 @@ class Cabal : GameMode {
 		XmlElement@ settings = m_userSettings.toXmlElement("settings");
 		root.appendChild(settings);
 
+		// append quickmatch data
+		ResourceLifecycleHandler::save(root);
+
 		commandRoot.appendChild(root);
+
+		// save through game
 		getComms().send(commandRoot);
+		_log("*** CABAL: finished saving quickmatch settings and player data", 1);
 	}
 
 	// --------------------------------------------
 	void load() {
-		_log("*** CABAL: loading metagame", 1);
+		_log("*** CABAL: (quickmatch) loading metagame", 1);
 
 		XmlElement@ query = XmlElement(
 			makeQuery(this, array<dictionary> = {
@@ -130,6 +134,8 @@ class Cabal : GameMode {
 
 			m_userSettings.print();
 
+			// load saved quickmatch data
+			ResourceLifecycleHandler::load(root);
 			_log("loaded", 1);
 		} else {
 			_log("load failed");
