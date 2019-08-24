@@ -96,7 +96,7 @@ class Cabal : GameMode {
 
 	// --------------------------------------------
 	void save() {
-		_log("*** CABAL: saving metagame", 1);
+		_log("** CABAL: saving metagame", 1);
 
 		XmlElement commandRoot("command");
 		commandRoot.setStringAttribute("class", "save_data");
@@ -111,7 +111,7 @@ class Cabal : GameMode {
 
 	// --------------------------------------------
 	void load() {
-		_log("*** CABAL: loading metagame", 1);
+		_log("** CABAL: loading metagame", 1);
 
 		XmlElement@ query = XmlElement(
 			makeQuery(this, array<dictionary> = {

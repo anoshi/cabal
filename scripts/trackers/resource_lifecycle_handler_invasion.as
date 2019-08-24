@@ -42,11 +42,11 @@ class ResourceLifecycleHandler : Tracker {
 	// PLAYER CHARACTER LIFECYCLES //
 	/////////////////////////////////
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
-		_log("*** CABAL: ResourceLifecycleHandler::handlePlayerSpawnEvent", 1);
+		_log("** CABAL: ResourceLifecycleHandler::handlePlayerSpawnEvent", 1);
 
 		if (curXP < goalXP) {
 			levelComplete = false;
-			_log("*** CABAL: Player spawning on incomplete level.", 1);
+			_log("** CABAL: Player spawning on incomplete level.", 1);
 		}
 
 		// how can this be improved to support 2-player co-op play?
@@ -67,22 +67,22 @@ class ResourceLifecycleHandler : Tracker {
 			string playerHash = player.getStringAttribute("profile_hash");
 			int characterId = player.getIntAttribute("character_id");
 			if (m_playersSpawned.find(playerHash) < 0) {
-				_log("*** CABAL: Player hash " + playerHash + " not found in m_playersSpawned array.", 1);
+				_log("** CABAL: Player hash " + playerHash + " not found in m_playersSpawned array.", 1);
 				if (int(m_playersSpawned.size()) < m_metagame.getUserSettings().m_maxPlayers) {
 					string name = player.getStringAttribute("name");
 					m_playerCharacterId = characterId;
 					m_playersSpawned.insertLast(playerHash);
-					_log("*** CABAL: player " + name + " (" + m_playerCharacterId + ") spawned as player" + int(m_playersSpawned.size()), 1);
+					_log("** CABAL: player " + name + " (" + m_playerCharacterId + ") spawned as player" + int(m_playersSpawned.size()), 1);
 				} else {
 					kickPlayer(player.getIntAttribute("player_id"), "Only " + m_metagame.getUserSettings().m_maxPlayers + " players allowed");
 				}
-				_log("*** CABAL: m_playersSpawned now stores: " + m_playersSpawned[0] + " for player1.", 1);
+				_log("** CABAL: m_playersSpawned now stores: " + m_playersSpawned[0] + " for player1.", 1);
 			} else {
 				// existing player.
-				_log("*** CABAL: existing player spawned. Equipping coloured vest", 1);
+				_log("** CABAL: existing player spawned. Equipping coloured vest", 1);
 			}
 
-			_log("*** CABAL: Equipping spawned player with appropriately-coloured vest", 1);
+			_log("** CABAL: Equipping spawned player with appropriately-coloured vest", 1);
 			// TEST PURPOSES: if cheat enabled, add cheat vest
 			//if (cheatMode) {
 			//	setPlayerInventory(m_metagame, characterId, "player_impervavest.carry_item");
@@ -95,23 +95,23 @@ class ResourceLifecycleHandler : Tracker {
 					setPlayerInventory(m_metagame, characterId, "player_red.carry_item");
 					break;
 				default: // shouldn't ever get here, but sanity
-					_log("*** CABAL: WARNING existing player spanwed but profile hash not stored in m_playersSpawned array", 1);
+					_log("** CABAL: WARNING existing player spanwed but profile hash not stored in m_playersSpawned array", 1);
 			}
 		} else {
-			_log("*** CABAL: CRITICAL WARNING, player not found in Player Spawn Event");
+			_log("** CABAL: CRITICAL WARNING, player not found in Player Spawn Event");
 		}
 	}
 
 	// -----------------------------------------------------------
 	protected void handlePlayerDieEvent(const XmlElement@ event) {
-		_log("*** CABAL: ResourceLifecycleHandler::handlePlayerDieEvent", 1);
+		_log("** CABAL: ResourceLifecycleHandler::handlePlayerDieEvent", 1);
 
 		// skip die event processing if disconnected
 		if (event.getBoolAttribute("combat") == false) return;
 
 		// level already won/lost? bug out
 		if (levelComplete) {
-			_log("*** CABAL: Level already won or lost. Dropping out of method", 1);
+			_log("** CABAL: Level already won or lost. Dropping out of method", 1);
 			return;
 		}
 
@@ -125,19 +125,19 @@ class ResourceLifecycleHandler : Tracker {
 		switch (playerNum) {
 			case 0 :
 			case 1 :
-				_log("*** CABAL: Player " + (playerNum + 1) + " lost a life!", 1);
+				_log("** CABAL: Player " + (playerNum + 1) + " lost a life!", 1);
 				m_playerLives[playerNum] -= 1;
-				_log("*** CABAL: Player " + (playerNum + 1) + " still has " + (playerNum > 0 ? m_playerLives[1] : m_playerLives[0]) + " lives available.", 1);
+				_log("** CABAL: Player " + (playerNum + 1) + " still has " + (playerNum > 0 ? m_playerLives[1] : m_playerLives[0]) + " lives available.", 1);
 				break;
 			default :
-				_log("*** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
+				_log("** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
 				// profile_hash listed in event doesn't exist as an active player. Silently fail to do anything.
 		}
 
 		// check if any player has any lives remaining
 		for (uint i = 0; i < m_playersSpawned.size(); ++ i) {
 			if (m_playerLives[i] <= 0) {
-				_log("*** CABAL: GAME OVER for Player " + (i+1), 1); // can't actually stop them from respawning. All or nothing
+				_log("** CABAL: GAME OVER for Player " + (i+1), 1); // can't actually stop them from respawning. All or nothing
 			}
 		}
 		if ((m_playersSpawned.size() == 1) && (m_playerLives[0] <= 0)) {
@@ -149,7 +149,7 @@ class ResourceLifecycleHandler : Tracker {
 			processGameOver();
 			return;
 		} else {
-			_log("*** CABAL: Saving Game", 1);
+			_log("** CABAL: Saving Game", 1);
 			m_metagame.save();
 		}
 
@@ -161,7 +161,7 @@ class ResourceLifecycleHandler : Tracker {
 		// kill enemies anywhere near player to allow respawn
 		const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerCharId);
 		if (characterInfo !is null) {
-			_log("*** CABAL: Killing enemies near dead player character", 1);
+			_log("** CABAL: Killing enemies near dead player character", 1);
 			Vector3 position = stringToVector3(characterInfo.getStringAttribute("position"));
 
 			// make an array of Xml Elements that stores affected enemy unit stats
@@ -175,7 +175,7 @@ class ResourceLifecycleHandler : Tracker {
 			killCharactersNearPosition(m_metagame, position, 1, 80.0f); // kill faction 1 (cabal)
 
 			// spawn enemies to replace the exchEnemies
-			_log("*** CABAL: Respawning " + exchEnemiesCount + " replacement enemy units.", 1);
+			_log("** CABAL: Respawning " + exchEnemiesCount + " replacement enemy units.", 1);
 			string randKey = ''; // random character 'Key' name
 
 			float retX = position.get_opIndex(0);
@@ -204,7 +204,7 @@ class ResourceLifecycleHandler : Tracker {
 					}
 				string spawnReps = "<command class='create_instance' faction_id='1' position='" + randPos + "' instance_class='character' instance_key='" + randKey + "' /></command>";
 				m_metagame.getComms().send(spawnReps);
-				_log("*** CABAL: Spawned a character at " + randPos, 1);
+				_log("** CABAL: Spawned a character at " + randPos, 1);
 			}
 		}
 		// Reenable character_kill tracking
@@ -221,7 +221,7 @@ class ResourceLifecycleHandler : Tracker {
 
 	// --------------------------------------------
 	protected void processGameOver() {
-		_log("*** CABAL: Running processGameOver", 1);
+		_log("** CABAL: Running processGameOver", 1);
 		if (levelComplete) return;
 		// stop cabal spawning
 		m_metagame.removeTracker(CabalSpawner(m_metagame));
@@ -241,12 +241,12 @@ class ResourceLifecycleHandler : Tracker {
 			playerCoins --;
 			m_metagame.getComms().send("<command class='set_match_status' lose='1' faction_id='0' />");
 			m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='1' />");
-			_log("*** CABAL: USING COIN / CONTINUE. " + playerCoins + " CONTINUES REMAINING!", 1);
+			_log("** CABAL: USING COIN / CONTINUE. " + playerCoins + " CONTINUES REMAINING!", 1);
 			// prep for restart
 			resetLevelStats();
 		}
 		else { // no coins / continues left, campaign lost / game over
-			_log("*** CABAL: no more coins / continues. GAME OVER", 1);
+			_log("** CABAL: no more coins / continues. GAME OVER", 1);
 			XmlElement c("command");
 			c.setStringAttribute("class", "set_campaign_status");
 			c.setStringAttribute("key", "lose");
@@ -272,9 +272,9 @@ class ResourceLifecycleHandler : Tracker {
 	protected void ensureValidLocalPlayer(float time) {
 		if (m_playerCharacterId < 0) {
 			m_localPlayerCheckTimer -= time;
-			_log("*** CABAL: m_local_PlayerCheckTimer: " + m_localPlayerCheckTimer,1);
+			_log("** CABAL: m_local_PlayerCheckTimer: " + m_localPlayerCheckTimer,1);
 			if (m_localPlayerCheckTimer < 0.0) {
-				_log("*** CABAL: tracked player character id " + m_playerCharacterId, 1);
+				_log("** CABAL: tracked player character id " + m_playerCharacterId, 1);
 				const XmlElement@ player = m_metagame.queryLocalPlayer();
 				if (player !is null) {
 					//setupCharacterForTracking
@@ -335,32 +335,32 @@ class ResourceLifecycleHandler : Tracker {
 		// wounded=0
 		// xp=0 (real/float)
 
-		_log("*** CABAL: ResourceLifecycleHandler::handleCharacterKillEvent", 1);
+		_log("** CABAL: ResourceLifecycleHandler::handleCharacterKillEvent", 1);
 
 		const XmlElement@ killerInfo = event.getFirstElementByTagName("killer");
 		if (killerInfo is null) {
-			_log("*** CABAL: Can't determine killer. Ignoring death", 1);
+			_log("** CABAL: Can't determine killer. Ignoring death", 1);
 			return;
 		}
 		const XmlElement@ targetInfo = event.getFirstElementByTagName("target");
 		if (targetInfo is null) {
-			_log("*** CABAL: Can't determine killed unit. Ignoring death", 1);
+			_log("** CABAL: Can't determine killed unit. Ignoring death", 1);
 			return;
 		}
 
 		// if a player character has died, don't process any further
 		if (targetInfo.getIntAttribute("player_id") >= 0) {
-			_log("*** CABAL: dead character id is a player character. Handled separately", 1);
+			_log("** CABAL: dead character id is a player character. Handled separately", 1);
 			return;
 		}
 
 		// if faction 0 (player), don't process further
 		if (targetInfo.getIntAttribute("faction_id") == 0) {
-			_log("*** CABAL: dead character id is from friendly faction. Ignoring", 1);
+			_log("** CABAL: dead character id is from friendly faction. Ignoring", 1);
 			return;
 		}
 
-        // _log("*** CABAL: store details of dead character " + charId, 1);
+        // _log("** CABAL: store details of dead character " + charId, 1);
 		int charId = targetInfo.getIntAttribute("id");
 		string charName = targetInfo.getStringAttribute("name");
 
@@ -375,7 +375,7 @@ class ResourceLifecycleHandler : Tracker {
 		int charLeader = targetInfo.getIntAttribute("leader");
 		string charGroup = targetInfo.getStringAttribute("soldier_group_name");
 
-		_log("*** CABAL: Character " + charId + " (" + charName + charGroup + "), with " + charXP + " XP, has died.", 1);
+		_log("** CABAL: Character " + charId + " (" + charName + charGroup + "), with " + charXP + " XP, has died.", 1);
 
 		// TODO commando to be carted off the field by medics
 
@@ -384,7 +384,7 @@ class ResourceLifecycleHandler : Tracker {
 		const XmlElement@ playerCharInfo = getCharacterInfo(m_metagame, playerCharId);
 		int playerCharIsDead = playerCharInfo.getIntAttribute("dead");
 		if (playerCharIsDead == 1) {
-			_log("*** CABAL: Player character is dead. No rewards given");
+			_log("** CABAL: Player character is dead. No rewards given");
 			return;
 		}
 		// Player is alive and well. Add enemy's XP to total score for level
@@ -393,15 +393,15 @@ class ResourceLifecycleHandler : Tracker {
 		// Increase player's score
 		if (killerInfo.getStringAttribute("name") == "Player ") { // trailing space intentional
 			int playerKiller = killerInfo.getIntAttribute("player_id");
-			_log("*** CABAL: playerKiller ID is: " + playerKiller, 1);
+			_log("** CABAL: playerKiller ID is: " + playerKiller, 1);
 			float xp = targetInfo.getFloatAttribute("xp");
 			if ((playerKiller >= 0) && (playerKiller < m_metagame.getUserSettings().m_maxPlayers)) {
 				awardXP(playerKiller, xp);
 			}
-		} else { _log("*** CABAL: killer name is " + killerInfo.getStringAttribute("name")); }
+		} else { _log("** CABAL: killer name is " + killerInfo.getStringAttribute("name")); }
 
 		string playerPos = playerCharInfo.getStringAttribute("position");
-        _log("*** CABAL: Player Character id: " + m_playerCharacterId + " is at: " + playerPos);
+        _log("** CABAL: Player Character id: " + m_playerCharacterId + " is at: " + playerPos);
 		Vector3 v3playerPos = stringToVector3(playerPos);
 
 		// create a new Vector3 as (enemyX, playerY +2, playerZ)
@@ -435,7 +435,7 @@ if (rand(1, 100) > 80) {
 				dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
 			} // revert to default weapon after X seconds have elapsed...
 			else {
-				_log("*** CABAL: XP too low, Nothing dropped", 1);
+				_log("** CABAL: XP too low, Nothing dropped", 1);
 			}
 		}
 	}
@@ -444,7 +444,7 @@ if (rand(1, 100) > 80) {
 	protected void awardXP(int playerKiller, float xp) {
 		// match playerKiller's ID to the appropriate player
 		m_playerScore[playerKiller] += xp;
-		_log("*** CABAL: Player " + (playerKiller + 1) + " XP now at " + int(m_playerScore[playerKiller]), 1);
+		_log("** CABAL: Player " + (playerKiller + 1) + " XP now at " + int(m_playerScore[playerKiller]), 1);
 	}
 
 	///////////////////////
@@ -455,10 +455,10 @@ if (rand(1, 100) > 80) {
 		if (levelComplete) {
 			return;
 		}
-        _log("*** CABAL: dropping a " + instanceKey + " at " + position, 1);
+        _log("** CABAL: dropping a " + instanceKey + " at " + position, 1);
         string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
         m_metagame.getComms().send(creator);
-		_log("*** CABAL: item placed at " + position, 1);
+		_log("** CABAL: item placed at " + position, 1);
 
 		// ensure all dropped items have a short TTL e.g 5 seconds
         // ensure only player weapons are dropped
@@ -473,9 +473,9 @@ if (rand(1, 100) > 80) {
 		}
 		curXP += charXP;
 		int levelCompletePercent = int(curXP / goalXP * 100);
-		_log("*** CABAL: current XP is: " + int(curXP) + " of " + int(goalXP), 1);
+		_log("** CABAL: current XP is: " + int(curXP) + " of " + int(goalXP), 1);
 		if (levelCompletePercent > 100) { levelCompletePercent = 100; }
-		_log("*** CABAL: Level completion: " + levelCompletePercent + "%", 1);
+		_log("** CABAL: Level completion: " + levelCompletePercent + "%", 1);
 
 		// notify text
 		if (levelCompletePercent > 0) {
@@ -495,7 +495,7 @@ if (rand(1, 100) > 80) {
 		m_metagame.getComms().send(scoreBoardText);
 
 		if (curXP >= goalXP) {
-			_log("*** CABAL: LEVEL COMPLETE!", 1);
+			_log("** CABAL: LEVEL COMPLETE!", 1);
 			curXP = 0.0; // ready to start next level
 			m_metagame.getComms().send("<command class='set_match_status' faction_id='1' lose='1' />");
 			m_metagame.getComms().send("<command class='set_match_status' faction_id='0' win='1' />");
@@ -512,7 +512,7 @@ if (rand(1, 100) > 80) {
 
 		// we are only interested in the destruction of dummy vehicles
         if (startsWith(event.getStringAttribute("vehicle_key"), "dummy_")) {
-            _log("*** CABAL: DummyVehicleHandler going to work!", 1);
+            _log("** CABAL: DummyVehicleHandler going to work!", 1);
 			if (event.getIntAttribute("owner_id") == 0) { return; } // don't care about player's faction vehicles.
 			// variablise attributes
 			string vehKey = event.getStringAttribute("vehicle_key");
@@ -557,7 +557,7 @@ if (rand(1, 100) > 80) {
 	protected void saveCampaignData(XmlElement@ campaignData) {
 		// writes <campaignData> section to savegames/campaign[0-999].save/metagame_invasion.xml
 		bool doSave = true;
-		_log("*** CABAL: saving campaignData to metagame_invasion.xml", 1);
+		_log("** CABAL: saving campaignData to metagame_invasion.xml", 1);
 
 		// level-specific info
 		XmlElement level("level");
@@ -570,7 +570,7 @@ if (rand(1, 100) > 80) {
 			for (uint i = 0; i < m_playersSpawned.size(); ++i) {
 				if (m_playersSpawned[i] == "") {
 					// if any spawned player doesn't have an associated hash, we're not in a position to save data
-					_log("*** CABAL: Player " + i + " has no hash recorded. Skipping save.", 1);
+					_log("** CABAL: Player " + i + " has no hash recorded. Skipping save.", 1);
 					doSave = false;
 					continue;
 				} else {
@@ -585,35 +585,35 @@ if (rand(1, 100) > 80) {
 			if (doSave) {
 				campaignData.appendChild(level);
 				campaignData.appendChild(players);
-				_log("*** CABAL: Player data saved to metagame_invasion.xml", 1);
+				_log("** CABAL: Player data saved to metagame_invasion.xml", 1);
 			}
 		} else {
-			_log("*** CABAL: no data in m_playersSpawned. No character info to save.", 1);
+			_log("** CABAL: no data in m_playersSpawned. No character info to save.", 1);
 		}
 
 
 		// any more info to add here? Create and populate another XmlElement and append to the campaignData XmlElement
 		// campaignData.appendChild(another_XmlElement);
-		_log("*** CABAL: RLH::saveCampaignData() done", 1);
+		_log("** CABAL: RLH::saveCampaignData() done", 1);
 	}
 
 	// --------------------------------------------
 	void load(const XmlElement@ root) {
-		_log("*** CABAL: Loading Data", 1);
+		_log("** CABAL: Loading Data", 1);
 		m_playersSpawned.clear();
 		m_playerLives.clear();
 		m_playerScore.clear();
 
 		const XmlElement@ campaignData = root.getFirstElementByTagName("campaignData");
 		if (campaignData !is null) {
-			_log("*** CABAL: loading level data", 1);
+			_log("** CABAL: loading level data", 1);
 			const XmlElement@ levelData = campaignData.getFirstElementByTagName("level");
 			float levelProgress = levelData.getFloatAttribute("progress");
 			approachGoalXP(levelProgress);
-			_log("*** CABAL: loading player data", 1); // tag elements (one element per saved player)
+			_log("** CABAL: loading player data", 1); // tag elements (one element per saved player)
 			array<const XmlElement@> playerData = campaignData.getElementsByTagName("players");
 			for (uint i = 0; i < playerData.size(); ++ i) {
-				_log("*** CABAL: player" + (i + 1), 1); // load player[1..999] tag elements
+				_log("** CABAL: player" + (i + 1), 1); // load player[1..999] tag elements
 				array<const XmlElement@> curPlayer = playerData[i].getElementsByTagName("player" + (i + 1));
 
 				for (uint j = 0; j < curPlayer.size(); ++j) {

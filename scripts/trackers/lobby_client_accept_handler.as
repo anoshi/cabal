@@ -31,13 +31,14 @@ class LobbyClientAcceptHandler : Tracker {
 			if (player !is null) {
 				setupCharacterForTracking(player.getIntAttribute("character_id"));
 			} else {
-				_log("*** CABAL: WARNING, local player query failed", -1);
+				_log("** CABAL: WARNING, local player query failed", -1);
 			}
 		}
 	}
 
 	// --------------------------------------------
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
+		_log("** CABAL: lobby_client_accept_handler processing Player connect request", 1);
 		m_players = getPlayerCount(m_metagame);
 		refreshExtractionPoints();
 	}
@@ -62,21 +63,21 @@ class LobbyClientAcceptHandler : Tracker {
 			const XmlElement@ hitboxNode = list[i];
 			string id = hitboxNode.getStringAttribute("id");
 			if (id.findFirst("proceed") >= 0) {
-				_log("*** CABAL: including " + id, 1);
+				_log("** CABAL: including " + id, 1);
 			} else {
-				_log("*** CABAL: ruling out " + id, 1);
+				_log("** CABAL: ruling out " + id, 1);
 				// remove this
 				list.erase(i);
 				i--;
 			}
 		}
-		_log("*** CABAL: * " + list.size() + " hitboxes found", 1);
+		_log("** CABAL: * " + list.size() + " hitboxes found", 1);
 		return list;
 	}
 
 	// --------------------------------------------------------
 	protected void refreshHitboxes() {
-		_log("*** CABAL: refreshHitboxes", 1);
+		_log("** CABAL: refreshHitboxes", 1);
 		clearHitboxAssociations(m_metagame, "character", m_playerCharacterId, m_trackedHitboxes);
 
 		const array<const XmlElement@> list = getHitboxList();
@@ -88,7 +89,7 @@ class LobbyClientAcceptHandler : Tracker {
 
 	// --------------------------------------------
 	protected void handleHitboxEvent(const XmlElement@ event) {
-		_log("*** CABAL: handle_hitbox_event, type=" + event.getStringAttribute("instance_type") + ", id=" + event.getIntAttribute("instance_id") + ", hitbox=" + event.getStringAttribute("hitbox_id"), 1);
+		_log("** CABAL: handle_hitbox_event, type=" + event.getStringAttribute("instance_type") + ", id=" + event.getIntAttribute("instance_id") + ", hitbox=" + event.getStringAttribute("hitbox_id"), 1);
 
 		if (areExtractionPointsActive()) {
 			if (event.getStringAttribute("instance_type") == "character" && event.getIntAttribute("instance_id") == m_playerCharacterId) {
@@ -104,7 +105,7 @@ class LobbyClientAcceptHandler : Tracker {
 
 	// ----------------------------------------------------
 	protected void handlePlayerSpawnEvent(const XmlElement@ event) {
-		_log("*** CABAL: LobbyClientAcceptHandler::handlePlayerSpawnEvent", 1);
+		_log("** CABAL: LobbyClientAcceptHandler::handlePlayerSpawnEvent", 1);
 		const XmlElement@ element = event.getFirstElementByTagName("player");
 		if (element.getIntAttribute("player_id") == 0) {
 			setupCharacterForTracking(element.getIntAttribute("character_id"));
@@ -117,7 +118,7 @@ class LobbyClientAcceptHandler : Tracker {
 		clearHitboxAssociations(m_metagame, "character", m_playerCharacterId, m_trackedHitboxes);
 		m_playerCharacterId = id;
 
-		_log("*** CABAL: LobbyClientAcceptHandler::setting up tracking for character " + id, 1);
+		_log("** CABAL: LobbyClientAcceptHandler::setting up tracking for character " + id, 1);
 		refreshHitboxes();
 	}
 

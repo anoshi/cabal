@@ -178,7 +178,7 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 
 	// ------------------------------------------------------------------------------------------------
 	protected Stage@ setupStage1() {
-		_log("*** CABAL: CabalStageConfigurator::setupStage1 running", 1);
+		_log("** CABAL: CabalStageConfigurator::setupStage1 running", 1);
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Cabal M1A1";
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
@@ -187,10 +187,10 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		int index = stage.m_includeLayers.find("layer1.map2");
 		if (index >= 0) {
 			stage.m_includeLayers.removeAt(index);
-			_log("*** CABAL: found and removed layer1.map2", 1);
+			_log("** CABAL: found and removed layer1.map2", 1);
 		}
 
-		_log("*** CABAL: adding map layer1.map1", 1);
+		_log("** CABAL: adding map layer1.map1", 1);
 		stage.m_includeLayers.insertLast("layer1.map1");
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
@@ -295,7 +295,7 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map4";
 
-		_log("*** CABAL: adding map layer1.map4", 1);
+		_log("** CABAL: adding map layer1.map4", 1);
 		stage.m_includeLayers.insertLast("layer1.map4");
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));

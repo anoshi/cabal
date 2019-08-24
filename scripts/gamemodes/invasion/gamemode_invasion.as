@@ -106,7 +106,7 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle is about to start
 	void preBeginMatch() {
-		_log("*** CABAL: preBeginMatch", 1);
+		_log("** CABAL: preBeginMatch", 1);
 
 		// all trackers are cleared when match is about to begin
 		GameMode::preBeginMatch();
@@ -117,7 +117,7 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle has started
 	void postBeginMatch() {
-		_log("*** CABAL: postBeginMatch", 1);
+		_log("** CABAL: postBeginMatch", 1);
 
 		GameMode::postBeginMatch();
 
@@ -203,7 +203,7 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	void save() {
 		// save metagame status now:
-		_log("*** CABAL: GameModeInvasion::saving metagame", 1);
+		_log("** CABAL: GameModeInvasion::saving metagame", 1);
 
 		XmlElement commandRoot("command");
 		commandRoot.setStringAttribute("class", "save_data");

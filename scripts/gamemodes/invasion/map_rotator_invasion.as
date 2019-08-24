@@ -87,7 +87,7 @@ class MapRotatorInvasion : MapRotator {
 	// --------------------------------------------
 	// --------------------------------------------
 	protected void handleFactionLoseEvent(const XmlElement@ event) {
-		_log("*** CABAL: map_rotator_invasion.as handleFactionLoseEvent", 1);
+		_log("** CABAL: map_rotator_invasion.as handleFactionLoseEvent", 1);
 		int factionId = -1;
 
 		const XmlElement@ loseCondition = event.getFirstElementByTagName("lose_condition");
@@ -522,7 +522,7 @@ class MapRotatorInvasion : MapRotator {
 
 	// ----------------------------------------------------
 	protected void handleBaseOwnerChangeEvent(const XmlElement@ event) {
-		_log("*** CABAL: handleBaseOwnerChangeEvent", 1);
+		_log("** CABAL: handleBaseOwnerChangeEvent", 1);
 		// only do the additional dialogue in capture type maps
 		if (!m_stages[m_currentStageIndex].isCapture()) {
 			return;
@@ -580,7 +580,7 @@ class MapRotatorInvasion : MapRotator {
 
 	// ----------------------------------------------------
 	protected void handleAttackChangeEvent(const XmlElement@ event) {
-		_log("*** CABAL: handleAttackChangeEvent", 1);
+		_log("** CABAL: handleAttackChangeEvent", 1);
 		if (event.getIntAttribute("faction_id") != 0) return;
 
 		int baseId = event.getIntAttribute("base_id");
