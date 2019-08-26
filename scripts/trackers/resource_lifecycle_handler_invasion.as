@@ -624,6 +624,7 @@ if (rand(1, 100) > 80) {
 					m_playerLives.insertLast(lives);
 					float score = pData.getFloatAttribute("score");
 					m_playerScore.insertLast(score);
+					_log("** CABAL: Score: " + score + ". Lives: " + lives, 1);
 				}
 			}
 		}
