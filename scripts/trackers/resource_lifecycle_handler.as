@@ -490,7 +490,7 @@ class ResourceLifecycleHandler : Tracker {
 	protected void saveQuickmatchData(XmlElement@ quickmatchData) {
 		// writes <quickmatchData> section to savegames/quickmatch[0-999].save/metagame_invasion.xml
 		bool doSave = true;
-		_log("*** CABAL: saving quickmatchData to metagame_invasion.xml", 1);
+		_log("** CABAL: saving quickmatchData to metagame_invasion.xml", 1);
 
 		// level-specific info
 		XmlElement level("level");
@@ -503,7 +503,7 @@ class ResourceLifecycleHandler : Tracker {
 			for (uint i = 0; i < m_playersSpawned.size(); ++i) {
 				if (m_playersSpawned[i] == "") {
 					// if any spawned player doesn't have an associated hash, we're not in a position to save data
-					_log("*** CABAL: Player " + i + " has no hash recorded. Skipping save.", 1);
+					_log("** CABAL: Player " + i + " has no hash recorded. Skipping save.", 1);
 					doSave = false;
 					continue;
 				} else {
@@ -518,35 +518,35 @@ class ResourceLifecycleHandler : Tracker {
 			if (doSave) {
 				quickmatchData.appendChild(level);
 				quickmatchData.appendChild(players);
-				_log("*** CABAL: Player data saved to metagame_invasion.xml", 1);
+				_log("** CABAL: Player data saved to metagame_invasion.xml", 1);
 			}
 		} else {
-			_log("*** CABAL: no data in m_playersSpawned. No character info to save.", 1);
+			_log("** CABAL: no data in m_playersSpawned. No character info to save.", 1);
 		}
 
 
 		// any more info to add here? Create and populate another XmlElement and append to the quickmatchData XmlElement
 		// quickmatchData.appendChild(another_XmlElement);
-		_log("*** CABAL: RLH::savequickmatchData() done", 1);
+		_log("** CABAL: RLH::savequickmatchData() done", 1);
 	}
 
 	// --------------------------------------------
 	void load(const XmlElement@ root) {
-		_log("*** CABAL: Loading Data", 1);
+		_log("** CABAL: Loading Data", 1);
 		m_playersSpawned.clear();
 		m_playerLives.clear();
 		m_playerScore.clear();
 
 		const XmlElement@ quickmatchData = root.getFirstElementByTagName("quickmatchData");
 		if (quickmatchData !is null) {
-			_log("*** CABAL: loading level data", 1);
+			_log("** CABAL: loading level data", 1);
 			const XmlElement@ levelData = quickmatchData.getFirstElementByTagName("level");
 			float levelProgress = levelData.getFloatAttribute("progress");
 			approachGoalXP(levelProgress);
-			_log("*** CABAL: loading player data", 1); // tag elements (one element per saved player)
+			_log("** CABAL: loading player data", 1); // tag elements (one element per saved player)
 			array<const XmlElement@> playerData = quickmatchData.getElementsByTagName("players");
 			for (uint i = 0; i < playerData.size(); ++ i) {
-				_log("*** CABAL: player" + (i + 1), 1); // load player[1..999] tag elements
+				_log("** CABAL: player" + (i + 1), 1); // load player[1..999] tag elements
 				array<const XmlElement@> curPlayer = playerData[i].getElementsByTagName("player" + (i + 1));
 
 				for (uint j = 0; j < curPlayer.size(); ++j) {

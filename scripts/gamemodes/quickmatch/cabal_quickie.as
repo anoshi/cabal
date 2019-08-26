@@ -19,7 +19,7 @@
 // --------------------------------------------
 class Cabal : GameMode {
 	protected UserSettings@ m_userSettings;
-	//protected ResourceLifecycleHandler@ m_resourceLifecycleHandler;
+	protected ResourceLifecycleHandler@ m_resourceLifecycleHandler;
 
 	string m_gameMapPath = "";
 
@@ -32,6 +32,8 @@ class Cabal : GameMode {
 	// --------------------------------------------
 	void init() {
 		GameMode::init();
+
+		setupResourceLifecycle();
 
 		if (m_userSettings.m_continue) {
 			// loading a saved game?
@@ -65,6 +67,11 @@ class Cabal : GameMode {
 	}
 
 	// --------------------------------------------
+	protected void setupResourceLifecycle() {
+		@m_resourceLifecycleHandler = ResourceLifecycleHandler(this);
+	}
+
+	// --------------------------------------------
 	void postBeginMatch() {
 		GameMode::postBeginMatch();
 
@@ -73,7 +80,7 @@ class Cabal : GameMode {
 		addTracker(BasicCommandHandler(this));
 
 		// Cabal handlers
-		addTracker(ResourceLifecycleHandler(this)); // m_resourceLifecycleHandler));
+		addTracker(m_resourceLifecycleHandler);
 		addTracker(CabalSpawner(this));
 
 		getUserSettings();
@@ -94,7 +101,7 @@ class Cabal : GameMode {
 
 	// --------------------------------------------
 	void save() {
-		_log("*** CABAL: (quickmatch) saving metagame", 1);
+		_log("** CABAL: (quickmatch) saving metagame", 1);
 
 		XmlElement commandRoot("command");
 		commandRoot.setStringAttribute("class", "save_data");
@@ -104,18 +111,18 @@ class Cabal : GameMode {
 		root.appendChild(settings);
 
 		// append quickmatch data
-		ResourceLifecycleHandler::save(root);
+		m_resourceLifecycleHandler.save(root);
 
 		commandRoot.appendChild(root);
 
 		// save through game
 		getComms().send(commandRoot);
-		_log("*** CABAL: finished saving quickmatch settings and player data", 1);
+		_log("** CABAL: finished saving quickmatch settings and player data", 1);
 	}
 
 	// --------------------------------------------
 	void load() {
-		_log("*** CABAL: (quickmatch) loading metagame", 1);
+		_log("** CABAL: (quickmatch) loading metagame", 1);
 
 		XmlElement@ query = XmlElement(
 			makeQuery(this, array<dictionary> = {
@@ -135,8 +142,8 @@ class Cabal : GameMode {
 			m_userSettings.print();
 
 			// load saved quickmatch data
-			ResourceLifecycleHandler::load(root);
-			_log("loaded", 1);
+			m_resourceLifecycleHandler.load(root);
+			_log("** CABAL: quickmatch load complete", 1);
 		} else {
 			_log("load failed");
 		}
