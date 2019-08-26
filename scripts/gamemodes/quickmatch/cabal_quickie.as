@@ -6,8 +6,8 @@
 #include "query_helpers.as"
 
 // generic trackers
-#include "basic_command_handler.as"
-#include "autosaver.as"
+//#include "basic_command_handler.as"
+//#include "autosaver.as"
 
 // cabal helpers
 #include "cabal_helpers.as"
@@ -19,7 +19,7 @@
 // --------------------------------------------
 class Cabal : GameMode {
 	protected UserSettings@ m_userSettings;
-	//protected ResourceLifecycleHandler@ m_resourceLifecycleHandler;
+	protected ResourceLifecycleHandler@ m_resourceLifecycleHandler;
 
 	string m_gameMapPath = "";
 
@@ -70,10 +70,10 @@ class Cabal : GameMode {
 
 		updateGeneralInfo();
 
-		addTracker(BasicCommandHandler(this));
+		//addTracker(BasicCommandHandler(this));
 
 		// Cabal handlers
-		addTracker(ResourceLifecycleHandler(this)); // m_resourceLifecycleHandler));
+		addTracker(m_resourceLifecycleHandler);
 		addTracker(CabalSpawner(this));
 
 		getUserSettings();
@@ -94,7 +94,7 @@ class Cabal : GameMode {
 
 	// --------------------------------------------
 	void save() {
-		_log("*** CABAL: (quickmatch) saving metagame", 1);
+		_log("** CABAL: (quickmatch) saving metagame", 1);
 
 		XmlElement commandRoot("command");
 		commandRoot.setStringAttribute("class", "save_data");
@@ -104,18 +104,18 @@ class Cabal : GameMode {
 		root.appendChild(settings);
 
 		// append quickmatch data
-		ResourceLifecycleHandler::save(root);
+		m_resourceLifecycleHandler.save(root);
 
 		commandRoot.appendChild(root);
 
 		// save through game
 		getComms().send(commandRoot);
-		_log("*** CABAL: finished saving quickmatch settings and player data", 1);
+		_log("** CABAL: finished saving quickmatch settings and player data", 1);
 	}
 
 	// --------------------------------------------
 	void load() {
-		_log("*** CABAL: (quickmatch) loading metagame", 1);
+		_log("** CABAL: (quickmatch) loading metagame", 1);
 
 		XmlElement@ query = XmlElement(
 			makeQuery(this, array<dictionary> = {
@@ -135,7 +135,7 @@ class Cabal : GameMode {
 			m_userSettings.print();
 
 			// load saved quickmatch data
-			ResourceLifecycleHandler::load(root);
+			m_resourceLifecycleHandler.load(root);
 			_log("loaded", 1);
 		} else {
 			_log("load failed");
