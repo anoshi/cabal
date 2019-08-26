@@ -14,7 +14,7 @@ class ResourceLifecycleHandler : Tracker {
 	protected array<string> m_playersSpawned;			// stores the unique 'hash' for each active player
 	protected array<int> m_playerLives = {3,3};			// players 1 and 2 have 3 lives each
 	protected array<float> m_playerScore = {0.0, 0.0};	// players 1 and 2 start with no XP
-	protected int playerCoins = 3; 						// coins on hand / restart level attempts left
+	protected int playerCoins = 0; 						// no continues / restarts in quickmatch
 
     protected float m_localPlayerCheckTimer;
     protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
@@ -34,7 +34,7 @@ class ResourceLifecycleHandler : Tracker {
 		@m_metagame = @metagame;
 		levelComplete = false;
 		gameOver = false;
-        // enable character_die tracking for cabal game mode (off by default)
+        // enable character_kill tracking for cabal game mode (off by default)
         string trackCharKill = "<command class='set_metagame_event' name='character_kill' enabled='1' />";
 		m_metagame.getComms().send(trackCharKill);
 	}
