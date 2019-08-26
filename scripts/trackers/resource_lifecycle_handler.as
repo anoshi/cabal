@@ -488,7 +488,7 @@ class ResourceLifecycleHandler : Tracker {
 
 	// --------------------------------------------
 	protected void saveQuickmatchData(XmlElement@ quickmatchData) {
-		// writes <quickmatchData> section to savegames/quickmatch[0-999].save/metagame_invasion.xml
+		// writes <quickmatchData> section to savegames/quickie[0-999].save/metagame_invasion.xml
 		bool doSave = true;
 		_log("** CABAL: saving quickmatchData to metagame_invasion.xml", 1);
 
