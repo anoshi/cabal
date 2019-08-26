@@ -33,6 +33,8 @@ class Cabal : GameMode {
 	void init() {
 		GameMode::init();
 
+		setupResourceLifecycle();
+
 		if (m_userSettings.m_continue) {
 			// loading a saved game?
 			load();
@@ -62,6 +64,11 @@ class Cabal : GameMode {
 	// --------------------------------------------
 	protected void startMatch() {
 		// TODO: derive and implement
+	}
+
+	// --------------------------------------------
+	protected void setupResourceLifecycle() {
+		@m_resourceLifecycleHandler = ResourceLifecycleHandler(this);
 	}
 
 	// --------------------------------------------
@@ -136,7 +143,7 @@ class Cabal : GameMode {
 
 			// load saved quickmatch data
 			m_resourceLifecycleHandler.load(root);
-			_log("loaded", 1);
+			_log("** CABAL: quickmatch load complete", 1);
 		} else {
 			_log("load failed");
 		}
