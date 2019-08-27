@@ -31,7 +31,7 @@
     <inventory encumbrance="10.0" price="2.0" />
 
     <weak_hand_hold offset="0.2" />
-    <projectile file="player_bullet_short.projectile">
+    <projectile file="player_bullet.projectile">
     </projectile>
 
     <modifier class="speed" value="-0.02" />

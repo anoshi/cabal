@@ -37,7 +37,7 @@
 
     <weak_hand_hold offset="0.0" />
     <projectile file="player_bullet.projectile">
-        <trail key="player_bullet_short" />
+        <trail key="player_bullet" />
     </projectile>
     <modifier class="speed" value="-0.018" />
 </weapon>

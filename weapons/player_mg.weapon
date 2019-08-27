@@ -45,7 +45,7 @@
     <inventory encumbrance="18.0" price="2.0" in_stock="0"/>
 
     <weak_hand_hold offset="0.4" />
-    <projectile file="player_bullet_short.projectile">
+    <projectile file="player_bullet.projectile">
     </projectile>
 
     <capacity value="1" source="rank" source_value="0.2" />
