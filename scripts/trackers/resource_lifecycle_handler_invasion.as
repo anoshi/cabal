@@ -44,6 +44,32 @@ class ResourceLifecycleHandler : Tracker {
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
 		_log("** CABAL: player_manager processing Player connect request", 1);
 
+	// TagName=player_connect_event
+	// TagName=player
+	// color=0.595 0.476 0 1
+	// faction_id=0
+	// ip=117.20.69.32
+	// name=ANOSHI
+	// player_id=2
+	// port=30664
+	// profile_hash=ID2771290503
+	// sid=ID10435653
+
+	// TagName=player_spawn
+	// TagName=player
+	// aim_target=0 0 0
+	// character_id=74
+	// color=0.595 0.476 0 1
+	// faction_id=0
+	// ip=117.20.69.32
+	// name=ANOSHI
+	// player_id=2
+	// port=30664
+	// profile_hash=ID2771290503
+	// sid=ID10435653
+
+		// get his hash, add to m_playersSpawned array
+
 	}
 
 	// -----------------------------------------------------------

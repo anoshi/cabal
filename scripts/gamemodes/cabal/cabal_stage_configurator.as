@@ -135,12 +135,12 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		return null;
 	}
 
-	void onLobbyClientAcceptHandlerCompleted() {
-		m_metagame.getPlayerManager().setupFromCurrentState();
-		// trigger map change
-		// lobby has only friendly faction, enough to set them won
-		m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
-	}
+	// void onLobbyClientAcceptHandlerCompleted() {
+	// 	m_metagame.getPlayerManager().setupFromCurrentState();
+	// 	// trigger map change
+	// 	// lobby has only friendly faction, enough to set them won
+	// 	m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
+	// }
 
 	/*
 	// ------------------------------------------------------------------------------------------------

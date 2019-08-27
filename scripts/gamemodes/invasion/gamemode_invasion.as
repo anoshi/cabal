@@ -23,7 +23,7 @@ class GameModeInvasion : GameMode {
 
 	protected CabalUserSettings@ m_userSettings;
 	protected ResourceLifecycleHandler@ m_resourceLifecycleHandler;
-	protected PlayerManager@ m_playerManager;
+	//protected PlayerManager@ m_playerManager;
 
 	// --------------------------------------------
 	GameModeInvasion(CabalUserSettings@ settings) {
@@ -89,17 +89,17 @@ class GameModeInvasion : GameMode {
 		return m_userSettings;
 	}
 
-	// cabal dedicated server only
-	// --------------------------------------------
-	protected void setupPlayerManager() {
-		@m_playerManager = PlayerManager(this);
-	}
+	// // cabal dedicated server only
+	// // --------------------------------------------
+	// protected void setupPlayerManager() {
+	// 	@m_playerManager = PlayerManager(this);
+	// }
 
-	// --------------------------------------------
-	PlayerManager@ getPlayerManager() const {
-		return m_playerManager;
-	}
-	// end cabal dedicated server only
+	// // --------------------------------------------
+	// PlayerManager@ getPlayerManager() const {
+	// 	return m_playerManager;
+	// }
+	// // end cabal dedicated server only
 
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle is about to start
@@ -130,8 +130,8 @@ class GameModeInvasion : GameMode {
 		//addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
 		addTracker(CabalSpawner(this));
 
-		// multiplayer handler
-		addTracker(PlayerManager(this));
+		// // multiplayer handler
+		// addTracker(PlayerManager(this));
 
 		for (uint i = 0; i < m_factions.size(); ++i) {
 			if (i != 0) {
