@@ -88,10 +88,10 @@ class ResourceLifecycleHandler : Tracker {
 			//}
 			switch (m_playersSpawned.find(playerHash)) {
 				case 0:
-					setPlayerInventory(m_metagame, characterId, "player_blue.carry_item");
+					setPlayerInventory(m_metagame, characterId, "player_blue.carry_item", m_playerLives[0]);
 					break;
 				case 1:
-					setPlayerInventory(m_metagame, characterId, "player_red.carry_item");
+					setPlayerInventory(m_metagame, characterId, "player_red.carry_item", m_playerLives[1]);
 					break;
 				default: // shouldn't ever get here, but sanity
 					_log("** CABAL: WARNING existing player spanwed but profile hash not stored in m_playersSpawned array", 1);

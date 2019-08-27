@@ -52,22 +52,22 @@ array<const XmlElement@>@ getVehiclesNearPosition(const Metagame@ metagame, cons
 	return vehNearPos;
 }
 
-void setPlayerInventory(const Metagame@ metagame, int characterId, string vest) {
+void setPlayerInventory(const Metagame@ metagame, int characterId, string vest, int numVests) {
 	// assign / override equipment to player character
-	_log("** CABAL: Equipping player (id: " + characterId + ") with " + vest, 1);
-	XmlElement charInv("command");
-	charInv.setStringAttribute("class", "update_inventory");
-
-	charInv.setIntAttribute("character_id", characterId);
-	charInv.setIntAttribute("container_type_id", 4); // vest
-	{
+	_log("** CABAL: Equipping player (id: " + characterId + ") with " + vest + " x" + numVests, 1);
+	for (uint j = numVests; j > 0; --j) {
+		XmlElement charInv("command");
+		charInv.setStringAttribute("class", "update_inventory");
+		charInv.setIntAttribute("character_id", characterId);
+		charInv.setIntAttribute("container_type_id", 4); // vest
 		XmlElement i("item");
 		i.setStringAttribute("class", "carry_item");
 		i.setStringAttribute("key", vest);
 		charInv.appendChild(i);
+		metagame.getComms().send(charInv);
 	}
-	metagame.getComms().send(charInv);
-	_log("** CABAL: " + vest + " equipped on character " + characterId, 1);
+
+	_log("** CABAL: " + vest + " equipped on character " + characterId + ". " + (numVests - 1) + " more added to backpack" , 1);
 }
 
 string curStage;
