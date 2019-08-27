@@ -8,7 +8,6 @@
 #include "cabal_stage_configurator.as"
 #include "resource_lifecycle_handler_invasion.as"
 #include "cabal_spawner_invasion.as"
-//#include "player_manager.as"
 
 // generic trackers
 #include "basic_command_handler.as"
@@ -23,7 +22,6 @@ class GameModeInvasion : GameMode {
 
 	protected CabalUserSettings@ m_userSettings;
 	protected ResourceLifecycleHandler@ m_resourceLifecycleHandler;
-	//protected PlayerManager@ m_playerManager;
 
 	// --------------------------------------------
 	GameModeInvasion(CabalUserSettings@ settings) {
@@ -37,7 +35,6 @@ class GameModeInvasion : GameMode {
 		GameMode::init();
 
 		setupMapRotator();
-		// setupPlayerManager(); // cabal dedicated server only
 		setupResourceLifecycle();
 
 		if (m_userSettings.m_continue) {
@@ -89,18 +86,6 @@ class GameModeInvasion : GameMode {
 		return m_userSettings;
 	}
 
-	// // cabal dedicated server only
-	// // --------------------------------------------
-	// protected void setupPlayerManager() {
-	// 	@m_playerManager = PlayerManager(this);
-	// }
-
-	// // --------------------------------------------
-	// PlayerManager@ getPlayerManager() const {
-	// 	return m_playerManager;
-	// }
-	// // end cabal dedicated server only
-
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle is about to start
 	void preBeginMatch() {
@@ -129,9 +114,6 @@ class GameModeInvasion : GameMode {
 		addTracker(m_resourceLifecycleHandler);
 		//addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
 		addTracker(CabalSpawner(this));
-
-		// // multiplayer handler
-		// addTracker(PlayerManager(this));
 
 		for (uint i = 0; i < m_factions.size(); ++i) {
 			if (i != 0) {

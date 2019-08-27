@@ -1,9 +1,7 @@
 // gamemode specific
-//#include "lobby_client_accept_handler.as"
 #include "faction_config.as"
 #include "stage_configurator.as"
 #include "cabal_stage.as"
-//#include "player_manager.as"
 
 // ------------------------------------------------------------------------------------------------
 class CabalStageConfigurator : StageConfigurator {
@@ -134,47 +132,6 @@ class CabalStageConfigurator : StageConfigurator {
 		// currently not in use in invasion
 		return null;
 	}
-
-	// void onLobbyClientAcceptHandlerCompleted() {
-	// 	m_metagame.getPlayerManager().setupFromCurrentState();
-	// 	// trigger map change
-	// 	// lobby has only friendly faction, enough to set them won
-	// 	m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
-	// }
-
-	/*
-	// ------------------------------------------------------------------------------------------------
-	protected Stage@ setupLobby() {
-		StageMVSW@ stage = createStage();
-		stage.m_mapInfo.m_name = "Lobby";
-		stage.m_mapInfo.m_path = "media/packages/man_vs_world_mp/maps/lobby_2p";
-		stage.m_mapInfo.m_id = "lobby_2p";
-
-	    stage.m_includeLayers.insertLast("bases.manvsworld");
-		stage.m_includeLayers.insertLast("layer1.manvsworld");
-
-		// - LobbyClientAcceptHandlerListener is notified when the client(s) are accepted by the hosting player
-		// - something in the script should save and remember player profiles on that moment
-		// - that same something should pay attention to profiles connecting that if not within the list,
-		//   they need to be kicked
-		// - also map change should trigger
-
-		stage.addTracker(LobbyClientAcceptHandler(m_metagame, m_metagame.getUserSettings().m_maxPlayers, this));
-
-		stage.m_maxSoldiers = 1;
-
-		{
-			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0));
-			f.m_overCapacity = 0;
-			f.m_capacityOffset = 1;
-			f.m_capacityMultiplier = 0.0001;
-			f.m_bases = 1;
-			stage.m_factions.insertLast(f);
-		}
-
-		return stage;
-	}
-	*/
 
 	// ------------------------------------------------------------------------------------------------
 	protected Stage@ setupStage1() {

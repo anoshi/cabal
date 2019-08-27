@@ -42,47 +42,60 @@ class ResourceLifecycleHandler : Tracker {
 	// PLAYER CHARACTER LIFECYCLES //
 	/////////////////////////////////
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
-		_log("** CABAL: player_manager processing Player connect request", 1);
+		// TagName=player_connect_event
+		// TagName=player
+		// color=0.595 0.476 0 1
+		// faction_id=0
+		// ip=117.20.69.32
+		// name=ANOSHI
+		// player_id=2
+		// port=30664
+		// profile_hash=ID<10_numbers>
+		// sid=ID<8_numbers>
 
-	// TagName=player_connect_event
-	// TagName=player
-	// color=0.595 0.476 0 1
-	// faction_id=0
-	// ip=117.20.69.32
-	// name=ANOSHI
-	// player_id=2
-	// port=30664
-	// profile_hash=ID2771290503
-	// sid=ID10435653
+		_log("** CABAL: Processing Player connect request", 1);
 
-	// TagName=player_spawn
-	// TagName=player
-	// aim_target=0 0 0
-	// character_id=74
-	// color=0.595 0.476 0 1
-	// faction_id=0
-	// ip=117.20.69.32
-	// name=ANOSHI
-	// player_id=2
-	// port=30664
-	// profile_hash=ID2771290503
-	// sid=ID10435653
+		// disallow player spawns while we prepare the playing field...
+		XmlElement preventSpawn("command");
+		preventSpawn.setStringAttribute("class", "set_soldier_spawn");
+		preventSpawn.setIntAttribute("faction_id", 0);
+		preventSpawn.setBoolAttribute("enabled", false);
+		m_metagame.getComms().send(preventSpawn);
 
-		// get his hash, add to m_playersSpawned array
-
+		const XmlElement@ connector = event.getFirstElementByTagName("player");
+		string connectorHash = connector.getStringAttribute("profile_hash");
+		if (m_playersSpawned.find(connectorHash) < 0) {
+			_log("** CABAL: known player rejoining", 1);
+			// kill bads near spawn
+			clearSpawnArea();
+		} else if (int(m_playersSpawned.size()) < m_metagame.getUserSettings().m_maxPlayers) {
+			_log("** CABAL: we still have room in server", 1);
+			m_playersSpawned.insertLast(connectorHash);
+			clearSpawnArea();
+		}
 	}
 
 	// -----------------------------------------------------------
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
+		// TagName=player_spawn
+		// TagName=player
+		// aim_target=0 0 0
+		// character_id=74
+		// color=0.595 0.476 0 1
+		// faction_id=0
+		// ip=117.20.69.32
+		// name=ANOSHI
+		// player_id=2
+		// port=30664
+		// profile_hash=ID<10_numbers>
+		// sid=ID<8_numbers>
+
 		_log("** CABAL: ResourceLifecycleHandler::handlePlayerSpawnEvent", 1);
 
 		if (curXP < goalXP) {
 			levelComplete = false;
 			_log("** CABAL: Player spawning on incomplete level.", 1);
 		}
-
-		// how can this be improved to support 2-player co-op play?
-		// currently falls apart if a second player were to spawn.
 
 		/* Alpha 0.1.1
 		// when the player spawns, he spawns alone...
@@ -185,60 +198,57 @@ class ResourceLifecycleHandler : Tracker {
 			m_metagame.save();
 		}
 
+	}
+
+	protected void clearSpawnArea() {
 		// player can't respawn if enemies are within ~70.0 units of the intended base. Need to forcibly remove enemy
 		// units from player's base area...
 		// We're about to kill a lot of people. Stop character_kill tracking for the moment
 		string trackCharKillOff = "<command class='set_metagame_event' name='character_kill' enabled='0' />";
 		m_metagame.getComms().send(trackCharKillOff);
-		// kill enemies anywhere near player to allow respawn
-		const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerCharId);
-		if (characterInfo !is null) {
-			_log("** CABAL: Killing enemies near dead player character", 1);
-			Vector3 position = stringToVector3(characterInfo.getStringAttribute("position"));
+		// kill enemies anywhere near player base to allow respawn
+		Vector3 position = stringToVector3("538 0 615"); // TODO use base position instead of dodgy hard-code
 
-			// make an array of Xml Elements that stores affected enemy unit stats
-			// TagName =character, id=xx (99)
-			array<const XmlElement@> exchEnemies = getCharactersNearPosition(m_metagame, position, 1, 80.0f);
-			int exchEnemiesCount = exchEnemies.size();
-			// rewrite as new array where the position of each enemy has +70 to Z axis
-			// or just get the size of the array, then queue that many random enemy respawns shortly
+		// make an array of Xml Elements that stores affected enemy units
+		array<const XmlElement@> exchEnemies = getCharactersNearPosition(m_metagame, position, 1, 80.0f);
+		int exchEnemiesCount = exchEnemies.size();
 
-			// improve?: apply invisi-vest to characters in the kill zone to make them disappear, then kill them
-			killCharactersNearPosition(m_metagame, position, 1, 80.0f); // kill faction 1 (cabal)
+		// improve?: apply invisi-vest to characters in the kill zone to make them disappear, then kill them
+		killCharactersNearPosition(m_metagame, position, 1, 80.0f); // kill faction 1 (cabal)
 
-			// spawn enemies to replace the exchEnemies
-			_log("** CABAL: Respawning " + exchEnemiesCount + " replacement enemy units.", 1);
-			string randKey = ''; // random character 'Key' name
+		// spawn enemies to replace the exchEnemies
+		_log("** CABAL: Respawning " + exchEnemiesCount + " replacement enemy units.", 1);
+		string randKey = ''; // random character 'Key' name
 
-			float retX = position.get_opIndex(0);
-			float retY = position.get_opIndex(1);
-			float retZ = position.get_opIndex(2) - 90.0;
-			string randPos = Vector3(retX, retY, retZ).toString(); // spawns all replacements in same place...
-			for (int k = 0; k < exchEnemiesCount; ++k) {
-				switch( rand(0, 5) )
-					{ // 5 types of enemy units, weighted to return more base level soldiers
-					case 0 :
-					case 1 :
-						randKey = "rifleman";
-						break;
-					case 2 :
-					case 3 :
-						randKey = "grenadier";
-						break;
-					case 4 :
-						randKey = "covert_ops";
-						break;
-					case 5 :
-						randKey = "commando";
-						break;
-					default:
-						randKey = "rifleman";
-					}
-				string spawnReps = "<command class='create_instance' faction_id='1' position='" + randPos + "' instance_class='character' instance_key='" + randKey + "' /></command>";
-				m_metagame.getComms().send(spawnReps);
-				_log("** CABAL: Spawned a character at " + randPos, 1);
-			}
+		float retX = position.get_opIndex(0);
+		float retY = position.get_opIndex(1);
+		float retZ = position.get_opIndex(2) - 90.0;
+		string randPos = Vector3(retX, retY, retZ).toString(); // spawns all replacements in same place...
+		for (int k = 0; k < exchEnemiesCount; ++k) {
+			switch( rand(0, 5) )
+				{ // 5 types of enemy units, weighted to return more base level soldiers
+				case 0 :
+				case 1 :
+					randKey = "rifleman";
+					break;
+				case 2 :
+				case 3 :
+					randKey = "grenadier";
+					break;
+				case 4 :
+					randKey = "covert_ops";
+					break;
+				case 5 :
+					randKey = "commando";
+					break;
+				default:
+					randKey = "rifleman";
+				}
+			string spawnReps = "<command class='create_instance' faction_id='1' position='" + randPos + "' instance_class='character' instance_key='" + randKey + "' /></command>";
+			m_metagame.getComms().send(spawnReps);
+			_log("** CABAL: Spawned a character at " + randPos, 1);
 		}
+
 		// Reenable character_kill tracking
 		string trackCharKillOn = "<command class='set_metagame_event' name='character_kill' enabled='1' />";
 		m_metagame.getComms().send(trackCharKillOn);
