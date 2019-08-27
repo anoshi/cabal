@@ -272,6 +272,10 @@ class ResourceLifecycleHandler : Tracker {
 
 		_log("** CABAL: ResourceLifecycleHandler::handleCharacterKillEvent", 1);
 
+		// we are manually playing death sounds when an AI unit has been killed.
+		string soundFilename = "die" + rand(1,7) + ".wav";
+		playSound(m_metagame, soundFilename, 0);
+
 		const XmlElement@ killerInfo = event.getFirstElementByTagName("killer");
 		if (killerInfo is null) {
 			_log("** CABAL: Can't determine killer. Ignoring death", 1);
