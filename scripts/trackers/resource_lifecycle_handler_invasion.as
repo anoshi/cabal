@@ -13,7 +13,7 @@ class ResourceLifecycleHandler : Tracker {
 
 	protected int m_playerCharacterId;
 	protected array<string> m_playersSpawned;			// stores the unique 'hash' for each active player
-	protected array<int> m_playerLives = {3,3};			// players 1 and 2 have 3 lives each
+	protected array<uint> m_playerLives = {3,3};		// players 1 and 2 start with 3 lives each
 	protected array<float> m_playerScore = {0.0, 0.0};	// players 1 and 2 start with no XP
 	protected int playerCoins = 3; 						// coins on hand / restart level attempts left
 
@@ -171,7 +171,9 @@ class ResourceLifecycleHandler : Tracker {
 			case 0 :
 			case 1 :
 				_log("** CABAL: Player " + (playerNum + 1) + " lost a life!", 1);
-				m_playerLives[playerNum] -= 1;
+				if (m_playerLives[playerNum] > 0) {
+					m_playerLives[playerNum] -= 1;
+				}
 				_log("** CABAL: Player " + (playerNum + 1) + " still has " + (playerNum > 0 ? m_playerLives[1] : m_playerLives[0]) + " lives available.", 1);
 				break;
 			default :
@@ -200,6 +202,7 @@ class ResourceLifecycleHandler : Tracker {
 		}
 	}
 
+	// --------------------------------------------
 	protected void clearSpawnArea() {
 		// player can't respawn if enemies are within ~70.0 units of the intended base. Need to forcibly remove enemy
 		// units from player's base area...

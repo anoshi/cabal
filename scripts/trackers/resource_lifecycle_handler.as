@@ -12,7 +12,7 @@ class ResourceLifecycleHandler : Tracker {
 
 	protected int m_playerCharacterId;
 	protected array<string> m_playersSpawned;			// stores the unique 'hash' for each active player
-	protected array<int> m_playerLives = {3,3};			// players 1 and 2 have 3 lives each
+	protected array<uint> m_playerLives = {3,3};		// players 1 and 2 start with 3 lives each
 	protected array<float> m_playerScore = {0.0, 0.0};	// players 1 and 2 start with no XP
 	protected int playerCoins = 0; 						// no continues / restarts in quickmatch
 
@@ -45,6 +45,24 @@ class ResourceLifecycleHandler : Tracker {
 	protected void handlePlayerConnectEvent(const XmlElement@ event) {
 		_log("** CABAL: Processing Player connect request", 1);
 
+		// disallow player spawns while we prepare the playing field...
+		XmlElement preventSpawn("command");
+		preventSpawn.setStringAttribute("class", "set_soldier_spawn");
+		preventSpawn.setIntAttribute("faction_id", 0);
+		preventSpawn.setBoolAttribute("enabled", false);
+		m_metagame.getComms().send(preventSpawn);
+
+		const XmlElement@ connector = event.getFirstElementByTagName("player");
+		string connectorHash = connector.getStringAttribute("profile_hash");
+		if (m_playersSpawned.find(connectorHash) < 0) {
+			_log("** CABAL: known player rejoining", 1);
+			// kill bads near spawn
+			clearSpawnArea();
+		} else if (int(m_playersSpawned.size()) < 2) {
+			_log("** CABAL: we still have room in server", 1);
+			m_playersSpawned.insertLast(connectorHash);
+			clearSpawnArea();
+		}
 	}
 
 	// -----------------------------------------------------------
@@ -55,9 +73,6 @@ class ResourceLifecycleHandler : Tracker {
 			levelComplete = false;
 			_log("** CABAL: Player spawning on incomplete level.", 1);
 		}
-
-		// how can this be improved to support 2-player co-op play?
-		// currently falls apart if a second player were to spawn.
 
 		// when the player spawns, he spawns alone...
 		XmlElement c("command");
@@ -131,7 +146,9 @@ class ResourceLifecycleHandler : Tracker {
 			case 0 :
 			case 1 :
 				_log("** CABAL: Player " + (playerNum + 1) + " lost a life!", 1);
-				m_playerLives[playerNum] -= 1;
+				if (m_playerLives[playerNum] > 0) {
+					m_playerLives[playerNum] -= 1;
+				}
 				_log("** CABAL: Player " + (playerNum + 1) + " still has " + (playerNum > 0 ? m_playerLives[1] : m_playerLives[0]) + " lives available.", 1);
 				break;
 			default :
@@ -156,22 +173,60 @@ class ResourceLifecycleHandler : Tracker {
 		} else {
 			_log("** CABAL: Saving Game", 1);
 			m_metagame.save();
+			clearSpawnArea();
 		}
+	}
 
+	// --------------------------------------------
+	protected void clearSpawnArea() {
 		// player can't respawn if enemies are within ~70.0 units of the intended base. Need to forcibly remove enemy
 		// units from player's base area...
 		// We're about to kill a lot of people. Stop character_kill tracking for the moment
 		string trackCharKillOff = "<command class='set_metagame_event' name='character_kill' enabled='0' />";
 		m_metagame.getComms().send(trackCharKillOff);
-		// kill enemies anywhere near player to allow respawn
+		// kill enemies anywhere near player base to allow respawn
+		Vector3 position = stringToVector3("538 0 615"); // TODO use base position instead of dodgy hard-code
 
-		// THIS CAN BE IMPROVED - we don't care where the player is, we simply need to make room around the spawn points.
-		const XmlElement@ characterInfo = getCharacterInfo(m_metagame, playerCharId);
-		if (characterInfo !is null) {
-			_log("** CABAL: Killing enemies near dead player character", 1);
-			Vector3 position = stringToVector3(characterInfo.getStringAttribute("position"));
-			killCharactersNearPosition(m_metagame, position, 1, 100.0f); // kill faction 1 (cabal)
+		// make an array of Xml Elements that stores affected enemy units
+		array<const XmlElement@> exchEnemies = getCharactersNearPosition(m_metagame, position, 1, 80.0f);
+		int exchEnemiesCount = exchEnemies.size();
+
+		// improve?: apply invisi-vest to characters in the kill zone to make them disappear, then kill them
+		killCharactersNearPosition(m_metagame, position, 1, 80.0f); // kill faction 1 (cabal)
+
+		// spawn enemies to replace the exchEnemies
+		_log("** CABAL: Respawning " + exchEnemiesCount + " replacement enemy units.", 1);
+		string randKey = ''; // random character 'Key' name
+
+		float retX = position.get_opIndex(0);
+		float retY = position.get_opIndex(1);
+		float retZ = position.get_opIndex(2) - 90.0;
+		string randPos = Vector3(retX, retY, retZ).toString(); // spawns all replacements in same place...
+		for (int k = 0; k < exchEnemiesCount; ++k) {
+			switch( rand(0, 5) )
+				{ // 5 types of enemy units, weighted to return more base level soldiers
+				case 0 :
+				case 1 :
+					randKey = "rifleman";
+					break;
+				case 2 :
+				case 3 :
+					randKey = "grenadier";
+					break;
+				case 4 :
+					randKey = "covert_ops";
+					break;
+				case 5 :
+					randKey = "commando";
+					break;
+				default:
+					randKey = "rifleman";
+				}
+			string spawnReps = "<command class='create_instance' faction_id='1' position='" + randPos + "' instance_class='character' instance_key='" + randKey + "' /></command>";
+			m_metagame.getComms().send(spawnReps);
+			_log("** CABAL: Spawned a character at " + randPos, 1);
 		}
+
 		// Reenable character_kill tracking
 		string trackCharKillOn = "<command class='set_metagame_event' name='character_kill' enabled='1' />";
 		m_metagame.getComms().send(trackCharKillOn);
@@ -338,7 +393,7 @@ class ResourceLifecycleHandler : Tracker {
 			int playerKiller = killerInfo.getIntAttribute("player_id");
 			_log("** CABAL: playerKiller ID is: " + playerKiller, 1);
 			float xp = targetInfo.getFloatAttribute("xp");
-			if (playerKiller >= 0) {
+			if ((playerKiller >= 0) && (playerKiller < 2)) {
 				awardXP(playerKiller, xp);
 			}
 		} else { _log("** CABAL: killer name is " + killerInfo.getStringAttribute("name")); }

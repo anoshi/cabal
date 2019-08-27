@@ -52,9 +52,10 @@ array<const XmlElement@>@ getVehiclesNearPosition(const Metagame@ metagame, cons
 	return vehNearPos;
 }
 
-void setPlayerInventory(const Metagame@ metagame, int characterId, string vest, int numVests) {
+void setPlayerInventory(const Metagame@ metagame, int characterId, string vest, uint numVests) {
 	// assign / override equipment to player character
 	_log("** CABAL: Equipping player (id: " + characterId + ") with " + vest + " x" + numVests, 1);
+	if (numVests < 1) { return; } // sanity
 	for (uint j = numVests; j > 0; --j) {
 		XmlElement charInv("command");
 		charInv.setStringAttribute("class", "update_inventory");
