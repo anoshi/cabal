@@ -37,7 +37,7 @@ class GameModeInvasion : GameMode {
 		GameMode::init();
 
 		setupMapRotator();
-		setupPlayerManager(); // cabal dedicated server only
+		// setupPlayerManager(); // cabal dedicated server only
 		setupResourceLifecycle();
 
 		if (m_userSettings.m_continue) {

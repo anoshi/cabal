@@ -6,7 +6,7 @@
 //#include "player_manager.as"
 
 // ------------------------------------------------------------------------------------------------
-class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListener {
+class CabalStageConfigurator : StageConfigurator {
 	protected GameModeInvasion@ m_metagame;
 	protected MapRotatorInvasion@ m_mapRotator;
 
