@@ -196,8 +196,8 @@ class ResourceLifecycleHandler : Tracker {
 		} else {
 			_log("** CABAL: Saving Game", 1);
 			m_metagame.save();
+			clearSpawnArea();
 		}
-
 	}
 
 	protected void clearSpawnArea() {
