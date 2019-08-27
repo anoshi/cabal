@@ -471,11 +471,11 @@ if (rand(1, 100) > 80) {
 	///////////////////
 	// MAP LIFECYCLE //
 	///////////////////
-	protected void approachGoalXP(float charXP) {
+	protected void approachGoalXP(float xp) {
 		if (levelComplete) {
 			return;
 		}
-		curXP += charXP;
+		curXP += xp;
 		int levelCompletePercent = int(curXP / goalXP * 100);
 		_log("** CABAL: current XP is: " + int(curXP) + " of " + int(goalXP), 1);
 		if (levelCompletePercent > 100) { levelCompletePercent = 100; }
@@ -511,24 +511,32 @@ if (rand(1, 100) > 80) {
 	// VEHICLE LIFECYCLES //
 	////////////////////////
 	protected void handleVehicleDestroyEvent(const XmlElement@ event) {
-	// in this game mode, all vehicles spawn a dummy vehicle (with 0 ttl) when destroyed
-	// this allows us to group large numbers of vehicles into sets, and issue rewards according to the vehicle's difficulty
+		// TagName=vehicle_destroyed_event
+		// character_id=75
+		// faction_id=0
+		// owner_id=0
+		// position=559.322 14.6788 618.121
+		// vehicle_key=env_building_1_1_1.vehicle
 
+		// in this game mode, all vehicles spawn a dummy vehicle (with 0 ttl) when destroyed
+		// this allows us to group large numbers of vehicles into sets, and issue rewards according to the vehicle's difficulty
 
-		// we are only interested in the destruction of dummy vehicles
-        if (startsWith(event.getStringAttribute("vehicle_key"), "dummy_")) {
-            _log("** CABAL: DummyVehicleHandler going to work!", 1);
-			if (event.getIntAttribute("owner_id") == 0) { return; } // don't care about player's faction vehicles.
-			// variablise attributes
-			string vehKey = event.getStringAttribute("vehicle_key");
-			string vehPosi = event.getStringAttribute("position");
-            Vector3 v3Posi = stringToVector3(vehPosi);
+		// we are only interested in the destruction of 'env_building_*' buildings
+        if (!startsWith(event.getStringAttribute("vehicle_key"), "env_building_")) {
+			return;
+		}
+		_log("** CABAL: VehicleHandler going to work!", 1);
+		// variablise attributes
+		string vehKey = event.getStringAttribute("vehicle_key");
+		int playerCharId = event.getIntAttribute("character_id");
+		const XmlElement@ playerCharInfo = getCharacterInfo(m_metagame, playerCharId);
 
-			// identify the dummy vehicle and process accordingly
-            if (vehKey == "dummy_next.vehicle") {
-				// do stuff
-			} // etc.
-        }
+		// identify the dummy vehicle and process accordingly
+		if (vehKey == "env_building_1_1_1.vehicle") {
+			_log("** CABAL: 1x1x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.4);
+			// awardXP(playerKiller, xp);
+		}
     }
 
 	// --------------------------------------------
