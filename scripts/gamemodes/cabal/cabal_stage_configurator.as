@@ -1,9 +1,9 @@
 // gamemode specific
-#include "lobby_client_accept_handler.as"
+//#include "lobby_client_accept_handler.as"
 #include "faction_config.as"
 #include "stage_configurator.as"
 #include "cabal_stage.as"
-#include "player_manager.as"
+//#include "player_manager.as"
 
 // ------------------------------------------------------------------------------------------------
 class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListener {

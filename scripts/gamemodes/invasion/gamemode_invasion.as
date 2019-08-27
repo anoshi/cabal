@@ -8,7 +8,7 @@
 #include "cabal_stage_configurator.as"
 #include "resource_lifecycle_handler_invasion.as"
 #include "cabal_spawner_invasion.as"
-#include "player_manager.as"
+//#include "player_manager.as"
 
 // generic trackers
 #include "basic_command_handler.as"

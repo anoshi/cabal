@@ -41,6 +41,12 @@ class ResourceLifecycleHandler : Tracker {
 	/////////////////////////////////
 	// PLAYER CHARACTER LIFECYCLES //
 	/////////////////////////////////
+	protected void handlePlayerConnectEvent(const XmlElement@ event) {
+		_log("** CABAL: player_manager processing Player connect request", 1);
+
+	}
+
+	// -----------------------------------------------------------
     protected void handlePlayerSpawnEvent(const XmlElement@ event) {
 		_log("** CABAL: ResourceLifecycleHandler::handlePlayerSpawnEvent", 1);
 
