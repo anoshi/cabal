@@ -4,7 +4,7 @@
 	<!-- faction-specific vehicles (not listed in common.resources) -->
 
 	<!-- faction-specific weapons (not listed in common.resources) -->
-	<weapon key="player_lr.weapon" />
+	<weapon key="player_ar.weapon" />
 	<weapon key="player_sg.weapon" />
 	<weapon key="player_mg.weapon" />
 	<weapon key="player_gl.weapon" />

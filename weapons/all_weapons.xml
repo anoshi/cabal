@@ -3,7 +3,7 @@
   <!-- CABAL weapons -->
 
   <!-- Player weapons -->
-  <weapon file="player_lr.weapon"> <!-- laser rifle -->
+  <weapon file="player_ar.weapon"> <!-- assault rifle -->
     <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_mp.weapon"> <!-- machine pistol -->
@@ -25,7 +25,7 @@
   <!-- end Player weapons -->
 
   <!-- Cabal weapons -->
-  <weapon file="cabal_lr.weapon"> <!-- laser rifle -->
+  <weapon file="cabal_ar.weapon"> <!-- assault rifle -->
     <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="cabal_mg.weapon"> <!-- machine gun -->
@@ -77,22 +77,6 @@
   <weapon file="mg_resource.weapon" >
   <weapon file="technical_mg.weapon" />
   <weapon file="radar_tank_cannon.weapon" />
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.2" value="1" />
-  </weapon>
-  <weapon file="deployable_minig.weapon" />
-  <weapon file="minig_resource.weapon" >
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.2" value="1" />
-  </weapon>
-  <weapon file="deployable_gl.weapon" />
-  <weapon file="gl_resource.weapon" >
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.3" value="1" />
-    <capacity source="rank" source_value="0.5" value="2" />
-  </weapon>
-  <weapon file="mortar.weapon" />
-  <weapon file="mortar_resource.weapon" >
     <capacity source="rank" source_value="0.0" value="0" />
     <capacity source="rank" source_value="0.2" value="1" />
   </weapon>

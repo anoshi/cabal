@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<projectile class="bullet" name="player_laser_short" slot="1" time_to_live="1.0" radius="4.0" pulldown_in_air="4">
+<projectile class="bullet" name="player_bullet" slot="1" time_to_live="1.0" radius="4.0" pulldown_in_air="4">
     <trigger class="impact" />
     <result class="blast" radius="1.8" damage="0.3" decal="0" character_state="death" faction_compare="not_equal" />
     <rotation class="motion" />
@@ -53,6 +53,6 @@
     <effect class="result" key="static_object" ref="Burst" use_surface_color="1" />
     <effect class="result" key="shield" ref="ShieldBurst" />
 
-    <trail probability="1.0" key="player_laser_short" />
+    <trail probability="1.0" key="player_bullet" />
 
 </projectile>

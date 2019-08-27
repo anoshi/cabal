@@ -434,7 +434,7 @@ if (rand(1, 100) > 80) {
 			} else if (charXP > 0.2) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
 			} else if (charGroup == "rifleman") {
-				dropPowerUp(dropPos.toString(), "weapon", "player_lr.weapon"); // drop laser rifle
+				dropPowerUp(dropPos.toString(), "weapon", "player_ar.weapon"); // drop assault rifle
 			} else if (charGroup == "commando") {
 				dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
 			} // revert to default weapon after X seconds have elapsed...
@@ -511,8 +511,9 @@ if (rand(1, 100) > 80) {
 	// VEHICLE LIFECYCLES //
 	////////////////////////
 	protected void handleVehicleDestroyEvent(const XmlElement@ event) {
-		// in this game mode, all vehicles spawn a dummy vehicle (with 0 ttl) when destroyed
-		// this allows us to group large numbers of vehicles into sets, and issue rewards according to the vehicle's difficulty
+	// in this game mode, all vehicles spawn a dummy vehicle (with 0 ttl) when destroyed
+	// this allows us to group large numbers of vehicles into sets, and issue rewards according to the vehicle's difficulty
+
 
 		// we are only interested in the destruction of dummy vehicles
         if (startsWith(event.getStringAttribute("vehicle_key"), "dummy_")) {

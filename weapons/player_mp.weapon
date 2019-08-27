@@ -42,7 +42,7 @@
     <inventory encumbrance="6.0" price="2.0" />
     <commonness value="0.8" can_respawn_with="1" in_stock="1"/>
 
-    <projectile file="player_laser_short.projectile">
+    <projectile file="player_bullet_short.projectile">
     </projectile>
     <capacity value="1" source="rank" source_value="0.0" />
 

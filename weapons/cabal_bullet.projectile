@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<projectile class="bullet" name="cabal_laser" slot="1" time_to_live="10.0" radius="4.0" pulldown_in_air="0.2">
+<projectile class="bullet" name="cabal_bullet" slot="1" time_to_live="10.0" radius="4.0" pulldown_in_air="0.2">
     <result class="hit" />
     <trigger class="impact" />
     <rotation class="motion" />
 
     <model mesh_filename="40mm.mesh" texture_filename="40mm.png" />
-    <trail probability="1.0" key="cabal_laser" />
+    <trail probability="1.0" key="cabal_bullet" />
 
     <effect class="result" key="terrain" ref="Burst" use_surface_color="1" />
     <effect class="result" key="vehicle" ref="Burst" use_surface_color="1" />

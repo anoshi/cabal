@@ -151,71 +151,19 @@ class BasicCommandHandler : Tracker {
 					"</command>";
 				m_metagame.getComms().send(command);
 			}
-		} else if (checkCommand(message, "create_vehicle")) {
-			spawnInstanceNearPlayer(senderId, "special_cargo_vehicle1.vehicle", "vehicle");
-		} else if (checkCommand(message, "jeep")) {
-			spawnInstanceNearPlayer(senderId, "jeep.vehicle", "vehicle");
 		} else if (checkCommand(message, "barricade")) {
 			spawnInstanceNearPlayer(senderId, "env_barricade.static_object", "static_object");
 		} else if (checkCommand(message, "shield")) {
 			spawnInstanceNearPlayer(senderId, "riot_shield.weapon", "weapon");
-		} else  if(checkCommand(message, "suitcase")) {
-			// .. create suitcase near local player
-			spawnInstanceNearPlayer(senderId, "suitcase.carry_item", "carry_item");
-		} else  if(checkCommand(message, "laptop")) {
-			// .. create laptop near local player
-			spawnInstanceNearPlayer(senderId, "laptop.carry_item", "carry_item");
-		} else  if(checkCommand(message, "c4")) {
-			spawnInstanceNearPlayer(senderId, "c4.projectile", "projectile");
-		} else if (checkCommand(message, "dc")) {
-			spawnInstanceNearPlayer(senderId, "cover_resource.weapon", "weapon");
-		} else if (checkCommand(message, "dgl")) {
-			spawnInstanceNearPlayer(senderId, "gl_resource.weapon", "weapon");
-		} else if (checkCommand(message, "dmg")) {
-			spawnInstanceNearPlayer(senderId, "mg_resource.weapon", "weapon");
-		} else if (checkCommand(message, "dminig")) {
-			spawnInstanceNearPlayer(senderId, "minig_resource.weapon", "weapon");
 		} else if (checkCommand(message, "m72")) {
 			spawnInstanceNearPlayer(senderId, "m72_law.weapon", "weapon");
 			spawnInstanceNearPlayer(senderId, "m72_law.weapon", "weapon");
-			spawnInstanceNearPlayer(senderId, "m72_law.weapon", "weapon");
-			spawnInstanceNearPlayer(senderId, "m72_law.weapon", "weapon");
-		} else if (checkCommand(message, "g36")) {
-			spawnInstanceNearPlayer(senderId, "g36.weapon", "weapon");
-			spawnInstanceNearPlayer(senderId, "g36.weapon", "weapon");
-			spawnInstanceNearPlayer(senderId, "g36.weapon", "weapon");
-			spawnInstanceNearPlayer(senderId, "g36.weapon", "weapon");
-			spawnInstanceNearPlayer(senderId, "g36.weapon", "weapon");
-		} else if (checkCommand(message, "cargo")) {
-			spawnInstanceNearPlayer(senderId, "cargo_truck.vehicle", "vehicle", 1);
-		} else if (checkCommand(message, "tank")) {
-			spawnInstanceNearPlayer(senderId, "tank.vehicle", "vehicle", 0);
-		} else if (checkCommand(message, "apc")) {
-			spawnInstanceNearPlayer(senderId, "apc.vehicle", "vehicle", 0);
-		} else if (checkCommand(message, "tow")) {
-			spawnInstanceNearPlayer(senderId, "tow.vehicle", "vehicle", 1);
-		} else if (checkCommand(message, "teddy")) {
-			spawnInstanceNearPlayer(senderId, "teddy.carry_item", "carry_item", 0);
-		} else if (checkCommand(message, "briefcase")) {
-			spawnInstanceNearPlayer(senderId, "suitcase.carry_item", "carry_item", 0);
+		} else if (checkCommand(message, "rifle")) {
+			spawnInstanceNearPlayer(senderId, "player_ar.weapon", "weapon");
 		} else if (checkCommand(message, "friend")) {
 			spawnInstanceNearPlayer(senderId, "default", "soldier", 0);
 		} else if (checkCommand(message, "foe")) {
-			spawnInstanceNearPlayer(senderId, "default", "soldier", 1);
-		} else if (checkCommand(message, "gb1")) {
-			spawnInstanceNearPlayer(senderId, "gift_box_1.carry_item", "carry_item", 0);
-		} else if (checkCommand(message, "gb2")) {
-			spawnInstanceNearPlayer(senderId, "gift_box_2.carry_item", "carry_item", 0);
-		} else if (checkCommand(message, "gb3")) {
-			spawnInstanceNearPlayer(senderId, "gift_box_3.carry_item", "carry_item", 0);
-		} else if (checkCommand(message, "cb1")) {
-			spawnInstanceNearPlayer(senderId, "gift_box_community_1.carry_item", "carry_item", 0);
-		} else if (checkCommand(message, "cb2")) {
-			spawnInstanceNearPlayer(senderId, "gift_box_community_2.carry_item", "carry_item", 0);
-		} else if (checkCommand(message, "quad")) {
-			spawnInstanceNearPlayer(senderId, "atv_armory.vehicle", "vehicle", 0);
-		} else if (checkCommand(message, "m29")) {
-			spawnInstanceNearPlayer(senderId, "model_29.weapon", "weapon", 0);
+			spawnInstanceNearPlayer(senderId, "rifleman", "soldier", 1);
 		} else if (checkCommand(message, "mg")) {
 			spawnInstanceNearPlayer(senderId, "deployable_mg.vehicle", "vehicle", 0);
 		} else  if(checkCommand(message, "kill_rt")) {
@@ -224,14 +172,6 @@ class BasicCommandHandler : Tracker {
 			destroyAllFactionVehicles(0, "radar_tower.vehicle");
 		} else  if(checkCommand(message, "kill_rj")) {
 			destroyAllEnemyVehicles("radio_jammer.vehicle");
-		} else  if(checkCommand(message, "mustela")) {
-			spawnInstanceNearPlayer(senderId, "wiesel_tow.vehicle", "vehicle", 0);
-		} else  if(checkCommand(message, "mortar")) {
-			spawnInstanceNearPlayer(senderId, "mortar_resource.weapon", "weapon", 0);
-		} else  if(checkCommand(message, "humvee")) {
-			spawnInstanceNearPlayer(senderId, "humvee_gl_para.vehicle", "vehicle", 0);
-		} else  if(checkCommand(message, "javelin")) {
-			spawnInstanceNearPlayer(senderId, "javelin_ap.weapon", "weapon", 0);
 		} else  if(checkCommand(message, "complete_campaign")) {
 			m_metagame.getComms().send("<command class='set_campaign_status' show_stats='1'/>");
 

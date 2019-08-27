@@ -1,4 +1,4 @@
-material cabal_laser
+material player_bullet
 {
 	receive_shadows off
 	technique
@@ -9,11 +9,11 @@ material cabal_laser
 			fog_override true
 
 			depth_write off
-        	scene_blend alpha_blend
+			scene_blend alpha_blend
 
 			texture_unit
 			{
-				texture cabal_laser.png
+				texture player_bullet.png
 			}
 		}
 	}
