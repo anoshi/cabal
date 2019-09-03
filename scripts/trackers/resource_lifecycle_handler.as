@@ -46,11 +46,7 @@ class ResourceLifecycleHandler : Tracker {
 		_log("** CABAL: Processing Player connect request", 1);
 
 		// disallow player spawns while we prepare the playing field...
-		XmlElement preventSpawn("command");
-		preventSpawn.setStringAttribute("class", "set_soldier_spawn");
-		preventSpawn.setIntAttribute("faction_id", 0);
-		preventSpawn.setBoolAttribute("enabled", false);
-		m_metagame.getComms().send(preventSpawn);
+		letPlayerSpawn(false);
 
 		const XmlElement@ connector = event.getFirstElementByTagName("player");
 		string connectorHash = connector.getStringAttribute("profile_hash");
@@ -75,11 +71,7 @@ class ResourceLifecycleHandler : Tracker {
 		}
 
 		// when the player spawns, he spawns alone...
-		XmlElement c("command");
-		c.setStringAttribute("class", "set_soldier_spawn");
-		c.setIntAttribute("faction_id", 0);
-		c.setBoolAttribute("enabled", false);
-		m_metagame.getComms().send(c);
+		letPlayerSpawn(false);
 
 		// now, work with the spawned player character
 		const XmlElement@ player = event.getFirstElementByTagName("player");
@@ -232,11 +224,7 @@ class ResourceLifecycleHandler : Tracker {
 		m_metagame.getComms().send(trackCharKillOn);
 
 		// allow player to respawn
-		XmlElement allowSpawn("command");
-		allowSpawn.setStringAttribute("class", "set_soldier_spawn");
-		allowSpawn.setIntAttribute("faction_id", 0);
-		allowSpawn.setBoolAttribute("enabled", true);
-		m_metagame.getComms().send(allowSpawn);
+		letPlayerSpawn(true);
 	}
 
 	// --------------------------------------------
@@ -246,13 +234,7 @@ class ResourceLifecycleHandler : Tracker {
 		// stop cabal spawning
 		m_metagame.removeTracker(CabalSpawner(m_metagame));
 		// no more respawning allowed
-		{
-			XmlElement c("command");
-			c.setStringAttribute("class", "set_soldier_spawn");
-			c.setIntAttribute("faction_id", 0);
-			c.setBoolAttribute("enabled", false);
-			m_metagame.getComms().send(c);
-		}
+		letPlayerSpawn(false);
 
 		sleep(2.0f); // brief pause before delivering the bad news
 
@@ -280,6 +262,15 @@ class ResourceLifecycleHandler : Tracker {
 				m_localPlayerCheckTimer = LOCAL_PLAYER_CHECK_TIME;
 			}
 		}
+	}
+
+	// --------------------------------------------
+	protected void letPlayerSpawn(bool spawnAllowed) {
+		XmlElement c("command");
+		c.setStringAttribute("class", "set_soldier_spawn");
+		c.setIntAttribute("faction_id", 0);
+		c.setBoolAttribute("enabled", spawnAllowed);
+		m_metagame.getComms().send(c);
 	}
 
 	// --------------------------------------------

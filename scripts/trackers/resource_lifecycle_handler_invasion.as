@@ -46,7 +46,7 @@ class ResourceLifecycleHandler : Tracker {
 		// TagName=player
 		// color=0.595 0.476 0 1
 		// faction_id=0
-		// ip=117.20.69.32
+		// ip=123.120.169.132
 		// name=ANOSHI
 		// player_id=2
 		// port=30664
@@ -56,11 +56,7 @@ class ResourceLifecycleHandler : Tracker {
 		_log("** CABAL: Processing Player connect request", 1);
 
 		// disallow player spawns while we prepare the playing field...
-		XmlElement preventSpawn("command");
-		preventSpawn.setStringAttribute("class", "set_soldier_spawn");
-		preventSpawn.setIntAttribute("faction_id", 0);
-		preventSpawn.setBoolAttribute("enabled", false);
-		m_metagame.getComms().send(preventSpawn);
+		letPlayerSpawn(false);
 
 		const XmlElement@ connector = event.getFirstElementByTagName("player");
 		string connectorHash = connector.getStringAttribute("profile_hash");
@@ -99,11 +95,7 @@ class ResourceLifecycleHandler : Tracker {
 
 		/* Alpha 0.1.1
 		// when the player spawns, he spawns alone...
-		XmlElement c("command");
-		c.setStringAttribute("class", "set_soldier_spawn");
-		c.setIntAttribute("faction_id", 0);
-		c.setBoolAttribute("enabled", false);
-		m_metagame.getComms().send(c);
+		letPlayerSpawn(false);
 		*/
 
 		// now, work with the spawned player character
@@ -174,7 +166,7 @@ class ResourceLifecycleHandler : Tracker {
 				if (m_playerLives[playerNum] > 0) {
 					m_playerLives[playerNum] -= 1;
 				}
-				_log("** CABAL: Player " + (playerNum + 1) + " still has " + (playerNum > 0 ? m_playerLives[1] : m_playerLives[0]) + " lives available.", 1);
+				_log("** CABAL: Player " + (playerNum + 1) + " has " + (playerNum > 0 ? m_playerLives[1] : m_playerLives[0]) + " lives remaining.", 1);
 				break;
 			default :
 				_log("** CABAL: Can't match profile_hash to a dead player character. No lives lost...");
@@ -184,7 +176,7 @@ class ResourceLifecycleHandler : Tracker {
 		// check if any player has any lives remaining
 		for (uint i = 0; i < m_playersSpawned.size(); ++ i) {
 			if (m_playerLives[i] <= 0) {
-				_log("** CABAL: GAME OVER for Player " + (i+1), 1); // can't actually stop them from respawning. All or nothing
+				_log("** CABAL: GAME OVER for Player " + (i+1), 1); // can't actually stop one player from respawning. All or nothing
 			}
 		}
 		if ((m_playersSpawned.size() == 1) && (m_playerLives[0] <= 0)) {
@@ -257,11 +249,7 @@ class ResourceLifecycleHandler : Tracker {
 		m_metagame.getComms().send(trackCharKillOn);
 
 		// allow player to respawn
-		XmlElement allowSpawn("command");
-		allowSpawn.setStringAttribute("class", "set_soldier_spawn");
-		allowSpawn.setIntAttribute("faction_id", 0);
-		allowSpawn.setBoolAttribute("enabled", true);
-		m_metagame.getComms().send(allowSpawn);
+		letPlayerSpawn(true);
 	}
 
 	// --------------------------------------------
@@ -271,13 +259,7 @@ class ResourceLifecycleHandler : Tracker {
 		// stop cabal spawning
 		m_metagame.removeTracker(CabalSpawner(m_metagame));
 		// no more respawning allowed
-		{
-			XmlElement c("command");
-			c.setStringAttribute("class", "set_soldier_spawn");
-			c.setIntAttribute("faction_id", 0);
-			c.setBoolAttribute("enabled", false);
-			m_metagame.getComms().send(c);
-		}
+		letPlayerSpawn(false);
 
 		sleep(2.0f); // brief pause before delivering the bad news
 
@@ -329,6 +311,15 @@ class ResourceLifecycleHandler : Tracker {
 				m_localPlayerCheckTimer = LOCAL_PLAYER_CHECK_TIME;
 			}
 		}
+	}
+
+	// --------------------------------------------
+	protected void letPlayerSpawn(bool spawnAllowed) {
+		XmlElement c("command");
+		c.setStringAttribute("class", "set_soldier_spawn");
+		c.setIntAttribute("faction_id", 0);
+		c.setBoolAttribute("enabled", spawnAllowed);
+		m_metagame.getComms().send(c);
 	}
 
 	// --------------------------------------------
