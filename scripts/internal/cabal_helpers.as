@@ -52,6 +52,22 @@ array<const XmlElement@>@ getVehiclesNearPosition(const Metagame@ metagame, cons
 	return vehNearPos;
 }
 
+const XmlElement@ getPlayerInventory(const Metagame@ metagame, int characterId) {
+	_log("** CABAL: Checking character inventory", 1);
+	XmlElement@ query = XmlElement(
+		makeQuery(metagame, array<dictionary> = {
+			dictionary = {
+				{"TagName", "data"},
+				{"class", "character"},
+				{"id", characterId},
+				{"include_equipment", 1}
+			}
+		})
+	);
+	const XmlElement@ doc = metagame.getComms().query(query);
+	return doc.getFirstElementByTagName("character"); //.getElementsByTagName("item")
+}
+
 void setPlayerInventory(const Metagame@ metagame, int characterId, string vest, uint numVests) {
 	// assign / override equipment to player character
 	_log("** CABAL: Equipping player (id: " + characterId + ") with " + vest + " x" + numVests, 1);
@@ -68,7 +84,7 @@ void setPlayerInventory(const Metagame@ metagame, int characterId, string vest, 
 		metagame.getComms().send(charInv);
 	}
 
-	_log("** CABAL: " + vest + " equipped on character " + characterId + ". " + (numVests - 1) + " more added to backpack" , 1);
+	_log("** CABAL: " + numVests + "x " + vest + " equipped on character " + characterId, 1);
 }
 
 string curStage;

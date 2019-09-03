@@ -5,13 +5,9 @@
 
 	<!-- faction-specific weapons (not listed in common.resources) -->
 	<weapon key="player_ar.weapon" />
-	<weapon key="player_sg.weapon" />
-	<weapon key="player_mg.weapon" />
-	<weapon key="player_gl.weapon" />
-	<weapon key="player_mp.weapon" />
-	<weapon key="player_rl.weapon" />
 
 	<!-- explicitly enable this faction's carry items (listed as disabled in common.resources) -->
+	<carry_item key="player_blank.carry_item" enabled="1" />
 	<carry_item key="player_impervavest.carry_item" enabled="1" />
 	<carry_item key="player_blue.carry_item" enabled="1" />
 	<carry_item key="player_red.carry_item" enabled="1" />

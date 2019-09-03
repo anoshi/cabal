@@ -126,6 +126,7 @@
 		<ai filename="cabal_covertops.ai" />
 		<model filename="cabal_covertops.xml" />
 		<resources file="cabal_rifleman.resources" />
+		<resources file="cabal_armour.resources" />
 
 		<item_class_existence_config>
 			<!-- secondary weapon -->
@@ -185,6 +186,7 @@
 		<ai filename="cabal_commando.ai" />
 		<model filename="cabal_commando.xml" />
 		<resources file="cabal_grenadier.resources" />
+		<resources file="cabal_armour.resources" />
 
 		<item_class_existence_config>
 			<!-- grenade forced as primary via cabal_gl.weapon -->

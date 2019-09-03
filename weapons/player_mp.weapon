@@ -40,7 +40,7 @@
     <model filename="player_smg.xml" />
     <hud_icon filename="hud_steyr_tmp.png" />
     <inventory encumbrance="6.0" price="2.0" />
-    <commonness value="0.8" can_respawn_with="1" in_stock="1"/>
+    <commonness value="0.008" can_respawn_with="0" in_stock="0"/>
 
     <projectile file="player_bullet.projectile">
     </projectile>

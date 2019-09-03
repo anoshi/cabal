@@ -41,7 +41,7 @@
     <model filename="player_mg.xml" />
 
     <hud_icon filename="hud_microgun.png" />
-    <commonness value="0.3" can_respawn_with="0"/>
+    <commonness value="0.003" can_respawn_with="0"/>
     <inventory encumbrance="18.0" price="2.0" in_stock="0"/>
 
     <weak_hand_hold offset="0.4" />

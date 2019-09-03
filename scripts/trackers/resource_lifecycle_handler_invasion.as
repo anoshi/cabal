@@ -119,16 +119,41 @@ class ResourceLifecycleHandler : Tracker {
 				_log("** CABAL: existing player spawned. Equipping coloured vest", 1);
 			}
 
+			// sometimes the player is spawning without a primary weapon.
+			const XmlElement@ pSpawned = getCharacterInfo(m_metagame, characterId);
+			string pPos = pSpawned.getStringAttribute("position");
+			_log("** CABAL: Player Character id: " + m_playerCharacterId + " spawned at: " + pPos + ". Checking Inventory", 1);
+			// get spawned player's inventory
+			const XmlElement@ allInv = getPlayerInventory(m_metagame, characterId);
+			// if no primary weapon (slot=0)
+			array<const XmlElement@> pInv = allInv.getElementsByTagName("item");
+			for (uint slot = 0; slot < pInv.size(); ++slot) {
+				if (pInv[slot].getIntAttribute("slot") == 0) {
+					if (pInv[slot].getStringAttribute("key") == "") {
+						_log("** CABAL: Player spawned without a weapon. Spawning an assault rifle next to player", 1);
+						Vector3 v3playerPos = stringToVector3(pPos);
+						float retX = v3playerPos.get_opIndex(0) + 2.0;
+						float retY = v3playerPos.get_opIndex(1) + 1.0;
+						float retZ = v3playerPos.get_opIndex(2);
+						Vector3 dropPos = Vector3(retX, retY, retZ);
+						dropPowerUp(dropPos.toString(), "weapon", "player_ar.weapon");
+					}
+				}
+			}
+
 			_log("** CABAL: Equipping spawned player with appropriately-coloured vest", 1);
 			// TEST PURPOSES: if cheat enabled, add cheat vest
 			//if (cheatMode) {
 			//	setPlayerInventory(m_metagame, characterId, "player_impervavest.carry_item");
 			//}
 			switch (m_playersSpawned.find(playerHash)) {
+				// replace player's vest with a blank item first to stop stacking on existing player vests
 				case 0:
+					setPlayerInventory(m_metagame, characterId, "player_blank.carry_item", 1);
 					setPlayerInventory(m_metagame, characterId, "player_blue.carry_item", m_playerLives[0]);
 					break;
 				case 1:
+					setPlayerInventory(m_metagame, characterId, "player_blank.carry_item", 1);
 					setPlayerInventory(m_metagame, characterId, "player_red.carry_item", m_playerLives[1]);
 					break;
 				default: // shouldn't ever get here, but sanity
@@ -460,19 +485,18 @@ class ResourceLifecycleHandler : Tracker {
 		if (charLeader == 1) { // artificially bump XP for greater chance of drop and reward when a squad leader dies
 			charXP += 0.1;
 		}
-
-if (rand(1, 100) > 80) {
+		if (rand(1, 100) > 80) {
 			// Group-based drop logic (enemies may drop specific equipment on death)
-			if (charXP > 0.5) {
+			if (charGroup == "rifleman") {
+				return;
+			} else if (charGroup == "commando") {
+				dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
+			} else if (charXP > 0.5) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_mg.weapon"); // drop minigun
 			} else if (charXP > 0.3) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_mp.weapon"); // drop machine pistol
 			} else if (charXP > 0.2) {
 				dropPowerUp(dropPos.toString(), "weapon", "player_sg.weapon"); // drop shotgun
-			} else if (charGroup == "rifleman") {
-				dropPowerUp(dropPos.toString(), "weapon", "player_ar.weapon"); // drop assault rifle
-			} else if (charGroup == "commando") {
-				dropPowerUp(dropPos.toString(), "grenade", "player_grenade.projectile"); // drop grenade
 			} // revert to default weapon after X seconds have elapsed...
 			else {
 				_log("** CABAL: XP too low, Nothing dropped", 1);
@@ -499,8 +523,6 @@ if (rand(1, 100) > 80) {
         string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
         m_metagame.getComms().send(creator);
 		_log("** CABAL: item placed at " + position, 1);
-
-		// ensure all dropped items have a short TTL e.g 5 seconds
         // ensure only player weapons are dropped
 	}
 

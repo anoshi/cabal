@@ -81,7 +81,7 @@
 			<!-- primary -->
 			<item_class_existence class="weapon" slot="0" probability="1.0" />
 			<!-- secondary -->
-			<item_class_existence class="weapon" slot="1" probability="0.4" />
+			<item_class_existence class="weapon" slot="1" probability="0.0" />
 			<!-- grenade -->
 			<item_class_existence class="grenade" slot="0" probability="1.0" />
 			<!-- armour -->

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources clear_weapons="1">
   <weapon key='cabal_ar.weapon' />
 </resources>

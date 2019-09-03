@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="base_primary.weapon" key="player_ar.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="10.0">
+<weapon file="base_primary.weapon" key="player_ar.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="15.0">
     <tag name="assault" />
     <specification
     retrigger_time="0.125"
@@ -32,8 +32,8 @@
     <model filename="assault_rifle2.xml" />
 
     <hud_icon filename="hud_g36.png" />
-    <commonness value="0.725" />
-    <inventory encumbrance="10.0" price="2.0" />
+    <commonness value="10.0" />
+    <inventory encumbrance="10.0" price="0.0" />
 
     <weak_hand_hold offset="0.0" />
     <projectile file="player_bullet.projectile">

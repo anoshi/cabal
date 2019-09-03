@@ -7,13 +7,13 @@
     <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_mp.weapon"> <!-- machine pistol -->
-    <capacity source="rank" source_value="0.01" value="1" />
+    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_mg.weapon"> <!-- machine gun -->
-    <capacity source="rank" source_value="0.01" value="1" />
+    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_sg.weapon"> <!-- shotgun -->
-    <capacity source="rank" source_value="0.01" value="1" />
+    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_rl.weapon"> <!-- rocket launcher -->
     <capacity source="rank" source_value="0.01" value="1" />
@@ -70,9 +70,6 @@
   <weapon file="buggy_mg.weapon" />
   <weapon file="humvee_gl.weapon" />
   <weapon file="humvee_mg.weapon"/>
-  <weapon file="patrol_ship_mg.weapon" />
-  <weapon file="patrol_ship_cannon.weapon" />
-  <weapon file="patrol_ship_mortar.weapon" />
   <weapon file="deployable_mg.weapon" />
   <weapon file="mg_resource.weapon" >
   <weapon file="technical_mg.weapon" />
