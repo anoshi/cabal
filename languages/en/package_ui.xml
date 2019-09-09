@@ -6,6 +6,6 @@
   <text key="Difficulty:Professional" text="Professional" />
   <text key="Help:Difficulty:Professional" text="Standard difficulty" />
   <text key="Veteran" text="Veteran" />
-  <text key="Help:Difficulty:Veteran" text="Same as professional but enemies outside the field of vision near your crosshair will be hidden from view!" />
+  <text key="Help:Difficulty:Veteran" text="Cabal weapons are faster and deadlier!" />
   <text key="Continue campaign as new" text="Start new campaign" />
 </ui>

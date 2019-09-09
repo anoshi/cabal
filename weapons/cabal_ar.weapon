@@ -9,7 +9,7 @@
     magazine_size="30"
     can_shoot_standing="1"
     suppressed="0"
-    name="Cabal Laser Rifle"
+    name="Cabal Assault Rifle"
     class="0"
     projectile_speed="18.0"
     burst_shots="1" />

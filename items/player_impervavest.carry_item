@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Player ImpervaVest -->
-<!-- Bullet, Laser, etc. projectile hits have no effect on armour or wearer -->
+<!-- Bullet / projectile hits have no effect on armour or wearer -->
 <!-- Blast damage destroys armour and stuns wearer, however -->
 
 <carry_items>

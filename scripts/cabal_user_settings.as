@@ -48,7 +48,7 @@ class CabalUserSettings : UserSettings {
 				m_enemyAiAccuracyFactor = 0.99;
 				m_xpFactor = 1.0;
 				m_rpFactor = 1.0;
-				m_fov = true;
+				m_fov = false;
 			}
 			if (settings.hasAttribute("continue_as_new_campaign") && settings.getIntAttribute("continue_as_new_campaign") != 0) {
 				m_continueAsNewCampaign = true;

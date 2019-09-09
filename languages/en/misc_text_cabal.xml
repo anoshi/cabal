@@ -22,13 +22,13 @@
 	<text key="Cabal Seventeen"/>
 	<text key="Player ImpervaVest"/>
 	<text key="player_bullet"/>
-	<text key="Laser Rifle"/>
+	<text key="Assault Rifle"/>
 	<text key="Machine Pistol"/>
 	<text key="Shotgun"/>
 	<text key="Rocket Launcher"/>
 	<text key="Player Sticky Grenade"/>
 	<text key="cabal_bullet"/>
-	<text key="Cabal Laser Rifle"/>
+	<text key="Cabal Assault Rifle"/>
 	<text key="Cabal Machine Gun"/>
 	<text key="Cabal Sniper Rifle"/>
 	<text key="Cabal Shotgun"/>
@@ -243,9 +243,9 @@
 	<text key="kamasutra" />
 	<text key="unreleased Justin Beerbar CD" />
 
-  <text key="I need fast combat transportation" />
-  <text key="Confirmed, Buggy's in the air." />
-  <text key="Airdropping Buggy now." />
+	<text key="I need fast combat transportation" />
+	<text key="Confirmed, Buggy's in the air." />
+	<text key="Airdropping Buggy now." />
 
 	<text key="Javelin" />
 	<text key="EOD armor" />
@@ -262,46 +262,44 @@
 
 	<text key="gold bar" />
 
-
-
 	<text key="quad" />
 	<text key="supply quad" />
-  <text key="mortar tank" />
+	<text key="mortar tank" />
 
 	<text key="MK23 SOCOM" />
 	<text key="AAC Honey Badger" />
 
-  <text key="blue box" />
-  <text key="purple box" />
-  <text key="titan box" />
+	<text key="blue box" />
+	<text key="purple box" />
+	<text key="titan box" />
 
-  <text key="black ops vest" />
+	<text key="black ops vest" />
 
-  <text key="spawn supplies" />
-  <text key="I need supplies!" />
-  <text key="Confirmed, supply is in the air." />
-  <text key="Airdropping supply quad now." />
+	<text key="spawn supplies" />
+	<text key="I need supplies!" />
+	<text key="Confirmed, supply is in the air." />
+	<text key="Airdropping supply quad now." />
 
 	<text key="Disabled" text="Spawn disabled" />
 
- <text key="kicking player" text="Kicking %player_name!" />
- <text key="flamethrower" />
- <text key="tracer" />
- <text key="tracer dart" />
- <text key="tracer missile" />
- <text key="taser" />
- <text key="community box" />
- <text key="mustela" />
+	<text key="kicking player" text="Kicking %player_name!" />
+	<text key="flamethrower" />
+	<text key="tracer" />
+	<text key="tracer dart" />
+	<text key="tracer missile" />
+	<text key="taser" />
+	<text key="community box" />
+	<text key="mustela" />
 
- <text key="bandage" />
- <text key="president" />
+	<text key="bandage" />
+	<text key="president" />
 
- <text key="Click RMB: move to backpack" />
- <text key="Click LMB: equip" />
- <text key="Click RMB: move to armory" />
- <text key="Click RMB: move to stash" />
- <text key="Click RMB: drop on ground" />
- <text key="Hold CTRL: operate on single item" />
+	<text key="Click RMB: move to backpack" />
+	<text key="Click LMB: equip" />
+	<text key="Click RMB: move to armory" />
+	<text key="Click RMB: move to stash" />
+	<text key="Click RMB: drop on ground" />
+	<text key="Hold CTRL: operate on single item" />
 
 	<text key="1 new item accessible in container" text="%item_name (%container_name): XP requirement reached!" />
 	<text key="2 new items accessible in container" text="%item_name1, %item_name2 (%container_name): XP requirement reached!" />
@@ -439,5 +437,4 @@
     <text key="Scanning area for strategic targets."/>
     <text key="Scanning area, open your maps, soldiers!"/>
     <text key="Elite Reinforcements"/>
-
 </translation>

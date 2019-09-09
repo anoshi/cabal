@@ -10,7 +10,7 @@
     magazine_size="3000"
     can_shoot_standing="1"
     suppressed="0"
-    name="Laser Rifle"
+    name="Assault Rifle"
     class="0"
     projectile_speed="100.0"
     barrel_offset="0.4" />

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<weapons>
+  <weapon file="bandage.weapon">
+    <commonness value="0.05" in_stock="0" />
+    <capacity source="rank" source_value="0.0" value="2" />
+    <capacity source="rank" source_value="0.5" value="3" />
+  </weapon>
+  <weapon file="cabal_ar.weapon">
+    <specification
+    retrigger_time="0.4"
+    accuracy_factor="1.0"
+    sustained_fire_grow_step="0.20"
+    sustained_fire_diminish_rate="1.2"
+    magazine_size="30"
+    can_shoot_standing="1"
+    suppressed="0"
+    name="Cabal Assault Rifle"
+    class="0"
+    projectile_speed="60.0"
+    burst_shots="3" />
+    <projectile file="cabal_exp_bullet.projectile">
+    </projectile>
+  </weapon>
+</weapons>
