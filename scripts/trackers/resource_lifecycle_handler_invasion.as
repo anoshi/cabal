@@ -508,6 +508,10 @@ class ResourceLifecycleHandler : Tracker {
 
 	// -----------------------------------------------------------
 	protected void awardXP(int playerKiller, float xp) {
+		if (playerKiller > m_playersSpawned.size()) || (playerKiller < 0)) {
+			_log("** CABAL: WARNING!! playerKiller int is " + playerKiller + ". Doesn't look right. Breaking out to prevent logic fault", 1);
+			return;
+		}
 		// match playerKiller's ID to the appropriate player
 		m_playerScore[playerKiller] += xp;
 		_log("** CABAL: Player " + (playerKiller + 1) + " XP now at " + int(m_playerScore[playerKiller]), 1);

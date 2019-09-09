@@ -16,8 +16,8 @@ class ResourceLifecycleHandler : Tracker {
 	protected array<float> m_playerScore = {0.0, 0.0};	// players 1 and 2 start with no XP
 	protected int playerCoins = 0; 						// no continues / restarts in quickmatch
 
-  protected float m_localPlayerCheckTimer;
-  protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
+  	protected float m_localPlayerCheckTimer;
+  	protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
 
 	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area (see /maps/cabal/objects.svg)
 	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area (see /maps/cabal/objects.svg)
@@ -457,6 +457,10 @@ class ResourceLifecycleHandler : Tracker {
 	// -----------------------------------------------------------
 	protected void awardXP(int playerKiller, float xp) {
 		// match playerKiller's ID to the appropriate player
+		if (playerKiller > m_playersSpawned.size()) || (playerKiller < 0)) {
+			_log("** CABAL: WARNING!! playerKiller int is " + playerKiller + ". Doesn't look right. Breaking out to prevent logic fault", 1);
+			return;
+		}
 		m_playerScore[playerKiller] += xp;
 		_log("** CABAL: Player " + (playerKiller + 1) + " XP now at " + int(m_playerScore[playerKiller]), 1);
 	}
