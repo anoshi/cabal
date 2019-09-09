@@ -2,7 +2,7 @@
 <weapon file="base_primary.weapon" key="player_ar.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="15.0">
     <tag name="assault" />
     <specification
-    retrigger_time="0.125"
+    retrigger_time="0.195"
     sight_range_modifier="0.0"
     accuracy_factor="1.0"
     sustained_fire_grow_step="0.20"
