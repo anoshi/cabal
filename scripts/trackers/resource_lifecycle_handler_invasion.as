@@ -68,6 +68,8 @@ class ResourceLifecycleHandler : Tracker {
 			_log("** CABAL: we still have room in server", 1);
 			m_playersSpawned.insertLast(connectorHash);
 			clearSpawnArea();
+			goalXP += goalXP;
+			approachGoalXP(0.0);
 		}
 	}
 

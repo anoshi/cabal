@@ -43,7 +43,7 @@ class CabalSpawner : Tracker {
 		_log("** CABAL: player is alive, ok to spawn enemies", 1);
 		// start enemy spawning from specific locations (as per passed map layer name, for level)
 		// after player character has spawned. i.e. no enemy spawn until player is on the map
-		int m_spawnCount = 4;
+		int m_spawnCount = playerHashes.size() * 4;
 		string m_genericNodeTag = "cabal_spawn";
 		string layerName = thisStage();
 		array<const XmlElement@>@ nodes = getGenericNodes(m_metagame, layerName, m_genericNodeTag);
