@@ -21,14 +21,13 @@
 	<text key="Cabal Sixteen"/>
 	<text key="Cabal Seventeen"/>
 	<text key="Player ImpervaVest"/>
-	<text key="player_laser"/>
-	<text key="player_laser_short"/>
+	<text key="player_bullet"/>
 	<text key="Laser Rifle"/>
 	<text key="Machine Pistol"/>
 	<text key="Shotgun"/>
 	<text key="Rocket Launcher"/>
 	<text key="Player Sticky Grenade"/>
-	<text key="cabal_laser"/>
+	<text key="cabal_bullet"/>
 	<text key="Cabal Laser Rifle"/>
 	<text key="Cabal Machine Gun"/>
 	<text key="Cabal Sniper Rifle"/>

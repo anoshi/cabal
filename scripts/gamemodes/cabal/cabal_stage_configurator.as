@@ -1,12 +1,10 @@
 // gamemode specific
-#include "lobby_client_accept_handler.as"
 #include "faction_config.as"
 #include "stage_configurator.as"
 #include "cabal_stage.as"
-#include "player_manager.as"
 
 // ------------------------------------------------------------------------------------------------
-class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListener {
+class CabalStageConfigurator : StageConfigurator {
 	protected GameModeInvasion@ m_metagame;
 	protected MapRotatorInvasion@ m_mapRotator;
 
@@ -135,50 +133,9 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		return null;
 	}
 
-	void onLobbyClientAcceptHandlerCompleted() {
-		m_metagame.getPlayerManager().setupFromCurrentState();
-		// trigger map change
-		// lobby has only friendly faction, enough to set them won
-		m_metagame.getComms().send("<command class='set_match_status' win='1' faction_id='0' />");
-	}
-
-	/*
-	// ------------------------------------------------------------------------------------------------
-	protected Stage@ setupLobby() {
-		StageMVSW@ stage = createStage();
-		stage.m_mapInfo.m_name = "Lobby";
-		stage.m_mapInfo.m_path = "media/packages/man_vs_world_mp/maps/lobby_2p";
-		stage.m_mapInfo.m_id = "lobby_2p";
-
-	    stage.m_includeLayers.insertLast("bases.manvsworld");
-		stage.m_includeLayers.insertLast("layer1.manvsworld");
-
-		// - LobbyClientAcceptHandlerListener is notified when the client(s) are accepted by the hosting player
-		// - something in the script should save and remember player profiles on that moment
-		// - that same something should pay attention to profiles connecting that if not within the list,
-		//   they need to be kicked
-		// - also map change should trigger
-
-		stage.addTracker(LobbyClientAcceptHandler(m_metagame, m_metagame.getUserSettings().m_maxPlayers, this));
-
-		stage.m_maxSoldiers = 1;
-
-		{
-			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0));
-			f.m_overCapacity = 0;
-			f.m_capacityOffset = 1;
-			f.m_capacityMultiplier = 0.0001;
-			f.m_bases = 1;
-			stage.m_factions.insertLast(f);
-		}
-
-		return stage;
-	}
-	*/
-
 	// ------------------------------------------------------------------------------------------------
 	protected Stage@ setupStage1() {
-		_log("*** CABAL: CabalStageConfigurator::setupStage1 running", 1);
+		_log("** CABAL: CabalStageConfigurator::setupStage1 running", 1);
 		Stage@ stage = createStage();
 		stage.m_mapInfo.m_name = "Cabal M1A1";
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
@@ -187,10 +144,10 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		int index = stage.m_includeLayers.find("layer1.map2");
 		if (index >= 0) {
 			stage.m_includeLayers.removeAt(index);
-			_log("*** CABAL: found and removed layer1.map2", 1);
+			_log("** CABAL: found and removed layer1.map2", 1);
 		}
 
-		_log("*** CABAL: adding map layer1.map1", 1);
+		_log("** CABAL: adding map layer1.map1", 1);
 		stage.m_includeLayers.insertLast("layer1.map1");
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));
@@ -295,7 +252,7 @@ class CabalStageConfigurator : StageConfigurator, LobbyClientAcceptHandlerListen
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map4";
 
-		_log("*** CABAL: adding map layer1.map4", 1);
+		_log("** CABAL: adding map layer1.map4", 1);
 		stage.m_includeLayers.insertLast("layer1.map4");
 
 		stage.addTracker(PeacefulLastBase(m_metagame, 0));

@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="1080.7685"
-     inkscape:cy="883.76484"
+     inkscape:zoom="8"
+     inkscape:cx="1092.3238"
+     inkscape:cy="841.11122"
      inkscape:document-units="px"
-     inkscape:current-layer="layer49"
+     inkscape:current-layer="layer57"
      showgrid="true"
      inkscape:window-width="1680"
      inkscape:window-height="951"
@@ -17582,8 +17582,8 @@ key = env_wall_1_1_1.vehicle;</desc>
       </rect>
       <rect
          inkscape:label="#rect10748"
-         y="1184.4725"
-         x="1101.5841"
+         y="1178.4725"
+         x="1099.2091"
          height="2.0679491"
          width="2.2977724"
          id="generic_node1-7-5"
@@ -17688,8 +17688,8 @@ key = env_building_3_3_1.vehicle;</desc>
       </rect>
       <rect
          inkscape:label="#rect10748"
-         y="1223.2161"
-         x="1100.6011"
+         y="1225.0911"
+         x="1101.8511"
          height="2.0679491"
          width="2.2977724"
          id="generic_node1-7-9-7-3"
@@ -17711,7 +17711,7 @@ key = env_building_3_3_1.vehicle;</desc>
     </g>
   </g>
   <g
-     style="display:inline"
+     style="display:none"
      inkscape:label="layer1.map3"
      id="g27529"
      inkscape:groupmode="layer">

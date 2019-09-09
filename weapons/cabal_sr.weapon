@@ -14,7 +14,7 @@
 	burst_shots="1"
 	reload_one_at_a_time="0"
 	sight_range_modifier="1.45"
-	projectile_speed="15.0"
+	projectile_speed="22.5"
 	barrel_offset="0.4"
 	projectiles_per_shot="1" />
 
@@ -38,7 +38,7 @@
     <projectiles_per_shot value="1" />
     <weak_hand_hold offset="0.3" />
 
-    <projectile file="cabal_laser.projectile">
+    <projectile file="cabal_bullet.projectile">
         <result
 		class="hit"
 		kill_probability="0.9"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<weapon file="base_primary.weapon" key="cabal_lr.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="0.0">
+<weapon file="base_primary.weapon" key="cabal_ar.weapon" drop_count_factor_on_death="0.0" time_to_live_out_in_the_open="0.0">
     <tag name="assault" />
     <specification
     retrigger_time="0.4"
@@ -11,7 +11,7 @@
     suppressed="0"
     name="Cabal Laser Rifle"
     class="0"
-    projectile_speed="12.0"
+    projectile_speed="18.0"
     burst_shots="1" />
 
     <animation key="recoil" ref="12" />
@@ -32,7 +32,7 @@
     <commonness value="0.6" />
     <inventory encumbrance="10.0" price="2.0" />
 
-    <projectile file="cabal_laser.projectile">
+    <projectile file="cabal_bullet.projectile">
 	    <result class="hit" kill_probability="0.99" kill_decay_start_time="7.00" kill_decay_end_time="10.00" />
     </projectile>
     <modifier class="speed" value="-0.02" />

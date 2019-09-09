@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <character filename="default_base.character">
-    <!-- defined in default.character for differentiation, see maps/lobby/default.character too -->
+
+	<!-- death Sounds implemented in lifecycle handler
+	<sound key="death" fileref="die1.wav" volume="0.55" />
+	<sound key="death" fileref="die3.wav" volume="0.55" />
+	<sound key="death" fileref="die4.wav" volume="0.55" />
+	<sound key="death" fileref="die5.wav" volume="0.55" />
+	<sound key="death" fileref="die6.wav" volume="0.55" />
+	<sound key="death" fileref="die7.wav" volume="0.55" />
+	-->
 
 	<comment key="Driver, abandon vehicle" text="" />
  	<comment key="Gunner, abandon vehicle" text=""  />

@@ -65,7 +65,7 @@
 	<!-- DEFAULT -->
 	<!-- /////// -->
 	<soldier name="default" spawn_score="0.0">
-		<character filename="default_male.character" />
+		<character filename="cabal.character" />
 		<ai filename="cabal_rifleman.ai" />
 
 		<model filename="cabal_rifleman.xml" />
@@ -93,7 +93,7 @@
 	<!-- RIFLEMAN -->
 	<!-- //////// -->
 	<soldier name="rifleman" spawn_score="0.5">
-		<character filename="default_male.character" />
+		<character filename="cabal.character" />
 		<ai filename="cabal_rifleman.ai" />
 		<model filename="cabal_rifleman.xml" />
 		<resources file="cabal_rifleman.resources" />
@@ -122,10 +122,11 @@
 	<!-- ////////// -->
 	<!-- rifleman with custom skin and animations (roll) and better combat skills -->
 	<soldier name="covert_ops" spawn_score="0.2">
-		<character filename="default_male.character" />
+		<character filename="cabal.character" />
 		<ai filename="cabal_covertops.ai" />
 		<model filename="cabal_covertops.xml" />
 		<resources file="cabal_rifleman.resources" />
+		<resources file="cabal_armour.resources" />
 
 		<item_class_existence_config>
 			<!-- secondary weapon -->
@@ -150,7 +151,7 @@
 	<!-- GRENADIER -->
 	<!-- ///////// -->
 	<soldier name="grenadier" spawn_score="0.2">
-		<character filename="default_male.character" />
+		<character filename="cabal.character" />
 		<ai filename="cabal_grenadier.ai" />
 		<model filename="cabal_grenadier.xml" />
 		<resources file="cabal_grenadier.resources" />
@@ -181,10 +182,11 @@
 	<!-- //////// -->
 	<!-- grenadier with custom skin and animations (roll) and better combat skills -->
 	<soldier name="commando" spawn_score="0.1">
-		<character filename="default_male.character" />
+		<character filename="cabal.character" />
 		<ai filename="cabal_commando.ai" />
 		<model filename="cabal_commando.xml" />
 		<resources file="cabal_grenadier.resources" />
+		<resources file="cabal_armour.resources" />
 
 		<item_class_existence_config>
 			<!-- grenade forced as primary via cabal_gl.weapon -->
@@ -212,7 +214,7 @@
 	<!-- ///// -->
 	<!-- Scripted. Medics spawn (offscreen) near a wounded commando or covert ops unit -->
 	<soldier name="medic" spawn_score="0.0">
-		<character filename="default_male.character" />
+		<character filename="cabal.character" />
 		<ai filename="cabal_medic.ai" />
 
 		<model filename="cabal_medic.xml" />

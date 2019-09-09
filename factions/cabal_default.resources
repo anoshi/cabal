@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Cabal-specific Vehicles, Radio Calls, and Carry Items -->
 <resources>
- 	<!-- faction-specific vehicles (not listed in common.resources) -->
+	<projectile key="player_grenade.projectile" enabled="0" /> <!-- not yours! -->
+
 	<vehicle key="jeep_2.vehicle" />
  	<vehicle key="apc_2.vehicle" />
  	<vehicle key="tank_2.vehicle" />
  	<vehicle key="transport_truck_2.vehicle" />
-
-	<projectile key="player_grenade.projectile" enabled="0" /> <!-- not yours! -->
 
 	<carry_item key="cabal_vest_1.carry_item" enabled="1" />
 </resources>

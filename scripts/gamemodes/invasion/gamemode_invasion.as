@@ -6,11 +6,8 @@
 // cabal gamemode-specific
 #include "cabal_map_rotator.as"
 #include "cabal_stage_configurator.as"
-//#include "cabal_user_settings.as"
-//#include "user_settings.as"
 #include "resource_lifecycle_handler_invasion.as"
 #include "cabal_spawner_invasion.as"
-#include "player_manager.as"
 
 // generic trackers
 #include "basic_command_handler.as"
@@ -25,7 +22,6 @@ class GameModeInvasion : GameMode {
 
 	protected CabalUserSettings@ m_userSettings;
 	protected ResourceLifecycleHandler@ m_resourceLifecycleHandler;
-	protected PlayerManager@ m_playerManager;
 
 	// --------------------------------------------
 	GameModeInvasion(CabalUserSettings@ settings) {
@@ -39,7 +35,6 @@ class GameModeInvasion : GameMode {
 		GameMode::init();
 
 		setupMapRotator();
-		setupPlayerManager(); // cabal dedicated server only
 		setupResourceLifecycle();
 
 		if (m_userSettings.m_continue) {
@@ -91,22 +86,10 @@ class GameModeInvasion : GameMode {
 		return m_userSettings;
 	}
 
-	// cabal dedicated server only
-	// --------------------------------------------
-	protected void setupPlayerManager() {
-		@m_playerManager = PlayerManager(this);
-	}
-
-	// --------------------------------------------
-	PlayerManager@ getPlayerManager() const {
-		return m_playerManager;
-	}
-	// end cabal dedicated server only
-
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle is about to start
 	void preBeginMatch() {
-		_log("*** CABAL: preBeginMatch", 1);
+		_log("** CABAL: preBeginMatch", 1);
 
 		// all trackers are cleared when match is about to begin
 		GameMode::preBeginMatch();
@@ -117,7 +100,7 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	// CabalMapRotator calls here when a battle has started
 	void postBeginMatch() {
-		_log("*** CABAL: postBeginMatch", 1);
+		_log("** CABAL: postBeginMatch", 1);
 
 		GameMode::postBeginMatch();
 
@@ -131,9 +114,6 @@ class GameModeInvasion : GameMode {
 		addTracker(m_resourceLifecycleHandler);
 		//addTracker(ResourceLifecycleHandler(this)); // players, enemies, objects, etc.
 		addTracker(CabalSpawner(this));
-
-		// multiplayer handler
-		addTracker(PlayerManager(this));
 
 		for (uint i = 0; i < m_factions.size(); ++i) {
 			if (i != 0) {
@@ -203,7 +183,7 @@ class GameModeInvasion : GameMode {
 	// --------------------------------------------
 	void save() {
 		// save metagame status now:
-		_log("*** CABAL: GameModeInvasion::saving metagame", 1);
+		_log("** CABAL: GameModeInvasion::saving metagame", 1);
 
 		XmlElement commandRoot("command");
 		commandRoot.setStringAttribute("class", "save_data");

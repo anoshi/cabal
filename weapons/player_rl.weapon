@@ -42,7 +42,7 @@
     <capacity value="2" source="rank" source_value="0.2" />
 
     <hud_icon filename="hud_m2_carlgustav.png" />
-    <commonness value="0.65" />
+    <commonness value="0.0008" />
     <inventory encumbrance="6.0" price="4.0" />
 
     <effect class="muzzle" ref="LawMuzzle" />

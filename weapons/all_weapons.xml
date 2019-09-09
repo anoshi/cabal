@@ -3,17 +3,17 @@
   <!-- CABAL weapons -->
 
   <!-- Player weapons -->
-  <weapon file="player_lr.weapon"> <!-- laser rifle -->
+  <weapon file="player_ar.weapon"> <!-- assault rifle -->
     <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_mp.weapon"> <!-- machine pistol -->
-    <capacity source="rank" source_value="0.01" value="1" />
+    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_mg.weapon"> <!-- machine gun -->
-    <capacity source="rank" source_value="0.01" value="1" />
+    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_sg.weapon"> <!-- shotgun -->
-    <capacity source="rank" source_value="0.01" value="1" />
+    <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="player_rl.weapon"> <!-- rocket launcher -->
     <capacity source="rank" source_value="0.01" value="1" />
@@ -25,7 +25,7 @@
   <!-- end Player weapons -->
 
   <!-- Cabal weapons -->
-  <weapon file="cabal_lr.weapon"> <!-- laser rifle -->
+  <weapon file="cabal_ar.weapon"> <!-- assault rifle -->
     <capacity source="rank" source_value="0.0" value="1" />
   </weapon>
   <weapon file="cabal_mg.weapon"> <!-- machine gun -->
@@ -70,29 +70,10 @@
   <weapon file="buggy_mg.weapon" />
   <weapon file="humvee_gl.weapon" />
   <weapon file="humvee_mg.weapon"/>
-  <weapon file="patrol_ship_mg.weapon" />
-  <weapon file="patrol_ship_cannon.weapon" />
-  <weapon file="patrol_ship_mortar.weapon" />
   <weapon file="deployable_mg.weapon" />
   <weapon file="mg_resource.weapon" >
   <weapon file="technical_mg.weapon" />
   <weapon file="radar_tank_cannon.weapon" />
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.2" value="1" />
-  </weapon>
-  <weapon file="deployable_minig.weapon" />
-  <weapon file="minig_resource.weapon" >
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.2" value="1" />
-  </weapon>
-  <weapon file="deployable_gl.weapon" />
-  <weapon file="gl_resource.weapon" >
-    <capacity source="rank" source_value="0.0" value="0" />
-    <capacity source="rank" source_value="0.3" value="1" />
-    <capacity source="rank" source_value="0.5" value="2" />
-  </weapon>
-  <weapon file="mortar.weapon" />
-  <weapon file="mortar_resource.weapon" >
     <capacity source="rank" source_value="0.0" value="0" />
     <capacity source="rank" source_value="0.2" value="1" />
   </weapon>

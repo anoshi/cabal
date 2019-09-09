@@ -19,7 +19,6 @@
   <vehicle file="prison_bus.vehicle" />
   <vehicle file="prison_door.vehicle" />
   <vehicle file="para_spawn.vehicle" />
-  <vehicle file="mortar.vehicle" />
   <vehicle file="radio_jammer.vehicle" />
   <vehicle file="aa_emplacement.vehicle" />
   <vehicle file="water_tower.vehicle" />

@@ -7,7 +7,7 @@
     accuracy_factor="0.55"
     sustained_fire_grow_step="1.5"
     sustained_fire_diminish_rate="0.7"
-    magazine_size="2000"
+    magazine_size="500"
     can_shoot_standing="1"
     can_shoot_crouching="1"
     can_shoot_prone="1"
@@ -41,11 +41,11 @@
     <model filename="player_mg.xml" />
 
     <hud_icon filename="hud_microgun.png" />
-    <commonness value="0.3" can_respawn_with="0"/>
+    <commonness value="0.003" can_respawn_with="0"/>
     <inventory encumbrance="18.0" price="2.0" in_stock="0"/>
 
     <weak_hand_hold offset="0.4" />
-    <projectile file="player_laser_short.projectile">
+    <projectile file="player_bullet.projectile">
     </projectile>
 
     <capacity value="1" source="rank" source_value="0.2" />

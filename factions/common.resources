@@ -4,17 +4,10 @@
 
 	<!-- ALL COMMON WEAPONS -->
 	<!-- RWR weapons -->
-	<weapon key='medikit.weapon' />
-	<weapon key='riot_shield.weapon' />
 	<weapon key='cover_resource.weapon' />
-	<weapon key='mg_resource.weapon' />
 	<weapon key='tank_trap_resource.weapon' />
 	<weapon key='binoculars.weapon' />
     <weapon key='bandage.weapon' />
-	<weapon key='minig_resource.weapon' />
-	<weapon key='mortar_resource.weapon' />
-	<weapon key='tow_resource.weapon' />
-	<weapon key='gl_resource.weapon' />
 	<weapon key='humvee_gl.weapon' />
 	<!-- end RWR weapons -->
 
@@ -50,8 +43,6 @@
 	<vehicle key="cover1.vehicle" />
 	<vehicle key="deployable_mg.vehicle" />
 	<vehicle key="deployable_minig.vehicle" />
-	<vehicle key="mortar.vehicle" />
-	<vehicle key="deployable_gl.vehicle" />
 	<vehicle key="radar_tower.vehicle" />
 	<vehicle key="gas_tank.vehicle" />
 	<vehicle key="water_tower.vehicle" />
@@ -100,7 +91,6 @@
 	<vehicle key="heli_broken2.vehicle" />
 	<vehicle key="cargo_truck.vehicle" />
 	<vehicle key="tank_trap.vehicle" />
-
 
 	<vehicle key="vulcan_tank.vehicle" />
 	<vehicle key="buggy.vehicle" />

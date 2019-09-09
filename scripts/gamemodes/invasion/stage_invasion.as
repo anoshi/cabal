@@ -227,7 +227,7 @@ class Stage {
 
 	// --------------------------------------------
 	protected void appendCamera(XmlElement@ scene) const {
-		_log("*** CABAL: Setting camera mode for map: " + m_mapInfo.m_id, 1);
+		_log("** CABAL: Setting camera mode for map: " + m_mapInfo.m_id, 1);
 		XmlElement camera("camera");
 		camera.setStringAttribute("direction", "-0.01 -0.21 0.5");
 		camera.setFloatAttribute("distance", 12.5);

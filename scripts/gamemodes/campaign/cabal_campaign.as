@@ -29,7 +29,7 @@ class Cabal : GameModeInvasion {
 	// --------------------------------------------
 	void save() {
 		// save metagame status now:
-		_log("*** CABAL: Cabal::save() saving metagame", 1);
+		_log("** CABAL: Cabal::save() saving metagame", 1);
 
 		XmlElement commandRoot("command");
 		commandRoot.setStringAttribute("class", "save_data");
@@ -49,13 +49,13 @@ class Cabal : GameModeInvasion {
 
 		// save through game
 		getComms().send(commandRoot);
-		_log("*** CABAL: finished saving campaign settings and data", 1);
+		_log("** CABAL: finished saving campaign settings and data", 1);
 	}
 
 	// --------------------------------------------
 	void load() {
 		// load metagame status now:
-		_log("*** CABAL: Cabal::load() loading metagame", 1);
+		_log("** CABAL: Cabal::load() loading metagame", 1);
 
 		XmlElement@ query = XmlElement(
 			makeQuery(this, array<dictionary> = {
