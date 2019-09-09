@@ -536,13 +536,88 @@ class ResourceLifecycleHandler : Tracker {
 		// variablise attributes
 		string vehKey = event.getStringAttribute("vehicle_key");
 		int playerCharId = event.getIntAttribute("character_id");
-		const XmlElement@ playerCharInfo = getCharacterInfo(m_metagame, playerCharId);
+		int playerKiller;
+
+		array<const XmlElement@> players = getPlayers(m_metagame);
+		for (uint i = 0; i < players.size(); ++i) {
+			const XmlElement@ player = players[i];
+			int characterId = player.getIntAttribute("character_id");
+			if (characterId == playerCharId) {
+				playerKiller = player.getIntAttribute("player_id");
+				break;
+			}
+		}
+
 
 		// identify the dummy vehicle and process accordingly
 		if (vehKey == "env_building_1_1_1.vehicle") {
 			_log("** CABAL: 1x1x1 building destroyed. Awarding XP", 1);
-			approachGoalXP(0.4);
-			// awardXP(playerKiller, xp);
+			approachGoalXP(0.025);
+			awardXP(playerKiller, 0.025);
+		} else if (vehKey == "env_building_1_2_1.vehicle") {
+			_log("** CABAL: 1x2x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.035);
+			awardXP(playerKiller, 0.035);
+		} else if (vehKey == "env_building_1_3_1.vehicle") {
+			_log("** CABAL: 1x3x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.05);
+			awardXP(playerKiller, 0.05);
+		} else if (vehKey == "env_building_1_5_1.vehicle") {
+			_log("** CABAL: 1x5x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.10);
+			awardXP(playerKiller, 0.10);
+		} else if (vehKey == "env_building_2_1_1.vehicle") {
+			_log("** CABAL: 2x1x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.12);
+			awardXP(playerKiller, 0.12);
+		} else if (vehKey == "env_building_2_2_1.vehicle") {
+			_log("** CABAL: 2x2x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.13);
+			awardXP(playerKiller, 0.13);
+		} else if (vehKey == "env_building_2_3_1.vehicle") {
+			_log("** CABAL: 2x3x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.14);
+			awardXP(playerKiller, 0.14);
+		} else if (vehKey == "env_building_2_5_1.vehicle") {
+			_log("** CABAL: 2x5x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.15);
+			awardXP(playerKiller, 0.15);
+		} else if (vehKey == "env_building_3_1_1.vehicle") {
+			_log("** CABAL: 3x1x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.16);
+			awardXP(playerKiller, 0.16);
+		} else if (vehKey == "env_building_3_1_3.vehicle") {
+			_log("** CABAL: 3x1x3 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.18);
+			awardXP(playerKiller, 0.18);
+		} else if (vehKey == "env_building_3_2_1.vehicle") {
+			_log("** CABAL: 3x2x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.20);
+			awardXP(playerKiller, 0.20);
+		} else if (vehKey == "env_building_3_2_3.vehicle") {
+			_log("** CABAL: 3x2x3 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.22);
+			awardXP(playerKiller, 0.22);
+		} else if (vehKey == "env_building_3_3_1.vehicle") {
+			_log("** CABAL: 3x3x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.24);
+			awardXP(playerKiller, 0.24);
+		} else if (vehKey == "env_building_3_3_3.vehicle") {
+			_log("** CABAL: 3x3x3 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.26);
+			awardXP(playerKiller, 0.26);
+		} else if (vehKey == "env_building_3_5_1.vehicle") {
+			_log("** CABAL: 3x5x1 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.28);
+			awardXP(playerKiller, 0.28);
+		} else if (vehKey == "env_building_3_5_3.vehicle") {
+			_log("** CABAL: 3x5x3 building destroyed. Awarding XP", 1);
+			approachGoalXP(0.30);
+			awardXP(playerKiller, 0.30);
+		} else if (vehKey == "env_wall_1_1_1.vehicle") {
+			_log("** CABAL: 1x1x1 wall destroyed. Awarding XP", 1);
+			approachGoalXP(0.02);
+			awardXP(playerKiller, 0.02);
 		}
     }
 
