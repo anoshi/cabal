@@ -20,6 +20,8 @@
 		rp_multiplier="0"
 		player_damage_modifier="0"
 		allow_activate_server="1">
+		<!--fixed_max_players="2"
+		show_host_menu_at_start="0">-->
 		<choice id="difficulty" text="Difficulty" default="1" >
 			<entry text="Recruit" help="Help:Difficulty:Recruit" />
 			<entry text="Professional" help="Help:Difficulty:Professional" />

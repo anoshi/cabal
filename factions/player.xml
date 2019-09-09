@@ -6,6 +6,12 @@
 	chat_icon_filename="player_chat_icon_soldier.png"
 	chat_icon_commander_filename="player_chat_icon_commander.png"
 	campaign_completion_icon_filename="player_campaign_win.png">
+
+	<campaign_completion>
+		<state key="default" icon_filename="player_campaign_win.png" />
+		<state key="lose" icon_filename="player_campaign_lose.png" />
+	</campaign_completion>
+
 	<rank xp="0.0" name="">
 		<hud_icon filename="hud_rank0.png" />
 	</rank>
