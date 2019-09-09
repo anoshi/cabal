@@ -1,0 +1,387 @@
+material PlayerMarker {
+	receive_shadows off
+	technique {
+		// stuff that shows through when hidden behind walls and roofs
+		pass {
+			lighting off
+			fog_override true none
+
+			depth_write off
+			depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+
+			scene_blend alpha_blend
+
+			texture_unit {
+				texture playermarker.png
+				tex_address_mode clamp
+			}
+
+			vertex_program_ref MarkerGhostVP {	
+			}
+
+			fragment_program_ref MarkerGhostFP {
+			}
+
+		} 
+
+		pass {
+			lighting off
+			ambient vertexcolour
+			diffuse vertexcolour
+
+			cull_hardware none
+			cull_software none        
+
+			scene_blend alpha_blend
+
+			depth_write off
+
+			texture_unit {
+				texture playermarker.png
+				tex_address_mode clamp
+			}
+		} 
+	}
+}
+
+/*
+material PlayerInVehicleMarker {
+	receive_shadows off
+	technique {
+		pass {
+			lighting off
+			ambient vertexcolour
+			diffuse vertexcolour
+
+			cull_hardware none
+			cull_software none        
+
+			scene_blend alpha_blend
+
+			depth_write off
+			depth_check off
+
+			texture_unit {
+				texture player_in_vehicle_marker.png
+				tex_address_mode clamp
+			}
+		} 
+	}
+}
+*/
+
+
+material SquadAIMarker {
+	receive_shadows off
+	technique {
+		// stuff that shows through when hidden behind walls and roofs
+		pass {
+			lighting on
+			depth_write off
+			depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+			alpha_rejection greater 16
+
+			texture_unit {
+				texture squad_ai_marker.png
+				tex_address_mode clamp
+			}
+		} 
+
+		pass {
+			lighting off
+			//ambient 1.0 1.0 1.0 1.0
+			//diffuse 1.0 1.0 1.0 1.0 
+			//lighting on
+			ambient vertexcolour
+			diffuse vertexcolour
+
+			cull_hardware none
+			cull_software none        
+			//alpha_rejection greater 32
+			scene_blend alpha_blend
+
+			depth_write off
+
+			texture_unit {
+				texture squad_ai_marker.png
+				tex_address_mode clamp
+			}
+		} 
+	}
+}
+
+
+material SquadCommandTargetMarker {
+	receive_shadows off
+	technique {
+		// stuff that shows through when hidden behind walls and roofs
+		pass {
+				lighting on
+				depth_write off
+				depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+			scene_blend alpha_blend
+
+				texture_unit {
+				texture command_marker.png 2d 0
+				tex_address_mode clamp
+					wave_xform scale_x sine 0.5 0.4 0.0 0.5
+					wave_xform scale_y sine 0.5 0.4 0.0 0.5
+				rotate_anim 0.1
+			}
+
+		} 
+
+		pass {
+			lighting off
+			ambient 1.0 1.0 1.0 1.0
+			diffuse 1.0 1.0 1.0 1.0 
+			//lighting on
+
+			cull_hardware none
+			cull_software none        
+			scene_blend alpha_blend
+
+			depth_write off
+
+			texture_unit {
+				texture command_marker.png 2d 0
+				tex_address_mode clamp
+					wave_xform scale_x sine 0.5 0.4 0.0 0.5
+					wave_xform scale_y sine 0.5 0.4 0.0 0.5
+				rotate_anim 0.1
+			}
+		} 
+	}
+}
+
+
+
+// -----------------------------
+
+material SquadCommandTargetMarkerFoot {
+	receive_shadows off
+	technique {
+		/*
+		// stuff that shows through when hidden behind walls and roofs
+		pass {
+				lighting on
+				depth_write off
+				depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+			scene_blend alpha_blend
+
+				texture_unit {
+				texture squad_marker_foot.png
+				tex_address_mode clamp
+			}
+
+		} 
+		*/
+
+
+		pass {
+			lighting off
+			ambient 1.0 1.0 1.0 1.0
+			diffuse 1.0 1.0 1.0 1.0 
+			//lighting on
+
+			cull_hardware none
+			cull_software none        
+			scene_blend alpha_blend
+
+			depth_write off
+			depth_check off
+
+			texture_unit {
+				texture squad_marker_foot.png
+				tex_address_mode clamp
+			}
+		} 
+	}
+
+}
+
+
+
+
+
+material SquadCommandTargetMarkerVehicle {
+	receive_shadows off
+	technique {
+		// stuff that shows through when hidden behind walls and roofs
+/*
+		pass {
+				lighting on
+				depth_write off
+				depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+			scene_blend alpha_blend
+
+				texture_unit {
+				texture squad_marker_vehicle.png
+				tex_address_mode clamp
+			}
+
+		} 
+*/
+
+		pass {
+			lighting off
+			ambient 1.0 1.0 1.0 1.0
+			diffuse 1.0 1.0 1.0 1.0 
+			//lighting on
+
+			cull_hardware none
+			cull_software none        
+			scene_blend alpha_blend
+
+			depth_write off
+			depth_check off
+
+			texture_unit {
+				texture squad_marker_vehicle.png
+				tex_address_mode clamp
+			}
+		}
+
+
+		pass Icon {
+			lighting off
+			ambient 1.0 1.0 1.0 1.0
+			diffuse 1.0 1.0 1.0 1.0 
+			//lighting on
+
+			cull_hardware none
+			cull_software none        
+			scene_blend alpha_blend
+
+			depth_write off
+			depth_check off
+
+				texture_unit {
+				texture squad_marker_vehicle_iconmask.png
+				tex_address_mode clamp
+				colour_op_ex source1 src_current src_current
+				alpha_op_ex source1 src_texture	src_current
+			}
+
+				texture_unit Icon {
+				texture mapview_vehicle.png
+				tex_address_mode clamp
+				//colour_op_ex blend_current_alpha src_texture src_current
+			}
+
+		} 
+	}
+
+}
+
+
+
+
+
+
+
+material SquadCommandTargetMarkerFlag {
+	receive_shadows off
+	technique {
+		// stuff that shows through when hidden behind walls and roofs
+/*
+		pass {
+				lighting on
+				depth_write off
+				depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+			scene_blend alpha_blend
+
+				texture_unit {
+				texture squad_marker_vehicle.png
+				tex_address_mode clamp
+			}
+
+		} 
+*/
+
+		pass {
+			lighting off
+			ambient 1.0 1.0 1.0 1.0
+			diffuse 1.0 1.0 1.0 1.0 
+			//lighting on
+
+			cull_hardware none
+			cull_software none        
+			scene_blend alpha_blend
+
+			depth_write off
+			depth_check off
+
+			texture_unit {
+				texture squad_marker_vehicle.png
+				tex_address_mode clamp
+			}
+		}
+	}
+
+}
+
+
+// ------------------------------------------
+
+material CallMarker {
+	receive_shadows off
+	technique {
+		// stuff that shows through when hidden behind walls and roofs
+		pass {
+				lighting on
+				depth_write off
+				depth_check on
+			depth_func greater
+			cull_hardware none
+			cull_software none
+			alpha_rejection greater 16
+
+				texture_unit {
+				texture callmarker.png
+				tex_address_mode clamp
+			}
+		} 
+
+		pass {
+			lighting off
+			//ambient 1.0 1.0 1.0 1.0
+			//diffuse 1.0 1.0 1.0 1.0 
+			//lighting on
+			ambient vertexcolour
+			diffuse vertexcolour
+
+			cull_hardware none
+			cull_software none        
+			//alpha_rejection greater 32
+			scene_blend alpha_blend
+
+			depth_write off
+
+			texture_unit {
+				texture callmarker.png
+				tex_address_mode clamp
+			}
+		} 
+	}
+}
+
+
