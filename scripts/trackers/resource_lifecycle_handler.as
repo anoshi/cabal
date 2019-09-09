@@ -16,8 +16,8 @@ class ResourceLifecycleHandler : Tracker {
 	protected array<float> m_playerScore = {0.0, 0.0};	// players 1 and 2 start with no XP
 	protected int playerCoins = 0; 						// no continues / restarts in quickmatch
 
-    protected float m_localPlayerCheckTimer;
-    protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
+  protected float m_localPlayerCheckTimer;
+  protected float LOCAL_PLAYER_CHECK_TIME = 5.0;
 
 	protected float MIN_SPAWN_X = 530.395; // Left-most X coord within player spawn area (see /maps/cabal/objects.svg)
 	protected float MAX_SPAWN_X = 545.197; // Right-most X coord within player spawn area (see /maps/cabal/objects.svg)
@@ -34,8 +34,8 @@ class ResourceLifecycleHandler : Tracker {
 		@m_metagame = @metagame;
 		levelComplete = false;
 		gameOver = false;
-        // enable character_kill tracking for cabal game mode (off by default)
-        string trackCharKill = "<command class='set_metagame_event' name='character_kill' enabled='1' />";
+    // enable character_kill tracking for cabal game mode (off by default)
+    string trackCharKill = "<command class='set_metagame_event' name='character_kill' enabled='1' />";
 		m_metagame.getComms().send(trackCharKill);
 	}
 
@@ -67,7 +67,6 @@ class ResourceLifecycleHandler : Tracker {
 
 		if (curXP < goalXP && !gameOver) {
 			levelComplete = false;
-			_log("** CABAL: Player spawning on incomplete level.", 1);
 		}
 
 		// when the player spawns, he spawns alone...
@@ -638,7 +637,7 @@ class ResourceLifecycleHandler : Tracker {
 		m_playersSpawned.clear();
 	}
 
-		// --------------------------------------------
+  // --------------------------------------------
 	void save(XmlElement@ root) {
 		// called by /scripts/gamemodes/quickmatch/cabal_quickie.as
 		XmlElement@ parent = root;

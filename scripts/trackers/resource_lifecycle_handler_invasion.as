@@ -519,11 +519,11 @@ class ResourceLifecycleHandler : Tracker {
 		if (levelComplete) {
 			return;
 		}
-        _log("** CABAL: dropping a " + instanceKey + " at " + position, 1);
-        string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
-        m_metagame.getComms().send(creator);
+    _log("** CABAL: dropping a " + instanceKey + " at " + position, 1);
+    string creator = "<command class='create_instance' faction_id='0' position='" + position + "' instance_class='" + instanceClass + "' instance_key='" + instanceKey + "' activated='0' />";
+    m_metagame.getComms().send(creator);
 		_log("** CABAL: item placed at " + position, 1);
-        // ensure only player weapons are dropped
+    // ensure only player weapons are dropped
 	}
 
 	///////////////////
