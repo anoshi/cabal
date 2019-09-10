@@ -317,3 +317,23 @@ fragment_program MarkerGhostFP cg
 	profiles ps_2_x arbfp1
 }
 
+// ------------------------------------------------
+vertex_program MarkerVP cg {
+ 	source tools.cg
+	entry_point marker_vp
+	profiles arbvp1 vs_2_x
+ 
+	default_params
+	{
+		param_named_auto worldViewProj worldviewproj_matrix
+		param_named_auto ambient ambient_light_colour			
+	}
+}
+
+fragment_program MarkerFP cg
+{
+	source tools.cg
+	entry_point marker_fp
+	profiles ps_2_x arbfp1
+}
+

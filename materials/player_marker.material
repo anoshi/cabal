@@ -29,6 +29,8 @@ material PlayerMarker {
 
 		pass {
 			lighting off
+			//fog_override true none
+			fog_override true
 			ambient vertexcolour
 			diffuse vertexcolour
 
@@ -42,6 +44,12 @@ material PlayerMarker {
 			texture_unit {
 				texture playermarker.png
 				tex_address_mode clamp
+			}
+			
+			vertex_program_ref MarkerVP {	
+			}
+
+			fragment_program_ref MarkerFP {
 			}
 		} 
 	}
@@ -274,7 +282,7 @@ material SquadCommandTargetMarkerVehicle {
 				texture_unit {
 				texture squad_marker_vehicle_iconmask.png
 				tex_address_mode clamp
-				colour_op_ex source1 src_current src_current
+				//colour_op_ex source1 src_current src_current
 				alpha_op_ex source1 src_texture	src_current
 			}
 
