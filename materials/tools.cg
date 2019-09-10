@@ -807,14 +807,14 @@ void marker_ghost_vp(
 	oPos = mul(worldViewProj, position);
 
 	// blend base light 
-	float weight = 0.5f;
+	float weight = 1.0f;
 	oColor.rgb = weight * ambient.rgb + (1.0 - weight) * color.rgb;
 
 	// desaturate by blending with grey
-	weight = 0.7f;
-	oColor.rgb = weight * oColor.rgb + (1.0 - weight) * float4(0.3f, 0.3f, 0.3f, 1.0f).rgb;
+	weight = 0.0f;
+	oColor.rgb = weight * oColor.rgb + (1.0 - weight) * float4(0.5f, 0.5f, 0.5f, 1.0f).rgb;
 
-	oColor.a = 1.0;
+	oColor.a = 0.0;
 
         oUV = uv;
 }
@@ -830,6 +830,49 @@ void marker_ghost_fp(
 {
 	float4 decalColor = tex2D(decalMap, uv);
 	
-	oColour = color * decalColor;
+	oColour = color * decalColor + (0.3);
+	oColour.a = decalColor.a;
+}
+
+// -------------------------------------------
+void marker_vp(
+    float4 position     : POSITION,
+    float4 color        : COLOR,   
+    float2 uv		: TEXCOORD0,   
+ 
+    out float4 oPos     : POSITION,
+    out float4 oColor   : COLOR,
+    out float2 oUV      : TEXCOORD0,
+ 
+    uniform float4x4 worldViewProj,
+    uniform float4 ambient)
+{
+	oPos = mul(worldViewProj, position);
+
+	// blend base light 
+	float weight = 1.0f;
+	oColor.rgb = weight * ambient.rgb + (1.0 + weight) * color.rgb;
+
+	// desaturate by blending with grey
+	weight = 0.0f;
+	oColor.rgb = weight * oColor.rgb + (1.0 + weight) * float4(0.5f, 0.5f, 0.5f, 1.0f).rgb;
+
+	oColor.a = 0.5;
+
+        oUV = uv;
+}
+
+
+void marker_fp(
+	float4 color 	      : COLOR,
+	float2 uv	      : TEXCOORD0,
+
+	out float4 oColour    : COLOR,
+
+	uniform sampler2D decalMap : register(s0)) 
+{
+	float4 decalColor = tex2D(decalMap, uv);
+	
+	oColour = color * decalColor + (0.2);
 	oColour.a = decalColor.a;
 }
