@@ -619,18 +619,6 @@ class MapRotatorInvasion : MapRotator {
 			// change map
 			m_metagame.getComms().send(getChangeMapCommand(index));
 
-			// TODO:
-			// - this would probably be the best place to sync & clear; when the sync comes, the default game has started and sent all its starting events,
-			//   which we want to clear
-			// - can't risk it, things work without it too
-			/*
-			{
-				$query_doc = new DOMDocument();
-				$command = "<command class='make_query' id='sync_query_0'/>\n";
-				$query_doc->loadXML($command);
-				$doc = $this->metagame->comms->query($query_doc);
-			}
-			*/
 
 			// if continuing a game, don't clear queue - we already have e.g. vehicle spawn events there as game loaded before the script,
 			// we can't lose those, otherwise some trackers may fail to be notified of the events

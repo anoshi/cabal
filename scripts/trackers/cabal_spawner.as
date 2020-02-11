@@ -9,6 +9,8 @@
 class CabalSpawner : Tracker {
 	protected Cabal@ m_metagame;
 
+	protected bool m_started = false;
+
     protected float SPAWN_DELAY_MAX = 10.00; // make this a dynamic value. Shorter as map increases in duration and at higher levels.
     protected float SPAWN_DELAY_MIN = 5.00;
 	protected float spawnDelay; // randomise time between enemy spawns
@@ -19,7 +21,13 @@ class CabalSpawner : Tracker {
 	// ----------------------------------------------------
 	CabalSpawner(Cabal@ metagame) {
 		@m_metagame = @metagame;
-		queueCabalSpawn(); // start the countdown to next enemy spawn event
+	}
+
+	// --------------------------------------------
+	void start() {
+		_log("** CABAL: starting cabal_spawner tracker", 1);
+		queueCabalSpawn();
+		m_started = true;
 	}
 
 	// --------------------------------------------
@@ -123,8 +131,7 @@ class CabalSpawner : Tracker {
 
 	// --------------------------------------------
 	bool hasStarted() const {
-		// always on
-		return true;
+		return m_started;
 	}
 
 	// --------------------------------------------

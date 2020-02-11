@@ -28,4 +28,7 @@
 			<entry text="Veteran" help="Help:Difficulty:Veteran" />
 		</choice>
 	</campaign_options>
+	<server_options
+		show_available_factions="1" >
+	</server_options>
 </package>
