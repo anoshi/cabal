@@ -3,7 +3,7 @@ vertex_program MultiPassShadowsVP cg
     source tools.cg
     entry_point multipass_shadows_vp
     profiles arbvp1 vs_2_x
- 
+
     default_params
     {
         param_named_auto world world_matrix
@@ -14,20 +14,20 @@ vertex_program MultiPassShadowsVP cg
         param_named_auto lightColor light_diffuse_colour 0
     }
 }
- 
+
 fragment_program MultiPassShadowsFP cg
 {
     source tools.cg
     entry_point multipass_shadows_fp
     profiles arbfp1 ps_2_x fp20
- 
+
     default_params
     {
         param_named inverseShadowmapSize float 0.0009765625
-	param_named fixedDepthBias float 0.001
+	    param_named fixedDepthBias float 0.001
         param_named gradientClamp float 0.0098
         param_named gradientScaleBias float 0
-	param_named_auto ambientLightColor ambient_light_colour
+	    param_named_auto ambientLightColor ambient_light_colour
         param_named_auto shadowColor shadow_colour
     }
 }
@@ -39,7 +39,7 @@ vertex_program DecalTextureShadowsVP cg
     source tools.cg
     entry_point decal_shadows_vp
     profiles arbvp1 vs_2_x
- 
+
     default_params
     {
         param_named_auto world world_matrix
@@ -52,24 +52,24 @@ vertex_program DecalTextureShadowsVP cg
 		param_named_auto fogParams fog_params
 	}
 }
- 
+
 fragment_program DecalTextureShadowsFP cg
 {
     source tools.cg
     entry_point decal_shadows_fp
     profiles arbfp1 ps_2_x fp20
- 
+
     default_params
     {
         param_named inverseShadowmapSize float 0.0009765625
-	param_named fixedDepthBias float 0.001
+	    param_named fixedDepthBias float 0.001
         param_named gradientClamp float 0.0098
         param_named gradientScaleBias float 0
-	param_named_auto ambientLightColor ambient_light_colour
+	    param_named_auto ambientLightColor ambient_light_colour
         param_named_auto shadowColor shadow_colour
    }
 }
- 
+
 
 // -------------------------------------
 
@@ -78,7 +78,7 @@ vertex_program DecalColorTextureShadowsVP cg
     source tools.cg
     entry_point decal_color_shadows_vp
     profiles arbvp1 vs_2_x
-     
+
     default_params
     {
         param_named_auto world world_matrix
@@ -87,25 +87,25 @@ vertex_program DecalColorTextureShadowsVP cg
         param_named_auto texViewProj texture_viewproj_matrix
         param_named_auto lightPosition light_position 0
         param_named_auto lightColor light_diffuse_colour 0
-	param_named_auto surfaceColor surface_diffuse_colour
-	param_named_auto fogColor fog_colour
-	param_named_auto fogParams fog_params
+        param_named_auto surfaceColor surface_diffuse_colour
+        param_named_auto fogColor fog_colour
+        param_named_auto fogParams fog_params
     }
 }
- 
+
 fragment_program DecalColorTextureShadowsFP cg
 {
     source tools.cg
     entry_point decal_color_shadows_fp
     profiles arbfp1 ps_2_x fp20
- 
+
     default_params
     {
         param_named inverseShadowmapSize float 0.0009765625
-	param_named fixedDepthBias float 0.001
+	    param_named fixedDepthBias float 0.001
         param_named gradientClamp float 0.0098
         param_named gradientScaleBias float 0
-	param_named_auto ambientLightColor ambient_light_colour
+	    param_named_auto ambientLightColor ambient_light_colour
         param_named_auto shadowColor shadow_colour
     }
 }
@@ -115,14 +115,14 @@ fragment_program DecalColorCutoutTextureShadowsFP cg
     source tools.cg
     entry_point decal_color_cutout_shadows_fp
     profiles arbfp1 ps_2_x fp20
- 
+
     default_params
     {
         param_named inverseShadowmapSize float 0.0009765625
-	param_named fixedDepthBias float 0.001
+	    param_named fixedDepthBias float 0.001
         param_named gradientClamp float 0.0098
         param_named gradientScaleBias float 0
-	param_named_auto ambientLightColor ambient_light_colour
+	    param_named_auto ambientLightColor ambient_light_colour
         param_named_auto shadowColor shadow_colour
     }
 }
@@ -132,14 +132,14 @@ fragment_program DecalColorBlendTextureShadowsFP cg
     source tools.cg
     entry_point decal_color_blend_shadows_fp
     profiles arbfp1 ps_2_x fp20
- 
+
     default_params
     {
         param_named inverseShadowmapSize float 0.0009765625
-	param_named fixedDepthBias float 0.001
+	    param_named fixedDepthBias float 0.001
         param_named gradientClamp float 0.0098
         param_named gradientScaleBias float 0
-	param_named_auto ambientLightColor ambient_light_colour
+	    param_named_auto ambientLightColor ambient_light_colour
         param_named_auto shadowColor shadow_colour
     }
 }
@@ -151,7 +151,7 @@ vertex_program DecalVertexColorTextureShadowsVP cg
     source tools.cg
     entry_point decal_vertex_color_shadows_vp
     profiles arbvp1 vs_2_0
- 
+
     default_params
     {
         param_named_auto world world_matrix
@@ -160,8 +160,8 @@ vertex_program DecalVertexColorTextureShadowsVP cg
         param_named_auto texViewProj texture_viewproj_matrix
         param_named_auto lightPosition light_position 0
         param_named_auto lightColor light_diffuse_colour 0
-	param_named_auto fogColor fog_colour
-	param_named_auto fogParams fog_params
+	    param_named_auto fogColor fog_colour
+	    param_named_auto fogParams fog_params
     }
 }
 
@@ -172,7 +172,7 @@ vertex_program DecalColorCutoutTextureShadowsVP cg
     source tools.cg
     entry_point decal_color_cutout_shadows_vp
     profiles arbvp1 vs_2_x
- 
+
     default_params
     {
         param_named_auto world world_matrix
@@ -181,8 +181,8 @@ vertex_program DecalColorCutoutTextureShadowsVP cg
         param_named_auto texViewProj texture_viewproj_matrix
         param_named_auto lightPosition light_position 0
         param_named_auto lightColor light_diffuse_colour 0
-	param_named_auto fogColor fog_colour
-	param_named_auto fogParams fog_params
+	    param_named_auto fogColor fog_colour
+	    param_named_auto fogParams fog_params
     }
 }
 
@@ -193,7 +193,7 @@ vertex_program VertexColorShadowsVP cg
     source tools.cg
     entry_point vertex_color_shadows_vp
     profiles arbvp1 vs_2_0
- 
+
     default_params
     {
         param_named_auto world world_matrix
@@ -202,12 +202,12 @@ vertex_program VertexColorShadowsVP cg
         param_named_auto texViewProj texture_viewproj_matrix
         param_named_auto lightPosition light_position 0
         param_named_auto lightColor light_diffuse_colour 0
-	param_named_auto fogColor fog_colour
-	param_named_auto fogParams fog_params
+	    param_named_auto fogColor fog_colour
+	    param_named_auto fogParams fog_params
     }
 }
-  
- 
+
+
 // -------------------------------------
 
 vertex_program ColorShadowsVP cg
@@ -215,7 +215,7 @@ vertex_program ColorShadowsVP cg
     source tools.cg
     entry_point color_shadows_vp
     profiles arbvp1 vs_2_x
- 
+
     default_params
     {
         param_named_auto world world_matrix
@@ -224,25 +224,25 @@ vertex_program ColorShadowsVP cg
         param_named_auto texViewProj texture_viewproj_matrix
         param_named_auto lightPosition light_position 0
         param_named_auto lightColor light_diffuse_colour 0
-	param_named_auto surfaceColor surface_diffuse_colour
-	param_named_auto fogColor fog_colour
-	param_named_auto fogParams fog_params
+        param_named_auto surfaceColor surface_diffuse_colour
+        param_named_auto fogColor fog_colour
+        param_named_auto fogParams fog_params
     }
 }
- 
+
 fragment_program ColorShadowsFP cg
 {
     source tools.cg
     entry_point color_shadows_fp
     profiles arbfp1 ps_2_x fp20
- 
+
     default_params
     {
         param_named inverseShadowmapSize float 0.0009765625
-	param_named fixedDepthBias float 0.001
+	    param_named fixedDepthBias float 0.001
         param_named gradientClamp float 0.0098
         param_named gradientScaleBias float 0
-	param_named_auto ambientLightColor ambient_light_colour
+	    param_named_auto ambientLightColor ambient_light_colour
         param_named_auto shadowColor shadow_colour
     }
 }
@@ -253,7 +253,7 @@ vertex_program BackContourVP cg
     source tools.cg
     entry_point back_contour_vp
     profiles arbvp1 vs_2_0
- 
+
     default_params
     {
         param_named_auto worldViewProj worldviewproj_matrix
@@ -274,11 +274,11 @@ vertex_program MeshGhostVP cg {
  	source tools.cg
 	entry_point mesh_ghost_vp
 	profiles arbvp1 vs_2_x
- 
+
 	default_params
 	{
 		param_named_auto worldViewProj worldviewproj_matrix
-		param_named_auto ambient ambient_light_colour			
+		param_named_auto ambient ambient_light_colour
 	}
 }
 
@@ -287,7 +287,7 @@ vertex_program MeshGhostBasicVP cg {
  	source tools.cg
 	entry_point mesh_ghost_basic_vp
 	profiles arbvp1 vs_2_x
- 
+
 	default_params
 	{
 		param_named_auto worldViewProj worldviewproj_matrix
@@ -302,11 +302,11 @@ vertex_program MarkerGhostVP cg {
  	source tools.cg
 	entry_point marker_ghost_vp
 	profiles arbvp1 vs_2_x
- 
+
 	default_params
 	{
 		param_named_auto worldViewProj worldviewproj_matrix
-		param_named_auto ambient ambient_light_colour			
+		param_named_auto ambient ambient_light_colour
 	}
 }
 
@@ -322,11 +322,11 @@ vertex_program MarkerVP cg {
  	source tools.cg
 	entry_point marker_vp
 	profiles arbvp1 vs_2_x
- 
+
 	default_params
 	{
 		param_named_auto worldViewProj worldviewproj_matrix
-		param_named_auto ambient ambient_light_colour			
+		param_named_auto ambient ambient_light_colour
 	}
 }
 
@@ -336,4 +336,3 @@ fragment_program MarkerFP cg
 	entry_point marker_fp
 	profiles ps_2_x arbfp1
 }
-
