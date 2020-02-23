@@ -16,7 +16,7 @@ Player characters wear coloured overalls to make them easily distinguishable in 
 * Run L/R (A, D);
 * Dive Roll L/R (Run L/R + prone key).
 
-Items such as powerups and XP pickups are automatically collected by moving a character over the dropped item.
+Items such as powerups and XP pickups are automatically collected by moving a character over the dropped item. Weapon pickups can be selectively picked up with the equip/add to inventory key (defaults: F, hold F)
 
 ### Player Weapons
 
