@@ -13,61 +13,7 @@
 	</campaign_completion>
 
 	<rank xp="0.0" name="">
-		<hud_icon filename="hud_rank0.png" />
-	</rank>
-	<rank xp="0.04" name="">
-		<hud_icon filename="hud_rank0.png" />
-	</rank>
-	<rank xp="0.05" name="">
-		<hud_icon filename="hud_rank1.png" />
-	</rank>
-	<rank xp="0.1" name="">
-		<hud_icon filename="hud_rank2.png" />
-	</rank>
-	<rank xp="0.2" name="">
-		<hud_icon filename="hud_rank3.png" />
-	</rank>
-	<rank xp="0.3" name="">
-		<hud_icon filename="hud_rank4.png" />
-	</rank>
-	<rank xp="0.4" name="">
-		<hud_icon filename="hud_rank5.png" />
-	</rank>
-	<rank xp="0.6" name="">
-		<hud_icon filename="hud_rank6.png" />
-	</rank>
-	<rank xp="0.8" name="">
-		<hud_icon filename="hud_rank7.png" />
-	</rank>
-	<rank xp="1.0" name="">
-		<hud_icon filename="hud_rank8.png" />
-	</rank>
-	<rank xp="1.2" name="">
-		<hud_icon filename="hud_rank9.png" />
-	</rank>
-	<rank xp="1.4" name="">
-		<hud_icon filename="hud_rank10.png" />
-	</rank>
-	<rank xp="2.0" name="">
-		<hud_icon filename="hud_rank11.png" />
-	</rank>
-	<rank xp="5.0" name="">
-		<hud_icon filename="hud_rank12.png" />
-	</rank>
-	<rank xp="10.0" name="">
-		<hud_icon filename="hud_rank13.png" />
-	</rank>
-	<rank xp="20.0" name="">
-		<hud_icon filename="hud_rank14.png" />
-	</rank>
-	<rank xp="50.0" name="">
-		<hud_icon filename="hud_rank15.png" />
-	</rank>
-	<rank xp="100.0" name="">
 		<hud_icon filename="hud_rank16.png" />
-	</rank>
-	<rank xp="1000.0" name="">
-		<hud_icon filename="hud_rank17.png" />
 	</rank>
 
 	<!-- ///////////// -->
