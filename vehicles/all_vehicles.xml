@@ -54,6 +54,26 @@
   <!-- CABAL destroyable buildings -->
   <vehicle file="env_wall_1_1_1.vehicle" />
 
+  <vehicle file="env_block_1_.5_1.vehicle" />
+  <vehicle file="env_block_1_.75_1.vehicle" />
+  <vehicle file="env_block_1_1_1.vehicle" />
+  <vehicle file="env_block_1_1.5_1.vehicle" />
+
+  <vehicle file="env_cabwall_.5_.5_1.vehicle" />
+  <vehicle file="env_cabwall_.5_.75_1.vehicle" />
+  <vehicle file="env_cabwall_.5_1_1.vehicle" />
+  <vehicle file="env_cabwall_.5_1.5_1.vehicle" />
+
+  <vehicle file="env_cabwall_1_.5_1.vehicle" />
+  <vehicle file="env_cabwall_1_.75_1.vehicle" />
+  <vehicle file="env_cabwall_1_1_1.vehicle" />
+  <vehicle file="env_cabwall_1_1.5_1.vehicle" />
+
+  <vehicle file="env_cabwall_2_.5_1.vehicle" />
+  <vehicle file="env_cabwall_2_.75_1.vehicle" />
+  <vehicle file="env_cabwall_2_1_1.vehicle" />
+  <vehicle file="env_cabwall_2_1.5_1.vehicle" />
+
   <vehicle file="env_building_1_1_1.vehicle" />
   <vehicle file="env_building_1_2_1.vehicle" />
   <vehicle file="env_building_1_3_1.vehicle" />

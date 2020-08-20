@@ -1,22 +1,50 @@
-#include "user_settings.as"
+#include "helpers.as"
 
-class CabalUserSettings : UserSettings {
+// --------------------------------------------
+class UserSettings {
 	int m_difficulty = 0;
-	int m_maxPlayers = 2;
+
+	int m_maxPlayers = 4;
+
+	bool m_continue = false;
+	bool m_continueAsNewCampaign = false;
+
+	string m_savegame = "";
+	string m_username = "unknown player";
+	int m_factionChoice = 0;
+
+	string m_baseCaptureSystem = "single";
+
+	float m_fellowCapacityFactor = 0.99;
+	float m_fellowAiAccuracyFactor = 0.95;
+	float m_enemyCapacityFactor = 1.0;
+	float m_enemyAiAccuracyFactor = 0.99;
+	float m_xpFactor = 1.0;
+	float m_rpFactor = 1.0;
+	bool m_fov = true;
+
+	float m_initialXp = 0.0;
+	int m_initialRp = 0;
+
+	array<string> m_overlayPaths;
+
+	// cabal mode
+	string m_startServerCommand = "";
 
 	// --------------------------------------------
-	CabalUserSettings() {
-		super();
+	UserSettings() {
+		m_overlayPaths.insertLast("media/packages/cabal");
 	}
 
 	// --------------------------------------------
-	void fromXmlElement(const XmlElement@ settings) {
+	void readSettings(const XmlElement@ settings) {
 		if (settings.hasAttribute("continue")) {
 			m_continue = settings.getBoolAttribute("continue");
 
 		} else {
 			m_savegame = settings.getStringAttribute("savegame");
 			m_username = settings.getStringAttribute("username");
+
 			if (settings.hasAttribute("difficulty")) {
 				m_difficulty = settings.getIntAttribute("difficulty");
 			}
@@ -58,7 +86,6 @@ class CabalUserSettings : UserSettings {
 
 	// --------------------------------------------
 	XmlElement@ toXmlElement(string name) const {
-		// NOTE, won't serialize continue keyword, it only works as input
 		XmlElement settings(name);
 
 		settings.setStringAttribute("savegame", m_savegame);
@@ -70,22 +97,22 @@ class CabalUserSettings : UserSettings {
 
 	// --------------------------------------------
 	void print() const {
-		_log(" * using savegame name: " + m_savegame);
-		_log(" * using username: " + m_username);
-		_log(" * using difficulty: " + m_difficulty);
-		_log(" * using fov: " + m_fov);
-		_log(" * using faction choice: " + m_factionChoice);
+		_log(" ** CABAL: using savegame name: " + m_savegame);
+		_log(" ** CABAL: using username: " + m_username);
+		_log(" ** CABAL: using difficulty: " + m_difficulty);
+		_log(" ** CABAL: using fov: " + m_fov);
+		_log(" ** CABAL: using faction choice: " + m_factionChoice);
 
 		// we can use this to provide difficulty settings, user faction, etc
-		_log(" * using fellow capacity: " + m_fellowCapacityFactor);
-		_log(" * using fellow ai accuracy: " + m_fellowAiAccuracyFactor);
-		_log(" * using fellow ai reduction: " + m_playerAiReduction);
-		_log(" * using enemy capacity: " + m_enemyCapacityFactor);
-		_log(" * using enemy ai accuracy: " + m_enemyAiAccuracyFactor);
-		_log(" * using xp factor: " + m_xpFactor);
-		_log(" * using rp factor: " + m_rpFactor);
+		_log(" ** CABAL: using fellow capacity: " + m_fellowCapacityFactor);
+		_log(" ** CABAL: using fellow ai accuracy: " + m_fellowAiAccuracyFactor);
+		// _log(" ** CABAL: using fellow ai reduction: " + m_playerAiReduction);
+		_log(" ** CABAL: using enemy capacity: " + m_enemyCapacityFactor);
+		_log(" ** CABAL: using enemy ai accuracy: " + m_enemyAiAccuracyFactor);
+		_log(" ** CABAL: using xp factor: " + m_xpFactor);
+		_log(" ** CABAL: using rp factor: " + m_rpFactor);
 
-		_log(" * using initial xp: " + m_initialXp);
-		_log(" * using initial rp: " + m_initialRp);
+		_log(" ** CABAL: using initial xp: " + m_initialXp);
+		_log(" ** CABAL: using initial rp: " + m_initialRp);
 	}
 }

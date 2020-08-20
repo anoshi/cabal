@@ -4,9 +4,9 @@
 	name="cabal"
 	description="Campaign description"
 	show_in_campaign_menu="1"
-	campaign_entry_script="start_campaign.as"
+	campaign_entry_script="start_cabal.as"
 	show_in_quick_match_mods="1"
-	quick_match_entry_script="start_quickie.as"
+	quick_match_entry_script="start_cabal.as"
 	image="cabal_campaign.png">
 
 	<campaign_options

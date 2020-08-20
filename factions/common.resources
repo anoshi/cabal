@@ -7,7 +7,7 @@
 	<weapon key='cover_resource.weapon' />
 	<weapon key='tank_trap_resource.weapon' />
 	<weapon key='binoculars.weapon' />
-    <weapon key='bandage.weapon' />
+	<weapon key='bandage.weapon' />
 	<weapon key='humvee_gl.weapon' />
 	<!-- end RWR weapons -->
 
@@ -103,6 +103,26 @@
 
 	<!-- CABAL buildings -->
 	<vehicle key="env_wall_1_1_1.vehicle" />
+
+	<vehicle file="env_block_1_.5_1.vehicle" />
+	<vehicle file="env_block_1_.75_1.vehicle" />
+	<vehicle file="env_block_1_1_1.vehicle" />
+	<vehicle file="env_block_1_1.5_1.vehicle" />
+
+	<vehicle file="env_cabwall_.5_.5_1.vehicle" />
+	<vehicle file="env_cabwall_.5_.75_1.vehicle" />
+	<vehicle file="env_cabwall_.5_1_1.vehicle" />
+	<vehicle file="env_cabwall_.5_1.5_1.vehicle" />
+
+	<vehicle file="env_cabwall_1_.5_1.vehicle" />
+	<vehicle file="env_cabwall_1_.75_1.vehicle" />
+	<vehicle file="env_cabwall_1_1_1.vehicle" />
+	<vehicle file="env_cabwall_1_1.5_1.vehicle" />
+
+	<vehicle file="env_cabwall_2_.5_1.vehicle" />
+	<vehicle file="env_cabwall_2_.75_1.vehicle" />
+	<vehicle file="env_cabwall_2_1_1.vehicle" />
+	<vehicle file="env_cabwall_2_1.5_1.vehicle" />
 
 	<vehicle key="env_building_1_1_1.vehicle" />
 	<vehicle key="env_building_1_2_1.vehicle" />
