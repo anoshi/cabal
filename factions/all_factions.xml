@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <factions>
-    <!-- order here must match that of scripts/my_stage_configurator.as -->
+    <!-- order here must match that of scripts/cabal_stage_configurator.as -->
 	<faction file="player.xml" />
 	<faction file="cabal.xml" />
 </factions>
