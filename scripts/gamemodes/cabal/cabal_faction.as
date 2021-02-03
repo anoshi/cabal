@@ -1,45 +1,34 @@
 // --------------------------------------------
-// match-specific faction settings
+// stage-specific faction info
 class Faction {
-	FactionConfig@ m_config;
+	const FactionConfig@ m_config;
+	XmlElement@ m_defaultCommanderAiCommand;
 
-	int m_bases = -1;
+	int m_bases;
 
-	float m_overCapacity = 0;
-	int m_capacityOffset = 0;
-	float m_capacityMultiplier = 0; //0.0001;
+	int m_overCapacity;
+	float m_capacityMultiplier;
+	int m_capacityOffset;
+	bool m_loseWithoutBases;
 
 	// this is optional
-	array<string> m_ownedBases;
+	array<int> m_ownedBases;
 
-	Faction(FactionConfig@ factionConfig) {
-		@m_config = @factionConfig;
+	Faction(const FactionConfig@ config, XmlElement@ defaultCommand) {
+		@m_config = @config;
+		@m_defaultCommanderAiCommand = @defaultCommand;
+		m_bases = -1;
+		m_overCapacity = 0;
+		m_capacityMultiplier = 1.0;
+		m_capacityOffset = 0;
+		m_loseWithoutBases = true;
 	}
 
-	void makeNeutral() {
-		m_capacityMultiplier = 0.0;
-	}
-
-	bool isNeutral() {
+	bool isNeutral() const {
 		return m_capacityMultiplier <= 0.0;
 	}
 
-	string getName() {
+	string getName() const {
 		return m_config.m_name;
-	}
-}
-
-// --------------------------------------------
-class FactionConfig {
-	int m_index = -1;
-	string m_file = "unset faction file";
-	string m_name = "unset faction name";
-	string m_color = "0 0 0";
-
-	FactionConfig(int index, string file, string name, string color) {
-		m_index = index;
-		m_file = file;
-		m_name = name;
-		m_color = color;
 	}
 };

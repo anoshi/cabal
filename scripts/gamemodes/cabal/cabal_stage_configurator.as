@@ -1,25 +1,28 @@
 // gamemode specific
-#include "faction_config.as"
-#include "stage_configurator.as"
 #include "cabal_stage.as"
 
 // ------------------------------------------------------------------------------------------------
-class CabalStageConfigurator : StageConfigurator {
-	protected GameModeInvasion@ m_metagame;
-	protected MapRotatorInvasion@ m_mapRotator;
+class CabalStageConfigurator {
+	protected CabalGameMode@ m_metagame;
+	protected CabalMapRotator@ m_mapRotator;
+	protected int m_stagesAdded;
 
 	// ------------------------------------------------------------------------------------------------
-	CabalStageConfigurator(GameModeInvasion@ metagame, MapRotatorInvasion@ mapRotator) {
+	CabalStageConfigurator(CabalGameMode@ metagame, CabalMapRotator@ mapRotator) {
 		@m_metagame = @metagame;
 		@m_mapRotator = mapRotator;
 		mapRotator.setConfigurator(this);
+		m_stagesAdded = 0;
 	}
 
 	// ------------------------------------------------------------------------------------------------
 	void setup() {
+		_log("** CABAL: setupFactionConfigs", 1);
 		setupFactionConfigs();
-		setupNormalStages();
+		_log("** CABAL: setupWorld", 1);
 		setupWorld();
+		_log("** CABAL: setupNormalStages", 1);
+		setupNormalStages();
 	}
 
 	// ------------------------------------------------------------------------------------------------
@@ -31,6 +34,12 @@ class CabalStageConfigurator : StageConfigurator {
 		return availableFactionConfigs;
 	}
 
+	// --------------------------------------------
+	array<XmlElement@>@ getFactionResourceConfigChangeCommands(float completionPercentage, Stage@ Stage) {
+		array<XmlElement@> empty;
+		return empty;
+	}
+
 	// ------------------------------------------------------------------------------------------------
 	protected void setupFactionConfigs() {
 		array<FactionConfig@> availableFactionConfigs = getAvailableFactionConfigs(); // copy for mutability
@@ -38,9 +47,9 @@ class CabalStageConfigurator : StageConfigurator {
 		const UserSettings@ settings = m_metagame.getUserSettings();
 		// First, add player faction
 		{
-			_log("faction choice: " + settings.m_factionChoice, 1);
+			_log("** CABAL: faction choice: " + settings.m_factionChoice, 1);
 			FactionConfig@ userChosenFaction = availableFactionConfigs[settings.m_factionChoice];
-			_log("player faction: " + userChosenFaction.m_file, 1);
+			_log("** CABAL: player faction: " + userChosenFaction.m_file, 1);
 
 			int index = int(getFactionConfigs().size()); // is 0
 			userChosenFaction.m_index = index;
@@ -70,7 +79,7 @@ class CabalStageConfigurator : StageConfigurator {
 		_log("total faction configs " + getFactionConfigs().size(), 1);
 	}
 
-// --------------------------------------------
+	// --------------------------------------------
 	protected void setupWorld() {
 		CabalWorld world(m_metagame);
 
@@ -92,7 +101,9 @@ class CabalStageConfigurator : StageConfigurator {
 
 	// ------------------------------------------------------------------------------------------------
 	protected void addStage(Stage@ stage) {
+		_log("** CABAL: adding a stage", 1);
 		m_mapRotator.addStage(stage);
+		m_stagesAdded++;
 	}
 
 	// ------------------------------------------------------------------------------------------------
@@ -113,8 +124,8 @@ class CabalStageConfigurator : StageConfigurator {
 	}
 
 	// --------------------------------------------
-	protected CabalStage@ createStage() const {
-		return CabalStage(m_metagame.getUserSettings());
+	protected Stage@ createStage() const {
+		return Stage(m_metagame.getUserSettings());
 	}
 
 	// --------------------------------------------
@@ -127,10 +138,25 @@ class CabalStageConfigurator : StageConfigurator {
 		return m_mapRotator.getFactionConfigs();
 	}
 
-	// ------------------------------------------------------------------------------------------------
+	// --------------------------------------------
 	Stage@ setupCompletedStage(Stage@ inputStage) {
-		// currently not in use in invasion
-		return null;
+		Stage@ stage = createStage();
+
+		stage.m_mapInfo = inputStage.m_mapInfo;
+		stage.m_finalBattle = inputStage.m_finalBattle;
+		stage.m_includeLayers = inputStage.m_includeLayers;
+
+		stage.m_maxSoldiers = 1;
+
+		{
+			Faction f(getFactionConfigs()[0], createCommanderAiCommand(0));
+			stage.m_factions.insertLast(f);
+		}
+
+		// addFixedSpecialCrates(stage);
+		// addRandomSpecialCrates(stage, stage.m_minRandomCrates, stage.m_maxRandomCrates);
+
+		return stage;
 	}
 
 	// ------------------------------------------------------------------------------------------------
@@ -150,7 +176,11 @@ class CabalStageConfigurator : StageConfigurator {
 		_log("** CABAL: adding map layer1.map1", 1);
 		stage.m_includeLayers.insertLast("layer1.map1");
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
+
+		// maybe we want to use crates as cache drops throughout the level...
+		// stage.m_minRandomCrates = 2;
+		// stage.m_maxRandomCrates = 4;
 
 		stage.m_maxSoldiers = 1;
 		stage.m_playerAiCompensation = 1;
@@ -184,12 +214,12 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map2";
 
-    	stage.m_fogOffset = 20.0;
-    	stage.m_fogRange = 50.0;
+		stage.m_fogOffset = 20.0;
+		stage.m_fogRange = 150.0;
 
 		stage.m_includeLayers.insertLast("layer1.map2");
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -222,7 +252,7 @@ class CabalStageConfigurator : StageConfigurator {
 
 		stage.m_includeLayers.insertLast("layer1.map3");
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -255,7 +285,7 @@ class CabalStageConfigurator : StageConfigurator {
 		_log("** CABAL: adding map layer1.map4", 1);
 		stage.m_includeLayers.insertLast("layer1.map4");
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -285,7 +315,7 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map5";
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -315,9 +345,9 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map6";
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
-		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
+		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise might score an AI friendly)
 
 		{
 			Faction f(getFactionConfigs()[0], createFellowCommanderAiCommand(0));
@@ -345,7 +375,7 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map7";
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -375,7 +405,7 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map8";
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -405,7 +435,7 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map9";
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -435,7 +465,7 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map10";
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -466,7 +496,7 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map11";
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -496,7 +526,7 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map12";
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 
@@ -525,7 +555,7 @@ class CabalStageConfigurator : StageConfigurator {
 		stage.m_mapInfo.m_path = "media/packages/cabal/maps/cabal";
 		stage.m_mapInfo.m_id = "map13";
 
-		stage.addTracker(PeacefulLastBase(m_metagame, 0));
+		// stage.addTracker(PeacefulLastBase(m_metagame, 0));
 
 		stage.m_maxSoldiers = 1; // just you and the other guy (if dedicated server, otherwise, might score an AI friendly)
 

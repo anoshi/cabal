@@ -6,6 +6,7 @@
 
 // cabal gamemode classes
 #include "cabal_map_rotator.as"
+#include "cabal_stage_configurator.as"
 
 // cabal helper functions
 #include "cabal_helpers.as"
@@ -17,18 +18,20 @@
 // --------------------------------------------
 class CabalGameMode : Metagame {
 	protected UserSettings@ m_userSettings;
-	protected MapRotator@ m_mapRotator;
+	protected CabalMapRotator@ m_cabalMapRotator;
 
 	protected bool trackPlayerDeaths = true;
-	protected bool matchEndOverride = false; 	// boss levels aren't won under normal level win conditions
+	protected bool matchEndOverride = false; 		// boss levels aren't won under normal level win conditions
 
-	protected uint numPlayers = 0;				// number of active players in the game
+	protected uint numPlayers = 0;							// number of active players in the game
 
-	protected array<int> trackedCharIds;		// Ids of characters being tracked against collisions with hitboxes
-	protected array<Vector3> targetLocations;	// locations of interest in each level
+	protected array<int> trackedCharIds;				// Ids of characters being tracked against collisions with hitboxes
+	protected array<Vector3> targetLocations;		// locations of interest in each level
 	protected array<Vector3> extractionPoints;	// locations that player characters must reach to advance to the next level
 
 	protected array<Faction@> m_factions;
+
+	string m_gameMapPath = "";
 
 	// --------------------------------------------
 	CabalGameMode(UserSettings@ settings) {
@@ -40,30 +43,26 @@ class CabalGameMode : Metagame {
 	void init() {
 		Metagame::init();
 
-		// trigger map change right now
-		_log("** CABABL: setupMapRotator", 1);
+		_log("** CABAL: setupMapRotator", 1);
 		setupMapRotator();
-		_log("** CABABL: mapRotator init()", 1);
-		m_mapRotator.init();
-		_log("** CABABL: mapRotator startRotation()", 1);
-		m_mapRotator.startRotation();
 
 		//setupPlayerTracker();
 
 		if (m_userSettings.m_continue) {
 			// loading a saved game?
+			updateGeneralInfo();
 			load();
-			preBeginMatch();
-			postBeginMatch();
-
 		} else {
 			// no, it's not a save game
+			_log("** CABAL: New game, clear the comms queue", 1);
 			sync();
-			preBeginMatch();
-			startMatch();
-			postBeginMatch();
 		}
 
+		_log("** CABAL: initialising mapRotator", 1);
+		m_cabalMapRotator.init();
+
+		_log("** CABAL: mapRotator startRotation()", 1);
+		m_cabalMapRotator.startRotation();
 	}
 
 	// --------------------------------------------
@@ -88,7 +87,17 @@ class CabalGameMode : Metagame {
 
 	// --------------------------------------------
 	protected void setupMapRotator() {
-		@m_mapRotator = CabalMapRotator(this);
+		CabalMapRotator cabalMapRotator(this);
+		@m_cabalMapRotator = @cabalMapRotator;
+		CabalStageConfigurator configurator(this, m_cabalMapRotator);
+	}
+
+	// --------------------------------------------
+	protected void updateGeneralInfo() {
+		const XmlElement@ general = getGeneralInfo(this);
+		if (general !is null) {
+			m_gameMapPath = general.getStringAttribute("map");
+		}
 	}
 
 	// // --------------------------------------------
@@ -97,12 +106,19 @@ class CabalGameMode : Metagame {
 	// }
 
 	// --------------------------------------------
-	protected void startMatch() {
-		// TODO: derive and implement
+	// MapRotator calls here when a battle is about to be started
+	void preBeginMatch() {
+		_log("** CABAL preBeginMatch", 1);
+
+		// all trackers are cleared when match is about to begin
+		Metagame::preBeginMatch();
+
+		addTracker(m_cabalMapRotator);
 	}
 
 	// --------------------------------------------
 	void postBeginMatch() {
+		_log("** CABAL postBeginMatch", 1);
 		Metagame::postBeginMatch();
 
 		// Cabal handlers
@@ -139,7 +155,7 @@ class CabalGameMode : Metagame {
 
 	// --------------------------------------------
 	bool getTrackPlayerDeaths() {
-		_log("** Cabal: got trackPlayerDeaths: (" + trackPlayerDeaths + ")", 1);
+		_log("** CABAL: got trackPlayerDeaths: (" + trackPlayerDeaths + ")", 1);
 		return trackPlayerDeaths;
 	}
 
@@ -150,7 +166,7 @@ class CabalGameMode : Metagame {
 
 	// --------------------------------------------
 	bool getMatchEndOverride() {
-		_log("** Cabal: Match End requested. " + (matchEndOverride ? 'Blocked' : 'Allowed'), 1);
+		_log("** CABAL: Match End requested. " + (matchEndOverride ? 'Blocked' : 'Allowed'), 1);
 		return matchEndOverride;
 	}
 
@@ -299,6 +315,11 @@ class CabalGameMode : Metagame {
 	// --------------------------------------------
 	array<Faction@> getFactions() {
 		return m_factions;
+	}
+
+	// --------------------------------------------
+	uint getFactionCount() const {
+		return m_factions.size();
 	}
 
 	// --------------------------------------------
