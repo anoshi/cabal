@@ -21,8 +21,8 @@ class PlayerTracker : Tracker {
 
 	protected float MIN_SPAWN_X = 530.395; 			// Left-most X coord within player spawn area (see /maps/cabal/objects.svg)
 	protected float MAX_SPAWN_X = 545.197; 			// Right-most X coord within player spawn area (see /maps/cabal/objects.svg)
-	protected float MIN_GOAL_XP = 40.0;
-	protected float MAX_GOAL_XP = 60.0;
+	protected float MIN_GOAL_XP = 4.0; // 40.0;
+	protected float MAX_GOAL_XP = 6.0; // 60.0;
 	protected float goalXP = rand(MIN_GOAL_XP, MAX_GOAL_XP);
 	protected float curXP = 0.0;
 
